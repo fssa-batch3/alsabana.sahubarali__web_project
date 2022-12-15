@@ -1,0 +1,246 @@
+nav {
+  background-color: #faf4ef;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  font-size: 23px;
+  font-family: cursive;
+  height: 90px;
+  font-weight: bold;
+  height: 85px;
+  cursor: pointer;
+}
+body {
+  font-size: 20px;
+  font-family: cursive;
+}
+/* nav ul :hover {
+    border-bottom: 8px solid rgb(240, 197, 155);
+  } */
+nav ul {
+  display: flex;
+  justify-content: space-around;
+}
+nav li {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+  color: black;
+}
+a:hover {
+  text-decoration: underline;
+}
+.image-1 {
+  margin-top: -20px;
+}
+.long-image {
+  margin-top: 70px;
+  margin-left: 20px;
+}
+.head-1 {
+  text-align: center;
+}
+.product-listing3 {
+  display: flex;
+  justify-content: space-around;
+  text-align: center;
+  font-size: 15px;
+}
+.product-listing3 img {
+  border-radius: 20px;
+}
+.product-listing3 h3 {
+  width: 220px;
+}
+.pro-list-1 {
+  background-color: rgb(221, 227, 227);
+  padding: 20px;
+  border-radius: 50px;
+  text-align: center;
+  box-shadow: 10px 20px 10px gray;
+}
+.pro-list-2 {
+  background-color: rgb(221, 227, 227);
+  padding: 20px;
+  border-radius: 50px;
+  text-align: center;
+  box-shadow: 10px 20px 10px gray;
+}
+.pro-list-3 {
+  background-color: rgb(221, 227, 227);
+  padding: 20px;
+  border-radius: 50px;
+  text-align: center;
+  box-shadow: 10px 20px 10px gray;
+}
+.pro-list-4 {
+  background-color: rgb(221, 227, 227);
+  padding: 20px;
+  border-radius: 50px;
+  text-align: center;
+  box-shadow: 10px 20px 10px gray;
+}
+.product-listing-4 {
+  display: flex;
+  justify-content: space-around;
+  text-align: center;
+  font-size: 15px;
+  margin-top: 30px;
+}
+.product-listing-4 h3 {
+  width: 220px;
+}
+.product-listing-4 img {
+  border-radius: 20px;
+}
+.head-2 {
+  text-align: center;
+}
+.pro-list-5 {
+  background-color: rgb(221, 227, 227);
+  padding: 20px;
+  border-radius: 50px;
+  text-align: center;
+  box-shadow: 10px 20px 10px gray;
+}
+.pro-list-6 {
+  background-color: rgb(221, 227, 227);
+  padding: 20px;
+  border-radius: 50px;
+  text-align: center;
+  box-shadow: 10px 20px 10px gray;
+}
+.pro-list-7 {
+  background-color: rgb(221, 227, 227);
+  padding: 20px;
+  border-radius: 50px;
+  text-align: center;
+  box-shadow: 10px 20px 10px gray;
+}
+.pro-list-8 {
+  background-color: rgb(221, 227, 227);
+  padding: 20px;
+  border-radius: 50px;
+  text-align: center;
+  box-shadow: 10px 20px 10px gray;
+}
+.long-1 {
+  margin-left: 10px;
+  margin-top: 30px;
+}
+.long-1 img {
+  border-radius: 10px;
+}
+.product-listing-5 {
+  display: flex;
+  justify-content: space-around;
+  text-align: center;
+  font-size: 15px;
+  margin-top: 30px;
+}
+.pro-list-9 {
+  background-color: rgb(221, 227, 227);
+  padding: 20px;
+  border-radius: 50px;
+  text-align: center;
+  box-shadow: 10px 20px 10px gray;
+}
+.pro-list-10 {
+  background-color: rgb(221, 227, 227);
+  padding: 20px;
+  border-radius: 50px;
+  text-align: center;
+  box-shadow: 10px 20px 10px gray;
+}
+.pro-list-11 {
+  background-color: rgb(221, 227, 227);
+  padding: 20px;
+  border-radius: 50px;
+  text-align: center;
+  box-shadow: 10px 20px 10px gray;
+}
+.pro-list-12 {
+  background-color: rgb(221, 227, 227);
+  padding: 20px;
+  border-radius: 50px;
+  text-align: center;
+  box-shadow: 10px 20px 10px gray;
+}
+.product-listing-5 h3 {
+  width: 220px;
+}
+.product-listing-5 img {
+  border-radius: 20px;
+}
+button {
+  width: 200px;
+  height: 50px;
+  background-color: rgb(221, 227, 227);
+}
+.btn {
+  padding: 50px;
+  margin-left: 37%;
+  display: flex;
+}
+.arrow {
+  margin-top: 13px;
+  margin-left: -40px;
+}
+footer {
+  font-family: cursive;
+  font-size: 15px;
+  padding: 10px;
+  background-color: #e7e4d6;
+  height: 250px;
+  margin-top: -8px;
+
+  border: 1px solid gray;
+}
+
+.sixteen {
+  display: flex;
+}
+.sixteen div {
+  padding: 20px;
+}
+.seventeen {
+  text-align: center;
+  margin-top: -12%;
+}
+
+.eighteen {
+  display: flex;
+  justify-content: center;
+}
+.eighteen div {
+  padding: 20px;
+}
+.nineteen {
+  text-align: end;
+  margin-top: -14%;
+  margin-right: 10%;
+}
+.twenty {
+  display: flex;
+  justify-content: end;
+  margin-right: 10%;
+}
+.twenty div {
+  padding: 10px;
+}
+.twentyone {
+  text-align: end;
+  margin-top: 50px;
+}
+.delivery {
+  display: flex;
+  justify-content: space-around;
+  font-size: 19px;
+  font-family: cursive;
+  /* background-color: #9f9d9b; */
+}
+.delivery div {
+  padding: 20px;
+}

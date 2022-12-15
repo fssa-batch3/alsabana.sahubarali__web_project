@@ -1,0 +1,30 @@
+nav {
+  display: flex;
+}
+nav div {
+  padding: 10px;
+}
+.image-1 {
+  border-radius: 50%;
+}
+a {
+  text-decoration: none;
+  color: black;
+}
+a:hover {
+  text-decoration: underline;
+}
+.whole input:not(.check) {
+  width: 250px;
+  height: 40px;
+}
+.whole {
+  margin-left: 30%;
+}
+button {
+  width: 250px;
+  height: 40px;
+}
+.btn {
+  margin-left: 35%;
+}

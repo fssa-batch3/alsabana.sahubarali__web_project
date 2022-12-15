@@ -1,0 +1,269 @@
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@100&family=Poppins:ital@1&family=Space+Mono:wght@700&display=swap");
+
+body {
+  font-family: "Poppins", sans-serif;
+}
+
+nav {
+  background-color: white;
+
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  font-size: 23px;
+  height: 90px;
+  font-weight: bold;
+  height: 85px;
+  cursor: pointer;
+}
+
+nav ul {
+  display: flex;
+  justify-content: space-around;
+}
+nav li {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+  color: black;
+}
+
+a:hover:not(.btn) {
+  font-size: 150%;
+}
+.image-1 {
+  margin-top: -23px;
+  border-radius: 50%;
+}
+
+.two {
+  display: flex;
+  margin-left: 50px;
+
+  font-size: 15px;
+  padding: 25px;
+}
+.two-2 h3 {
+  width: 850px;
+  border-left: 5px solid rgb(24, 24, 24);
+  border-left-style: double;
+  padding-left: 15px;
+  font-size: 17px;
+}
+.three {
+  display: flex;
+  margin-left: 200px;
+  font-family: "Poppins", sans-serif;
+}
+.three-1 {
+  padding: 40px;
+  font-size: 25px;
+  margin-right: 100px;
+  margin-bottom: 250px;
+}
+.three-1 button {
+  width: 150px;
+  height: 50px;
+  background-color: black;
+  color: white;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+button:hover {
+  font-size: 80%;
+  box-shadow: 5px 5px 5px black;
+}
+.three-2 {
+  border-radius: 20px;
+}
+.four {
+  display: flex;
+  margin-top: -300px;
+  margin-left: 15px;
+}
+
+.five h2 {
+  padding: 30px;
+  width: 800px;
+  margin-left: 300px;
+  text-align: center;
+  font-size: 30px;
+  font-family: "Poppins", sans-serif;
+}
+.seven {
+  display: flex;
+  /* background-color: antiquewhite; */
+  background-color: #f5ebe0;
+
+  font-size: 15px;
+  font-family: "Poppins", sans-serif;
+  font-weight: bold;
+  color: rgba(148, 108, 56, 0.664);
+  width: 1390px;
+  margin-top: 20px;
+  margin-left: 30px;
+  margin-right: 10px;
+  height: 300px;
+  border-radius: 40px;
+
+  border-style: double;
+}
+.seven div {
+  padding: 50px;
+}
+.eight {
+  font-size: 20px;
+  font-family: "Poppins", sans-serif;
+  padding: 10px;
+  margin-left: 10px;
+}
+.nine {
+  display: flex;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+.nine div {
+  padding: 15px;
+  font-size: 15px;
+  font-family: "Poppins", sans-serif;
+  font-weight: bold;
+  border-left: 2px solid rgb(57, 56, 56);
+  border-left-style: double;
+  /* background-color: rgb(205, 205, 196); */
+  background-color: #faf4ef;
+  box-shadow: 20px 20px 15px gray;
+}
+.nine h5 {
+  text-align: end;
+  margin-right: 50px;
+}
+.ten {
+  padding: 10px;
+  margin-left: 30px;
+}
+.ten button {
+  width: 150px;
+  height: 50px;
+  background-color: black;
+  color: white;
+  font-size: 20px;
+  border-radius: 20px;
+}
+.about {
+  font-size: 20px;
+  font-family: "Poppins", sans-serif;
+}
+.eleven {
+  text-align: center;
+  font-family: "Poppins", sans-serif;
+}
+.twelve {
+  text-align: center;
+  margin-left: 400px;
+  font-size: 20px;
+  font-family: "Poppins", sans-serif;
+  border-bottom-style: dotted;
+  border-bottom-width: 600;
+  margin-right: 400px;
+}
+.twelve p {
+  width: 600px;
+}
+.thirdeen {
+  display: flex;
+  padding: 30px;
+}
+.thirdeen div {
+  padding: 50px;
+  font-size: 25px;
+  font-family: "Poppins", sans-serif;
+}
+.thirdeen-1 {
+  border-radius: 40px;
+
+  box-shadow: 20px 20px 15px #faefe5;
+}
+.fourteen {
+  text-align: center;
+}
+.fourteen-1 {
+  display: inline-block;
+  height: 80px;
+  width: 500px;
+  border-bottom-style: double;
+}
+.fifteen {
+  text-align: center;
+  width: 800px;
+  margin-left: 25%;
+  font-family: "Poppins", sans-serif;
+}
+.fifteen-1 {
+  margin-left: 50px;
+}
+
+footer {
+  font-family: "Poppins", sans-serif;
+  font-size: 15px;
+  padding: 10px;
+
+  background-color: black;
+  color: white;
+  height: 250px;
+  margin-top: -8px;
+
+  border: 1px solid gray;
+}
+.flip {
+  border-radius: 50%;
+}
+.sixteen {
+  display: flex;
+}
+.sixteen div {
+  padding: 20px;
+}
+.seventeen {
+  text-align: center;
+  margin-top: -12%;
+}
+
+.eighteen {
+  display: flex;
+  justify-content: center;
+}
+.eighteen div {
+  padding: 20px;
+}
+.nineteen {
+  text-align: end;
+  margin-top: -14%;
+  margin-right: 10%;
+}
+.twenty {
+  display: flex;
+  justify-content: end;
+  margin-right: 10%;
+}
+.twenty div {
+  padding: 10px;
+}
+.twentyone {
+  text-align: end;
+  margin-top: 50px;
+}
+.delivery {
+  display: flex;
+  justify-content: space-around;
+  font-size: 19px;
+  font-family: "Poppins", sans-serif;
+  /* background-color: #9f9d9b; */
+}
+.delivery img {
+  filter: sepia(100%);
+}
+.delivery div {
+  padding: 20px;
+}

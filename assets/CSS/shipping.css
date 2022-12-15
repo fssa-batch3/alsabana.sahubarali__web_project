@@ -1,0 +1,53 @@
+nav {
+  display: flex;
+}
+nav div {
+  padding: 10px;
+}
+.image-1 {
+  border-radius: 50%;
+}
+a {
+  text-decoration: none;
+  color: black;
+}
+a:hover {
+  text-decoration: underline;
+}
+.first {
+  display: flex;
+}
+.first div {
+  padding: 20px;
+}
+.second {
+  display: flex;
+}
+.second div {
+  padding: 20px;
+}
+.three {
+  display: flex;
+}
+.three div {
+  padding: 30px;
+}
+.pay {
+  border: 1px solid black;
+  max-width: 300px;
+}
+.online {
+  border-top: 1px solid black;
+}
+.return {
+  display: flex;
+  background-color: blue;
+  justify-content: space-between;
+}
+.return div {
+  background-color: blueviolet;
+  padding: 10px;
+}
+.continue {
+  margin-top: 25px;
+}

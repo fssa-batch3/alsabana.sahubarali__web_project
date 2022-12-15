@@ -1,0 +1,20 @@
+.head {
+  display: flex;
+}
+.head-1,
+.head-2,
+.head-3 {
+  display: flex;
+  justify-content: center;
+}
+.head-1,
+.head-2,
+.head-3 div {
+  padding: 50px;
+}
+.head-4 {
+  display: flex;
+}
+.head-4 div {
+  padding: 50px;
+}

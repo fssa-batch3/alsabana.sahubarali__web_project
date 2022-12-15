@@ -1,0 +1,37 @@
+nav {
+  display: flex;
+}
+nav div {
+  padding: 10px;
+}
+.image-1 {
+  border-radius: 50%;
+}
+a {
+  text-decoration: none;
+  color: black;
+}
+a:hover {
+  text-decoration: underline;
+}
+.one,
+.two,
+.three {
+  display: flex;
+}
+.one div,
+.two div,
+.three div {
+  padding: 20px;
+}
+.complete {
+  display: flex;
+}
+.complete div {
+  padding: 10px;
+}
+.complete button {
+  margin-top: 14px;
+  width: 250px;
+  height: 40px;
+}
