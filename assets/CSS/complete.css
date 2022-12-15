@@ -1,5 +1,28 @@
-.com div,
-h3 {
-  padding: 50px;
-  background-color: aqua;
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@100&family=Poppins:ital@1&family=Space+Mono:wght@700&display=swap");
+
+body {
+  font-family: "Poppins", sans-serif;
+  background-image: linear-gradient(
+    rgb(219, 217, 217),
+    rgb(153, 216, 227),
+    rgb(220, 220, 241)
+  );
+  font-weight: bold;
+}
+.com {
+  margin-top: 20%;
+  text-align: center;
+}
+img {
+  border-radius: 70%;
+}
+button {
+  width: 200px;
+  height: 50px;
+  background-color: black;
+  color: white;
+  border-radius: 10px;
+}
+button:hover {
+  transform: scale(1.2);
 }
