@@ -7,7 +7,6 @@ body {
 
 nav {
   background-color: rgb(14, 14, 14);
-
   position: fixed;
   top: 0;
   left: 0;
@@ -15,7 +14,6 @@ nav {
   font-size: 23px;
   height: 90px;
   font-weight: bold;
-  height: 85px;
   cursor: pointer;
 }
 
