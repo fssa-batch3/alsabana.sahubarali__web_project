@@ -1,3 +1,26 @@
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@100&family=Poppins:ital@1&family=Space+Mono:wght@700&display=swap");
+
+body {
+  font-family: "Poppins", sans-serif;
+  background-image: linear-gradient(
+    rgb(194, 141, 141),
+    rgb(153, 216, 227),
+    rgb(167, 167, 224)
+  );
+  font-weight: bold;
+}
+
+.full-container {
+  display: flex;
+  justify-content: center;
+}
+.icon {
+  margin-top: 20%;
+  padding-left: 10%;
+}
+.icn {
+  border-radius: 50%;
+}
 .whole {
   padding: 20%;
 }

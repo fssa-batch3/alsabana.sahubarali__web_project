@@ -1,23 +1,23 @@
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@100&family=Poppins:ital@1&family=Space+Mono:wght@700&display=swap");
+
+body {
+  font-family: "Poppins", sans-serif;
+}
+
 nav {
-  background-color: #faf4ef;
+  background-color: white;
+
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
   font-size: 23px;
-  font-family: cursive;
   height: 90px;
   font-weight: bold;
   height: 85px;
   cursor: pointer;
 }
-body {
-  font-size: 20px;
-  font-family: cursive;
-}
-/* nav ul :hover {
-  border-bottom: 8px solid rgb(240, 197, 155);
-} */
+
 nav ul {
   display: flex;
   justify-content: space-around;
@@ -25,25 +25,29 @@ nav ul {
 nav li {
   list-style: none;
 }
-a {
+a:not(.btn-a) {
   text-decoration: none;
-  color: black;
+  color: rgb(18, 17, 17);
 }
-a:hover {
-  text-decoration: underline;
+
+a:hover:not(.btn-a) {
+  font-size: 150%;
 }
 .image-1 {
-  margin-top: -20px;
+  margin-top: -23px;
+  border-radius: 50%;
 }
 .images-1 {
   margin-top: 90px;
-  /* background-color: yellowgreen; */
+
   margin-left: 20px;
 }
 .side button:not(.btn) {
   width: 450px;
   height: 40px;
   margin-top: 10px;
+  background-color: black;
+  color: white;
 }
 .quan {
   width: 50px;
@@ -53,11 +57,16 @@ a:hover {
   float: right;
   margin-top: -35%;
 }
+.side-1 button {
+  background-color: black;
+  color: white;
+}
 .side h3 {
   width: 600px;
 }
 p {
   width: 800px;
+  font-weight: bold;
 }
 .review {
   display: flex;
