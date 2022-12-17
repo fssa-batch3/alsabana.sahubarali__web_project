@@ -2,11 +2,12 @@
 
 body {
   font-family: "Poppins", sans-serif;
+  width: 1440px;
 }
 
 nav {
   background-color: white;
-
+  width: 1440px;
   position: fixed;
   top: 0;
   left: 0;
@@ -49,6 +50,9 @@ a:hover:not(.btn-a) {
   background-color: black;
   color: white;
 }
+.whole-container {
+  width: 1440px;
+}
 .quan {
   width: 50px;
   height: 30px;
@@ -90,18 +94,25 @@ p {
 .write button {
   width: 200px;
   height: 40px;
+  font-size: 20;
+  background-color: black;
+  color: white;
 }
 footer {
-  font-family: cursive;
+  font-family: "Poppins", sans-serif;
   font-size: 15px;
   padding: 10px;
-  background-color: #e7e4d6;
+
+  background-color: black;
+  color: white;
   height: 250px;
   margin-top: -8px;
 
   border: 1px solid gray;
 }
-
+.flip {
+  border-radius: 50%;
+}
 .sixteen {
   display: flex;
 }
@@ -141,8 +152,10 @@ footer {
   display: flex;
   justify-content: space-around;
   font-size: 19px;
-  font-family: cursive;
-  /* background-color: #9f9d9b; */
+  font-family: "Poppins", sans-serif;
+}
+.delivery img {
+  filter: sepia(100%);
 }
 .delivery div {
   padding: 20px;
