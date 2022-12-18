@@ -8,6 +8,7 @@ body {
     rgb(167, 167, 224)
   );
   font-weight: bold;
+  cursor: pointer;
 }
 
 nav {
@@ -33,6 +34,9 @@ a:hover {
 .whole-1 {
   padding: 30px 10px 20px 30%;
 }
+.full-container {
+  border: 1px solid black;
+}
 .pay-2 img {
   float: right;
   border-radius: 10px;
@@ -43,7 +47,7 @@ a:hover {
 .two,
 .three {
   display: flex;
-  border: 1px solid black;
+  /* border: 1px solid black; */
 }
 .one div,
 .two div,

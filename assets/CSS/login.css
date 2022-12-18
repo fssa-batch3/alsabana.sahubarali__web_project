@@ -8,6 +8,7 @@ body {
     rgb(167, 167, 224)
   );
   font-weight: bold;
+  cursor: pointer;
 }
 
 .full-container {
@@ -33,6 +34,8 @@ body {
 #user input {
   width: 140px;
   height: 30px;
+  background-color: black;
+  color: white;
 }
 #pass {
   display: flex;
@@ -40,6 +43,8 @@ body {
 #pass input {
   width: 140px;
   height: 30px;
+  background-color: black;
+  color: white;
 }
 .checkbox {
   display: flex;
@@ -51,4 +56,9 @@ body {
 .btn button {
   width: 300px;
   height: 40px;
+  background-color: black;
+  color: white;
+}
+button:hover {
+  transform: scale(1.2);
 }
