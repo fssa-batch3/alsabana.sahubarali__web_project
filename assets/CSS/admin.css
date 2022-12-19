@@ -2,11 +2,7 @@
 
 body {
   font-family: "Poppins", sans-serif;
-  background-image: linear-gradient(
-    rgb(194, 141, 141),
-    rgb(153, 216, 227),
-    rgb(167, 167, 224)
-  );
+  background-image: linear-gradient(rgb(170, 227, 208), rgb(207, 209, 211));
   font-weight: bold;
 }
 .whole-container {
@@ -35,7 +31,7 @@ h2 {
 button {
   width: 250px;
   height: 50px;
-  background-image: linear-gradient(rgb(236, 88, 88), rgb(111, 169, 228));
+  background-image: linear-gradient(rgb(133, 218, 190), rgb(135, 136, 138));
   font-size: 20px;
   font-weight: bolder;
   border-style: none;
