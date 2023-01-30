@@ -11,7 +11,7 @@ header {
 }
 
 nav {
-  background-color: black;
+  background-color: white;
 
   position: fixed;
   top: 0;
@@ -19,8 +19,6 @@ nav {
   right: 0;
   font-size: 23px;
   height: 90px;
-  display: flex;
-  align-items: center;
   font-weight: bold;
 
   cursor: pointer;
@@ -33,12 +31,12 @@ nav ul {
 nav li {
   list-style: none;
 }
-a {
+a:not(.btn-a) {
   text-decoration: none;
-  color: black;
+  color: rgb(18, 17, 17);
 }
 
-a:hover:not(.btn) {
+a:hover:not(.btn-a) {
   font-size: 150%;
 }
 .image-1 {
