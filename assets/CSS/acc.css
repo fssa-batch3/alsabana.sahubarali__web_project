@@ -1,0 +1,260 @@
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@100&family=Poppins:ital@1&family=Space+Mono:wght@700&display=swap");
+
+body {
+  font-family: "Poppins", sans-serif;
+}
+.navbar {
+  width: 100%;
+  padding: 20px;
+  background-color: white;
+  box-sizing: border-box;
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  color: #000;
+}
+
+nav li {
+  padding-right: 50px;
+  font-size: 50px;
+  font-weight: bold;
+  font-family: cambria;
+  cursor: pointer;
+  color: black;
+}
+.navbar .navbar-header {
+  color: rgb(9, 9, 9);
+  font-size: 26px;
+  text-decoration: none;
+}
+
+.image-1 {
+  margin-top: -12px;
+  border-radius: 50%;
+}
+.fst-container {
+  display: flex;
+
+  /* background-color: rgb(124, 124, 123); */
+  margin-top: 140px;
+  margin-left: 50px;
+  width: 300px;
+  height: 100px;
+  justify-content: space-evenly;
+}
+.fst-container img {
+  border-radius: 50%;
+  margin-top: 10px;
+}
+.first-container {
+  display: flex;
+  justify-content: space-evenly;
+}
+h3 {
+  padding: 0;
+  margin: 0;
+}
+.scnd-container {
+  /* margin-top: 140px; */
+  margin-top: -100px;
+}
+.profile img {
+  width: 80px;
+  height: 80px;
+}
+/* .whole {
+  display: flex;
+  justify-content: space-around;
+} */
+.dot {
+  height: 10px;
+  width: 10px;
+  background-color: rgb(56, 92, 65);
+  border-radius: 50%;
+  display: inline-block;
+}
+.checked {
+  color: rgb(53, 49, 141);
+}
+.personal-container {
+  width: 200px;
+}
+.order-container {
+  margin-top: 50px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  background-color: rgb(166, 169, 169);
+  width: 950px;
+  height: 120px;
+  box-shadow: 4px 10px rgb(92, 91, 91);
+}
+.form label {
+  color: rgb(16, 16, 16);
+  margin-top: 20px;
+  /* padding: 8px; */
+}
+input {
+  width: 250px;
+  height: 35px;
+}
+.radio input {
+  width: 25px;
+  height: 25px;
+}
+.url input {
+  width: 20px;
+  height: 10px;
+}
+button {
+  margin-top: 20px;
+  width: 90px;
+  height: 33px;
+  background-color: rgb(47, 46, 46);
+  color: white;
+}
+.image {
+  margin-top: 10px;
+  margin-left: 10px;
+}
+footer {
+  font-family: "Poppins", sans-serif;
+  font-size: 15px;
+  padding: 10px;
+
+  background-color: black;
+  color: white;
+  /* height: 250px; */
+  margin-top: 50px;
+
+  border: 1px solid gray;
+}
+.flip {
+  border-radius: 50%;
+}
+.sixteen {
+  display: flex;
+  flex-wrap: wrap;
+}
+.sixteen div {
+  padding: 20px;
+}
+.seventeen {
+  text-align: center;
+  margin-top: -12%;
+}
+
+.eighteen {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.eighteen div {
+  padding: 20px;
+}
+.nineteen {
+  text-align: end;
+  margin-top: -14%;
+  margin-right: 10%;
+}
+.twenty {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: end;
+  margin-right: 10%;
+}
+.twenty div {
+  padding: 10px;
+}
+.twentyone {
+  text-align: end;
+  margin-top: 50px;
+}
+.delivery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  font-size: 19px;
+  font-family: "Poppins", sans-serif;
+  /* background-color: #9f9d9b; */
+}
+.deli {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.delivery img {
+  filter: sepia(100%);
+}
+.delivery div {
+  padding: 20px;
+}
+
+/*Desktop*/
+@media (min-width: 600px) {
+  .navbar .navbar-item {
+    position: absolute;
+    right: 0;
+    top: 5px;
+  }
+  .navbar .navbar-item ul li {
+    display: inline;
+    margin-right: 15px;
+  }
+  .navbar .navbar-item ul li a {
+    color: rgb(17, 17, 17);
+    text-decoration: none;
+    font-size: 25px;
+  }
+  .navbar .navbar-item ul li a:hover {
+    color: rgb(20, 20, 20);
+  }
+  .navbar-btn {
+    display: none;
+  }
+  .image-2 {
+    margin-top: 10px;
+  }
+}
+@media (max-width: 600px) {
+  .navbar .navbar-item ul {
+    list-style-type: none;
+    padding: 0;
+  }
+
+  .navbar .navbar-item ul li {
+    margin-top: 15px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid rgba(79, 77, 77, 0.2);
+  }
+  .navbar .navbar-item ul li a {
+    color: rgb(18, 18, 18);
+    text-decoration: none;
+    font-size: 16px;
+  }
+  .navbar-btn {
+    border: none;
+    background: none;
+    /* border: 1px solid white; */
+    padding: 5px;
+    position: absolute;
+    right: 0;
+    top: 25px;
+    left: 89%;
+    cursor: pointer;
+  }
+  .navbar-btn span {
+    display: block;
+    width: 30px;
+    height: 2px;
+    border-top: 1px solid rgb(16, 15, 15);
+    background-color: #000;
+  }
+  .navbar-btn span:not(:last-child) {
+    margin-bottom: 5px;
+  }
+  .hide {
+    display: none;
+  }
+}

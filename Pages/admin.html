@@ -5,43 +5,112 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="../assets/CSS/admin.css" />
-    <title>Document</title>
+    <title>ADMIN</title>
   </head>
   <body>
-    <div class="whole-container">
-      <div>
-        <img src="../assets/images/computer-Gif-unscreen.gif" alt="image" />
+    <div class="first-container">
+      <div class="icon">
+        <img
+          src="../assets/images/new logo.png"
+          alt="image"
+          width="200"
+          height="200"
+        />
       </div>
-      <div class="whole">
-        <div class="log-1">
-          <div>
-            <img
-              class="icons"
-              src="../assets/images/admin icon.webp"
-              alt="image"
-              height="100"
-              width="100"
-            />
-          </div>
-          <div class="btn">
-            <a href="../Pages/login1.html"><button>Admin</button></a>
-          </div>
-        </div>
-        <div class="log-2">
-          <div>
-            <img
-              class="icons"
-              src="../assets/images/customer.jpg"
-              alt="image"
-              height="100"
-              width="100"
-            />
-          </div>
-          <div class="btn">
-            <a href="../Pages/login.html"><button>Customer</button></a>
-          </div>
-        </div>
+      <div class="product">
+        <h2>PRODUCTS</h2>
+        <h3>120</h3>
+      </div>
+      <div class="product">
+        <h2>ORDERS</h2>
+        <h3>56/Day</h3>
+      </div>
+      <div class="product">
+        <h2>EARINGS</h2>
+        <h3>$40/Day</h3>
+      </div>
+      <div class="product">
+        <h2>SALES</h2>
+        <h3>550/MO</h3>
       </div>
     </div>
+    <div class="list">
+      <h2>OUR PRODUCT LIST</h2>
+    </div>
+    <div class="btn">
+      <a href="../Pages/update.html"> <button class="add">ADD</button></a>
+    </div>
+    <div class="products" id="app">
+      <div class="product-listing-1">
+        <!-- <div class="listing-1">
+          <div>
+            <img
+              src="../assets/images/sample 1.png"
+              alt="image"
+              width="250"
+              height="250"
+            />
+          </div>
+          <div>
+            <h3>Serum for dry hair-100ml</h3>
+            <h5>Rs.399</h5>
+            <button>EDIT</button>
+            <a href="./upPro.html"><button id="delete">Delete</button></a>
+          </div>
+        </div> -->
+      </div>
+    </div>
+
+    <script>
+      const arr = JSON.parse(localStorage.getItem("proObject"));
+      console.log(arr);
+      for (let i = 0; i < arr.length; i++) {
+        //first div
+        let div_card = document.createElement("div");
+        div_card.setAttribute("class", "product-listing-1");
+        //second div
+        let div1 = document.createElement("div");
+        div1.setAttribute("class", "listing-1");
+        div_card.append(div1);
+        //third div
+        let div2 = document.createElement("div");
+        div1.append(div2);
+        //img tag and attributes
+        let card_img = document.createElement("img");
+        card_img.setAttribute("src", arr[i].image["src"]);
+        card_img.setAttribute("height", "250");
+        card_img.setAttribute("width", "250");
+        card_img.setAttribute("alt", arr[i].image["alt"]);
+
+        div2.append(card_img);
+        //div for h3 and h5 tags
+
+        let div1_card = document.createElement("div");
+        div_card.append(div1_card);
+        //h3 tag
+        let h3_tag = document.createElement("h3");
+        div2.append(h3_tag);
+
+        h3_tag.innerText = arr[i].productName;
+        //h5 tag
+        let h5_tag = document.createElement("h5");
+        div2.append(h5_tag);
+        h5_tag.innerText = " Rs. " + arr[i].cost;
+        //button tag
+        let anchor = document.createElement("a");
+        anchor.setAttribute("href", "./upPro.html?id=" + arr[i].productName);
+        anchor.innerText = "EDIT";
+        div2.append(anchor);
+        let delete_button = document.createElement("a");
+        delete_button.innerText = "DELETE";
+        delete_button.setAttribute(
+          "href",
+          "./upPro.html?id=" + arr[i].productName
+        );
+        div2.append(delete_button);
+        let insert_div = document.getElementById("app");
+        insert_div.append(div_card);
+      }
+    </script>
   </body>
 </html>

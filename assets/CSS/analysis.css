@@ -63,6 +63,7 @@ a:hover {
 }
 .side-1 {
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
 }
 .goose {
@@ -77,6 +78,7 @@ a:hover {
 
 .step-2 {
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
 }
 .step-2 div {
@@ -87,6 +89,7 @@ a:hover {
 }
 .step-3 {
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
 }
 .step-4 {
@@ -94,6 +97,7 @@ a:hover {
 }
 .step-5 {
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
 }
 .step-5 div {
@@ -101,6 +105,7 @@ a:hover {
 }
 .step-6 {
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
 }
 .fifteen-1 {
@@ -123,7 +128,7 @@ footer {
 
   background-color: black;
   color: white;
-  height: 250px;
+  /* height: 250px; */
   margin-top: -8px;
 
   border: 1px solid gray;
@@ -133,6 +138,7 @@ footer {
 }
 .sixteen {
   display: flex;
+  flex-wrap: wrap;
 }
 .sixteen div {
   padding: 20px;
@@ -144,6 +150,7 @@ footer {
 
 .eighteen {
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
 }
 .eighteen div {
@@ -156,6 +163,7 @@ footer {
 }
 .twenty {
   display: flex;
+  flex-wrap: wrap;
   justify-content: end;
   margin-right: 10%;
 }
@@ -168,14 +176,36 @@ footer {
 }
 .delivery {
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-around;
   font-size: 19px;
   font-family: "Poppins", sans-serif;
   /* background-color: #9f9d9b; */
+}
+.deli {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 .delivery img {
   filter: sepia(100%);
 }
 .delivery div {
   padding: 20px;
+}
+
+/* phone size */
+@media screen and (max-width: 600px) {
+  .long-img {
+    width: 400px;
+    height: 80px;
+  }
+  .btns {
+    margin-left: -120px;
+  }
+  .fif {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
 }

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>product update</title>
+    <link rel="stylesheet" href="../assets/CSS/upPro.css" />
+  </head>
+  <body>
+    <div class="whole_div">
+      <img id="for_img" width="200" height="350" />
+      <form id="update_form">
+        <label>Product name <input type="text" id="pName" /></label>
+        <label>Product price<input type="number" id="pPrice" /></label>
+        <label>Image<input type="text" id="pImage" /></label>
+        <label>Description<input type="textarea" id="pDescription" /></label>
+        <button type="submit">SUBMIT</button>
+        <button type="submit" onclick="del()" id="delete">DELETE</button>
+      </form>
+    </div>
+    <script>
+      const upForm = document.getElementById("update_form");
+      let params = window.location.search;
+      let parameter = new URLSearchParams(params);
+      let paraName = parameter.get("id");
+
+      let parraArray = JSON.parse(localStorage.getItem("proObject"));
+      let paraObj = parraArray.find(function (user) {
+        let productName = user["productName"];
+        // console.log(productName);
+        if (paraName == productName) {
+          return true;
+        } else {
+          return false;
+        }
+      });
+
+      let productName = document.getElementById("pName");
+      let cost = document.getElementById("pPrice");
+      let src = document.getElementById("pImage");
+      let alt = document.getElementById("pDescription");
+      let img = document.getElementById("for_img");
+      img.setAttribute("src", paraObj["image"]["src"]);
+      productName.value = paraObj["productName"];
+      cost.value = paraObj["cost"];
+      src.value = paraObj["image"]["src"];
+      // qa1w;
+      alt.value = paraObj["image"]["alt"];
+
+      // console.log(paraObj);
+      // console.log(parraArray);
+
+      let index = parraArray.indexOf(paraObj);
+      console.log(index);
+
+      upForm.addEventListener("submit", function (event) {
+        event.preventDefault();
+
+        let productName = document.getElementById("pName").value;
+        let cost = document.getElementById("pPrice").value;
+        let src = document.getElementById("pImage").value;
+        let alt = document.getElementById("pDescription").value;
+
+        proObject = {
+          productName,
+          cost,
+          image: { src, alt },
+        };
+
+        let newObj = Object.assign(paraObj, proObject);
+        parraArray[index] = newObj;
+        alert("updated Successfully ");
+
+        localStorage.setItem("proObject", JSON.stringify(parraArray));
+        window.location.href = "./admin.html";
+      });
+
+      let delete_product = document.getElementById("delete");
+      delete_product.addEventListener("click", function (event) {
+        event.preventDefault();
+        let indexProduct = parraArray.indexOf(paraObj);
+        let msg = confirm("would you like to delete your product");
+        if (msg !== true) {
+          return;
+        } else {
+          parraArray.splice(indexProduct, 1);
+          localStorage.setItem("proObject", JSON.stringify(parraArray));
+          window.location.href = "./admin.html";
+        }
+      });
+    </script>
+  </body>
+</html>

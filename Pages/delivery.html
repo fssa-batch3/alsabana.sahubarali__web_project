@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../assets/CSS/delivery.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    />
+    <title>Account</title>
+  </head>
+  <body>
+    <nav>
+      <img src="../assets/images/new logo.png" width="60" height="60" />
+    </nav>
+
+    <div class="parent-div">
+      <div class="form-container">
+        <h3>Enter your details</h3>
+        <form class="form">
+          <input type="text" placeholder="First name" />
+          <input type="text" placeholder="last-name" />
+          <input type="nummber" placeholder="Mobile number" />
+          <input type="number" placeholder="pincode" />
+          <input type="textarea" placeholder="Address" />
+          <input type="text" placeholder="city/district" />
+          <select class="state">
+            <option>States</option>
+            <option>Tamilnadu</option>
+            <option>Kerala</option>
+          </select>
+          <input type="text" placeholder="landmark (optional)" />
+          <input type="number" placeholder="Alternate number(optional)" />
+          <button>SAVE AND DELIVER HERE</button>
+        </form>
+      </div>
+      <div class="p-child">
+        <h4>Price details</h4>
+        <div>
+          <h5>Price(1 item) &emsp;&emsp; Rs. 400</h5>
+          <h5>Delivery charges &emsp;&emsp;Free</h5>
+          <hr />
+          <h6>Amount payable &emsp;&emsp;Rs.400</h6>
+        </div>
+        <h4>Payment method</h4>
+        <form class="child">
+          <label><input type="radio" name="select" />CASH ON DELIVERY</label>
+          <label onclick="exitpop"
+            ><input
+              onclick="openpop()"
+              name="select"
+              id="payment"
+              type="radio"
+            />ONLINE PAYMENT</label
+          >
+        </form>
+      </div>
+    </div>
+    <div class="full-container">
+      <div class="visa">
+        <div class="visa-flex">
+          <div>
+            <img
+              src="../assets/images/chip.png"
+              alt="image"
+              width="80"
+              height="60"
+            />
+          </div>
+          <div>
+            <img
+              src="../assets/images/visa.png"
+              alt="visa"
+              width="80"
+              height="60"
+            />
+          </div>
+        </div>
+        <div>
+          <h2>6578 6348 3384 327</h2>
+        </div>
+        <div class="expire">
+          <div><h2>ALSABANA</h2></div>
+          <div>
+            <h3>expires on</h3>
+            <h3>03/02/2025</h3>
+          </div>
+        </div>
+      </div>
+
+      <div class="form1">
+        <form>
+          <label class="card">Card number<input type="text" /></label>
+          <label class="card">Card holder <input type="text" /></label>
+          <label class="month"
+            >expiration mm
+            <select>
+              <option>month</option>
+              <option>01</option>
+              <option>02</option>
+              <option>03</option>
+              <option>04</option>
+              <option>05</option>
+              <option>06</option>
+              <option>07</option>
+              <option>08</option>
+              <option>09</option>
+              <option>10</option>
+              <option>11</option>
+              <option>12</option>
+              <option>13</option>
+              <option>14</option>
+              <option>15</option>
+            </select></label
+          >
+          <label class="month"
+            >expiration yy
+            <select>
+              <option>Year</option>
+              <option>2025</option>
+              <option>2026</option>
+              <option>2027</option>
+              <option>2028</option>
+              <option>2029</option>
+              <option>2030</option>
+              <option>2031</option>
+              <option>2032</option>
+              <option>2033</option>
+              <option>2034</option>
+              <option>2035</option>
+            </select>
+          </label>
+          <label class="month">cvv<input type="text" /></label>
+          <button>Submit</button>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>
