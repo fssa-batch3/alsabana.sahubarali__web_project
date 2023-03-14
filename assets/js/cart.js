@@ -44,6 +44,7 @@ function changeQty() {
   }
 }
 // add cart
+let cart_array = [];
 function addCart() {
   let product = this.parentElement;
   let title = product.querySelector(".product-name").innerHTML;
@@ -55,19 +56,20 @@ function addCart() {
     price: price,
     image: image,
   };
+  if (window.localStorage.getItem("items") === null) {
+    window.localStorage.setItem("items", JSON.stringify(cart_array));
+  } else {
+    let cart = window.localStorage.getItem("items");
+    let parseCart = JSON.parse(cart);
+    parseCart.push(items);
+    window.localStorage.setItem("items", JSON.stringify(parseCart));
+  }
+}
 
-  localStorage.setItem("items", JSON.stringify(items));
-  location.reload();
-}
-let cartArray = [];
-if (localStorage.getItem("items") != null) {
-  cartArray = JSON.parse(localStorage.getItem("items"));
-}
-// console.log(getItem);
-for (let i = 0; i < cartArray.length; i++) {
-  document.getElementById("pro").innerHTML = getItem.title;
-  document.getElementById("pri").innerHTML = getItem.price;
-  document.getElementById("im").src = getItem.image;
+for (let i = 0; i < cart_array.length; i++) {
+  let detail = cart_array[i];
+  document.getElementById("product_name").innerHTML = detail.title;
+  document.getElementById("price").innerHTML = detail.price;
+  document.getElementById("image").src = detail.image;
   cartArray.push(item);
 }
-console.log(cartArray);
