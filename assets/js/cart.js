@@ -44,10 +44,7 @@ function changeQty() {
   }
 }
 // add cart
-
-let cart_array = [];
-function addCart(event) {
-  event.preventDefault();
+function addCart() {
   let product = this.parentElement;
   let title = product.querySelector(".product-name").innerHTML;
   let price = product.querySelector(".product-cost").innerHTML;
@@ -59,20 +56,18 @@ function addCart(event) {
     image: image,
   };
 
-  if (window.localStorage.getItem("items") === null) {
-    window.localStorage.setItem("items", JSON.stringify(cart_array));
-  } else {
-    let cart = window.localStorage.getItem("items");
-    let whole = JSON.parse(cart);
-    whole.push(items);
-    window.localStorage.setItem("items", JSON.stringify(whole));
-  }
+  localStorage.setItem("items", JSON.stringify(items));
+  location.reload();
 }
-
-for (let i = 0; i < cart_array.length; i++) {
-  console.log(cart_array[i].title);
-  let detail = cart_array[i];
-  document.getElementById("product_name").innerHTML = detail.title;
-  document.getElementById("price").innerHTML = detail.price;
-  document.getElementById("image").src = detail.image;
+let cartArray = [];
+if (localStorage.getItem("items") != null) {
+  cartArray = JSON.parse(localStorage.getItem("items"));
 }
+// console.log(getItem);
+for (let i = 0; i < cartArray.length; i++) {
+  document.getElementById("pro").innerHTML = getItem.title;
+  document.getElementById("pri").innerHTML = getItem.price;
+  document.getElementById("im").src = getItem.image;
+  cartArray.push(item);
+}
+console.log(cartArray);

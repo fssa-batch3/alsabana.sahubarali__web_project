@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>update products</title>
+    <link rel="stylesheet" href="../assets/CSS/update.css" />
+  </head>
+  <body>
+    <div class="parent">
+      <div class="parent-div">ADD A NEW PRODUCT</div>
+      <div class="whole">
+        <form id="update-form">
+          <label>Product name <input type="text" id="pName" /></label>
+          <label>Product price<input type="number" id="pPrice" /></label>
+          <label>Image<input type="text" id="pImage" /></label>
+          <label>Description<input type="textarea" id="pDescription" /></label>
+          <button type="submit">ADD</button>
+        </form>
+      </div>
+    </div>
+    <script>
+      const form = document.getElementById("update-form");
+      form.addEventListener("submit", function (event) {
+        event.preventDefault();
+        let productArray = [];
+        if (localStorage.getItem("proObject") != null) {
+          productArray = JSON.parse(localStorage.getItem("proObject"));
+        }
+
+        let productName = document.getElementById("pName").value;
+        let cost = document.getElementById("pPrice").value;
+        let src = document.getElementById("pImage").value;
+        let alt = document.getElementById("pDescription").value;
+
+        proObject = {
+          productName,
+          cost,
+          image: { src, alt },
+        };
+        productArray.push(proObject);
+        // console.log(productArray);
+        stringProduct = JSON.stringify(productArray);
+        localStorage.setItem("proObject", stringProduct);
+        window.location.href = "./admin.html";
+      });
+    </script>
+  </body>
+</html>
