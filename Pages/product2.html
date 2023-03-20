@@ -5,6 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="../assets/CSS/product2.css" />
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css"
@@ -27,28 +29,35 @@
         <span></span>
       </button>
 
-      <nav class="navbar-item hide">
+     <nav class="navbar-item hide">
         <ul>
           <li><a href="../index.html">Home</a></li>
           <li><a href="../Pages/analysis.html">Hair Analysis</a></li>
           <li><a href="../Pages/Product.html">Products</a></li>
-         
-          
-          <li>
-            <a href="../Pages/cart.html"
-              class="bi bi-cart4 "
-            >Cart</a>
+          <li class="box">
+             <span class="bi bi-cart4 count " >0</span>Cart
           </li>
           <li>
-            <a href="../Pages/account.html"
+            <a href="../Pages/acc.html"
              class="bi bi-person-circle" >
           Account  </a>
           </li>
         </ul>
       </div>
     </nav>
-
-
+    <!-- cart -->
+     <div class="cart cart-active">
+      <div class="cart-title">Cart items</div>
+      <div class="cart-content">
+         <div class="total">
+          <div class="total-title">Total</div>
+          <div class="total-price" id="total">Rs.0</div>
+        </div>
+        <ion-icon name="close" id="cart-close"></ion-icon>
+        <button class="btn-buy">place order</button>
+      </div>  
+    </div> 
+    <!-- cart -->
     <div class="head-4">
       <a href="../Pages/product detail.html">
         <img
@@ -442,5 +451,7 @@
       }
     </script>
       <script src="/assets/js/script.js"></script>
+      <script src="/assets/js/cart.js"></script>
+
   </body>
 </html>

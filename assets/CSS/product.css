@@ -70,6 +70,10 @@ nav li {
   text-align: center;
   box-shadow: 10px 20px 10px gray;
 }
+.box {
+  font-size: 27px;
+}
+/* cart */
 .cart {
   position: fixed;
   top: 0;
@@ -203,6 +207,7 @@ button:hover {
   margin-top: 10px;
   margin-left: -40px;
 }
+/* cart */
 
 footer {
   font-family: "Poppins", sans-serif;

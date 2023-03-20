@@ -28,6 +28,11 @@ function loadContent() {
     input.addEventListener("change", changeQty);
   });
 }
+//subtotal
+// let subTotal = document.getElementById("total");
+// subTotal.forEach((btn) => {
+//   btn.addEventListener("show", total);
+// });
 //product cart
 let cartBtns = document.querySelectorAll(".add_Cart");
 
@@ -69,7 +74,15 @@ function removeItem() {
     }
   }
 }
-
+//total
+function total() {
+  document.getElementById("total").textContent;
+  let total = 0;
+  for (let i = 0; i < getCartItems?.length; i += 1) {
+    total += getCartItems[i].price * getCartItems[i].quantity;
+  }
+  return total;
+}
 //change quantity
 function changeQty() {
   if (isNaN(this.value) || this.value < 1) {
