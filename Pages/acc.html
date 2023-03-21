@@ -268,7 +268,7 @@
           
          ]
 
-         for(let i=0;i<=products.length;i++){
+         for(let i=0;i<products.length;i++){
 
       let div_card=document.createElement("div")
       div_card.setAttribute("class","order-container")
@@ -314,8 +314,6 @@
 
 
     ///profile
-
-    // const profile=JSON.parse(localStorage.getItem("login"));
     const logEmail=JSON.parse(localStorage.getItem("login"));
     const userData=JSON.parse(localStorage.getItem("userData"))
 

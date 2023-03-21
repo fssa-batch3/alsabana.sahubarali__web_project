@@ -395,6 +395,8 @@
             src: "../assets/images/GoodAyurvedic-hairoil1.webp",
             alt: "hair oil",
           },
+          id:1,
+          
         },
         {
           productName:"Ayurvedic hair shampoo for Anti-Dandruff & Anti-Hairfall - 200ml",
@@ -403,6 +405,7 @@
             src: "../assets/images/GoodHair_AyurvedicShampoo2.webp",
             alt: "shampoo",
           },
+          id:2,
         },
         {
           productName:"Ayurvedic hair conditionar for Thin,weak and Damaged hair-100ml",
@@ -411,6 +414,7 @@
             src: "../assets/images/GoodHairAyurvedicConditioner3.webp",
             alt: "conditioner",
           },
+          id:3,
         },
         {
           productName: "Green apple shampoo-100ml",
@@ -419,6 +423,7 @@
             src: "../assets/images/GoodHair-GreenAppleShampoo4.webp",
             alt: "green apple shampoo",
           },
+          id:4
         },
         {
           productName:
@@ -428,6 +433,7 @@
             src: "../assets/images/Goodhair-ayurvedic-trio6.webp",
             alt: "hair oil",
           },
+          id:5
         },
         {
           productName: "Green Apple & Aloevera shampoo & conditioner",
@@ -436,6 +442,7 @@
             src: "../assets/images/GoodHair-GreenApple-combo7.webp",
             alt: "aloevera shampoo",
           },
+          id:7
         },
         {
           productName: "conditioner",
@@ -445,6 +452,7 @@
             src: "../assets/images/GoodHair-GreenAppleConditioner5.webp",
             alt: "apple conditioner",
           },
+          id:8
         },
 
         {
@@ -454,20 +462,12 @@
             src: "../assets/images/GoodHair-Ayurvedic-combo8.webp",
             alt: "ayurvedic shampoo",
           },
-        },
-        {
-          productName: "Alsabana)",
-          cost: 590,
-          image: {
-            src: "../assets/images/GoodHair-Ayurvedic-combo8.webp",
-            alt: "ayurvedic shampoo",
-          },
+          id:9
         },
       ];
     const arr =JSON.parse(localStorage.getItem("proObject"))
-    console.log(arr)
-    console.log(arr)
-    for(let i = 0;i<arr.length;i++){
+ 
+    for(let i = 0;i<arr?.length;i++){
       products.push(arr[i])
     }
       for (let i = 0; i < products.length; i++) {
@@ -475,7 +475,7 @@
         let anger_tag = document.createElement("a");
         anger_tag.setAttribute(
           "href",
-          "../Pages/product detail.html"
+          "../Pages/product detail.html?product_id="+products[i]["id"]
         );
         //first div
         let div_card = document.createElement("div");
@@ -566,7 +566,7 @@
         }
       ];
 
-      for (let i = 0; i <= 3; i++) {
+      for (let i = 0; i <= products1.length; i++) {
         //first div
         let div_card = document.createElement("div");
         div_card.setAttribute("class", "product-listing3");

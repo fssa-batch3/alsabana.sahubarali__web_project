@@ -132,5 +132,94 @@
         </div>
       </div>
     </div>
+    <script>
+      let products = [
+        {
+          productName: "Ayurvedic hair oil for hair growth - 100ml",
+          cost: 299,
+          image: {
+            src: "../assets/images/GoodAyurvedic-hairoil1.webp",
+            alt: "hair oil",
+          },
+          id: 1,
+        },
+        {
+          productName:
+            "Ayurvedic hair shampoo for Anti-Dandruff & Anti-Hairfall - 200ml",
+          cost: 349,
+          image: {
+            src: "../assets/images/GoodHair_AyurvedicShampoo2.webp",
+            alt: "shampoo",
+          },
+          id: 2,
+        },
+        {
+          productName:
+            "Ayurvedic hair conditionar for Thin,weak and Damaged hair-100ml",
+          cost: 249,
+          image: {
+            src: "../assets/images/GoodHairAyurvedicConditioner3.webp",
+            alt: "conditioner",
+          },
+          id: 3,
+        },
+        {
+          productName: "Green apple shampoo-100ml",
+          cost: 359,
+          image: {
+            src: "../assets/images/GoodHair-GreenAppleShampoo4.webp",
+            alt: "green apple shampoo",
+          },
+          id: 4,
+        },
+        {
+          productName:
+            "Ayurvedic hair oil,shampoo & consitioner for hair growth",
+          cost: 622,
+          image: {
+            src: "../assets/images/Goodhair-ayurvedic-trio6.webp",
+            alt: "hair oil",
+          },
+          id: 5,
+        },
+        {
+          productName: "Green Apple & Aloevera shampoo & conditioner",
+          cost: 718,
+          image: {
+            src: "../assets/images/GoodHair-GreenApple-combo7.webp",
+            alt: "aloevera shampoo",
+          },
+          id: 7,
+        },
+        {
+          productName: "conditioner",
+
+          cost: 359,
+          image: {
+            src: "../assets/images/GoodHair-GreenAppleConditioner5.webp",
+            alt: "apple conditioner",
+          },
+          id: 8,
+        },
+
+        {
+          productName: "Ayurvedic shampoo & conditioner (combo pack)",
+          cost: 590,
+          image: {
+            src: "../assets/images/GoodHair-Ayurvedic-combo8.webp",
+            alt: "ayurvedic shampoo",
+          },
+          id: 9,
+        },
+      ];
+      let url = window.location.search;
+      let params = new URLSearchParams(url);
+      Data = get("product_id");
+      let pro = products.find(Data, function (e) {
+        if (Data === e["product_id"]) {
+          return true;
+        }
+      });
+    </script>
   </body>
 </html>

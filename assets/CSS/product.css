@@ -75,6 +75,7 @@ nav li {
 }
 /* cart */
 .cart {
+  /* visibility: hidden; */
   position: fixed;
   top: 0;
   right: -100%;
@@ -87,7 +88,9 @@ nav li {
   box-shadow: 0 1px 4px rgba(40, 37, 37, 0.1);
   z-index: 100;
 }
-
+.count {
+  background-color: #6d4cd1;
+}
 .cart-active {
   right: 0;
   transition: 0.5s;

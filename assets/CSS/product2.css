@@ -97,6 +97,7 @@ h5 {
 }
 /* cart */
 .cart {
+  visibility: hidden;
   position: fixed;
   top: 0;
   right: -100%;
@@ -229,6 +230,7 @@ button:hover {
   margin-top: 10px;
   margin-left: -40px;
 }
+
 /* cart */
 
 footer {

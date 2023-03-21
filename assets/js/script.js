@@ -92,7 +92,7 @@ loginForm.addEventListener("submit", function (event) {
   let email = document.getElementById("loginEmail").value;
   let password = document.getElementById("loginPassword").value;
   let isExist = false;
-  for (let i = 0; i < login_data.length; i++) {
+  for (let i = 0; i < login_data?.length; i++) {
     // console.log(login_data[i]["email"]);
     if (
       email == login_data[i]["email"] &&
