@@ -64,8 +64,20 @@ let products = [
     },
   },
 ];
-let create_product = JSON.parse(localStorage.getItem("proObject"));
-products.push(create_product);
+let get_product = JSON.parse(localStorage.getItem("proObject"));
+console.log(get_product);
+
+const samples = get_product.filter((get) => get["product_type"] == "samples");
+console.log(samples);
+
+// function product_type(type) {
+//   const product_type = get_product.filter((s) => s.product_type == type);
+//   return product_type;
+// }
+// for (let i = 0; i < product_type("samples").length; i++) {
+//   products.push(product_type("samples")[i]);
+// }
+productDiv(samples, ".products");
 function productDiv(products, id) {
   for (let i = 0; i <= products.length; i++) {
     //first div
@@ -113,3 +125,5 @@ function productDiv(products, id) {
   }
 }
 productDiv(products, ".products");
+
+const proArray = JSON.parse(localStorage.getItem("proObject"));

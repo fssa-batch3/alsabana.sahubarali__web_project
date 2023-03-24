@@ -67,7 +67,7 @@
       <h3>AYURVEDIC RANGE</h3>
     </div>
     <!-- <div class="products">
-      <!-- <div class="product-listing3">
+       <div class="product-listing3">
       <div class="pro-list-1">
         <div>
           <a href="../Pages/product detail.html"
@@ -85,7 +85,7 @@
       </div>
     </div>-->
     <!-- </div>  -->
-    <div class="products">
+     <div class="products">
       <!-- <div class="product-listing-1">
       <div class="listing-1">
         <div>
@@ -337,6 +337,9 @@
     for(let i = 0;i<arr?.length;i++){
       products.push(arr[i])
     }
+    function productDiv2(products,id){
+
+   
       for (let i = 0; i < products.length; i++) {
         let name = products[i];
         let anger_tag = document.createElement("a");
@@ -382,10 +385,12 @@
         h5_tag.innerText = "Rs. " + products[i].cost;
 
         //append
-        let insert_div = document.querySelector(".products");
+        let insert_div = document.querySelector(id);
         insert_div.append(anger_tag);
        
       }
+    }
+    productDiv2(products,".products")
 
       let products1 = [
         {
@@ -396,6 +401,7 @@
             src: "../assets/images/caffeine1.webp",
             alt: "onion caffeine",
           },
+          id:100
         },
         {
           productsname: "Onion Caffeine Shampoo & Conditioner(combo pack)",
@@ -404,6 +410,7 @@
             src: "../assets/images/caffeine2.webp",
             alt: "onion shampoo",
           },
+          id:101
         },
         {
           productsname: "Onion oil for Regrowth-200ml",
@@ -412,6 +419,7 @@
             src: "../assets/images/caffeine3.webp",
             alt: "onion oil",
           },
+          id:102
         },
         {
           productsname: "Onion shampoo for dandruff-300ml",
@@ -420,19 +428,19 @@
             src: "../assets/images/caffeine4.webp",
             alt: "shampoo for dandruff",
           },
+          id:103
          
         },
-        {
-          productsname: "dsajhluiasdc",
-          cost: 550,
-          image: {
-            src: "../assets/images/caffeine4.webp",
-            alt: "shampoo for dandruff",
-          },
-        }
+       
       ];
 
+        function productDiv1(products1,id){
       for (let i = 0; i <= products1.length; i++) {
+        let anger_tag = document.createElement("a");
+        anger_tag.setAttribute(
+          "href",
+          "../Pages/product detail.html?product_id="+products[i]["id"]
+        );
         //first div
         let div_card = document.createElement("div");
         div_card.setAttribute("class", "product-listing3");
@@ -465,9 +473,11 @@
         h5_tag.innerText = " Rs. " + products1[i].cost;
 
         //append
-        let insert_div = document.querySelector(".Products");
+        let insert_div = document.querySelector(id);
         insert_div.append(div_card);
       }
+    }
+    productDiv1(products1,".Products")
     </script>
       <script src="/assets/js/script.js"></script>
       <script src="/assets/js/cart.js"></script>

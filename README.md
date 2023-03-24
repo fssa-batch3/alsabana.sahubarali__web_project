@@ -40,4 +40,8 @@ Create product[completed]
 list product[completed]
 update product[completed]
 delete product[completed]
-ORDER CRUD
+CART CRUD
+Create cart[completed]
+list cart[completed]
+update cart[completed]
+delete cart[completed]

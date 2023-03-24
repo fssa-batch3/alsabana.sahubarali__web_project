@@ -16,12 +16,14 @@ document.addEventListener("DOMContentLoaded", loadProduct);
 function loadProduct() {
   loadContent();
 }
+
 function loadContent() {
-  //Remove food cart_array from cart
+  //Remove product cart_array from cart
   let btnRemove = document.querySelectorAll(".cart-remove");
   btnRemove.forEach((btn) => {
     btn.addEventListener("click", removeItem);
   });
+
   // product item change event
   let qtyElement = document.querySelectorAll(".cart-quantity");
   qtyElement.forEach((input) => {
@@ -39,16 +41,6 @@ let cartBtns = document.querySelectorAll(".add_Cart");
 cartBtns.forEach((btn) => {
   btn.addEventListener("click", addCart);
 });
-
-// remove item
-
-// function removeItem() {
-//   if (confirm("Are you sure to remove")) {
-//     // console.log(this.parentElement);
-//     this.parentElement.remove();
-//     // window.localStorage.setItem("items", JSON.stringify(this.parentElement));
-//   }
-// }
 
 function removeItem() {
   let product = this.parentElement;
@@ -164,48 +156,12 @@ for (let i = 0; i < getCartItems?.length; i++) {
   input.setAttribute("type", "number");
   input.setAttribute("class", "cart-quantity");
   div_card1.append(input);
-
   let ion = document.createElement("ion-icon");
   ion.setAttribute("class", "cart-remove");
   ion.setAttribute("id", "delete");
   ion.setAttribute("name", "trash");
-  // ion.setAttribute("onclick", "del(" + getCartItems[i].cart_id + ")");
   div_card.append(ion);
 
   let cart_content = document.querySelector(".cart-content");
   cart_content.prepend(div_card);
-}
-
-//delete
-// function del(id) {
-//   const arr = JSON.parse(localStorage.getItem("items"));
-//   let delobj = arr.find(function (event) {
-//     if (id === e.cart_id) {
-//       return true;
-//     }
-//   });
-//   let index = arr.indexOf(delobj);
-//   arr.splice(index, 1);
-//   alert("removed sucessfully ");
-// }
-
-function delete_cart() {
-  // let delete_btn = document.getElementById("delete");
-  let product = this.parentElement;
-  let title = product.querySelector(".product-name").innerHTML;
-
-  let delete_items = JSON.parse(localStorage.getItem("items"));
-
-  for (var i = 0; i < delete_items?.length; i++) {
-    var key = delete_items[i];
-    var haveTitle = true;
-    if (key.title == items.title) {
-      if (key) {
-        key.quantity += items.quantity;
-      }
-      localStorage.setItem("items", JSON.stringify(checkQty));
-      haveTitle = false;
-      break;
-    }
-  }
 }
