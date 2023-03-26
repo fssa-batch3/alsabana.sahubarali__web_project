@@ -139,7 +139,7 @@
       <h3>Hair serum and Hair Booster capsules</h3>
     </div>
     <div class="Products">
-     <div class="product-listing3">
+     <!-- <div class="product-listing3">
       <div class="pro-list-1">
         <div>
           <img
@@ -154,7 +154,7 @@
           <h5>Rs.499</h5>
         </div>
       </div>
-      </div>
+      </div> -->
     </div> 
     <hr />
     <div class="delivery">
@@ -300,6 +300,10 @@
           },
         },
       ];
+      let get_product = JSON.parse(localStorage.getItem("proObject"));
+     const avocado = get_product.filter((get) => get["product_type"] == "avocado");
+     productDiv3(avocado, ".products");
+
       function productDiv3(products,id){
       for (let i = 0; i <= products.length; i++) {
         //first div
@@ -376,6 +380,11 @@
           },
         },
       ];
+      let get_product1 = JSON.parse(localStorage.getItem("proObject"));
+     const capsules = get_product1.filter((get) => get["product_type"] == "capsules");
+     productDiv3(capsules, ".Products");
+
+      function productDiv4(products1,id){
       for (let i = 0; i < products1.length; i++) {
         //first div
         let div_card = document.createElement("div");
@@ -402,7 +411,7 @@
         let h3_tag = document.createElement("h3");
         div2.append(h3_tag);
 
-        h3_tag.innerText = products1[i].productsname;
+        h3_tag.innerText = products1[i].productName;
         //h5 tag
         let h5_tag = document.createElement("h5");
         div2.append(h5_tag);
@@ -412,6 +421,8 @@
         let insert_div = document.querySelector(".Products");
         insert_div.append(div_card);
       }
+    }
+    productDiv4(products1,".Products")
     </script>
       <script src="/assets/js/script.js"></script>
       <script src="/assets/js/cart.js"></script>

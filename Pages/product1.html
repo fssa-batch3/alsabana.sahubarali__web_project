@@ -333,13 +333,15 @@
           id:9
         },
       ];
-    const arr =JSON.parse(localStorage.getItem("proObject"))
-    for(let i = 0;i<arr?.length;i++){
-      products.push(arr[i])
-    }
-    function productDiv2(products,id){
+    // const arr =JSON.parse(localStorage.getItem("proObject"))
+    // for(let i = 0;i<arr?.length;i++){
+    //   products.push(arr[i])
+    // }
+    let get_product1 = JSON.parse(localStorage.getItem("proObject"));
+     const ayurvedic = get_product1.filter((get) => get["product_type"] == "ayurvedic");
+     productDiv2(ayurvedic, ".products");
 
-   
+    function productDiv2(products,id){
       for (let i = 0; i < products.length; i++) {
         let name = products[i];
         let anger_tag = document.createElement("a");
@@ -434,6 +436,10 @@
        
       ];
 
+     let get_product = JSON.parse(localStorage.getItem("proObject"));
+     const Caffeine = get_product.filter((get) => get["product_type"] == "Caffeine");
+     productDiv1(Caffeine, ".Products");
+
         function productDiv1(products1,id){
       for (let i = 0; i <= products1.length; i++) {
         let anger_tag = document.createElement("a");
@@ -466,7 +472,7 @@
         let h3_tag = document.createElement("h3");
         div2.append(h3_tag);
 
-        h3_tag.innerText = products1[i].productsname;
+        h3_tag.innerText = products1[i].productName;
         //h5 tag
         let h5_tag = document.createElement("h5");
         div2.append(h5_tag);
