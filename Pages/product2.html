@@ -260,6 +260,7 @@
         </div>
       </div>
       <div class="twentyone">
+        <a href="./Pages/admin.html"> <button>Admin</button></a>
         <h3>Healthy hair 2022 © All rights reserved</h3>
       </div>
     </footer>
@@ -383,7 +384,6 @@
       let get_product1 = JSON.parse(localStorage.getItem("proObject"));
      const capsules = get_product1.filter((get) => get["product_type"] == "capsules");
      productDiv3(capsules, ".Products");
-
       function productDiv4(products1,id){
       for (let i = 0; i < products1.length; i++) {
         //first div

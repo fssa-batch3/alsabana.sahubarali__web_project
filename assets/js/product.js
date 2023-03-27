@@ -95,9 +95,12 @@ function productDiv(products, id) {
     h3_tag.setAttribute("class", "product-name");
     h3_tag.innerText = products[i].productName;
     div2.append(h3_tag);
+    let tag_h5 = document.createElement("h5");
+    tag_h5.innerText = "Rs .";
+    div2.append(tag_h5);
     //h5 tag
     let h5_tag = document.createElement("h5");
-    h5_tag.innerText = " Rs. " + products[i].cost;
+    h5_tag.innerText = products[i].cost;
     h5_tag.setAttribute("class", "product-cost");
     div2.append(h5_tag);
     //button tag
