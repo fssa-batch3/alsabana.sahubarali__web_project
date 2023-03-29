@@ -4,7 +4,6 @@ body {
   font-family: "Poppins", sans-serif;
 }
 
-.overall {
   width: 450px;
   margin: 0 auto;
   padding: 30px 0;
@@ -14,9 +13,7 @@ body {
   top: 0;
   right: 5%;
   left: 50%;
-  visibility: hidden;
-  transform: translate(-50%, -50%) scale(0.1);
-  transition: transform 0.4s, top 0.4s;
+
   cursor: pointer;
 }
 .open-popup {
@@ -40,133 +37,13 @@ body {
   width: 100px;
   height: 100px;
   border-radius: 50%;
-  background-color: white;
-  padding: 10px;
-  box-shadow: 0px 2px 2px rgb(0 0 0 / 10%);
-}
-.image {
-  border-radius: 50%;
-  margin-right: 10px;
+
+
 }
 .title {
   text-align: center;
   font-size: 20px;
-}
-.form-input input {
-  min-height: 40px;
-  border-radius: 2px;
-  width: 100%;
-  padding: 0.375rem 0.75rem;
-  font-size: 1rem;
-  border: 1px solid #ced4da;
-  margin-bottom: 20px;
-}
-button {
-  /* background: #2f2e2e !important; */
-  background-color: #000;
-  border: none;
-  min-height: 40px;
-  border-radius: 2px;
-  padding: 0.5rem 1rem;
-  font-size: 20px;
-  text-align: center;
-  color: #fff;
-  width: 100%;
-  box-shadow: 0px 2px 2px rgb(0 0 0 / 10%);
-}
-.radio_btn {
-  color: black;
-  font-size: 20px;
-  font-size: bold;
-  margin-bottom: 30px;
-}
-.radio_btn input {
-  width: 20px;
-  height: 20px;
-  color: rgb(17, 17, 17);
-  border: 0px;
-}
-.signup {
-  font-size: 18px;
-  color: #000;
-  text-align: center;
-}
-.signup a {
-  text-decoration: none;
-  color: #f278a0;
-}
-/* sign up */
-.overall-pop {
-  width: 550px;
-  margin: 0 auto;
-  margin-top: 13%;
-}
 
-.signup-pop {
-  width: 450px;
-  margin: 0 auto;
-  padding: 30px 0;
-  margin-top: 13%;
-  height: 500px;
-  position: absolute;
-  top: 0;
-  right: 5%;
-  left: 50%;
-  display: none;
-  cursor: pointer;
-}
-
-.sign-block {
-  display: block;
-}
-
-.top {
-  width: 100%;
-  height: 50px;
-  background: #292829;
-  margin: 0 auto;
-}
-.title {
-  text-align: center;
-  font-size: 20px;
-  color: #fff;
-  padding: 13px;
-}
-
-input {
-  outline: none;
-  box-shadow: 0 0 0.5px 0.5px #1f1b4b;
-  border-color: rgb(20, 15, 15);
-}
-input:valid {
-  border-color: green;
-}
-input:invalid {
-  border-color: red;
-}
-button:focus {
-  outline: none;
-  box-shadow: 0 0 0.5px 0.5px #121213;
-}
-.exit {
-  margin-top: -45px;
-  margin-left: 10px;
-}
-.exit img {
-  border-radius: 50%;
-}
-
-.navbar {
-  width: 100%;
-  padding: 20px;
-  background-color: white;
-  box-sizing: border-box;
-  position: fixed;
-  top: 0;
-  right: 0;
-  left: 0;
-  color: #000;
-}
 
 nav li {
   padding-right: 50px;

@@ -5,7 +5,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="../assets/CSS/product2.css" />
-    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
 
     <link
       rel="stylesheet"
@@ -29,35 +28,19 @@
         <span></span>
       </button>
 
-     <nav class="navbar-item hide">
+
         <ul>
           <li><a href="../index.html">Home</a></li>
           <li><a href="../Pages/analysis.html">Hair Analysis</a></li>
           <li><a href="../Pages/Product.html">Products</a></li>
-          <li class="box">
-             <span class="bi bi-cart4 count " >0</span>Cart
-          </li>
-          <li>
-            <a href="../Pages/acc.html"
+
              class="bi bi-person-circle" >
           Account  </a>
           </li>
         </ul>
       </div>
     </nav>
-    <!-- cart -->
-     <div class="cart cart-active">
-      <div class="cart-title">Cart items</div>
-      <div class="cart-content">
-         <div class="total">
-          <div class="total-title">Total</div>
-          <div class="total-price" id="total">Rs.0</div>
-        </div>
-        <ion-icon name="close" id="cart-close"></ion-icon>
-        <button class="btn-buy">place order</button>
-      </div>  
-    </div> 
-    <!-- cart -->
+
     <div class="head-4">
       <a href="../Pages/product detail.html">
         <img
@@ -139,7 +122,7 @@
       <h3>Hair serum and Hair Booster capsules</h3>
     </div>
     <div class="Products">
-     <!-- <div class="product-listing3">
+
       <div class="pro-list-1">
         <div>
           <img
@@ -154,8 +137,7 @@
           <h5>Rs.499</h5>
         </div>
       </div>
-      </div> -->
-    </div> 
+
     <hr />
     <div class="delivery">
       <div class="deli">
@@ -301,12 +283,7 @@
           },
         },
       ];
-      let get_product = JSON.parse(localStorage.getItem("proObject"));
-     const avocado = get_product.filter((get) => get["product_type"] == "avocado");
-     productDiv3(avocado, ".products");
 
-      function productDiv3(products,id){
-      for (let i = 0; i <= products.length; i++) {
         //first div
         let div_card = document.createElement("div");
         div_card.setAttribute("class", "product-listing3");
@@ -339,13 +316,6 @@
         h5_tag.innerText = " Rs. " + products[i].cost;
 
         //append
-        let insert_div = document.querySelector(id);
-        insert_div.append(div_card);
-      }
-    }
-    productDiv3(products,".products")
-
-//capsules
 
       let products1 = [
         {
@@ -381,11 +351,7 @@
           },
         },
       ];
-      let get_product1 = JSON.parse(localStorage.getItem("proObject"));
-     const capsules = get_product1.filter((get) => get["product_type"] == "capsules");
-     productDiv3(capsules, ".Products");
-      function productDiv4(products1,id){
-      for (let i = 0; i < products1.length; i++) {
+
         //first div
         let div_card = document.createElement("div");
         div_card.setAttribute("class", "product-listing3");
@@ -411,7 +377,7 @@
         let h3_tag = document.createElement("h3");
         div2.append(h3_tag);
 
-        h3_tag.innerText = products1[i].productName;
+
         //h5 tag
         let h5_tag = document.createElement("h5");
         div2.append(h5_tag);
@@ -421,11 +387,6 @@
         let insert_div = document.querySelector(".Products");
         insert_div.append(div_card);
       }
-    }
-    productDiv4(products1,".Products")
-    </script>
-      <script src="/assets/js/script.js"></script>
-      <script src="/assets/js/cart.js"></script>
 
   </body>
 </html>

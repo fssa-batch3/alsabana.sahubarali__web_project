@@ -16,16 +16,7 @@
           <label>Product price<input type="number" id="pPrice" /></label>
           <label>Image<input type="text" id="pImage" /></label>
           <label>Description<input type="textarea" id="pDescription" /></label>
-          <label
-            >product_details<input type="text" id="product_detail"
-          /></label>
-          <select id="product_type">
-            <option value="ayurvedic">Ayurvedic Range</option>
-            <option value="Caffeine">Caffeine Range</option>
-            <option value="samples">Our Samples</option>
-            <option value="avocado">Avocado, Biotin Range</option>
-            <option value="capsules">Hair serum and capsules</option>
-          </select>
+
           <button type="submit">ADD</button>
         </form>
       </div>
@@ -38,16 +29,14 @@
         if (localStorage.getItem("proObject") != null) {
           productArray = JSON.parse(localStorage.getItem("proObject"));
         }
-        let product_type = document.getElementById("product_type").value;
-        let product_detail = document.getElementById("product_detail").value;
+
         let productName = document.getElementById("pName").value;
         let cost = document.getElementById("pPrice").value;
         let src = document.getElementById("pImage").value;
         let alt = document.getElementById("pDescription").value;
 
         proObject = {
-          product_type,
-          product_detail,
+
           productName,
           cost,
           image: { src, alt },

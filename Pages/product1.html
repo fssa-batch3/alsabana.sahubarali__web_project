@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="../assets/CSS/product1.css" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
-    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+
     <title>Document</title>
   </head>
   <body>
@@ -25,35 +25,19 @@
         <span></span>
       </button>
 
-     <nav class="navbar-item hide">
+
         <ul>
           <li><a href="../index.html">Home</a></li>
           <li><a href="../Pages/analysis.html">Hair Analysis</a></li>
           <li><a href="../Pages/Product.html">Products</a></li>
-          <li class="box">
-             <span class="bi bi-cart4 count " >0</span>Cart
-          </li>
-          <li>
-            <a href="../Pages/acc.html"
+
              class="bi bi-person-circle" >
           Account  </a>
           </li>
         </ul>
       </div>
     </nav>
-    <!-- cart -->
-     <div class="cart cart-active">
-      <div class="cart-title">Cart items</div>
-      <div class="cart-content">
-         <div class="total">
-          <div class="total-title">Total</div>
-          <div class="total-price" id="total">Rs.0</div>
-        </div>
-        <ion-icon name="close" id="cart-close"></ion-icon>
-        <button class="btn-buy">place order</button>
-      </div>  
-    </div> 
-    <!-- cart -->
+
     <div class="long-image">
       <img
         src="../assets/images/big image.jpg"
@@ -66,8 +50,7 @@
     <div class="head-1">
       <h3>AYURVEDIC RANGE</h3>
     </div>
-    <!-- <div class="products">
-       <div class="product-listing3">
+
       <div class="pro-list-1">
         <div>
           <a href="../Pages/product detail.html"
@@ -102,8 +85,9 @@
           <a href="../Pages/information.html"><button>BUY NOW</button></a>
         </div>
       </div>
-    </div> -->
+
     </div>
+
     <div class="long-1">
       <img
         src="../assets/images/big images1.jpg"
@@ -115,6 +99,7 @@
     <div class="head-2"><h2>Onion Caffeine Range</h2></div>
     <div class="Products">
       <!-- <div class="product-listing3">
+
       <div class="pro-list-1">
         <div>
           <img
@@ -256,6 +241,7 @@
       </div>
     </footer>
     <script>
+
       let products = [
         {
           productName:  "Ayurvedic hair oil for hair growth - 100ml",
@@ -264,8 +250,7 @@
             src: "../assets/images/GoodAyurvedic-hairoil1.webp",
             alt: "hair oil",
           },
-          id:1,
-          
+
         },
         {
           productName:"Ayurvedic hair shampoo for Anti-Dandruff & Anti-Hairfall - 200ml",
@@ -274,7 +259,7 @@
             src: "../assets/images/GoodHair_AyurvedicShampoo2.webp",
             alt: "shampoo",
           },
-          id:2,
+
         },
         {
           productName:"Ayurvedic hair conditionar for Thin,weak and Damaged hair-100ml",
@@ -283,7 +268,7 @@
             src: "../assets/images/GoodHairAyurvedicConditioner3.webp",
             alt: "conditioner",
           },
-          id:3,
+
         },
         {
           productName: "Green apple shampoo-100ml",
@@ -292,7 +277,7 @@
             src: "../assets/images/GoodHair-GreenAppleShampoo4.webp",
             alt: "green apple shampoo",
           },
-          id:4
+
         },
         {
           productName:
@@ -302,7 +287,7 @@
             src: "../assets/images/Goodhair-ayurvedic-trio6.webp",
             alt: "hair oil",
           },
-          id:5
+
         },
         {
           productName: "Green Apple & Aloevera shampoo & conditioner",
@@ -311,7 +296,7 @@
             src: "../assets/images/GoodHair-GreenApple-combo7.webp",
             alt: "aloevera shampoo",
           },
-          id:7
+
         },
         {
           productName: "conditioner",
@@ -321,7 +306,7 @@
             src: "../assets/images/GoodHair-GreenAppleConditioner5.webp",
             alt: "apple conditioner",
           },
-          id:8
+
         },
 
         {
@@ -331,24 +316,13 @@
             src: "../assets/images/GoodHair-Ayurvedic-combo8.webp",
             alt: "ayurvedic shampoo",
           },
-          id:9
-        },
-      ];
-    // const arr =JSON.parse(localStorage.getItem("proObject"))
-    // for(let i = 0;i<arr?.length;i++){
-    //   products.push(arr[i])
-    // }
-    let get_product1 = JSON.parse(localStorage.getItem("proObject"));
-     const ayurvedic = get_product1.filter((get) => get["product_type"] == "ayurvedic");
-     productDiv2(ayurvedic, ".products");
 
-    function productDiv2(products,id){
       for (let i = 0; i < products.length; i++) {
         let name = products[i];
         let anger_tag = document.createElement("a");
         anger_tag.setAttribute(
           "href",
-          "../Pages/product detail.html?product_id="+products[i]["id"]
+
         );
         //first div
         let div_card = document.createElement("div");
@@ -388,12 +362,7 @@
         h5_tag.innerText = "Rs. " + products[i].cost;
 
         //append
-        let insert_div = document.querySelector(id);
-        insert_div.append(anger_tag);
-       
-      }
-    }
-    productDiv2(products,".products")
+
 
       let products1 = [
         {
@@ -404,7 +373,7 @@
             src: "../assets/images/caffeine1.webp",
             alt: "onion caffeine",
           },
-          id:100
+
         },
         {
           productsname: "Onion Caffeine Shampoo & Conditioner(combo pack)",
@@ -413,7 +382,7 @@
             src: "../assets/images/caffeine2.webp",
             alt: "onion shampoo",
           },
-          id:101
+
         },
         {
           productsname: "Onion oil for Regrowth-200ml",
@@ -422,7 +391,7 @@
             src: "../assets/images/caffeine3.webp",
             alt: "onion oil",
           },
-          id:102
+
         },
         {
           productsname: "Onion shampoo for dandruff-300ml",
@@ -431,23 +400,7 @@
             src: "../assets/images/caffeine4.webp",
             alt: "shampoo for dandruff",
           },
-          id:103
-         
-        },
-       
-      ];
 
-     let get_product = JSON.parse(localStorage.getItem("proObject"));
-     const Caffeine = get_product.filter((get) => get["product_type"] == "Caffeine");
-     productDiv1(Caffeine, ".Products");
-
-      function productDiv1(products1,id){
-      for (let i = 0; i <= products1.length; i++) {
-        let anger_tag = document.createElement("a");
-        anger_tag.setAttribute(
-          "href",
-          "../Pages/product detail.html?product_id="+products[i]["id"]
-        );
         //first div
         let div_card = document.createElement("div");
         div_card.setAttribute("class", "product-listing3");
@@ -473,21 +426,13 @@
         let h3_tag = document.createElement("h3");
         div2.append(h3_tag);
 
-        h3_tag.innerText = products1[i].productName;
+
         //h5 tag
         let h5_tag = document.createElement("h5");
         div2.append(h5_tag);
         h5_tag.innerText = " Rs. " + products1[i].cost;
 
         //append
-        let insert_div = document.querySelector(id);
-        insert_div.append(div_card);
-      }
-    }
-    productDiv1(products1,".Products")
-    </script>
-      <script src="/assets/js/script.js"></script>
-      <script src="/assets/js/cart.js"></script>
 
   </body>
 </html>
