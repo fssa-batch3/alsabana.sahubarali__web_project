@@ -9,13 +9,23 @@
   </head>
   <body>
     <div class="whole_div">
-
+      <img id="for_img" width="250" height="400" />
       <form id="update_form">
         <label>Product name <input type="text" id="pName" /></label>
         <label>Product price<input type="number" id="pPrice" /></label>
         <label>Image<input type="text" id="pImage" /></label>
         <label>Description<input type="textarea" id="pDescription" /></label>
-
+        <label>product_details<input type="text" id="product_detail" /></label>
+        <label
+          >Where do you want to show
+          <select id="product_type">
+            <option value="ayurvedic">Ayurvedic Range</option>
+            <option value="Caffeine">Caffeine Range</option>
+            <option value="samples">Our Samples</option>
+            <option value="avocado">Avocado, Biotin Range</option>
+            <option value="capsules">Hair serum and capsules</option>
+          </select>
+        </label>
         <button type="submit">SUBMIT</button>
         <button type="submit" onclick="del()" id="delete">DELETE</button>
       </form>
@@ -36,19 +46,36 @@
           return false;
         }
       });
-
+      let product_type = document.getElementById("product_type");
+      let product_detail = document.getElementById("product_detail");
       let productName = document.getElementById("pName");
       let cost = document.getElementById("pPrice");
       let src = document.getElementById("pImage");
       let alt = document.getElementById("pDescription");
       let img = document.getElementById("for_img");
       img.setAttribute("src", paraObj["image"]["src"]);
-
+      product_type.value = paraObj["product_type"];
+      productName.value = paraObj["productName"];
+      product_detail.value = paraObj[" product_detail"];
+      cost.value = paraObj["cost"];
+      src.value = paraObj["image"]["src"];
+      alt.value = paraObj["image"]["alt"];
+      let index = parraArray.indexOf(paraObj);
+      upForm.addEventListener("submit", function (event) {
+        event.preventDefault();
+        let product_detail = document.getElementById("product_detail").value;
         let productName = document.getElementById("pName").value;
         let cost = document.getElementById("pPrice").value;
         let src = document.getElementById("pImage").value;
         let alt = document.getElementById("pDescription").value;
+        let product_id = Date.now();
 
+        proObject = {
+          product_detail,
+          productName,
+          cost,
+          image: { src, alt },
+          product_id: Date.now(),
         };
 
         let newObj = Object.assign(paraObj, proObject);
