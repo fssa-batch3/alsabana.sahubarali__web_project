@@ -35,7 +35,16 @@
           <li><a href="./Pages/Product.html">Products</a></li>
           <li onclick="openpopup()"><a>Login</a></li>
           
-
+          <!-- <li>
+            <a href="./Pages/cart.html"
+              class="bi bi-cart4 "
+            >Cart</a>
+          </li> -->
+          <!-- <li>
+            <a href="./Pages/acc.html"
+             class="bi bi-person-circle" >
+          Account  </a>
+          </li> -->
         </ul>
       </div>
     </nav>
@@ -47,7 +56,7 @@
       <div class="exit">
         <img  onclick="exit_popup()" src="../assets/images/exits image.png" width="35" height="35" />
       </div>
-
+      
       <div class="form" id="pop_up">
         <form id="signUp">
           <div class="form-input">
@@ -65,7 +74,6 @@
           <div class="form-input">
             <input type="password" id="confirm-password" pattern="[A-Z a-z 0-9]{10,15}"  placeholder="Confirm Password" required="true"/>
           </div>
-
           <div class="form-input">
             <button type="submit" onclick="sign()">Sign In</button>
           </div>
@@ -77,7 +85,9 @@
     <!-- login page -->
     <div class="overall" id="pop">
       <div class="form">
-<
+        <div >
+          <img  onclick="exit_pop()" src="./assets/images/exits image.png" width="40" height="40" />
+        </div>
         <div class="circle">
           <img
             class="image"
@@ -95,7 +105,7 @@
             <input type="password" id="loginPassword" placeholder="Password" required />
           </div>
           <div class="form-input">
-
+            <button type="submit" onclick="login()">Login</button>
           </div>
         </form>
         <div class="signup">
@@ -429,7 +439,7 @@
         </div>
       </div>
       <div class="twentyone">
-       <a href="./Pages/admin.html"> <button>Admin</button></a>
+       <a href="./Pages/adPanel.html"> <button>Admin</button></a>
         <h3>Healthy hair 2022 © All rights reserved</h3>
       </div>
     </footer>
@@ -437,3 +447,4 @@
 
   </body>
 </html>
+

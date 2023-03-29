@@ -17,7 +17,6 @@
         width="100"
         height="100"
         alt="image"
-           
       />
       <button class='navbar-btn'>
         <span></span>
@@ -168,7 +167,6 @@
       </div>
     </div>
     <div class="seventeen"><h2>Also Available On</h2></div>
-
     <div class="eighteen">
       <div>
         <img
@@ -228,7 +226,6 @@
      
      
   <script>
-
          let products=[
         {
           productName:
@@ -269,7 +266,7 @@
           
          ]
 
-
+         for(let i=0;i<products.length;i++){
 
       let div_card=document.createElement("div")
       div_card.setAttribute("class","order-container")
@@ -315,7 +312,6 @@
 
 
     ///profile
-
     const logEmail=JSON.parse(localStorage.getItem("login"));
     const userData=JSON.parse(localStorage.getItem("userData"))
 
