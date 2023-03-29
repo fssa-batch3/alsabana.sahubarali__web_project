@@ -1,0 +1,81 @@
+nav {
+  background-color: black;
+  color: #818181;
+  height: 100%;
+  width: 200px;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  overflow-x: hidden;
+  padding-top: 20px;
+  cursor: pointer;
+}
+nav h3 {
+  margin-left: 20px;
+}
+.nav_logo {
+  display: flex;
+  justify-content: space-around;
+}
+nav img {
+  border-radius: 45%;
+}
+nav a {
+  text-decoration: none;
+  font-size: 20px;
+  color: #818181;
+  display: block;
+}
+
+nav a:hover {
+  color: #f1f1f1;
+}
+nav a:active {
+  color: #f1f1f1;
+}
+
+.help_div {
+  border-top: 1px solid rgb(245, 242, 242);
+  margin-top: 100%;
+}
+.dashboard {
+  margin-top: 50px;
+}
+.dashboard_content {
+  margin-left: 15%;
+}
+main {
+  padding: 20px;
+  display: flex;
+  flex-wrap: wrap;
+}
+#dash {
+  color: white;
+}
+section {
+  flex-basis: 30%;
+  background-color: #f9f9f9;
+  border-radius: 5px;
+  margin: 10px;
+  padding: 20px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+section h2 {
+  margin: 0;
+  font-size: 18px;
+}
+
+section p {
+  font-size: 24px;
+  margin: 10px 0;
+}
+
+footer {
+  background-color: #333;
+  color: #fff;
+  padding: 10px;
+  text-align: center;
+}

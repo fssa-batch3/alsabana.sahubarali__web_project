@@ -29,6 +29,7 @@ function exit_popup() {
 }
 
 ///my signup
+
 let checker = false;
 const signup = document.getElementById("signUp");
 signup.addEventListener("submit", function (event) {
@@ -38,6 +39,7 @@ signup.addEventListener("submit", function (event) {
   if (localStorage.getItem("userData") != null) {
     arrayOfUserDetails = JSON.parse(localStorage.getItem("userData"));
   }
+  // let radio = document.getElementById("radio_btn").value;
   let userName = document.getElementById("username").value;
   let email = document.getElementById("email").value;
   let phoneNo = document.getElementById("phone-no").value;
@@ -52,6 +54,7 @@ signup.addEventListener("submit", function (event) {
     password: password,
     confirmPassword: confirmPassword,
     u_id,
+    radio,
   };
 
   for (let i = 0; i < arrayOfUserDetails.length; i++) {

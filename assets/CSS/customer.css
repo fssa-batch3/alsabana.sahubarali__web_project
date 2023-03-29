@@ -1,0 +1,91 @@
+nav {
+  background-color: black;
+  color: #818181;
+  height: 100%;
+  width: 200px;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  overflow-x: hidden;
+  padding-top: 20px;
+  cursor: pointer;
+}
+nav img {
+  border-radius: 45%;
+}
+nav h3 {
+  margin-left: 20px;
+}
+.nav_logo {
+  display: flex;
+  justify-content: space-around;
+}
+nav a {
+  text-decoration: none;
+  font-size: 20px;
+  color: #818181;
+  display: block;
+}
+
+nav a:hover {
+  color: #f1f1f1;
+}
+
+.help_div {
+  border-top: 1px solid rgb(245, 242, 242);
+  margin-top: 100%;
+}
+.dashboard {
+  margin-top: 50px;
+}
+#dash {
+  color: white;
+}
+.profile_name img {
+  width: 80px;
+  height: 80px;
+  border-radius: 30%;
+}
+.list h2 {
+  margin-left: 10%;
+  text-align: center;
+}
+.whole {
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: 13.5%;
+  justify-content: space-between;
+  gap: 15px;
+  /* margin-top: 30px; */
+}
+.whole_card {
+  background-color: rgb(12, 12, 12);
+  color: rgb(254, 253, 253);
+  width: 250px;
+  height: 350px;
+
+  border-radius: 10%;
+  margin-bottom: 2rem;
+}
+
+.whole_card form {
+  display: flex;
+  flex-direction: column;
+}
+.cus_name {
+  margin-top: 15px;
+}
+form input {
+  height: 30px;
+  width: 200px;
+  margin-top: 10px;
+  /* margin-left: 18px; */
+}
+label {
+  margin-left: 18px;
+}
+.profile_name {
+  display: flex;
+}
