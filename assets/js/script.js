@@ -29,7 +29,6 @@ function exit_popup() {
 }
 
 ///my signup
-
 let checker = false;
 const signup = document.getElementById("signUp");
 signup.addEventListener("submit", function (event) {
@@ -39,7 +38,6 @@ signup.addEventListener("submit", function (event) {
   if (localStorage.getItem("userData") != null) {
     arrayOfUserDetails = JSON.parse(localStorage.getItem("userData"));
   }
-
   let userName = document.getElementById("username").value;
   let email = document.getElementById("email").value;
   let phoneNo = document.getElementById("phone-no").value;
@@ -54,7 +52,6 @@ signup.addEventListener("submit", function (event) {
     password: password,
     confirmPassword: confirmPassword,
     u_id,
-n
   };
 
   for (let i = 0; i < arrayOfUserDetails.length; i++) {
@@ -95,7 +92,7 @@ loginForm.addEventListener("submit", function (event) {
   let email = document.getElementById("loginEmail").value;
   let password = document.getElementById("loginPassword").value;
   let isExist = false;
-
+  for (let i = 0; i < login_data?.length; i++) {
     // console.log(login_data[i]["email"]);
     if (
       email == login_data[i]["email"] &&
