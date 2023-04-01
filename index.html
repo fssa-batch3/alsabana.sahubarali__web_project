@@ -34,7 +34,6 @@
           <li><a href="./Pages/analysis.html">Hair Analysis</a></li>
           <li><a href="./Pages/Product.html">Products</a></li>
           <li onclick="openpopup()"><a>Login</a></li>
-          
           <!-- <li>
             <a href="./Pages/cart.html"
               class="bi bi-cart4 "
@@ -74,14 +73,17 @@
           <div class="form-input">
             <input type="password" id="confirm-password" pattern="[A-Z a-z 0-9]{10,15}"  placeholder="Confirm Password" required="true"/>
           </div>
+          <select id="input_type">
+            <option>Signup with</option>
+            <option>Cutomer</option>
+            <option>Seller</option>
+          </select>
           <div class="form-input">
             <button type="submit" onclick="sign()">Sign In</button>
-          </div>
+          </div>  
         </form>
-       
       </div>
     </div>
-
     <!-- login page -->
     <div class="overall" id="pop">
       <div class="form">
@@ -113,8 +115,6 @@
         </div>
       </div>
     </div>
-
-
     <div class="one">
       <img
         src="./assets/images/Screenshot 2022-12-02 140508.png"

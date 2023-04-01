@@ -63,6 +63,7 @@
       let index = parraArray.indexOf(paraObj);
       upForm.addEventListener("submit", function (event) {
         event.preventDefault();
+        let product_type = document.getElementById("product_type").value;
         let product_detail = document.getElementById("product_detail").value;
         let productName = document.getElementById("pName").value;
         let cost = document.getElementById("pPrice").value;

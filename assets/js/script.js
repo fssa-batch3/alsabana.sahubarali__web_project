@@ -38,6 +38,7 @@ signup.addEventListener("submit", function (event) {
   if (localStorage.getItem("userData") != null) {
     arrayOfUserDetails = JSON.parse(localStorage.getItem("userData"));
   }
+  let sign_type = document.getElementById("input_type").value;
   let userName = document.getElementById("username").value;
   let email = document.getElementById("email").value;
   let phoneNo = document.getElementById("phone-no").value;
@@ -52,6 +53,7 @@ signup.addEventListener("submit", function (event) {
     password: password,
     confirmPassword: confirmPassword,
     u_id,
+    sign_type,
   };
 
   for (let i = 0; i < arrayOfUserDetails.length; i++) {
@@ -80,6 +82,11 @@ signup.addEventListener("submit", function (event) {
     }
   }
 });
+let signIn = JSON.parse(localStorage.getItem("userData"));
+for (let i = 0; i < signIn.length; i++) {
+  if (signIn[i][sign_type] === seller) {
+  }
+}
 
 // MY LOGIN
 let loginForm = document.getElementById("login_form");
