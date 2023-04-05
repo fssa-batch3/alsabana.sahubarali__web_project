@@ -29,11 +29,11 @@ function exit_popup() {
 }
 
 ///my signup
+
 let checker = false;
 const signup = document.getElementById("signUp");
 signup.addEventListener("submit", function (event) {
   event.preventDefault();
-
   let arrayOfUserDetails = [];
   if (localStorage.getItem("userData") != null) {
     arrayOfUserDetails = JSON.parse(localStorage.getItem("userData"));
@@ -55,7 +55,6 @@ signup.addEventListener("submit", function (event) {
     u_id,
     sign_type,
   };
-
   for (let i = 0; i < arrayOfUserDetails.length; i++) {
     if (email === arrayOfUserDetails[i]["email"]) {
       checker = true;
@@ -71,54 +70,65 @@ signup.addEventListener("submit", function (event) {
     }
   }
   if (checker === false) {
-    if (userDetails.password == userDetails.confirmPassword) {
+    if (
+      userDetails.password == userDetails.confirmPassword &&
+      userDetails.sign_type === "customer"
+    ) {
       arrayOfUserDetails.push(userDetails);
       stringArray = JSON.stringify(arrayOfUserDetails);
       localStorage.setItem("userData", stringArray);
       alert("You have successfully Registered");
       window.open("/Pages/Product.html");
+    } else if (userDetails.sign_type === "seller") {
+      let get_seller = JSON.parse(localStorage.getItem("seller"));
+      get_seller.push(userDetails);
+      string_seller = JSON.stringify(get_seller);
+      localStorage.setItem("seller", string_seller);
+      alert("succesfully seller added");
+      window.location.href = "../Pages/seller.html";
     } else {
       alert("password not match");
     }
   }
 });
-let signIn = JSON.parse(localStorage.getItem("userData"));
-for (let i = 0; i < signIn.length; i++) {
-  if (signIn[i][sign_type] === seller) {
-  }
-}
-
 // MY LOGIN
 let loginForm = document.getElementById("login_form");
 loginForm.addEventListener("submit", function (event) {
   event.preventDefault();
-  let userArray = [];
-
-  let login_data = JSON.parse(localStorage.getItem("userData"));
-
   let email = document.getElementById("loginEmail").value;
   let password = document.getElementById("loginPassword").value;
   let isExist = false;
-  for (let i = 0; i < login_data?.length; i++) {
-    // console.log(login_data[i]["email"]);
-    if (
-      email == login_data[i]["email"] &&
-      password == login_data[i]["password"]
-    ) {
+  let find_customer = JSON.parse(localStorage.getItem("userData"));
+  let find_seller = JSON.parse(localStorage.getItem("seller"));
+  const find = find_customer.find(function (user) {
+    if (email === user["email"]) {
       isExist = true;
-      userArray.push(login_data[i]);
-      localStorage.setItem("login", JSON.stringify(login_data[i]["u_id"]));
-
-      break;
-    } else {
-      isExist = false;
+      if (password === user["password"]) {
+        alert("successfully loged in");
+        window.open("/Pages/Product.html");
+        localStorage.setItem("login", JSON.stringify(user["u_id"]));
+        return isExist;
+      }
+      alert("password not match");
+      return isExist;
     }
+    return isExist;
+  });
+  if (isExist == false) {
+    const seller = find_seller.find(function (user) {
+      if (email === user["email"]) {
+        isExist = true;
+        if (password === user["password"]) {
+          alert("successfully loged in");
+          window.open("/Pages/seller.html");
+          localStorage.setItem("login", JSON.stringify(user["u_id"]));
+          return isExist;
+        }
+      }
+      return isExist;
+    });
   }
-
-  if (isExist == true) {
-    window.open("/Pages/Product.html");
-    alert("You have successfully loged-in");
-  } else {
+  if (isExist === false) {
     alert("Invalid user crentials");
   }
 });
