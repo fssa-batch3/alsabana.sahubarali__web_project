@@ -42,10 +42,22 @@
       </div>
     </nav>
     <!-- cart -->
-     <div class="cart cart-active">
+    <div class="cart ">
       <div class="cart-title">Cart items</div>
       <div class="cart-content">
-         <div class="total">
+        <!-- <div class="cart-box">
+          <img src="../assets/images/Caster-Hair-Oil-.jpg.webp"class="cart-img">
+          <div class="detail-box">
+            <div class="product-title">caffeine shampoo</div>
+            <div class="price-box">
+              <div class="cart-price">Rs.678</div>
+              <div class="cart-amt">Rs.72</div>
+            </div>
+            <input type="number" value="1" class="cart-quantity">
+          </div>
+          <ion-icon name="trash" class="cart-remove"></ion-icon>
+        </div> -->
+        <div class="total">
           <div class="total-title">Total</div>
           <div class="total-price" id="total">Rs.0</div>
         </div>
@@ -334,10 +346,7 @@
           id:9
         },
       ];
-    // const arr =JSON.parse(localStorage.getItem("proObject"))
-    // for(let i = 0;i<arr?.length;i++){
-    //   products.push(arr[i])
-    // }
+  
     let get_product1 = JSON.parse(localStorage.getItem("proObject"));
      const ayurvedic = get_product1.filter((get) => get["product_type"] == "ayurvedic");
      productDiv2(ayurvedic, ".products");
@@ -346,10 +355,10 @@
       for (let i = 0; i < products.length; i++) {
         let name = products[i];
         let anger_tag = document.createElement("a");
-        anger_tag.setAttribute(
-          "href",
-          "../Pages/product detail.html?product_id="+products[i]["id"]
-        );
+        // anger_tag.setAttribute(
+        //   "href",
+        //   "../Pages/product detail.html?product_id="+products[i]["id"]
+        // );
         //first div
         let div_card = document.createElement("div");
         div_card.setAttribute("class", "product-listing3");
@@ -386,7 +395,10 @@
         let h5_tag = document.createElement("h5");
         div2.append(h5_tag);
         h5_tag.innerText = "Rs. " + products[i].cost;
-
+        let button_tag = document.createElement("button");
+        button_tag.innerText = "Add to cart";
+        button_tag.setAttribute("class", "add_Cart");
+        div2.append(button_tag)
         //append
         let insert_div = document.querySelector(id);
         insert_div.append(anger_tag);
@@ -477,7 +489,7 @@
         //h5 tag
         let h5_tag = document.createElement("h5");
         div2.append(h5_tag);
-        h5_tag.innerText = " Rs. " + products1[i].cost;
+        h5_tag.innerText =  products1[i].cost;
 
         //append
         let insert_div = document.querySelector(id);
@@ -485,9 +497,9 @@
       }
     }
     productDiv1(products1,".Products")
+
     </script>
       <script src="/assets/js/script.js"></script>
       <script src="/assets/js/cart.js"></script>
-
   </body>
 </html>

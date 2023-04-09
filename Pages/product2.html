@@ -46,7 +46,7 @@
       </div>
     </nav>
     <!-- cart -->
-     <div class="cart cart-active">
+     <div class="cart">
       <div class="cart-title">Cart items</div>
       <div class="cart-content">
          <div class="total">
@@ -339,7 +339,9 @@
       ];
       let get_product1 = JSON.parse(localStorage.getItem("proObject"));
      const capsules = get_product1.filter((get) => get["product_type"] == "capsules");
-     productDiv3(capsules, ".Products");
+     productDiv4(capsules, ".Products");
+
+     
       function productDiv4(products1,id){
       for (let i = 0; i < products1.length; i++) {
         //first div
@@ -374,7 +376,7 @@
         h5_tag.innerText = " Rs." + products1[i].cost;
 
         //append
-        let insert_div = document.querySelector(".Products");
+        let insert_div = document.querySelector(id);
         insert_div.append(div_card);
       }
     }

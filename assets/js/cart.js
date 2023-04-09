@@ -136,7 +136,8 @@ for (let i = 0; i < getCartItems?.length; i++) {
   let price_div1 = document.createElement("div");
   price_div1.setAttribute("id", "price");
   price_div1.setAttribute("class", "cart-price");
-  price_div1.innerText = getCartItems[i].price * getCartItems[i].quantity;
+  price_div1.innerText =
+    "Rs." + getCartItems[i].price * getCartItems[i].quantity;
   price_div.append(price_div1);
   // let price_div2 = document.createElement("div");
   // price_div2.setAttribute("class", "cart-amt");

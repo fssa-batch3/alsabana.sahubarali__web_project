@@ -96,7 +96,6 @@ function productDiv(products, id) {
     h3_tag.innerText = products[i].productName;
     div2.append(h3_tag);
     let tag_h5 = document.createElement("h5");
-    tag_h5.innerText = "Rs .";
     div2.append(tag_h5);
     //h5 tag
     let h5_tag = document.createElement("h5");
@@ -108,9 +107,6 @@ function productDiv(products, id) {
     button_tag.innerText = "Add to cart";
     button_tag.setAttribute("class", "add_Cart");
     div2.append(button_tag);
-    // let cart_tag = document.createElement("button");
-    // cart_tag.innerText = "add to cart";
-    // div2.append(cart_tag);
     //append
     let insert_div = document.querySelector(id);
     insert_div.append(div_card);
@@ -118,4 +114,4 @@ function productDiv(products, id) {
 }
 productDiv(products, ".products");
 
-const proArray = JSON.parse(localStorage.getItem("proObject"));
+// const proArray = JSON.parse(localStorage.getItem("proObject"));

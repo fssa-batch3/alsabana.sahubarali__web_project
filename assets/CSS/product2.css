@@ -97,7 +97,6 @@ h5 {
 }
 /* cart */
 .cart {
-  visibility: hidden;
   position: fixed;
   top: 0;
   right: -100%;

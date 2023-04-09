@@ -70,24 +70,27 @@ signup.addEventListener("submit", function (event) {
     }
   }
   if (checker === false) {
-    if (
-      userDetails.password == userDetails.confirmPassword &&
-      userDetails.sign_type === "customer"
-    ) {
-      arrayOfUserDetails.push(userDetails);
-      stringArray = JSON.stringify(arrayOfUserDetails);
-      localStorage.setItem("userData", stringArray);
-      alert("You have successfully Registered");
-      window.open("/Pages/Product.html");
-    } else if (userDetails.sign_type === "seller") {
-      let get_seller = JSON.parse(localStorage.getItem("seller"));
-      get_seller.push(userDetails);
-      string_seller = JSON.stringify(get_seller);
-      localStorage.setItem("seller", string_seller);
-      alert("succesfully seller added");
-      window.location.href = "../Pages/seller.html";
-    } else {
-      alert("password not match");
+    if (userDetails.password == userDetails.confirmPassword) {
+      if (userDetails.sign_type === "customer") {
+        arrayOfUserDetails.push(userDetails);
+        stringArray = JSON.stringify(arrayOfUserDetails);
+        localStorage.setItem("userData", stringArray);
+        alert("You have successfully Registered");
+        window.open("/Pages/Product.html");
+      }
+      if (userDetails.sign_type === "seller") {
+        let get_seller = JSON.parse(localStorage.getItem("seller"));
+        get_seller.push(userDetails);
+        string_seller = JSON.stringify(get_seller);
+        localStorage.setItem("seller", string_seller);
+        alert("succesfully seller added");
+        window.location.href = "../Pages/seller.html";
+      } else if (localStorage.getItem("seller") === null) {
+        let seller_array = [];
+        seller_array.push(userDetails);
+      } else {
+        alert("password not match");
+      }
     }
   }
 });
