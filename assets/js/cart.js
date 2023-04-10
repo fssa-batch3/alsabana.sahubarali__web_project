@@ -30,14 +30,8 @@ function loadContent() {
     input.addEventListener("change", changeQty);
   });
 }
-//subtotal
-// let subTotal = document.getElementById("total");
-// subTotal.forEach((btn) => {
-//   btn.addEventListener("show", total);
-// });
 //product cart
 let cartBtns = document.querySelectorAll(".add_Cart");
-
 cartBtns.forEach((btn) => {
   btn.addEventListener("click", addCart);
 });
@@ -71,13 +65,11 @@ function changeQty() {
   }
 }
 // add cart
-
 function addCart() {
   let product = this.parentElement;
   let title = product.querySelector(".product-name").innerHTML;
   let price = product.querySelector(".product-cost").innerHTML;
   let image = product.querySelector(".img-src").src;
-  let product_id = Date.now();
   let items = {
     title: title,
     price: price,
@@ -157,3 +149,9 @@ for (let i = 0; i < getCartItems?.length; i++) {
   let cart_content = document.querySelector(".cart-content");
   cart_content.prepend(div_card);
 }
+let cart_price = JSON.parse(localStorage.getItem("items"));
+let add = 0;
+for (let i = 0; i < cart_price.length; i++) {
+  add += parseInt(cart_price[i].price * cart_price[i].quantity);
+}
+let view = (document.getElementById("total").innerHTML = "Rs." + add);

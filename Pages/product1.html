@@ -31,7 +31,7 @@
           <li><a href="../Pages/analysis.html">Hair Analysis</a></li>
           <li><a href="../Pages/Product.html">Products</a></li>
           <li class="box">
-             <span class="bi bi-cart4 count " >0</span>Cart
+             <span class="bi bi-cart4 count " ></span>Cart
           </li>
           <li>
             <a href="../Pages/acc.html"
@@ -279,72 +279,7 @@
           id:1,
           
         },
-        {
-          productName:"Ayurvedic hair shampoo for Anti-Dandruff & Anti-Hairfall - 200ml",
-          cost: 349,
-          image: {
-            src: "../assets/images/GoodHair_AyurvedicShampoo2.webp",
-            alt: "shampoo",
-          },
-          id:2,
-        },
-        {
-          productName:"Ayurvedic hair conditionar for Thin,weak and Damaged hair-100ml",
-          cost: 249,
-          image: {
-            src: "../assets/images/GoodHairAyurvedicConditioner3.webp",
-            alt: "conditioner",
-          },
-          id:3,
-        },
-        {
-          productName: "Green apple shampoo-100ml",
-          cost: 359,
-          image: {
-            src: "../assets/images/GoodHair-GreenAppleShampoo4.webp",
-            alt: "green apple shampoo",
-          },
-          id:4
-        },
-        {
-          productName:
-            "Ayurvedic hair oil,shampoo & consitioner for hair growth",
-          cost: 622,
-          image: {
-            src: "../assets/images/Goodhair-ayurvedic-trio6.webp",
-            alt: "hair oil",
-          },
-          id:5
-        },
-        {
-          productName: "Green Apple & Aloevera shampoo & conditioner",
-          cost: 718,
-          image: {
-            src: "../assets/images/GoodHair-GreenApple-combo7.webp",
-            alt: "aloevera shampoo",
-          },
-          id:7
-        },
-        {
-          productName: "conditioner",
-
-          cost: 359,
-          image: {
-            src: "../assets/images/GoodHair-GreenAppleConditioner5.webp",
-            alt: "apple conditioner",
-          },
-          id:8
-        },
-
-        {
-          productName: "Ayurvedic shampoo & conditioner (combo pack)",
-          cost: 590,
-          image: {
-            src: "../assets/images/GoodHair-Ayurvedic-combo8.webp",
-            alt: "ayurvedic shampoo",
-          },
-          id:9
-        },
+     
       ];
   
     let get_product1 = JSON.parse(localStorage.getItem("proObject"));
@@ -378,15 +313,12 @@
         card_img.setAttribute("alt", products[i].image["alt"]);
         div2.append(card_img);
         //div for h3 and h5 tags
-
         let div1_card = document.createElement("div");
         div_card.append(div1_card);
         //h3 tag
         let h3_tag = document.createElement("h3");
         div2.append(h3_tag);
-
         h3_tag.innerText = products[i].productName;
-
         // //p tag for desc
         // let desc_p = document.createElement("p");
         // desc_p.innerText = products[i].description;
@@ -394,10 +326,11 @@
         //h5 tag
         let h5_tag = document.createElement("h5");
         div2.append(h5_tag);
-        h5_tag.innerText = "Rs. " + products[i].cost;
+        h5_tag.innerText =  products[i].cost;
         let button_tag = document.createElement("button");
         button_tag.innerText = "Add to cart";
         button_tag.setAttribute("class", "add_Cart");
+        button_tag.setAttribute("onclick","addCart()")
         div2.append(button_tag)
         //append
         let insert_div = document.querySelector(id);
@@ -417,36 +350,7 @@
             alt: "onion caffeine",
           },
           id:100
-        },
-        {
-          productsname: "Onion Caffeine Shampoo & Conditioner(combo pack)",
-          cost: 1100,
-          image: {
-            src: "../assets/images/caffeine2.webp",
-            alt: "onion shampoo",
-          },
-          id:101
-        },
-        {
-          productsname: "Onion oil for Regrowth-200ml",
-          cost: 599,
-          image: {
-            src: "../assets/images/caffeine3.webp",
-            alt: "onion oil",
-          },
-          id:102
-        },
-        {
-          productsname: "Onion shampoo for dandruff-300ml",
-          cost: 550,
-          image: {
-            src: "../assets/images/caffeine4.webp",
-            alt: "shampoo for dandruff",
-          },
-          id:103
-         
-        },
-       
+        }, 
       ];
 
      let get_product = JSON.parse(localStorage.getItem("proObject"));
