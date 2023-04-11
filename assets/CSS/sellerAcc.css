@@ -1,17 +1,3 @@
-/* nav {
-  display: flex;
-  justify-content: space-between;
-  font-size: 24px;
-  padding: 20px;
-  font-weight: bold;
-}
-nav a {
-  text-decoration: none;
-  color: black;
-}
-.detail {
-  margin-left: 70%;
-} */
 nav {
   background-color: black;
   color: #818181;
@@ -42,7 +28,6 @@ nav a {
   color: #818181;
   display: block;
 }
-
 nav a:hover {
   color: #f1f1f1;
 }

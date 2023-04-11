@@ -50,9 +50,7 @@
        </div>
        <div>
         <p>Hello,</p>
-        <h3 id="user_name"></h3>
-          <!-- <input class="url" type="url" placeholder="upload image" /> -->
-  
+        <h3 id="user_name"></h3>  
       </div>
     </div>
     <!-- personal info -->
@@ -83,31 +81,7 @@
          <button type="submit"> SUBMIT</button>
          <button id="delete">DELETE</button>
     </form>  
-     
-      <!-- <h5>Personal information</h5> 
-      <form>
-        <input type="text" id="username" placeholder="your name" value="Alsabana">
-      </form>
-       <h5>
-        Email Address  
-       </h5>
-       <input type="email" id="email" placeholder="alsabana@gmail.com"> 
-    </div>
-    <h5>
-      Mobile Number 
-    </h5>
-    <input type="text" id="phNo" placeholder="8090177736"> 
-    <h5>
-      your password 
-    </h5>
-    <input type="text" id="pass">  -->
-    <!-- <div>
-     <button>Edit</button>
-   
-    </div> -->
-    
    </div>
-       
     <div class="scnd-container">
       <div>
         <h3  class="bi bi-caret-right" > My orders</h3>
@@ -333,14 +307,11 @@
     let userImg=document.getElementById("user_img")
     userImg.setAttribute("src",select_user["image"])
 
-
     email.value=select_user["email"]
     phNo.value=select_user["phoneNo"]
     userName.value=select_user["username"]
     password.value=select_user["password"]
     address.value=select_user["address"]
-
-
 
     const form=document.getElementById("proform")
 
@@ -379,12 +350,10 @@ let delete_user = document.getElementById("delete")
         return
       } else{
         userData.splice(indexDel,1)
-        console.log(userData);
+        window.location.href = "/index.html";
         localStorage.setItem("userData",JSON.stringify(userData))
-      
+        
       }
     })
-
-   
      </script>
 </html>

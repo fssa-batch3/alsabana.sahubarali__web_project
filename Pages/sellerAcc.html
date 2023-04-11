@@ -17,7 +17,6 @@
     <title>Seller Account page</title>
   </head>
   <body>
-    \
     <nav>
       <div class="nav_logo">
         <div>
@@ -33,16 +32,15 @@
         </div>
       </div>
       <div>
-        <a href="#">
+        <a href="../Pages/sellerAdd.html">
           <h3><i class="fa fa-product-hunt"></i> Products</h3></a
         >
       </div>
       <div>
-        <a href="#"
+        <a href="../Pages/sellerAcc.html"
           ><h3 id="dash"><i class="fa fa-users"></i>Account</h3></a
         >
       </div>
-
       <div class="help_div">
         <div>
           <a href="#"><h3>Contact us</h3></a>
@@ -55,19 +53,20 @@
       </div>
     </nav>
     <main>
-      <h2>Welcome, John Doe</h2>
+      <h2>Welcome, <span id="user_name"></span></h2>
       <section>
-        <img src="../assets/images/Brahmi.png" />
+        <img id="user_img" width="200" height="200" alt="image" />
         <h3>Profile Information</h3>
         <p>Name: Sabana</p>
         <p>Email: sabin.@example.com</p>
         <p>Phone: 555-555-5555</p>
+        <p>Address:pallivasal Street</p>
       </section>
       <section>
-        <h3>Account Settings</h3>
-        <form>
+        <h3>Account Settings, You can Edit your Account</h3>
+        <form id="acc_form">
           <label for="image">Your image:</label>
-          <input type="url" name="image" />
+          <input id="image" type="url" name="image" />
           <br /><br />
           <label for="name">Name:</label>
           <input
@@ -91,7 +90,11 @@
             name="phone"
             value="555-555-5555"
           /><br /><br />
+          <label for="address">Pickup Address:</label>
+          <input for="address" id="address" type="text" />
+          <br /><br />
           <input type="submit" value="Save" />
+          <button id="delete">DELETE</button>
         </form>
       </section>
 
@@ -99,5 +102,67 @@
         <p>&copy; 2023 Healthy hair</p>
       </footer>
     </main>
+    <script>
+      const logEmail = JSON.parse(localStorage.getItem("login"));
+      const sellerData = JSON.parse(localStorage.getItem("seller"));
+
+      let select_user = sellerData.find(function (event) {
+        const customerEmail = event["email"];
+        if (logEmail === customerEmail) {
+          return true;
+        }
+      });
+      const email = document.getElementById("email");
+      const num = document.getElementById("phone");
+      const name = document.getElementById("name");
+      const address = document.getElementById("address");
+      let username = document.getElementById("user_name");
+      username.innerText = select_user["username"];
+      let user_img = document.getElementById("user_img");
+      user_img.setAttribute("src", select_user["image"]);
+
+      email.value = select_user["email"];
+      num.value = select_user["phoneNo"];
+      name.value = select_user["username"];
+      address.value = select_user["address"];
+
+      const form = document.getElementById("acc_form");
+
+      form.addEventListener("submit", function (event) {
+        event.preventDefault();
+        let name = document.getElementById("name").value;
+        let email = document.getElementById("email").value;
+        let num = document.getElementById("phone").value;
+        let address = document.getElementById("address").value;
+        let image = document.getElementById("image").value;
+
+        let data = {
+          name,
+          email,
+          num,
+          address,
+          image,
+        };
+        const combineData = Object.assign(select_user, data);
+        let find = sellerData.indexOf(select_user);
+        sellerData[find] = combineData;
+        localStorage.setItem("seller", JSON.stringify(sellerData));
+        alert("successfully changed");
+      });
+
+      let delete_seller = document.getElementById("delete");
+      delete_seller.addEventListener("click", function (event) {
+        event.preventDefault();
+        let indexDel = sellerData.indexOf(select_user);
+        let msg = confirm("Are you sure you want to delete your account");
+        if (msg !== true) {
+          return;
+        } else {
+          sellerData.splice(indexDel, 1);
+          window.location.href = "/index.html";
+          localStorage.setItem("seller", JSON.stringify(sellerData));
+        }
+      });
+    </script>
   </body>
 </html>

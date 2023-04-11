@@ -15,7 +15,6 @@ function openpopup() {
 function exit_pop() {
   popup.classList.remove("open-popup");
 }
-
 //login button
 
 let pop_up = document.querySelector(".signup-pop");
@@ -76,19 +75,21 @@ signup.addEventListener("submit", function (event) {
         arrayOfUserDetails.push(userDetails);
         stringArray = JSON.stringify(arrayOfUserDetails);
         localStorage.setItem("userData", stringArray);
-        alert("You have successfully Registered");
+        alert("You have successfully Registered Please login your account");
         window.open("/Pages/Product.html");
       }
       if (
         localStorage.getItem("seller") === null &&
         userDetails.sign_type === "seller"
       ) {
-        alert("exe");
+        alert(
+          "You have successfully Registered as a seller Please login your account"
+        );
         let seller_array = [];
         seller_array.push(userDetails);
         seller_str = JSON.stringify(seller_array);
         localStorage.setItem("seller", seller_str);
-        window.location.href = "../Pages/seller.html";
+        // window.location.href = "../Pages/seller.html";
       } else if (
         localStorage.getItem("seller") != null &&
         userDetails.sign_type === "seller"
@@ -97,8 +98,10 @@ signup.addEventListener("submit", function (event) {
         get_seller.push(userDetails);
         string_seller = JSON.stringify(get_seller);
         localStorage.setItem("seller", string_seller);
-        alert("succesfully seller added");
-        window.location.href = "../Pages/seller.html";
+        alert(
+          "You have successfully Registered as a seller Please login your account"
+        );
+        // window.location.href = "../Pages/seller.html";
       } else {
         alert("password not match");
       }
@@ -134,15 +137,14 @@ loginForm.addEventListener("submit", function (event) {
         isExist = true;
         if (password === user["password"]) {
           alert("successfully loged in");
-          window.open("/Pages/seller.html");
-          localStorage.setItem("login", JSON.stringify(user["u_id"]));
+          window.location.href = "../Pages/sellerAcc.html";
+          localStorage.setItem("login", JSON.stringify(user["email"]));
           return isExist;
         }
       }
       return isExist;
     });
   }
-
   if (isExist === false) {
     alert("Invalid user crentials");
   }

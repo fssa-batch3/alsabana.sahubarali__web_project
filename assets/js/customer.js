@@ -19,7 +19,6 @@ function createUserCard(arr) {
     let number = document.createElement("p");
     number.innerText = "Phone No : " + arr[i]["phoneNo"];
     div_card3.append(number);
-
     let email = document.createElement("p");
     email.innerText = "email : " + arr[i]["email"];
     div_card3.append(email);
@@ -31,4 +30,3 @@ function createUserCard(arr) {
     insert_div.append(div_card);
   }
 }
-
