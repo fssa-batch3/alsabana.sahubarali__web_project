@@ -55,6 +55,7 @@ signup.addEventListener("submit", function (event) {
     u_id,
     sign_type,
   };
+
   for (let i = 0; i < arrayOfUserDetails.length; i++) {
     if (email === arrayOfUserDetails[i]["email"]) {
       checker = true;
@@ -78,14 +79,20 @@ signup.addEventListener("submit", function (event) {
         alert("You have successfully Registered");
         window.open("/Pages/Product.html");
       }
-      if (localStorage.getItem("seller") === null) {
-        alert("execute");
+      if (
+        localStorage.getItem("seller") === null &&
+        userDetails.sign_type === "seller"
+      ) {
+        alert("exe");
         let seller_array = [];
         seller_array.push(userDetails);
         seller_str = JSON.stringify(seller_array);
         localStorage.setItem("seller", seller_str);
         window.location.href = "../Pages/seller.html";
-      } else if (userDetails.sign_type === "seller") {
+      } else if (
+        localStorage.getItem("seller") != null &&
+        userDetails.sign_type === "seller"
+      ) {
         let get_seller = JSON.parse(localStorage.getItem("seller"));
         get_seller.push(userDetails);
         string_seller = JSON.stringify(get_seller);
@@ -135,6 +142,7 @@ loginForm.addEventListener("submit", function (event) {
       return isExist;
     });
   }
+
   if (isExist === false) {
     alert("Invalid user crentials");
   }
