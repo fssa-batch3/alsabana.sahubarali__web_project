@@ -84,7 +84,7 @@
         alert("updated Successfully ");
 
         localStorage.setItem("proObject", JSON.stringify(parraArray));
-        window.location.href = "./admin.html";
+        window.location.href = "./sellerAdd.html";
       });
 
       let delete_product = document.getElementById("delete");
@@ -97,7 +97,7 @@
         } else {
           parraArray.splice(indexProduct, 1);
           localStorage.setItem("proObject", JSON.stringify(parraArray));
-          window.location.href = "./admin.html";
+          window.location.href = "./sellerAdd.html";
         }
       });
     </script>
