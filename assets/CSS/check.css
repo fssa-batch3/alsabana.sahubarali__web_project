@@ -26,7 +26,6 @@ body {
   right: 0;
   left: 0;
   color: #000;
-  /* border-bottom: 1px solid black; */
 }
 nav ul {
   margin-top: 20px;
@@ -88,8 +87,8 @@ nav li {
 
 .progress-step-container:nth-of-type(2) .step-check {
   background-image: none;
-  background-color: rgb(255, 255, 255);
-  border: 2px solid grey;
+  background-color: white;
+  border: 2px solid rgb(243, 98, 127);
 }
 
 .step-check::after {
@@ -114,7 +113,6 @@ nav li {
   justify-content: flex-start;
   align-items: flex-start;
   flex-direction: column;
-  margin-bottom: -10px;
 }
 
 .form-title {
@@ -188,10 +186,6 @@ input[type="button"] {
 input[type="button"]:hover {
   background-color: rgb(243, 98, 127);
 }
-.select {
-  width: 80%;
-  color: grey;
-}
 a {
   text-decoration: none;
 }
@@ -259,18 +253,5 @@ a {
   }
   .hide {
     display: none;
-  }
-  .lng-img {
-    width: 400px;
-    height: 250px;
-  }
-
-  .fif {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  .show {
-    margin-right: -1400px;
   }
 }

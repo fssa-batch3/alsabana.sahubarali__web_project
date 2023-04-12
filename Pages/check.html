@@ -13,8 +13,8 @@
       src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
     ></script>
 
-    <link rel="stylesheet" href="../assets/CSS/delivery.css" />
-    <title>Complete your purchase</title>
+    <link rel="stylesheet" href="../assets/CSS/check.css" />
+    <title>PAYMENT</title>
   </head>
   <body>
     <!-- nav -->
@@ -69,10 +69,10 @@
     </div>
 
     <div class="form-container">
-      <h2 class="form-title">Address Details</h2>
+      <h2 class="form-title">Payment Details</h2>
       <form action="" class="checkout-form">
         <div class="input-line">
-          <label for="name">Name </label>
+          <label for="name">Name on card</label>
           <input
             type="text"
             name="name"
@@ -81,35 +81,26 @@
           />
         </div>
         <div class="input-line">
-          <label for="name">Phone number</label>
-          <input type="text" name="name" id="name" placeholder="+91" />
-        </div>
-        <div class="input-container">
-          <div class="input-line">
-            <label for="name">Your state</label>
-            <select class="select">
-              <option>CHOOSE</option>
-              <option>Tamil Nadu</option>
-              <option>Kerala</option>
-            </select>
-            <!-- <input type="text" name="name" id="name" placeholder="" /> -->
-          </div>
-          <div class="input-line">
-            <label for="name">Pincode</label>
-            <input type="text" name="name" id="name" placeholder="***" />
-          </div>
-        </div>
-        <div class="input-line">
-          <label for="name">Address</label>
+          <label for="name">Card number</label>
           <input
             type="text"
             name="name"
             id="name"
-            placeholder="Enter your address"
+            placeholder="1111-2222-3333-4444"
           />
         </div>
-        <a href="../Pages/check.html"
-          ><input type="button" value="Ready to Payment"
+        <div class="input-container">
+          <div class="input-line">
+            <label for="name">Expiring Date</label>
+            <input type="text" name="name" id="name" placeholder="09-21" />
+          </div>
+          <div class="input-line">
+            <label for="name">CVC</label>
+            <input type="text" name="name" id="name" placeholder="***" />
+          </div>
+        </div>
+        <a href="../Pages/confirmation.html"
+          ><input type="button" value="Complete payment"
         /></a>
       </form>
     </div>
