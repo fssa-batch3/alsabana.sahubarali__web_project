@@ -44,7 +44,6 @@
         let cost = document.getElementById("pPrice").value;
         let src = document.getElementById("pImage").value;
         let alt = document.getElementById("pDescription").value;
-
         proObject = {
           product_type,
           product_detail,
@@ -53,7 +52,6 @@
           image: { src, alt },
         };
         productArray.push(proObject);
-        // console.log(productArray);
         stringProduct = JSON.stringify(productArray);
         localStorage.setItem("proObject", stringProduct);
         window.location.href = "./admin.html";

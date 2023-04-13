@@ -26,9 +26,7 @@ function open_pop() {
 function exit_popup() {
   pop_up.classList.remove("sign-block");
 }
-
 ///my signup
-
 let checker = false;
 const signup = document.getElementById("signUp");
 signup.addEventListener("submit", function (event) {
@@ -101,7 +99,6 @@ signup.addEventListener("submit", function (event) {
         alert(
           "You have successfully Registered as a seller Please login your account"
         );
-        // window.location.href = "../Pages/seller.html";
       } else {
         alert("password not match");
       }

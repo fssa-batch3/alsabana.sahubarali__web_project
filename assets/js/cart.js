@@ -82,7 +82,7 @@ function addCart() {
   for (var i = 0; i < checkQty?.length; i++) {
     var key = checkQty[i];
     var haveTitle = true;
-    if (key.title == items.title) {
+    if (key?.title == items.title) {
       key.quantity += items.quantity;
       localStorage.setItem("items", JSON.stringify(checkQty));
       haveTitle = false;
