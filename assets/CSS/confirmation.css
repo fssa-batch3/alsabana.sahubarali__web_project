@@ -6,7 +6,6 @@
   box-sizing: border-box;
   transition: 0.5s;
 }
-
 body {
   height: 100vh;
   width: 100%;
@@ -15,36 +14,6 @@ body {
   align-items: center;
   flex-direction: column;
   padding: 0 20%;
-}
-.navbar {
-  width: 100%;
-  padding: 20px;
-  background-color: white;
-  box-sizing: border-box;
-  position: fixed;
-  top: 0;
-  right: 0;
-  left: 0;
-  color: #000;
-}
-nav ul {
-  margin-top: 20px;
-}
-nav li {
-  padding-right: 50px;
-  font-size: 50px;
-  font-weight: bold;
-  font-family: cambria;
-  cursor: pointer;
-  color: black;
-}
-.navbar .navbar-header {
-  color: rgb(9, 9, 9);
-  font-size: 26px;
-  text-decoration: none;
-}
-.box {
-  font-size: 27px;
 }
 .progress-checkout-container {
   display: flex;
@@ -78,16 +47,16 @@ nav li {
 .progress-step-container:nth-of-type(3) .step-check {
   background-image: none;
   background-color: rgb(255, 255, 255);
-  border: 2px solid grey;
+  border: 2px solid rgb(243, 98, 127);
 }
 
 .progress-step-container:nth-of-type(2) .step-check::after {
-  background-color: grey;
+  background-color: rgb(243, 98, 127);
 }
 
 .progress-step-container:nth-of-type(2) .step-check {
   background-image: none;
-  background-color: white;
+  background-color: rgb(243, 98, 127);
   border: 2px solid rgb(243, 98, 127);
 }
 
@@ -105,68 +74,6 @@ nav li {
 .step-title {
   color: grey;
 }
-@media (min-width: 600px) {
-  .navbar .navbar-item {
-    position: absolute;
-    right: 0;
-    top: 5px;
-  }
-  .navbar .navbar-item ul li {
-    display: inline;
-    margin-right: 15px;
-  }
-  .navbar .navbar-item ul li a {
-    color: rgb(17, 17, 17);
-    text-decoration: none;
-    font-size: 25px;
-  }
-  .navbar .navbar-item ul li a:hover {
-    color: rgb(20, 20, 20);
-  }
-  .navbar-btn {
-    display: none;
-  }
-  .image-2 {
-    margin-top: 10px;
-  }
-}
-@media (max-width: 600px) {
-  .navbar .navbar-item ul {
-    list-style-type: none;
-    padding: 0;
-  }
-
-  .navbar .navbar-item ul li {
-    margin-top: 15px;
-    padding-bottom: 15px;
-    border-bottom: 1px solid rgba(79, 77, 77, 0.2);
-  }
-  .navbar .navbar-item ul li a {
-    color: rgb(18, 18, 18);
-    text-decoration: none;
-    font-size: 16px;
-  }
-  .navbar-btn {
-    border: none;
-    background: none;
-    padding: 5px;
-    position: absolute;
-    right: 0;
-    top: 25px;
-    left: 89%;
-    cursor: pointer;
-  }
-  .navbar-btn span {
-    display: block;
-    width: 30px;
-    height: 2px;
-    border-top: 1px solid rgb(16, 15, 15);
-    background-color: #000;
-  }
-  .navbar-btn span:not(:last-child) {
-    margin-bottom: 5px;
-  }
-  .hide {
-    display: none;
-  }
+a {
+  text-decoration: none;
 }
