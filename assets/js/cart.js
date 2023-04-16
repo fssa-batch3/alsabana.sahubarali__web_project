@@ -1,5 +1,3 @@
-// const { json } = require("stream/consumers");
-
 const btnCart = document.querySelector(".count");
 const cart = document.querySelector(".cart");
 const btnClose = document.querySelector("#cart-close");
@@ -51,7 +49,7 @@ function removeItem() {
   for (var i = 0; i < checkQty?.length; i++) {
     var key = checkQty[i];
     if (key.title == items.title) {
-      checkQty.splice(i);
+      checkQty.splice(i, 1);
       localStorage.setItem("items", JSON.stringify(checkQty));
       break;
     }
@@ -66,6 +64,7 @@ function changeQty() {
 }
 // add cart
 function addCart() {
+  console.log("hi");
   let product = this.parentElement;
   let title = product.querySelector(".product-name").innerHTML;
   let price = product.querySelector(".product-cost").innerHTML;
