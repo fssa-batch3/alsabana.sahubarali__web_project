@@ -173,7 +173,7 @@ input[type="text"]::placeholder {
   width: 48%;
 }
 
-input[type="button"] {
+input[type="submit"] {
   background-color: rgb(10, 10, 10);
   color: white;
   font-weight: 500;
@@ -184,8 +184,18 @@ input[type="button"] {
   border-radius: 5px;
   cursor: pointer;
 }
-
-input[type="button"]:hover {
+input {
+  outline: none;
+  box-shadow: 0 0 0.5px 0.5px #070707;
+  border-color: rgb(14, 14, 14);
+}
+input:valid {
+  border-color: green;
+}
+input:invalid {
+  border-color: red;
+}
+input[type="submit"]:hover {
   background-color: rgb(243, 98, 127);
 }
 .select {

@@ -62,7 +62,6 @@ body {
   margin-bottom: 20px;
 }
 button {
-  /* background: #2f2e2e !important; */
   background-color: #000;
   border: none;
   min-height: 40px;
@@ -89,7 +88,6 @@ button {
   margin: 0 auto;
   margin-top: 13%;
 }
-
 .signup-pop {
   width: 450px;
   margin: 0 auto;
@@ -103,11 +101,9 @@ button {
   display: none;
   cursor: pointer;
 }
-
 .sign-block {
   display: block;
 }
-
 .top {
   width: 100%;
   height: 50px;
@@ -120,7 +116,6 @@ button {
   color: #fff;
   padding: 13px;
 }
-
 input {
   outline: none;
   box-shadow: 0 0 0.5px 0.5px #1f1b4b;
@@ -143,7 +138,6 @@ button:focus {
 .exit img {
   border-radius: 50%;
 }
-
 .navbar {
   width: 100%;
   padding: 20px;
@@ -155,7 +149,6 @@ button:focus {
   left: 0;
   color: #000;
 }
-
 nav li {
   padding-right: 50px;
   font-size: 50px;
@@ -169,7 +162,6 @@ nav li {
   font-size: 26px;
   text-decoration: none;
 }
-
 .image-1 {
   margin-top: -12px;
   border-radius: 50%;
@@ -183,9 +175,7 @@ nav li {
 }
 .two {
   display: flex;
-
   margin-left: 50px;
-
   font-size: 15px;
   padding: 25px;
 }
@@ -198,7 +188,6 @@ nav li {
 }
 .three {
   display: flex;
-
   margin-left: 200px;
   font-family: "Poppins", sans-serif;
 }
@@ -228,7 +217,6 @@ button:hover {
   margin-top: -300px;
   margin-left: 15px;
 }
-
 .five h2 {
   padding: 30px;
   width: 800px;
@@ -239,9 +227,7 @@ button:hover {
 }
 .seven {
   display: flex;
-
   background-color: #f5ebe0;
-
   font-size: 15px;
   font-family: "Poppins", sans-serif;
   font-weight: bold;
@@ -252,13 +238,11 @@ button:hover {
   margin-right: 10px;
   height: 300px;
   border-radius: 40px;
-
   border-style: double;
 }
 .seven div {
   padding: 50px;
 }
-
 .eight {
   font-size: 20px;
   font-family: "Poppins", sans-serif;
@@ -277,7 +261,6 @@ button:hover {
   font-weight: bold;
   border-left: 2px solid rgb(57, 56, 56);
   border-left-style: double;
-  /* background-color: rgb(205, 205, 196); */
   background-color: #faf4ef;
   box-shadow: 20px 20px 15px gray;
 }
@@ -329,7 +312,6 @@ button:hover {
 }
 .thirdeen-1 {
   border-radius: 40px;
-
   box-shadow: 20px 20px 15px #faefe5;
 }
 .fourteen {
@@ -350,17 +332,13 @@ button:hover {
 .fifteen-1 {
   margin-left: 50px;
 }
-
 footer {
   font-family: "Poppins", sans-serif;
   font-size: 15px;
   padding: 10px;
-
   background-color: black;
   color: white;
-  /* height: 250px; */
   margin-top: -8px;
-
   border: 1px solid gray;
 }
 .flip {
@@ -377,7 +355,6 @@ footer {
   text-align: center;
   margin-top: -12%;
 }
-
 .eighteen {
   display: flex;
   flex-wrap: wrap;
@@ -410,7 +387,6 @@ footer {
   justify-content: space-around;
   font-size: 19px;
   font-family: "Poppins", sans-serif;
-  /* background-color: #9f9d9b; */
 }
 .deli {
   display: flex;
@@ -423,7 +399,6 @@ footer {
 .delivery div {
   padding: 20px;
 }
-
 /*Desktop*/
 @media (min-width: 600px) {
   .navbar .navbar-item {

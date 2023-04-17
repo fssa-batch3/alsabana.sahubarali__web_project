@@ -154,3 +154,5 @@ for (let i = 0; i < cart_price.length; i++) {
   add += parseInt(cart_price[i].price * cart_price[i].quantity);
 }
 let view = (document.getElementById("total").innerHTML = "Rs." + add);
+
+// exports.addCart = addCart;

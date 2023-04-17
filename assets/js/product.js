@@ -7,62 +7,6 @@ let products = [
       alt: "serum",
     },
   },
-  {
-    productName: "Serum for dry hair-100ml",
-    cost: 399,
-    image: {
-      src: "../assets/images/sample 1.png",
-      alt: "dry hair serum",
-    },
-  },
-  {
-    productName: "Shampoo for dry hair-100ml",
-    cost: 299,
-    image: {
-      src: "../assets/images/sample2.png",
-      alt: "shampoo",
-    },
-  },
-  {
-    productName: "cool scalp refresher-100ml",
-    cost: 299,
-    image: {
-      src: "../assets/images/sample 3.png",
-      alt: "cool scalp",
-    },
-  },
-  {
-    productName: "macadamia hair sparay-250ml",
-    cost: 459,
-    image: {
-      src: "../assets/images/sample4.png",
-      alt: "hair spray",
-    },
-  },
-  {
-    productName: "hair mask-50ml",
-    cost: 200,
-    image: {
-      src: "../assets/images/sample5.jpg",
-      alt: "hair mask",
-    },
-  },
-  {
-    productName: "Shampoo brush",
-    cost: 150,
-    image: {
-      src: "../assets/images/sample8.jpg",
-      alt: "shampoo brush",
-    },
-  },
-  {
-    productName: "Shampoo for hair color",
-    cost: 299,
-    image: {
-      src: "../assets/images/sample7.jpg",
-      alt: "hair color",
-    },
-  },
 ];
 let get_product = JSON.parse(localStorage.getItem("proObject"));
 const samples = get_product.filter((get) => get["product_type"] == "samples");
@@ -114,5 +58,3 @@ function productDiv(products, id) {
   }
 }
 productDiv(products, ".products");
-
-// const proArray = JSON.parse(localStorage.getItem("proObject"));

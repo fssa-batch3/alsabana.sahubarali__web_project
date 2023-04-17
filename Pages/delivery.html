@@ -70,7 +70,7 @@
 
     <div class="form-container">
       <h2 class="form-title">Address Details</h2>
-      <form action="" class="checkout-form">
+      <form action="" class="checkout-form" id="form">
         <div class="input-line">
           <label for="name">Name </label>
           <input
@@ -78,25 +78,43 @@
             name="name"
             id="name"
             placeholder="Your name and surname"
+            autocomplete="off"
+            pattern="[A-Za-z]{1,30}"
+            title="Username cannot contains spaces"
+            placeholder="Username"
+            required="true"
           />
         </div>
         <div class="input-line">
           <label for="name">Phone number</label>
-          <input type="text" name="name" id="name" placeholder="+91" />
+          <input
+            type="text"
+            name="name"
+            id="number"
+            placeholder="+91"
+            pattern="[0-9]{1,10}"
+            required="true"
+          />
         </div>
         <div class="input-container">
           <div class="input-line">
             <label for="name">Your state</label>
-            <select class="select">
+            <select class="select" id="select" required="true">
               <option>CHOOSE</option>
               <option>Tamil Nadu</option>
               <option>Kerala</option>
             </select>
-            <!-- <input type="text" name="name" id="name" placeholder="" /> -->
           </div>
           <div class="input-line">
             <label for="name">Pincode</label>
-            <input type="text" name="name" id="name" placeholder="***" />
+            <input
+              type="text"
+              name="name"
+              id="pincode"
+              placeholder="***"
+              required="true"
+              pattern="[0-6]{6}"
+            />
           </div>
         </div>
         <div class="input-line">
@@ -104,14 +122,14 @@
           <input
             type="text"
             name="name"
-            id="name"
+            id="address"
             placeholder="Enter your address"
+            required="true"
           />
         </div>
-        <a href="../Pages/check.html"
-          ><input type="button" value="Ready to Payment"
-        /></a>
+        <input type="submit" value="Ready to Payment" />
       </form>
     </div>
+    <script src="../assets/js/order.js"></script>
   </body>
 </html>
