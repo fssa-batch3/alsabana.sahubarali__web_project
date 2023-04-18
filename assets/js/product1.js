@@ -6,7 +6,6 @@ let products = [
       src: "../assets/images/GoodAyurvedic-hairoil1.webp",
       alt: "hair oil",
     },
-    id: 1,
   },
 ];
 let get_product1 = JSON.parse(localStorage.getItem("proObject"));

@@ -44,12 +44,14 @@
         let cost = document.getElementById("pPrice").value;
         let src = document.getElementById("pImage").value;
         let alt = document.getElementById("pDescription").value;
+        let pro_id = Date.now();
         proObject = {
           product_type,
           product_detail,
           productName,
           cost,
           image: { src, alt },
+          pro_id,
         };
         productArray.push(proObject);
         stringProduct = JSON.stringify(productArray);

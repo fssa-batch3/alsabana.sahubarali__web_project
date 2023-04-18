@@ -1,22 +1,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Outfit:wght@100&family=Poppins:ital@1&family=Space+Mono:wght@700&display=swap");
-* {
-  margin: 0;
-  padding: 0;
-  font-family: Arial, Helvetica, sans-serif;
-  box-sizing: border-box;
-  transition: 0.5s;
-  font-size: 24px;
-}
 
 body {
-  height: 100vh;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  padding: 0 20%;
+  font-family: "Poppins", sans-serif;
 }
+
 .navbar {
   width: 100%;
   padding: 20px;
@@ -28,9 +15,7 @@ body {
   left: 0;
   color: #000;
 }
-nav ul {
-  margin-top: 20px;
-}
+
 nav li {
   padding-right: 50px;
   font-size: 50px;
@@ -44,8 +29,68 @@ nav li {
   font-size: 26px;
   text-decoration: none;
 }
-.box {
-  font-size: 27px;
+
+.image-1 {
+  margin-top: -12px;
+  border-radius: 50%;
+}
+
+.card {
+  display: flex;
+  margin-top: 8%;
+  margin-left: 8%;
+}
+.left {
+  margin-left: 50px;
+}
+.left img {
+  width: 366px;
+  height: 80%;
+  margin-inline: 32px;
+  margin-top: 30px;
+}
+.card .img img {
+  width: 74px;
+  margin-left: 22px;
+  cursor: pointer;
+}
+
+.card .right {
+  margin-top: 11px;
+}
+.right h3 {
+  margin-top: 11px;
+  color: gray;
+}
+.right h1 {
+  margin-top: 11px;
+}
+.right i {
+  margin-top: 11px;
+  color: green;
+}
+.right h4 {
+  margin-top: 11px;
+}
+.right p {
+  margin-top: 11px;
+  width: 800px;
+}
+.right button {
+  width: 200px;
+  height: 50px;
+  background-color: rgb(255, 106, 0);
+  color: white;
+  font-size: 25px;
+  border: none;
+  margin-top: 22px;
+  margin-inline: 22px;
+  font-weight: 600;
+  margin-left: 1px;
+}
+.right button:hover {
+  background-color: rgb(255, 136, 0);
+  cursor: pointer;
 }
 /* cart */
 .cart {
@@ -149,6 +194,15 @@ nav li {
   right: 0.8rem;
   font-size: 2rem;
 }
+button {
+  width: 200px;
+  height: 50px;
+  background-color: rgb(250, 246, 246);
+  color: rgb(11, 10, 10);
+  text-decoration: none;
+  border-radius: 10px;
+  font-size: 16px;
+}
 .btn button {
   background-color: rgb(8, 8, 8);
   color: rgb(251, 248, 248);
@@ -171,91 +225,11 @@ button:hover {
   margin-top: 10px;
   margin-left: -40px;
 }
+.box {
+  font-size: 27px;
+}
 /* cart */
-.progress-checkout-container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 60%;
-}
-
-.progress-step-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-}
-
-.step-check {
-  background-color: rgb(243, 98, 127);
-  height: 30px;
-  width: 30px;
-  border-radius: 30px;
-  margin-bottom: 1rem;
-  position: relative;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: 60%;
-}
-
-.progress-step-container:nth-of-type(3) .step-check::after {
-  display: none;
-}
-.progress-step-container:nth-of-type(3) .step-check {
-  background-image: none;
-  background-color: rgb(243, 98, 127);
-}
-.progress-step-container:nth-of-type(2) .step-check::after {
-  background-color: rgb(243, 98, 127);
-}
-
-.progress-step-container:nth-of-type(2) .step-check {
-  background-image: none;
-  background-color: rgb(243, 98, 127);
-  border: 2px solid rgb(243, 98, 127);
-}
-
-.step-check::after {
-  content: "";
-  width: 15vw;
-  height: 2px;
-  background-color: inherit;
-  position: absolute;
-  top: 50%;
-  right: 0;
-  transform: translateX(100%) translateY(-50%);
-}
-.step-title {
-  color: grey;
-}
-a {
-  text-decoration: none;
-}
-.whole_container {
-  display: flex;
-  justify-content: space-between;
-  margin-top: 40px;
-}
-.thank_div button {
-  width: 450px;
-  height: 40px;
-  font-size: larger;
-  margin-top: 40px;
-  background-color: #403e3e;
-  color: white;
-  border-radius: 50px;
-}
-.continue_btn button {
-  height: 40px;
-  width: 250px;
-  margin-top: 20px;
-  background-color: #403e3e;
-  color: white;
-  border-radius: 10%;
-}
-.price_detail {
-  margin-left: 30px;
-}
+/*Desktop*/
 @media (min-width: 600px) {
   .navbar .navbar-item {
     position: absolute;
@@ -286,7 +260,6 @@ a {
     list-style-type: none;
     padding: 0;
   }
-
   .navbar .navbar-item ul li {
     margin-top: 15px;
     padding-bottom: 15px;
@@ -319,5 +292,18 @@ a {
   }
   .hide {
     display: none;
+  }
+  .long-img {
+    width: 500px;
+    height: 200px;
+    margin-top: 40px;
+  }
+  .btns {
+    margin-left: -120px;
+  }
+  .fif {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 }
