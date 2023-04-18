@@ -8,9 +8,7 @@ btnCart.addEventListener("click", () => {
 btnClose.addEventListener("click", () => {
   cart.classList.remove("cart-active");
 });
-
 document.addEventListener("DOMContentLoaded", loadProduct);
-
 function loadProduct() {
   loadContent();
 }
@@ -150,7 +148,7 @@ for (let i = 0; i < getCartItems?.length; i++) {
 }
 let cart_price = JSON.parse(localStorage.getItem("items"));
 let add = 0;
-for (let i = 0; i < cart_price.length; i++) {
+for (let i = 0; i < cart_price?.length; i++) {
   add += parseInt(cart_price[i].price * cart_price[i].quantity);
 }
 let view = (document.getElementById("total").innerHTML = "Rs." + add);
