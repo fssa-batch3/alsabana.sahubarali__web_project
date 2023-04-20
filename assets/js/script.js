@@ -67,6 +67,22 @@ signup.addEventListener("submit", function (event) {
       checker = false;
     }
   }
+  let get_seller = JSON.parse(localStorage.getItem("seller"));
+  for (let i = 0; i < get_seller?.length; i++) {
+    if (email === get_seller[i]["email"]) {
+      checker = true;
+      alert("email already exist");
+      break;
+    }
+    if (phoneNo === get_seller[i]["phoneNo"]) {
+      checker = true;
+      alert("phone number already exist");
+      break;
+    } else {
+      checker = false;
+    }
+  }
+
   if (checker === false) {
     if (userDetails.password == userDetails.confirmPassword) {
       if (userDetails.sign_type === "customer") {
@@ -83,6 +99,7 @@ signup.addEventListener("submit", function (event) {
         alert(
           "You have successfully Registered as a seller Please login your account"
         );
+        location.reload();
         let seller_array = [];
         seller_array.push(userDetails);
         seller_str = JSON.stringify(seller_array);
@@ -99,8 +116,9 @@ signup.addEventListener("submit", function (event) {
         alert(
           "You have successfully Registered as a seller Please login your account"
         );
+        location.reload();
       } else {
-        alert("password not match");
+        alert("Please check your details");
       }
     }
   }
@@ -114,7 +132,7 @@ loginForm.addEventListener("submit", function (event) {
   let isExist = false;
   let find_customer = JSON.parse(localStorage.getItem("userData"));
   let find_seller = JSON.parse(localStorage.getItem("seller"));
-  const find = find_customer.find(function (user) {
+  const find = find_customer?.find(function (user) {
     if (email === user["email"]) {
       isExist = true;
       if (password === user["password"]) {
@@ -123,17 +141,17 @@ loginForm.addEventListener("submit", function (event) {
         localStorage.setItem("login", JSON.stringify(user["u_id"]));
         return isExist;
       }
-      alert("password not match");
+      alert("password log not match");
       return isExist;
     }
     return isExist;
   });
   if (isExist == false) {
-    const seller = find_seller.find(function (user) {
+    const seller = find_seller?.find(function (user) {
       if (email === user["email"]) {
         isExist = true;
         if (password === user["password"]) {
-          alert("successfully loged in");
+          alert("successfully seller loged in");
           window.location.href = "../Pages/sellerAcc.html";
           localStorage.setItem("login", JSON.stringify(user["email"]));
           return isExist;
@@ -141,6 +159,14 @@ loginForm.addEventListener("submit", function (event) {
       }
       return isExist;
     });
+  }
+  if (email === "admin@gmail.com") {
+    if (password == 1234567890) {
+      alert("Welcome");
+      window.open("/Pages/adPanel.html");
+    } else {
+      alert("invalid please check");
+    }
   }
   if (isExist === false) {
     alert("Invalid user crentials");
