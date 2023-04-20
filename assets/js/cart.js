@@ -62,7 +62,8 @@ function changeQty() {
 }
 // add cart
 function addCart() {
-  console.log("hi");
+  let login_uid = JSON.parse(localStorage.getItem("login"));
+
   let product = this.parentElement;
   let title = product.querySelector(".product-name").innerHTML;
   let price = product.querySelector(".product-cost").innerHTML;
@@ -72,7 +73,7 @@ function addCart() {
     price: price,
     image: image,
     quantity: 1,
-    product_id: Date.now(),
+    product_id: login_uid,
   };
   let checkQty = JSON.parse(localStorage.getItem("items"));
 
@@ -103,11 +104,22 @@ function addCart() {
 
 let getCartItems = JSON.parse(localStorage.getItem("items"));
 
-for (let i = 0; i < getCartItems?.length; i++) {
+let matched_products;
+let login_uid = JSON.parse(localStorage.getItem("login"));
+console.log(login_uid);
+let finded_product = getCartItems.find(function (user) {
+  let product_id = user["product_id"];
+  if (login_uid == product_id) {
+    matched_products = getCartItems.filter(
+      (getting) => getting["product_id"] == login_uid
+    );
+  }
+});
+for (let i = 0; i < matched_products?.length; i++) {
   let div_card = document.createElement("div");
   div_card.setAttribute("class", "cart-box");
   let card_img = document.createElement("img");
-  card_img.setAttribute("src", getCartItems[i].image);
+  card_img.setAttribute("src", matched_products[i].image);
   card_img.setAttribute("class", "cart-img");
   card_img.setAttribute("id", "image");
   div_card.append(card_img);
@@ -117,7 +129,7 @@ for (let i = 0; i < getCartItems?.length; i++) {
   let div_card2 = document.createElement("div");
   div_card2.setAttribute("id", "product_name");
   div_card2.setAttribute("class", "product-title");
-  div_card2.innerText = getCartItems[i].title;
+  div_card2.innerText = matched_products[i].title;
   div_card1.append(div_card2);
   let price_div = document.createElement("div");
   price_div.setAttribute("class", "price-box");
@@ -126,14 +138,14 @@ for (let i = 0; i < getCartItems?.length; i++) {
   price_div1.setAttribute("id", "price");
   price_div1.setAttribute("class", "cart-price");
   price_div1.innerText =
-    "Rs." + getCartItems[i].price * getCartItems[i].quantity;
+    "Rs." + matched_products[i].price * matched_products[i].quantity;
   price_div.append(price_div1);
   // let price_div2 = document.createElement("div");
   // price_div2.setAttribute("class", "cart-amt");
-  // price_div2.innerText = getCartItems[i].price;
+  // price_div2.innerText = matched_products[i].price;
   // price_div.append(price_div2);
   let input = document.createElement("input");
-  input.setAttribute("value", getCartItems[i].quantity);
+  input.setAttribute("value", matched_products[i].quantity);
   input.setAttribute("type", "number");
   input.setAttribute("class", "cart-quantity");
   div_card1.append(input);
@@ -146,11 +158,8 @@ for (let i = 0; i < getCartItems?.length; i++) {
   let cart_content = document.querySelector(".cart-content");
   cart_content.prepend(div_card);
 }
-let cart_price = JSON.parse(localStorage.getItem("items"));
 let add = 0;
-for (let i = 0; i < cart_price?.length; i++) {
-  add += parseInt(cart_price[i].price * cart_price[i].quantity);
+for (let i = 0; i < matched_products?.length; i++) {
+  add += parseInt(matched_products[i].price * matched_products[i].quantity);
 }
 let view = (document.getElementById("total").innerHTML = "Rs." + add);
-
-// exports.addCart = addCart;

@@ -13,6 +13,8 @@ sonar cloud:https://sonarcloud.io/project/overview?id=fssa-batch3_alsabana.sahub
 / My Progress Table
 CRUD For User signing page => Create user account [completed] => Read User Data For Profile Page [completed] => Update user details For Edit Page [completed] => Delete user details For deactivate [completed] CRUD For User Features page => Create products card/list [completed] => Read Product Data For card [completed] => Update user details For card [completed] PRODUCT CRUD Create product[completed] list product[completed] update product[completed] delete product[completed] CART CRUD Create cart[completed] list cart[completed] update cart[completed] delete cart[completed]
 
+USER STORY:
+
 CREATE AN ACCOUNT
 
 Scenario 1: Successfully create an account Steps: 1.Navigate to the registration page. 2.Enter the required information such as name, email, and password. 3.Click the "Create Account" button. Expected Result: The user is redirected to the product page.

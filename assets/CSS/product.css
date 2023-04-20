@@ -2,6 +2,7 @@
 
 body {
   font-family: "Poppins", sans-serif;
+  overflow-x: hidden;
 }
 
 .navbar {
@@ -45,12 +46,12 @@ nav li {
 .product-listing-1 {
   display: flex;
   flex-wrap: wrap;
-  /* justify-content: space-around; */
-  justify-content: space-evenly;
-
+  justify-content: space-around;
+  /* justify-content: space-evenly; */
+  flex-direction: column;
   text-align: center;
   font-size: 15px;
-
+  padding: 10px;
   margin-bottom: 40px;
 }
 .products {

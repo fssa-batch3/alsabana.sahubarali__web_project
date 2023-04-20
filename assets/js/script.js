@@ -28,8 +28,8 @@ function exit_popup() {
 }
 ///my signup
 let checker = false;
-let signup = document.getElementById("signUp");
-signup?.addEventListener("submit", function (event) {
+const signup = document.getElementById("signUp");
+signup.addEventListener("submit", function (event) {
   event.preventDefault();
   let arrayOfUserDetails = [];
   if (localStorage.getItem("userData") != null) {
@@ -107,7 +107,7 @@ signup?.addEventListener("submit", function (event) {
 });
 // MY LOGIN
 let loginForm = document.getElementById("login_form");
-loginForm?.addEventListener("submit", function (event) {
+loginForm.addEventListener("submit", function (event) {
   event.preventDefault();
   let email = document.getElementById("loginEmail").value;
   let password = document.getElementById("loginPassword").value;
