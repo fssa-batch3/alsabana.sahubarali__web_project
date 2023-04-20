@@ -215,18 +215,37 @@ button {
 button:hover {
   transform: scale(1.2);
 }
-.btn {
-  padding: 50px;
-  margin-left: 37%;
-  display: flex;
-  flex-wrap: wrap;
-}
 .arrow {
   margin-top: 10px;
   margin-left: -40px;
 }
 .box {
   font-size: 27px;
+}
+.input {
+  width: 300px;
+}
+.input input {
+  width: 400px;
+  height: 70px;
+}
+.btn button {
+  width: 100px;
+  height: 30px;
+  margin-left: 10px;
+  margin-top: 10px;
+}
+.rating_section {
+  margin-top: 10%;
+  margin-left: 50px;
+}
+.fa-regular {
+  cursor: pointer;
+  color: #296b42;
+  font-size: 26px;
+}
+.fa-fa-regular:hover {
+  transform: scale(1.2);
 }
 /* cart */
 /*Desktop*/
