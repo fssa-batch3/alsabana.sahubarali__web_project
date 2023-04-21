@@ -47,7 +47,6 @@ nav li {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
-  /* justify-content: space-evenly; */
   flex-direction: column;
   text-align: center;
   font-size: 15px;

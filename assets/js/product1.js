@@ -1,21 +1,3 @@
-let products = [
-  {
-    productName: "Ayurvedic hair oil for hair growth - 100ml",
-    cost: 299,
-    image: {
-      src: "../assets/images/GoodAyurvedic-hairoil1.webp",
-      alt: "hair oil",
-    },
-  },
-  {
-    productName: "Ayurvedic hair oil for hair growth - 100ml",
-    cost: 299,
-    image: {
-      src: "../assets/images/GoodAyurvedic-hairoil1.webp",
-      alt: "hair oil",
-    },
-  },
-];
 let get_product1 = JSON.parse(localStorage.getItem("proObject"));
 let ayurvedic = get_product1.filter(
   (get) => get["product_type"] == "ayurvedic"

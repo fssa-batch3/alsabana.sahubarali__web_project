@@ -39,7 +39,6 @@
       let parraArray = JSON.parse(localStorage.getItem("proObject"));
       let paraObj = parraArray.find(function (user) {
         let productName = user["productName"];
-        // console.log(productName);
         if (paraName == productName) {
           return true;
         } else {

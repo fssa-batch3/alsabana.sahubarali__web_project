@@ -1,13 +1,3 @@
-let products = [
-  {
-    productName: "Protein serum-50ml",
-    cost: 200,
-    image: {
-      src: "../assets/images/Protien-Serum.jpg.webp",
-      alt: "serum",
-    },
-  },
-];
 let get_product = JSON.parse(localStorage.getItem("proObject"));
 const samples = get_product.filter((get) => get["product_type"] == "samples");
 productDiv(samples, ".products");
