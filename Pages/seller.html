@@ -4,9 +4,10 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../assets/CSS/seller.css">
     <title>seller</title>
   </head>
-  <body>
+  <!-- <body>
     <div>
       <div>
         <img
@@ -25,6 +26,37 @@
       <label>Organization/Business Name<input type="text" /> </label>
       <label>Company Address <input type="text" /></label>
       <label>Street Address <input type="text" /></label>
+    </div> -->
+    <div class="whole">
+      <div>
+        <form>
+          <h2>Seller Registration</h2>
+        
+          <label for="name">Full Name:</label>
+          <input type="text" id="name" name="name" required />
+        
+          <label for="email">Email Address:</label>
+          <input type="email" id="email" name="email" required />
+        
+          <label for="password">Password:</label>
+          <input type="password" id="password" name="password" required />
+        
+          <label for="confirm-password">Confirm Password:</label>
+          <input
+            type="password"
+            id="confirm-password"
+            name="confirm-password"
+            required
+          />
+        
+          <label for="company-name">Company Name:</label>
+          <input type="text" id="company-name" name="company-name" required />
+        
+          <label for="company-address">Company Address:</label>
+          <textarea id="company-address" name="company-address" required></textarea>
+          <button type="submit">Register</button>
+        </form>
+      </div>
     </div>
   </body>
 </html>
