@@ -148,6 +148,7 @@ button:focus {
   right: 0;
   left: 0;
   color: #000;
+  z-index: 10;
 }
 nav li {
   padding-right: 50px;

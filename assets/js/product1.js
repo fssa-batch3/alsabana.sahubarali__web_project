@@ -7,7 +7,10 @@ function productDiv2(products, id) {
   for (let i = 0; i < products.length; i++) {
     let name = products[i];
     let anger_tag = document.createElement("a");
-    anger_tag.setAttribute("href", "#" + products[i]["id"]);
+    anger_tag.setAttribute(
+      "href",
+      "../Pages/productDetails.html?id=" + products[i]["id"]
+    );
     //first div
     let div_card = document.createElement("div");
     div_card.setAttribute("class", "product-listing3");

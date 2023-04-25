@@ -32,3 +32,12 @@ Scenario 1: Successfully add product/item to cart Steps: 1.Log in as a buyer. 2.
 REMOVE ITEM FROM CART
 
 Scenario 1: Successfully remove item from cart Steps: 1.Log in as a buyer. 2.Navigate to the cart page. 3.Remove the selected item from the cart. Expected Result: The item is removed from the user's cart.
+
+PRODUCT DETAILS
+
+Scenario 1 : Successfully show products product details steps:
+
+1.Log in as a buyer.
+2.Navigate to the product list page.
+3.Click one product it navigate to product detail page.
+Expected Result : Click one product it navigate to product details page.

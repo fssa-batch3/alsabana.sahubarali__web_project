@@ -245,8 +245,7 @@
           
          ]
 
-         for(let i=0;i<products.length;i++){
-
+      for(let i=0;i<products.length;i++){
       let div_card=document.createElement("div")
       div_card.setAttribute("class","order-container")
       let div_card1=document.createElement("div")
@@ -288,8 +287,6 @@
       let insert_div=document.querySelector(".scnd-container")
       insert_div.append(div_card)
          }
-
-
     ///profile
     const logEmail=JSON.parse(localStorage.getItem("login"));
     const userData=JSON.parse(localStorage.getItem("userData"))
@@ -300,7 +297,6 @@
     return true;
    }
   
-  // console.log(select_user)
 });
    const email=document.getElementById("email")
     const phNo=document.getElementById("phNo")
@@ -309,15 +305,18 @@
     const address=document.getElementById("country")
     let Name=document.getElementById("user_name")
     Name.innerText=select_user["username"]
-    let userImg=document.getElementById("user_img")
-    userImg.setAttribute("src",select_user["image"])
+    let userImg=document.getElementById("image")
+    // userImg.setAttribute("src",select_user["image"])
+    let image=document.getElementById("user_img")
+      image.setAttribute("src",select_user["image"])
+    
 
     email.value=select_user["email"]
     phNo.value=select_user["phoneNo"]
     userName.value=select_user["username"]
     password.value=select_user["password"]
     address.value=select_user["address"]
-
+    userImg.value=select_user["image"]
     const form=document.getElementById("proform")
 
    form.addEventListener("submit",function(event){
@@ -338,7 +337,7 @@
      }
     
      const combineData=Object.assign(select_user,newData)
-     console.log(combineData)
+    //  console.log(combineData)
 
     let findIndex = userData.indexOf(select_user) 
       userData[findIndex]=combineData

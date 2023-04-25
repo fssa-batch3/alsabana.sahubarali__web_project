@@ -68,14 +68,13 @@
         let cost = document.getElementById("pPrice").value;
         let src = document.getElementById("pImage").value;
         let alt = document.getElementById("pDescription").value;
-        let product_id = Date.now();
 
         proObject = {
           product_detail,
           productName,
           cost,
           image: { src, alt },
-          product_id: Date.now(),
+         
         };
 
         let newObj = Object.assign(paraObj, proObject);

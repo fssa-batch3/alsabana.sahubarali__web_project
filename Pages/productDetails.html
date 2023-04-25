@@ -84,15 +84,15 @@
 
       <div class="right">
         <h3>Ayurvedic product</h3>
-        <h1>caffeine conditioner & shampooo</h1>
-        <h1>₹314</h1>
+        <h1 id="pro_name">caffeine conditioner & shampooo</h1>
+        <h1 id="pro_cost">₹314</h1>
         <i class="fa-solid fa-star"></i>
         <i class="fa-solid fa-star"></i>
         <i class="fa-solid fa-star"></i>
         <i class="fa-solid fa-star"></i>
         <i class="fa-solid fa-star-half-stroke"></i>
         <h3>Product Description :</h3>
-        <p>
+        <p id="description">
           Good Hair Oil is made of 28 herbs and 7 essential oils that bring the
           10X advantage and the unadulterated goodness of nature. Good Hair Oil
           is proprietary and premium quality Ayurvedic hair oil that removes
@@ -116,9 +116,7 @@
         <button>Buy Now</button>
       </div>
     </div>
-    <!-- 
-      Reviews
-     -->
+    <!-- Reviews-->
   <div class="rating_section">
     <div class="star_rating">
       <div class="userRating">
@@ -138,7 +136,33 @@
       <button>Cancel</button>
     </div>
   </div>
+  <script>
+    const product_id=window.location.search
+    const product_params= new URLSearchParams(product_id)
+    const get_details=product_params.get("id")
+
+    const products=JSON.parse(localStorage.getItem("proObject"))
+console.log(products)
+    let pro_detail=products.find(function(event){
+      let id=event["id"]
+      if(get_details==id){
+        return true
+      }
+    })
+
+    let images=document.getElementById("imgs")
+    let product_name=document.getElementById("pro_name")
+    let product_price=document.getElementById("pro_cost")
+    let description=document.getElementById("description")
+    
+
+    product_name.innerText=products["productName"]
+    product_price.innerText=products["cost"]
+    description.innerText=products["product_detail"]
+    images.setAttribute("src",products["src"])
+  </script>
   <script src="/assets/js/detail.js"></script>
   <script src="/assets/js/cart.js"></script>
+  <script src="/assets/js/product.js"></script>
 </body>
 </html>
