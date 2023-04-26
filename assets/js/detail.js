@@ -37,9 +37,31 @@ allstar.forEach((star, index) => {
   });
 });
 
-let review = document.getElementById("review");
-let input = document.getElementById("input");
-input.addEventListener("submit", function (event) {
-  event.preventDefault();
-  let review = document.getElementById("review").value;
-});
+// let review = document.getElementById("review");
+// let input = document.getElementById("input");
+// input.addEventListener("submit", function (event) {
+//   event.preventDefault();
+//   let review = document.getElementById("review").value;
+// });
+
+let div = document.createElement("div");
+div.setAttribute("class", "reviews");
+let div_card = document.createElement("div");
+let img_tag = document.createElement("img");
+img_tag.setAttribute("width", "50");
+img_tag.setAttribute("height", "50");
+img_tag.setAttribute("src", "../assets/images/alodia-target.jpeg");
+div_card.append(img_tag);
+
+let div_card1 = document.createElement("div");
+let h3_tag = document.createElement("h3");
+h3_tag.innerText = "name";
+div_card1.append(h3_tag);
+let p_tag = document.createElement("p");
+p_tag.innerText = "good product";
+div_card1.append(p_tag);
+div.append(div_card);
+div.append(div_card1);
+let insert = document.querySelector(".whole");
+insert.append(div);
+console.log(insert);

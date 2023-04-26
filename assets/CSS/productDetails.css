@@ -247,6 +247,20 @@ button:hover {
 .fa-fa-regular:hover {
   transform: scale(1.2);
 }
+.reviews {
+  background-color: #797d7a;
+  border-radius: 10px;
+  display: flex;
+  width: 420px;
+  margin-top: 30px;
+}
+.reviews img {
+  margin-top: 20px;
+  border-radius: 20%;
+}
+.reviews div {
+  padding: 10px;
+}
 /* cart */
 /*Desktop*/
 @media (min-width: 600px) {
