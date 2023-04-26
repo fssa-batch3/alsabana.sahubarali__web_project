@@ -7,7 +7,7 @@ function productDiv(products, id) {
     let anger_tag = document.createElement("a");
     anger_tag.setAttribute(
       "href",
-      "../Pages/productDetails.html?id=" + products[i]["id"]
+      "../Pages/productDetails.html?id=" + get_product[i]["id"]
     );
     //first div
     let div_card = document.createElement("div");

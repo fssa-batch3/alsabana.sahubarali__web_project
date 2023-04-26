@@ -8,15 +8,16 @@ let pro_detail = products.find(function (event) {
     return true;
   }
 });
-
+let range = document.getElementById("range");
 let images = document.getElementById("imgs");
 let product_name = document.getElementById("pro_name");
 let product_price = document.getElementById("pro_cost");
 let description = document.getElementById("description");
-product_name.innerText = products["productName"];
-product_price.innerText = products["cost"];
-description.innerText = products["product_detail"];
-images.setAttribute("src", products["src"]);
+product_name.innerText = pro_detail["productName"];
+product_price.innerText = "Rs." + pro_detail["cost"];
+description.innerText = pro_detail["product_detail"];
+images.setAttribute("src", pro_detail["image"]["src"]);
+range.innerText = pro_detail["product_type"];
 
 const allstar = document.querySelectorAll(".fa-regular");
 const showRating = document.getElementById("showRating");
@@ -37,12 +38,23 @@ allstar.forEach((star, index) => {
   });
 });
 
-// let review = document.getElementById("review");
-// let input = document.getElementById("input");
-// input.addEventListener("submit", function (event) {
-//   event.preventDefault();
-//   let review = document.getElementById("review").value;
-// });
+let review = document.getElementById("review");
+let input = document.getElementById("input");
+input.addEventListener("submit", function (event) {
+  event.preventDefault();
+  let reviewArray = [];
+  if (localStorage.getItem("user_review") != null) {
+    userReview = JSON.parse(localStorage.getItem("user_review"));
+  }
+  let review = document.getElementById("review").value;
+  let reviews = {
+    review_id: Date.now(),
+    review,
+    date: toLocaleDateString(),
+  };
+  reviewArray.push(reviews);
+  stringProduct = JSON.stringify(reviewArray);
+});
 
 let div = document.createElement("div");
 div.setAttribute("class", "reviews");
@@ -52,7 +64,6 @@ img_tag.setAttribute("width", "50");
 img_tag.setAttribute("height", "50");
 img_tag.setAttribute("src", "../assets/images/alodia-target.jpeg");
 div_card.append(img_tag);
-
 let div_card1 = document.createElement("div");
 let h3_tag = document.createElement("h3");
 h3_tag.innerText = "name";
@@ -64,4 +75,3 @@ div.append(div_card);
 div.append(div_card1);
 let insert = document.querySelector(".whole");
 insert.append(div);
-console.log(insert);
