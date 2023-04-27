@@ -36,22 +36,22 @@ allstar.forEach((star, index) => {
   });
 });
 
-// let form_2 = document.getElementById("input_2");
-// form_2.addEventListener("submit", function (event) {
-//   event.preventDefault();
-//   let reviewArray = [];
-//   if (localStorage.getItem("reviews") != null) {
-//     productArray = JSON.parse(localStorage.getItem("reviews"));
-//   }
-//   let product_review = document.getElementById("review").value;
-//   reviews = {
-//     product_review: product_review,
-//     review_id: Date.now(),
-//   };
-//   reviewArray.push(reviews);
-//   stringReview = JSON.stringify(reviewArray);
-//   localStorage.setItem("reviews", stringReview);
-// });
+let form_2 = document.getElementById("input_2");
+form_2.addEventListener("submit", function (event) {
+  event.preventDefault();
+  let reviewArray = [];
+  if (localStorage.getItem("reviews") != null) {
+    productArray = JSON.parse(localStorage.getItem("reviews"));
+  }
+  let product_review = document.getElementById("review").value;
+  reviews = {
+    product_review: product_review,
+    review_id: Date.now(),
+  };
+  reviewArray.push(reviews);
+  stringReview = JSON.stringify(reviewArray);
+  localStorage.setItem("reviews", stringReview);
+});
 
 let div = document.createElement("div");
 div.setAttribute("class", "reviews");
