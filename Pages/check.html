@@ -93,14 +93,17 @@
 
     <div class="form-container">
       <h2 class="form-title">Payment Details</h2>
-      <form action="" class="checkout-form">
+      <form action="" class="checkout-form" id="pay_form">
         <div class="input-line">
           <label for="name">Name on card</label>
           <input
             type="text"
             name="name"
             id="name"
+            pattern="[A-Za-z]{1,30}"
             placeholder="Your name and surname"
+            title="Enter your card name"
+            required="true"
           />
         </div>
         <div class="input-line">
@@ -108,26 +111,36 @@
           <input
             type="text"
             name="name"
-            id="name"
+            id="number"
             placeholder="1111-2222-3333-4444"
+            pattern="[0-9]{16}"
+            required="true"
           />
         </div>
         <div class="input-container">
           <div class="input-line">
             <label for="name">Expiring Date</label>
-            <input type="text" name="name" id="name" placeholder="09-21" />
+            <input type="date" name="name" id="date" placeholder="09-21" />
           </div>
           <div class="input-line">
             <label for="name">CVC</label>
-            <input type="text" name="name" id="name" placeholder="***" />
+            <input
+              type="text"
+              name="name"
+              pattern="[0-9]{3}"
+              required="true"
+              id="cvc"
+              placeholder="***"
+            />
           </div>
         </div>
         <a href="../Pages/confirmation.html"
-          ><input type="button" value="Complete payment"
+          ><input type="submit" value="Complete payment"
         /></a>
       </form>
     </div>
-    <script src="/assets/js/script.js"></script>
+    <!-- <script src="/assets/js/script.js"></script> -->
     <script src="/assets/js/cart.js"></script>
+    <script src="/assets/js/payment.js"></script>
   </body>
 </html>

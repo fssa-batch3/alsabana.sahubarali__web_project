@@ -14,7 +14,7 @@ let product_name = document.getElementById("pro_name");
 let product_price = document.getElementById("pro_cost");
 let description = document.getElementById("description");
 product_name.innerText = pro_detail["productName"];
-product_price.innerText = "Rs." + pro_detail["cost"];
+product_price.innerText = "₹" + pro_detail["cost"];
 description.innerText = pro_detail["product_detail"];
 images.setAttribute("src", pro_detail["image"]["src"]);
 range.innerText = pro_detail["product_type"];
@@ -22,11 +22,9 @@ range.innerText = pro_detail["product_type"];
 const allstar = document.querySelectorAll(".fa-regular");
 const showRating = document.getElementById("showRating");
 allstar.forEach((star, index) => {
-  //  console.log(index)
   star.addEventListener("click", (e) => {
     e.preventDefault();
     let current_star = index + 1;
-    // console.log(current_star)
     showRating.innerText = `${current_star} of 5`;
     allstar.forEach((star, i) => {
       if (current_star >= i + 1) {
@@ -38,23 +36,22 @@ allstar.forEach((star, index) => {
   });
 });
 
-let review = document.getElementById("review");
-let input = document.getElementById("input");
-input.addEventListener("submit", function (event) {
-  event.preventDefault();
-  let reviewArray = [];
-  if (localStorage.getItem("user_review") != null) {
-    userReview = JSON.parse(localStorage.getItem("user_review"));
-  }
-  let review = document.getElementById("review").value;
-  let reviews = {
-    review_id: Date.now(),
-    review,
-    date: toLocaleDateString(),
-  };
-  reviewArray.push(reviews);
-  stringProduct = JSON.stringify(reviewArray);
-});
+// let form_2 = document.getElementById("input_2");
+// form_2.addEventListener("submit", function (event) {
+//   event.preventDefault();
+//   let reviewArray = [];
+//   if (localStorage.getItem("reviews") != null) {
+//     productArray = JSON.parse(localStorage.getItem("reviews"));
+//   }
+//   let product_review = document.getElementById("review").value;
+//   reviews = {
+//     product_review: product_review,
+//     review_id: Date.now(),
+//   };
+//   reviewArray.push(reviews);
+//   stringReview = JSON.stringify(reviewArray);
+//   localStorage.setItem("reviews", stringReview);
+// });
 
 let div = document.createElement("div");
 div.setAttribute("class", "reviews");
