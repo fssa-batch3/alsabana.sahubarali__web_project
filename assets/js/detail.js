@@ -19,56 +19,56 @@ description.innerText = pro_detail["product_detail"];
 images.setAttribute("src", pro_detail["image"]["src"]);
 range.innerText = pro_detail["product_type"];
 
-const allstar = document.querySelectorAll(".fa-regular");
-const showRating = document.getElementById("showRating");
-allstar.forEach((star, index) => {
-  star.addEventListener("click", (e) => {
-    e.preventDefault();
-    let current_star = index + 1;
-    showRating.innerText = `${current_star} of 5`;
-    allstar.forEach((star, i) => {
-      if (current_star >= i + 1) {
-        star.innerHTML = "&#9733";
-      } else {
-        star.innerHTML = "&#9734;";
-      }
-    });
-  });
-});
+// const allstar = document.querySelectorAll(".fa-regular");
+// const showRating = document.getElementById("showRating");
+// allstar.forEach((star, index) => {
+//   star.addEventListener("click", (e) => {
+//     e.preventDefault();
+//     let current_star = index + 1;
+//     showRating.innerText = `${current_star} of 5`;
+//     allstar.forEach((star, i) => {
+//       if (current_star >= i + 1) {
+//         star.innerHTML = "&#9733";
+//       } else {
+//         star.innerHTML = "&#9734;";
+//       }
+//     });
+//   });
+// });
 
-let form_2 = document.getElementById("input_2");
-form_2.addEventListener("submit", function (event) {
-  event.preventDefault();
-  let reviewArray = [];
-  if (localStorage.getItem("reviews") != null) {
-    productArray = JSON.parse(localStorage.getItem("reviews"));
-  }
-  let product_review = document.getElementById("review").value;
-  reviews = {
-    product_review: product_review,
-    review_id: Date.now(),
-  };
-  reviewArray.push(reviews);
-  stringReview = JSON.stringify(reviewArray);
-  localStorage.setItem("reviews", stringReview);
-});
+// let form_2 = document.getElementById("input_2");
+// form_2.addEventListener("submit", function (event) {
+//   event.preventDefault();
+//   let reviewArray = [];
+//   if (localStorage.getItem("reviews") != null) {
+//     productArray = JSON.parse(localStorage.getItem("reviews"));
+//   }
+//   let product_review = document.getElementById("review").value;
+//   reviews = {
+//     product_review: product_review,
+//     review_id: Date.now(),
+//   };
+//   reviewArray.push(reviews);
+//   stringReview = JSON.stringify(reviewArray);
+//   localStorage.setItem("reviews", stringReview);
+// });
 
-let div = document.createElement("div");
-div.setAttribute("class", "reviews");
-let div_card = document.createElement("div");
-let img_tag = document.createElement("img");
-img_tag.setAttribute("width", "50");
-img_tag.setAttribute("height", "50");
-img_tag.setAttribute("src", "../assets/images/alodia-target.jpeg");
-div_card.append(img_tag);
-let div_card1 = document.createElement("div");
-let h3_tag = document.createElement("h3");
-h3_tag.innerText = "name";
-div_card1.append(h3_tag);
-let p_tag = document.createElement("p");
-p_tag.innerText = "good product";
-div_card1.append(p_tag);
-div.append(div_card);
-div.append(div_card1);
-let insert = document.querySelector(".whole");
-insert.append(div);
+// let div = document.createElement("div");
+// div.setAttribute("class", "reviews");
+// let div_card = document.createElement("div");
+// let img_tag = document.createElement("img");
+// img_tag.setAttribute("width", "50");
+// img_tag.setAttribute("height", "50");
+// img_tag.setAttribute("src", "../assets/images/alodia-target.jpeg");
+// div_card.append(img_tag);
+// let div_card1 = document.createElement("div");
+// let h3_tag = document.createElement("h3");
+// h3_tag.innerText = "name";
+// div_card1.append(h3_tag);
+// let p_tag = document.createElement("p");
+// p_tag.innerText = "good product";
+// div_card1.append(p_tag);
+// div.append(div_card);
+// div.append(div_card1);
+// let insert = document.querySelector(".whole");
+// insert.append(div);

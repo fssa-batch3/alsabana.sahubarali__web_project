@@ -11,19 +11,21 @@ form.addEventListener("submit", function (event) {
   let select_state = document.getElementById("select").value;
   let pincode = document.getElementById("pincode").value;
   let address = document.getElementById("address").value;
-
-  details = {
-    cus_name,
-    number,
-    select_state,
-    pincode,
-    address,
-    login_id,
-    order_id: Date.now(),
-  };
+  let order_id = Date.now(),
+    details = {
+      cus_name,
+      number,
+      select_state,
+      pincode,
+      address,
+      login_id,
+      order_id,
+    };
   customer_details.push(details);
   stringDetail = JSON.stringify(customer_details);
   localStorage.setItem("details", stringDetail);
+
+  localStorage.setItem("order_id", JSON.stringify(order_id));
   window.location.href = "../Pages/check.html";
 });
 

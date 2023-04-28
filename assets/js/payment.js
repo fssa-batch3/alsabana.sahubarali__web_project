@@ -2,12 +2,12 @@ let payment_form = document.getElementById("pay_form");
 payment_form.addEventListener("submit", function (event) {
   event.preventDefault();
 
-  let logged = JSON.parse(localStorage.getItem("login"));
+  let order = JSON.parse(localStorage.getItem("order_id"));
   let details = JSON.parse(localStorage.getItem("details"));
 
   let find_id = details.find(function (obj) {
-    let id = obj["login_id"];
-    if (id == logged) {
+    let id = obj["order_id"];
+    if (id == order) {
       return true;
     }
   });
@@ -29,5 +29,6 @@ payment_form.addEventListener("submit", function (event) {
 
   details[index] = pay;
   localStorage.setItem("details", JSON.stringify(details));
+  alert("order succeed");
   location.href = "../Pages/confirmation.html";
 });

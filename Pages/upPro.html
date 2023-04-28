@@ -18,7 +18,7 @@
         <label>product_details<input type="text" id="product_detail" /></label>
         <label
           >Where do you want to show
-          <select id="product_type">
+          <select id="productType">
             <option value="ayurvedic">Ayurvedic Range</option>
             <option value="Caffeine">Caffeine Range</option>
             <option value="samples">Our Samples</option>
@@ -45,6 +45,7 @@
           return false;
         }
       });
+      console.log(paraObj);
       let product_type = document.getElementById("product_type");
       let product_detail = document.getElementById("product_detail");
       let productName = document.getElementById("pName");
@@ -59,7 +60,7 @@
       cost.value = paraObj["cost"];
       src.value = paraObj["image"]["src"];
       alt.value = paraObj["image"]["alt"];
-      product_type.value = paraObj["product_type"];
+      producType.value = paraObj["product_type"];
 
       let index = parraArray.indexOf(paraObj);
       upForm.addEventListener("submit", function (event) {
@@ -89,9 +90,8 @@
 
       let delete_product = document.getElementById("delete");
       delete_product.addEventListener("click", function (event) {
-        event.preventDefault();
-        let indexProduct = parraArray.indexOf(paraObj);
         let msg = confirm("would you like to delete your product");
+        let indexProduct = parraArray.indexOf(paraObj);
         if (msg !== true) {
           return;
         } else {
