@@ -135,11 +135,18 @@
           </div>
         </div>
         <a href="../Pages/confirmation.html"
-          ><input type="submit" value="Complete payment"
+          ><input type="submit" id="pay" value="Complete payment"
         /></a>
       </form>
     </div>
-    <!-- <script src="/assets/js/script.js"></script> -->
+    <script>
+      let get_product = JSON.parse(localStorage.getItem("proObject"));
+      let payment = document.getElementById("pay");
+      payment.addEventListener("submit", function (e) {
+        window.location.href =
+          "../Pages/confirmation.html?id=" + get_product[i]["id"];
+      });
+    </script>
     <script src="/assets/js/cart.js"></script>
     <script src="/assets/js/payment.js"></script>
   </body>

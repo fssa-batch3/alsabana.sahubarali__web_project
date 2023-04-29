@@ -52,38 +52,9 @@ signup.addEventListener("submit", function (event) {
     u_id,
     sign_type,
   };
+  let check = checkUser(phoneNo, email);
 
-  for (let i = 0; i < arrayOfUserDetails.length; i++) {
-    if (email === arrayOfUserDetails[i]["email"]) {
-      checker = true;
-      alert("email already exist");
-      break;
-    }
-    if (phoneNo === arrayOfUserDetails[i]["phoneNo"]) {
-      checker = true;
-      alert("phone number already exist");
-      break;
-    } else {
-      checker = false;
-    }
-  }
-  let get_seller = JSON.parse(localStorage.getItem("seller"));
-  for (let i = 0; i < get_seller?.length; i++) {
-    if (email === get_seller[i]["email"]) {
-      checker = true;
-      alert("email already exist");
-      break;
-    }
-    if (phoneNo === get_seller[i]["phoneNo"]) {
-      checker = true;
-      alert("phone number already exist");
-      break;
-    } else {
-      checker = false;
-    }
-  }
-
-  if (checker === false) {
+  if (check != true) {
     if (userDetails.password == userDetails.confirmPassword) {
       if (userDetails.sign_type === "customer") {
         arrayOfUserDetails.push(userDetails);
@@ -123,6 +94,34 @@ signup.addEventListener("submit", function (event) {
     }
   }
 });
+// function check user
+function checkUser(phn, email) {
+  let user = [];
+  if (JSON.parse(localStorage.getItem("userData") != null)) {
+    user = JSON.parse(localStorage.getItem("userData"));
+  }
+  let seller = [];
+  if (JSON.parse(localStorage.getItem("seller") != null)) {
+    seller = JSON.parse(localStorage.getItem("seller"));
+  }
+  let check = false;
+  let findUser = user.find((e) => {
+    if (e["email"] == email || phn == e["phoneNo"]) {
+      check = true;
+      alert("Email or phone number already Exist");
+      return true;
+    }
+  });
+
+  let findSeller = seller.find((e) => {
+    if (e["email"] == email || phn == e["phoneNo"]) {
+      check = true;
+      alert("ALREADY SELLER THERE PLEASE LOGIN");
+      return true;
+    }
+  });
+  return check;
+}
 // MY LOGIN
 let loginForm = document.getElementById("login_form");
 loginForm.addEventListener("submit", function (event) {

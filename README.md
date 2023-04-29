@@ -41,3 +41,6 @@ Scenario 1 : Successfully show products product details steps:
 2.Navigate to the product list page.
 3.Click one product it navigate to product detail page.
 Expected Result : Click one product it navigate to product details page.
+
+MY ADMIN EMAIL : admin@gmail.com
+MY ADMIN PASSWORD : 1234567890
