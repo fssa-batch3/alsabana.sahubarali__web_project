@@ -63,7 +63,6 @@ function changeQty() {
 // add cart
 function addCart() {
   let login_uid = JSON.parse(localStorage.getItem("login"));
-
   let product = this.parentElement;
   let title = product.querySelector(".product-name").innerHTML;
   let price = product.querySelector(".product-cost").innerHTML;
@@ -76,11 +75,10 @@ function addCart() {
     product_id: login_uid,
   };
   let checkQty = JSON.parse(localStorage.getItem("items"));
-
   for (var i = 0; i < checkQty?.length; i++) {
     var key = checkQty[i];
     var haveTitle = true;
-    if (key?.title == items.title) {
+    if (key.title == items.title) {
       key.quantity += items.quantity;
       localStorage.setItem("items", JSON.stringify(checkQty));
       haveTitle = false;

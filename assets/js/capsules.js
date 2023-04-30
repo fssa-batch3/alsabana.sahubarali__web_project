@@ -12,15 +12,22 @@ let products1 = [
 ];
 let get_product1 = JSON.parse(localStorage.getItem("proObject"));
 const capsules = get_product1.filter(
-  (get) => get["product_type"] == "capsules"
+  (get) => get["product_type"] == "Capsules"
 );
 productDiv4(capsules, ".Products");
 
 function productDiv4(products1, id) {
   for (let i = 0; i < products1.length; i++) {
+    let anger_tag = document.createElement("a");
+    anger_tag.setAttribute(
+      "href",
+      "../Pages/productDetails.html?id=" + products[i]["id"]
+    );
     //first div
     let div_card = document.createElement("div");
     div_card.setAttribute("class", "product-listing3");
+    anger_tag.append(div_card);
+
     //second div
     let div1 = document.createElement("div");
     div1.setAttribute("class", "pro-list-1");
@@ -54,7 +61,7 @@ function productDiv4(products1, id) {
     div2.append(button_tag);
     //append
     let insert_div = document.querySelector(id);
-    insert_div.append(div_card);
+    insert_div.append(anger_tag);
   }
 }
 productDiv4(products1, ".Products");

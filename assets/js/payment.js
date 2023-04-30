@@ -32,3 +32,4 @@ payment_form.addEventListener("submit", function (event) {
   alert("order succeed");
   location.href = "../Pages/confirmation.html";
 });
+

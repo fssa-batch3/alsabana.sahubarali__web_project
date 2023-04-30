@@ -1,6 +1,18 @@
+let products = [
+  {
+    productName: "Protein serum-50ml",
+    cost: 200,
+    image: {
+      src: "../assets/images/Protien-Serum.jpg.webp",
+      alt: "serum",
+    },
+    id: 100,
+  },
+];
+
 let get_product1 = JSON.parse(localStorage.getItem("proObject"));
 let ayurvedic = get_product1.filter(
-  (get) => get["product_type"] == "ayurvedic"
+  (get) => get["product_type"] == "Ayurvedic Range"
 );
 productDiv2(ayurvedic, ".products");
 function productDiv2(products, id) {

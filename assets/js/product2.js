@@ -1,7 +1,6 @@
 let products = [
   {
-    productName:
-      "Macadamia Nut,Avacado,Biotin shampoo,conditioner & hair serum",
+    productName: "Avacado serum",
     cost: 1597,
     image: {
       src: "../assets/images/mecahair4.webp",
@@ -10,14 +9,22 @@ let products = [
   },
 ];
 let get_product = JSON.parse(localStorage.getItem("proObject"));
-const avocado = get_product.filter((get) => get["product_type"] == "avocado");
+const avocado = get_product.filter(
+  (get) => get["product_type"] == "Avocado Range"
+);
 productDiv3(avocado, ".products");
 
 function productDiv3(products, id) {
-  for (let i = 0; i <= products.length; i++) {
+  for (let i = 0; i < products.length; i++) {
+    let anger_tag = document.createElement("a");
+    anger_tag.setAttribute(
+      "href",
+      "../Pages/productDetails.html?id=" + products[i]["id"]
+    );
     //first div
     let div_card = document.createElement("div");
     div_card.setAttribute("class", "product-listing3");
+    anger_tag.append(div_card);
     //second div
     let div1 = document.createElement("div");
     div1.setAttribute("class", "pro-list-1");
@@ -49,7 +56,7 @@ function productDiv3(products, id) {
     div2.append(button_tag);
     //append
     let insert_div = document.querySelector(id);
-    insert_div.append(div_card);
+    insert_div.append(anger_tag);
   }
 }
 productDiv3(products, ".products");

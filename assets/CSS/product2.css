@@ -61,9 +61,7 @@ nav li {
   flex-wrap: wrap;
   justify-content: space-evenly;
 }
-.product-listing3 img {
-  border-radius: 20px;
-}
+
 .product-listing3 h3 {
   width: 220px;
 }
@@ -72,7 +70,7 @@ nav li {
   background-color: rgb(11, 11, 11);
   color: white;
   padding: 20px;
-  border-radius: 50px;
+  /* border-radius: 50px; */
   text-align: center;
   box-shadow: 10px 20px 10px gray;
 }

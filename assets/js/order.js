@@ -28,16 +28,3 @@ form.addEventListener("submit", function (event) {
   localStorage.setItem("order_id", JSON.stringify(order_id));
   window.location.href = "../Pages/check.html";
 });
-
-// PAYMENT
-
-// let details = JSON.parse(localStorage.getItem("details"));
-
-// let find = details.find(function (event) {
-//   event.preventDefault();
-//   let id = event["login_id"];
-//   if (details === id) {
-//     return true;
-//   }
-// });
-// console.log;

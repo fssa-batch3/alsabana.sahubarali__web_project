@@ -72,18 +72,3 @@ range.innerText = pro_detail["product_type"];
 // div.append(div_card1);
 // let insert = document.querySelector(".whole");
 // insert.append(div);
-
-let buy_btn = document.getElementById("buy");
-buy_btn.addEventListener("click", function (event) {
-  event.preventDefault();
-  const product_id = window.location.search;
-  const product_params = new URLSearchParams(product_id);
-  const get_details = product_params.get("id");
-  const products = JSON.parse(localStorage.getItem("proObject"));
-  let pro_detail = products.find(function (event) {
-    let id = event["id"];
-    if (get_details == id) {
-      return true;
-    }
-  });
-});
