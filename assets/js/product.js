@@ -1,13 +1,12 @@
 let get_product = JSON.parse(localStorage.getItem("proObject"));
 const samples = get_product.filter((get) => get["product_type"] == "samples");
 productDiv(samples, ".products");
-console.log(samples);
 function productDiv(products, id) {
-  for (let i = 0; i <= products.length; i++) {
+  for (let i = 0; i < products.length; i++) {
     let anger_tag = document.createElement("a");
     anger_tag.setAttribute(
       "href",
-      "../Pages/productDetails.html?id=" + get_product[i]["id"]
+      "../Pages/productDetails.html?id=" + products[i]["id"]
     );
     //first div
     let div_card = document.createElement("div");

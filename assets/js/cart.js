@@ -105,7 +105,7 @@ function addCart() {
 let getCartItems = JSON.parse(localStorage.getItem("items"));
 let matched_products;
 let login_uid = JSON.parse(localStorage.getItem("login"));
-let finded_product = getCartItems.find(function (user) {
+let finded_product = getCartItems?.find(function (user) {
   let product_id = user["product_id"];
   if (login_uid == product_id) {
     matched_products = getCartItems.filter(
