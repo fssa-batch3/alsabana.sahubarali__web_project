@@ -136,10 +136,6 @@ for (let i = 0; i < matched_products?.length; i++) {
   price_div1.innerText =
     "Rs." + matched_products[i].price * matched_products[i].quantity;
   price_div.append(price_div1);
-  // let price_div2 = document.createElement("div");
-  // price_div2.setAttribute("class", "cart-amt");
-  // price_div2.innerText = matched_products[i].price;
-  // price_div.append(price_div2);
   let input = document.createElement("input");
   input.setAttribute("value", matched_products[i].quantity);
   input.setAttribute("type", "number");

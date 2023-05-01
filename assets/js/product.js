@@ -124,5 +124,6 @@ let sampleProducts = [
 
 if (localStorage.getItem("proObject") == null) {
   let jsonString = JSON.stringify(sampleProducts);
+  console.log(jsonString);
   localStorage.setItem("proObject", jsonString);
 }

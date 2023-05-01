@@ -79,53 +79,51 @@
     <div class="thank_div">
       <button>Thank you for shopping with us!</button>
     </div>
+    <div class="id">
+      <h3>YOUR ORDER ID :<span id="order_id">1234567890</span></h3>
+    </div>
     <div class="whole_container">
       <div>
-        <div>
-          <p>Order Detail</p>
+        <div class="flex">
+          <div>
+            <p>Order Details</p>
+          </div>
         </div>
         <!-- cart div-->
         <div class="cart-box">
           <img
             src="../assets/images/Caster-Hair-Oil-.jpg.webp"
             class="cart-img"
+            id="image"
           />
           <div class="detail-box">
-            <div class="product-title">caffeine shampoo</div>
+            <div id="product_name" class="product-title">caffeine shampoo</div>
             <div class="price-box">
-              <div class="cart-price">Rs.678</div>
+              <div id="product_cost" class="cart-price">Rs.678</div>
             </div>
           </div>
         </div>
         <div>
-          <p>Delivery Address</p>
+          <p>Delivery Address:</p>
         </div>
         <div>
-          <p>Adress</p>
-          <p>state</p>
-          <p>mobile no</p>
+          <p id="cus_name">Name</p>
+          <p id="address">Adress</p>
+          <p id="state">state</p>
+          <p id="number">mobile no</p>
         </div>
       </div>
       <div class="price_detail">
         <div><p>Price detail</p></div>
-        <div><p>Order total : Rs.768</p></div>
+        <div>
+          <p>Order total :<span id="total">Rs.768</span></p>
+        </div>
         <div class="continue_btn">
-          <a href="../Pages/Product.html"><button>Continue shopping</button></a>
+          <a href="../Pages/Product.html"><h6>Continue shopping</h6></a>
         </div>
       </div>
     </div>
-    <script>
-      const product_id = window.location.search;
-      const product_params = new URLSearchParams(product_id);
-      const get_details = product_params.get("id");
-      const products = JSON.parse(localStorage.getItem("proObject"));
-      let pro_detail = products.find(function (event) {
-        let id = event["id"];
-        if (get_details == id) {
-          return true;
-        }
-      });
-    </script>
+    <script src="/assets/js/confirmation.js"></script>
     <script src="/assets/js/script.js"></script>
     <script src="/assets/js/cart.js"></script>
   </body>
