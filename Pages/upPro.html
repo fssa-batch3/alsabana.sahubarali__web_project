@@ -47,8 +47,7 @@
           return false;
         }
       });
-      console.log(paraObj);
-      let product_type = document.getElementById("product_type");
+      let product_type = document.getElementById("productType");
       let product_detail = document.getElementById("product_detail");
       let productName = document.getElementById("pName");
       let cost = document.getElementById("pPrice");
@@ -62,12 +61,12 @@
       cost.value = paraObj["cost"];
       src.value = paraObj["image"]["src"];
       alt.value = paraObj["image"]["alt"];
-      producType.value = paraObj["product_type"];
+      productType.value = paraObj["product_type"];
 
       let index = parraArray.indexOf(paraObj);
       upForm.addEventListener("submit", function (event) {
         event.preventDefault();
-        let product_type = document.getElementById("product_type").value;
+        let product_type = document.getElementById("productType").value;
         let product_detail = document.getElementById("product_detail").value;
         let productName = document.getElementById("pName").value;
         let cost = document.getElementById("pPrice").value;
@@ -85,13 +84,13 @@
         let newObj = Object.assign(paraObj, proObject);
         parraArray[index] = newObj;
         alert("updated Successfully ");
-
         localStorage.setItem("proObject", JSON.stringify(parraArray));
         window.location.href = "./sellerAdd.html";
       });
 
       let delete_product = document.getElementById("delete");
       delete_product.addEventListener("click", function (event) {
+        event.preventDefault();
         let msg = confirm("would you like to delete your product");
         let indexProduct = parraArray.indexOf(paraObj);
         if (msg !== true) {
