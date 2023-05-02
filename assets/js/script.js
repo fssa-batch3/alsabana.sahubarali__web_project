@@ -54,7 +54,7 @@ signup?.addEventListener("submit", function (event) {
   };
   let check = checkUser(phoneNo, email);
 
-  if (check != true) {
+  if (check == false) {
     if (userDetails.password == userDetails.confirmPassword) {
       if (userDetails.sign_type === "customer") {
         arrayOfUserDetails.push(userDetails);
@@ -89,7 +89,7 @@ signup?.addEventListener("submit", function (event) {
         );
         location.reload();
       } else {
-        alert("Please check your details");
+        alert("Please Check Your Details");
       }
     }
   }
@@ -116,7 +116,7 @@ function checkUser(phn, email) {
   let findSeller = seller.find((e) => {
     if (e["email"] == email || phn == e["phoneNo"]) {
       check = true;
-      alert("ALREADY SELLER THERE PLEASE LOGIN");
+      alert("please check your details");
       return true;
     }
   });
@@ -140,7 +140,7 @@ loginForm?.addEventListener("submit", function (event) {
         localStorage.setItem("login", JSON.stringify(user["u_id"]));
         return isExist;
       }
-      alert("password log not match");
+      alert("password not match");
       return isExist;
     }
     return isExist;
