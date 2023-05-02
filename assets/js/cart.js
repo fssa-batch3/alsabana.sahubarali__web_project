@@ -86,6 +86,7 @@ function addCart() {
     }
   }
   if (checkQty === null || checkQty.length === 0) {
+    alert("Successfully added into the cart");
     window.localStorage.setItem("items", JSON.stringify([items]));
   } else {
     if (haveTitle) {
@@ -146,7 +147,6 @@ for (let i = 0; i < matched_products?.length; i++) {
   ion.setAttribute("id", "delete");
   ion.setAttribute("name", "trash");
   div_card.append(ion);
-
   let cart_content = document.querySelector(".cart-content");
   cart_content.prepend(div_card);
 }

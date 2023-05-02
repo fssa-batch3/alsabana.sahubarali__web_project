@@ -9,14 +9,14 @@ let pro_detail = products.find(function (event) {
   }
 });
 let range = document.getElementById("range");
-let images = document.getElementById("imgs");
-let product_name = document.getElementById("pro_name");
+let pic = document.getElementById("imgs");
+let productname = document.getElementById("pro_name");
 let product_price = document.getElementById("pro_cost");
 let description = document.getElementById("description");
-product_name.innerText = pro_detail["productName"];
+productname.innerText = pro_detail["productName"];
 product_price.innerText = "₹" + pro_detail["cost"];
 description.innerText = pro_detail["product_detail"];
-images.setAttribute("src", pro_detail["image"]["src"]);
+pic.setAttribute("src", pro_detail["image"]["src"]);
 range.innerText = pro_detail["product_type"];
 
 // const allstar = document.querySelectorAll(".fa-regular");
