@@ -45,7 +45,7 @@ nav li {
   text-decoration: none;
 }
 .box {
-  font-size: 27px;
+  font-size: 24px;
 }
 /* cart */
 .cart {
@@ -239,20 +239,19 @@ a {
 .thank_div button {
   width: 450px;
   height: 40px;
-  font-size: 23px;
+  font-size: larger;
   margin-top: 40px;
   background-color: #403e3e;
   color: white;
   border-radius: 50px;
 }
-.continue_btn h6 {
+.continue_btn button {
   height: 40px;
   width: 250px;
   margin-top: 20px;
-  /* background-color: rgb(248, 76, 111); */
-  color: rgb(248, 76, 111);
-  /* border-radius: 10%; */
-  border-style: none;
+  background-color: #403e3e;
+  color: white;
+  border-radius: 10%;
 }
 .price_detail {
   margin-left: 30px;

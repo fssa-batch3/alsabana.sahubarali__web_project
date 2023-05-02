@@ -37,6 +37,7 @@ let customer_name;
 let cus_address;
 let state;
 let number;
+let order_detail;
 let id;
 for (let j = 0; j < order_details.length; j++) {
   if (order_id == order_details[j]["order_id"]) {
@@ -44,6 +45,7 @@ for (let j = 0; j < order_details.length; j++) {
     cus_address = order_details[j]["address"];
     state = order_details[j]["select_state"];
     number = order_details[j]["number"];
+    order_detail = order_details[j]["delivery_date"];
     id = order_details[j]["order_id"];
   }
 }
@@ -53,4 +55,6 @@ let address = (document.getElementById("address").innerHTML =
   cus_address + ",");
 let cus_state = (document.getElementById("state").innerHTML = state + ",");
 let phone = (document.getElementById("number").innerHTML = number + ".");
+let orderdetail = (document.getElementById("date").innerHTML =
+  order_detail + ".");
 let order = (document.getElementById("order_id").innerHTML = id);

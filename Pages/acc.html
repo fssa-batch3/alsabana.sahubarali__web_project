@@ -60,7 +60,7 @@
     <form class="form" id="proform">
         <label>Image <input class="url" id="image" type="text" placeholder="upload image" />
         </label>       
-         <label>Name <input type="text" id="username" placeholder="your name" value="Alsabana">
+         <label>Name <input type="text" id="username" placeholder="your name">
          </label>
          <label>Email
           <input type="email" id="email" placeholder="alsabana@gmail.com"> 
@@ -89,26 +89,8 @@
    </div>
     <div class="scnd-container">
       <div>
-        <h3  class="bi bi-caret-right" > My orders</h3>
+        <h3  class="bi bi-caret-right" > Your Order details</h3>
       </div>
-   
-      <!-- <div class="order-container">
-        <div>
-          <img src="../assets/images/Almond-2.png" width="80" height="80">
-        </div>
-        <div>
-          <h4>Product name</h4>
-        </div>
-        <div>
-          <h5>Rs.234</h5>
-        </div>
-        <div>
-          <span class="dot"></span><span>&nbsp;&nbsp;Delivered on Feb 01</span>
-          
-          <p>Your product has been delivered</p>
-          <span class="fa fa-star checked"></span><span>&nbsp;&nbsp;Rate & Review product</span>
-        </div>
-      </div> -->
     </div>
   </div>
 </div>
@@ -202,56 +184,15 @@
     </div>
   </footer> -->
   </body>
-     
-     
   <script>
-         let products=[
-        {
-          productName:
-            "Onion Caffeine Hair Oil, Shampoo & Conditioner (trio pack)",
-          cost: 1799,
-          image: {
-            src: "../assets/images/caffeine1.webp",
-            alt: "onion caffeine",
-          },
-          detail:"Delivered on Feb 01",
-          details:"Your product has been delivered",
-          details1:"Rate & Review product"
-
-        },
-        {
-          productName:
-            "Ayurvedic hair shampoo for Anti-Dandruff & Anti-Hairfall - 200ml",
-          cost: 349,
-          image: {
-            src: "../assets/images/GoodHair_AyurvedicShampoo2.webp",
-            alt: "shampoo",
-          },
-          detail:"Delivered on March 03",
-          details:"Your product has been delivered",
-          details1:"Rate & Review product"
-        },
-        {
-          productName: "hair mask-50ml",
-          cost: 200,
-          image: {
-            src: "../assets/images/sample5.jpg",
-            alt: "hair mask",
-          },
-          detail:"Delivered on April 23",
-          details:"Your product has been delivered",
-          details1:"Rate & Review product"
-        },
-          
-         ]
-
-      for(let i=0;i<products.length;i++){
+      let product=JSON.parse(localStorage.getItem("details"))
+      for(let i=0; i<product.length; i++){
       let div_card=document.createElement("div")
       div_card.setAttribute("class","order-container")
       let div_card1=document.createElement("div")
       div_card.append( div_card1)
       let img_tag=document.createElement("img")
-      img_tag.setAttribute("src",products[i].image["src"])
+      img_tag.setAttribute("src",product[i]["image"])
       img_tag.setAttribute("class","image")
       img_tag.setAttribute("width","100")
       img_tag.setAttribute("height","110")
@@ -259,30 +200,30 @@
       let div_card2=document.createElement("div")
       div_card.append( div_card2)
       let h4_tag=document.createElement("h4")
-      h4_tag.innerText=products[i]["productName"]
+      h4_tag.innerText=product[i]["productName"]
       div_card2.append(h4_tag)
       let div_card3=document.createElement("div")
       div_card.append( div_card3)
       let h5_tag=document.createElement("h5")
-      h5_tag.innerText="Rs."+ products[i]["cost"]
+      h5_tag.innerText="Rs."+ product[i]["cost"]
       div_card3.append(h5_tag)
       let div_card4=document.createElement("div")
       div_card.append( div_card4)
-      //span
+      // span
       let span_tag=document.createElement("span")
       span_tag.setAttribute("class","dot")
       div_card4.append(span_tag)
       let span1_tag=document.createElement("span")
-      span1_tag.innerText=products[i]["detail"]
+      span1_tag.innerText="Delivered by" + product[i]["delivery_date"]
       div_card4.append(span1_tag)
       let p_tag=document.createElement("p")
-      p_tag.innerText=products[i]["details"]
+      p_tag.innerText="Your product has been delivered"
       div_card4.append(p_tag)
       let span2_tag=document.createElement("span")
       span2_tag.setAttribute("class","fa fa-star checked")
       div_card4.append(span2_tag)
       let span3_tag=document.createElement("span")
-      span3_tag.innerText=products[i]["details1"]
+      span3_tag.innerText="Rate & Review product";
       div_card4.append(span3_tag)
       let insert_div=document.querySelector(".scnd-container")
       insert_div.append(div_card)

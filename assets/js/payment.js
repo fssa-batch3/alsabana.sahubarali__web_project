@@ -36,6 +36,7 @@ payment_form.addEventListener("submit", function (event) {
     productName,
     cost,
     image,
+    delivery_date: new Date(),
   };
 
   let pay = Object.assign(find_id, new_obj);
