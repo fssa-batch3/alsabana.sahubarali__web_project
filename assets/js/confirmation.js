@@ -15,11 +15,13 @@ let product = JSON.parse(localStorage.getItem("proObject"));
 let pro_name;
 let cost;
 let image;
+let totals;
 for (let i = 0; i < product.length; i++) {
   if (get_id == product[i]["id"]) {
     pro_name = product[i]["productName"];
     cost = product[i]["cost"];
     image = product[i]["image"]["src"];
+    totals = product[i]["cost"];
   }
 }
 let product_name = (document.getElementById("product_name").innerHTML =
@@ -27,7 +29,7 @@ let product_name = (document.getElementById("product_name").innerHTML =
 let pro_cost = (document.getElementById("product_cost").innerHTML =
   "Rs." + cost);
 let images = (document.getElementById("image").src = image);
-let total = (document.getElementById("total").innerHTML = cost);
+let total = (document.getElementById("totals").innerHTML = "Rs." + cost);
 
 let order_id = JSON.parse(localStorage.getItem("order_id"));
 let order_details = JSON.parse(localStorage.getItem("details"));
