@@ -9,8 +9,10 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
     />
-
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css"
+    />
     <title>Home</title>
   </head>
   <body class="container">
@@ -22,7 +24,7 @@
         height="100"
         alt="image"
       />
-      <button class='navbar-btn'>
+      <button class="navbar-btn">
         <span></span>
         <span></span>
         <span></span>
@@ -33,34 +35,81 @@
           <li><a href="./index.html">Home</a></li>
           <li><a href="./Pages/analysis.html">Hair Analysis</a></li>
           <li><a href="./Pages/Product.html">Products</a></li>
-          <li onclick="openpopup()"><a>Login</a></li>
+          <li id="login_btn" onclick="openpopup()"><a>Login/signup</a></li>
+          <li class="profile">
+            <img
+              class="pro_img"
+              src="./assets/images/26.png"
+              width="60"
+              height="60"
+            />
+          </li>
         </ul>
-      </div>
-    </nav>
+      </nav>
+    </div>
     <!-- sign up -->
     <div class="signup-pop" id="popup">
       <div class="top">
         <h4 class="title">Sign Up</h4>
       </div>
       <div class="exit">
-        <img  onclick="exit_popup()" src="../assets/images/exits image.png" width="35" height="35" />
+        <img
+          onclick="exit_popup()"
+          src="../assets/images/exits image.png"
+          width="35"
+          height="35"
+        />
       </div>
       <div class="form" id="pop_up">
         <form id="signUp">
           <div class="form-input">
-            <input type="text"  id="username" autocomplete="off" pattern="[A-Za-z]{1,30}" title="Username cannot contains spaces" placeholder="Enter your name" required="true" />
+            <input
+              type="text"
+              id="username"
+              autocomplete="off"
+              pattern="[A-Za-z]{1,30}"
+              title="Username cannot contains spaces"
+              placeholder="Enter your name"
+              required="true"
+            />
           </div>
           <div class="form-input">
-            <input type="email" id="email"  placeholder="Email" required="true" />
+            <input
+              type="email"
+              id="email"
+              placeholder="Email"
+              required="true"
+            />
           </div>
           <div class="form-input">
-            <input type="text" id="phone-no" title="Phone number contains only 10 digits" placeholder="Phone No" pattern="[0-9]{10}" required="true" />
+            <input
+              type="text"
+              id="phone-no"
+              title="Phone number contains only 10 digits"
+              placeholder="Phone No"
+              pattern="[0-9]{10}"
+              required="true"
+            />
           </div>
           <div class="form-input">
-            <input type="password" title="You can use 6 to 15 characters,Alphabets and numbers"  id="password" pattern="[A-Z a-z 0-9]{6,15}" placeholder="Password" required="true" />
+            <input
+              type="password"
+              title="You can use 6 to 15 characters,Alphabets and numbers"
+              id="password"
+              pattern="[A-Z a-z 0-9]{6,15}"
+              placeholder="Password"
+              required="true"
+            />
           </div>
           <div class="form-input">
-            <input type="password" title="You can use 6 to 15 characters,Alphabets and numbers" id="confirm-password" pattern="[A-Z a-z 0-9]{6,15}"  placeholder="Confirm Password" required="true"/>
+            <input
+              type="password"
+              title="You can use 6 to 15 characters,Alphabets and numbers"
+              id="confirm-password"
+              pattern="[A-Z a-z 0-9]{6,15}"
+              placeholder="Confirm Password"
+              required="true"
+            />
           </div>
           <select id="input_type">
             <option value="">CHOOSE</option>
@@ -69,15 +118,20 @@
           </select>
           <div class="form-input">
             <button type="submit">Sign Up</button>
-          </div>  
+          </div>
         </form>
       </div>
     </div>
     <!-- login page -->
     <div class="overall" id="pop">
       <div class="form">
-        <div >
-          <img  onclick="exit_pop()" src="./assets/images/exits image.png" width="40" height="40" />
+        <div>
+          <img
+            onclick="exit_pop()"
+            src="./assets/images/exits image.png"
+            width="40"
+            height="40"
+          />
         </div>
         <div class="circle">
           <img
@@ -93,7 +147,12 @@
             <input type="email" id="loginEmail" placeholder="Email" required />
           </div>
           <div class="form-input">
-            <input type="password" id="loginPassword" placeholder="Password" required />
+            <input
+              type="password"
+              id="loginPassword"
+              placeholder="Password"
+              required
+            />
           </div>
           <div class="form-input">
             <button type="submit" onclick="login()">Login</button>
@@ -431,8 +490,43 @@
         <h3>Healthy hair 2022 © All rights reserved</h3>
       </div>
     </footer>
-     <script src="assets/js/script.js"></script>
+    <script src="assets/js/script.js"></script>
+    <script type="module">
+      // Import the functions you need from the SDKs you need
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/9.21.0/firebase-app.js";
+      import {
+        getDatabase,
+        set,
+        ref,
+        onValue,
+        push,
+      } from "https://www.gstatic.com/firebasejs/9.21.0/firebase-database.js";
 
+      // TODO: Add SDKs for Firebase products that you want to use
+      // https://firebase.google.com/docs/web/setup#available-libraries
+
+      // Your web app's Firebase configuration
+      const firebaseConfig = {
+        apiKey: "AIzaSyAg8L8TzqOUoS52UC3Hod__xttGfLgux7E",
+        authDomain: "healthy-hair-7397e.firebaseapp.com",
+        projectId: "healthy-hair-7397e",
+        storageBucket: "healthy-hair-7397e.appspot.com",
+        messagingSenderId: "1031359648247",
+        appId: "1:1031359648247:web:686fb168e4fe4a13a91ef2",
+      };
+
+      // Initialize Firebase
+      const app = initializeApp(firebaseConfig);
+      const database = getDatabase();
+      console.log(database);
+
+      const db = getDatabase();
+      const starCountRef = ref(database, "email/");
+      onValue(starCountRef, (snapshot) => {
+        const data = snapshot.val();
+        console.log(data);
+      });
+    </script>
+    <script src="/assets/js/cart.js"></script>
   </body>
 </html>
-

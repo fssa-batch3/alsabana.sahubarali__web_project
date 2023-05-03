@@ -171,3 +171,15 @@ loginForm?.addEventListener("submit", function (event) {
     alert("Invalid user crentials");
   }
 });
+
+let logged = JSON.parse(localStorage.getItem("login"));
+let login_btn = document.getElementById("login_btn");
+let profile = document.querySelector(".pro_img");
+let nav = document.querySelector(".navbar-item");
+let cart = document.querySelector(".count");
+if (logged != null) {
+  login_btn.style.display = "none";
+  profile.style.display = "block";
+  nav.style.marginRight = "100px";
+  cart.style.display = "block";
+}

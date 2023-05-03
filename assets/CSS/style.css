@@ -151,6 +151,18 @@ button:focus {
   color: #000;
   z-index: 10;
 }
+nav {
+  position: relative;
+  margin-right: 0px;
+}
+.profile {
+  position: absolute;
+  top: 25px;
+  right: -100px;
+}
+.pro_img {
+  display: none;
+}
 nav li {
   padding-right: 50px;
   font-size: 50px;
