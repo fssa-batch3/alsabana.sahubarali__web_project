@@ -53,7 +53,6 @@ signup?.addEventListener("submit", function (event) {
     sign_type,
   };
   let check = checkUser(phoneNo, email);
-
   if (check == false) {
     if (userDetails.password == userDetails.confirmPassword) {
       if (userDetails.sign_type === "customer") {
@@ -61,21 +60,22 @@ signup?.addEventListener("submit", function (event) {
         stringArray = JSON.stringify(arrayOfUserDetails);
         localStorage.setItem("userData", stringArray);
         alert("You have successfully Registered Please login your account");
-        window.open("/Pages/Product.html");
+        // window.open("/Pages/Product.html");
       }
       if (
         localStorage.getItem("seller") === null &&
         userDetails.sign_type === "seller"
       ) {
-        alert(
-          "You have successfully Registered as a seller Please login your account"
-        );
-        location.reload();
         let seller_array = [];
         seller_array.push(userDetails);
         seller_str = JSON.stringify(seller_array);
         localStorage.setItem("seller", seller_str);
-        // window.location.href = "../Pages/seller.html";
+        alert("You have successfully Registered");
+        localStorage.setItem(
+          "seller_email",
+          JSON.stringify(seller_array["email"])
+        );
+        window.open("../Pages/seller.html");
       } else if (
         localStorage.getItem("seller") != null &&
         userDetails.sign_type === "seller"
@@ -84,9 +84,9 @@ signup?.addEventListener("submit", function (event) {
         get_seller.push(userDetails);
         string_seller = JSON.stringify(get_seller);
         localStorage.setItem("seller", string_seller);
-        alert(
-          "You have successfully Registered as a seller Please login your account"
-        );
+        alert("You have successfully Registered as a seller");
+        window.open("../Pages/seller.html");
+
         location.reload();
       } else {
         alert("Please Check Your Details");
@@ -151,7 +151,7 @@ loginForm?.addEventListener("submit", function (event) {
         isExist = true;
         if (password === user["password"]) {
           alert("successfully seller loged in");
-          window.location.href = "../Pages/sellerAcc.html";
+          window.location.href = "../Pages/sellerAdd.html";
           localStorage.setItem("login", JSON.stringify(user["email"]));
           return isExist;
         }
@@ -172,14 +172,38 @@ loginForm?.addEventListener("submit", function (event) {
   }
 });
 
+//forgot password
+
+let form = document.getElementById("submit_form");
+form.addEventListener("submit", function (e) {
+  e.preventDefault();
+
+  let forgotEmail = document.getElementById("f_email").value;
+  let forgotPass = document.getElementById("f_password").value;
+  let forgotCpass = document.getElementById("f_confirm_password").value;
+
+  let userDetails = JSON.parse(localStorage.getItem("userData"));
+
+  let get_email = userDetails.find(function (obj) {
+    if (forgotEmail === obj["email"]) {
+      return true;
+    }
+  });
+  console.log(get_email);
+});
+
 let logged = JSON.parse(localStorage.getItem("login"));
 let login_btn = document.getElementById("login_btn");
 let profile = document.querySelector(".pro_img");
 let nav = document.querySelector(".navbar-item");
-let cart = document.querySelector(".count");
 if (logged != null) {
   login_btn.style.display = "none";
   profile.style.display = "block";
   nav.style.marginRight = "100px";
-  cart.style.display = "block";
 }
+
+let show_profile = document.getElementById("show_profile");
+let user = JSON.parse(localStorage.getItem("userData"));
+
+let log_user = user.find((obj) => logged == obj["u_id"]);
+show_profile.setAttribute("src", log_user["image"]);

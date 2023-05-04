@@ -36,23 +36,6 @@ range.innerText = pro_detail["product_type"];
 //   });
 // });
 
-// let form_2 = document.getElementById("input_2");
-// form_2.addEventListener("submit", function (event) {
-//   event.preventDefault();
-//   let reviewArray = [];
-//   if (localStorage.getItem("reviews") != null) {
-//     productArray = JSON.parse(localStorage.getItem("reviews"));
-//   }
-//   let product_review = document.getElementById("review").value;
-//   reviews = {
-//     product_review: product_review,
-//     review_id: Date.now(),
-//   };
-//   reviewArray.push(reviews);
-//   stringReview = JSON.stringify(reviewArray);
-//   localStorage.setItem("reviews", stringReview);
-// });
-
 // let div = document.createElement("div");
 // div.setAttribute("class", "reviews");
 // let div_card = document.createElement("div");
@@ -72,3 +55,21 @@ range.innerText = pro_detail["product_type"];
 // div.append(div_card1);
 // let insert = document.querySelector(".whole");
 // insert.append(div);
+let postBtn = document.getElementById("post");
+postBtn.addEventListener("click", function (e) {
+  e.preventDefault();
+  let array = [];
+  if (localStorage.getItem("reviews") != null) {
+    array = JSON.parse(localStorage.getItem("reviews"));
+  }
+  let customer_reviews = document.getElementById("input_field").value;
+  let login_acc = JSON.parse(localStorage.getItem("login"));
+  let reviews = {
+    customer_reviews,
+    login_acc,
+  };
+
+  array.push(reviews);
+  let stringify = JSON.stringify(array);
+  localStorage.setItem("reviews", stringify);
+});

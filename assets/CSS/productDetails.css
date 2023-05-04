@@ -229,6 +229,7 @@ button:hover {
   width: 400px;
   height: 70px;
 }
+
 .btn button {
   width: 100px;
   height: 30px;
@@ -248,18 +249,38 @@ button:hover {
   transform: scale(1.2);
 }
 .reviews {
-  background-color: #797d7a;
-  border-radius: 10px;
   display: flex;
-  width: 420px;
-  margin-top: 30px;
+  margin-top: 10px;
 }
 .reviews img {
-  margin-top: 20px;
+  margin-top: 30px;
   border-radius: 20%;
 }
 .reviews div {
   padding: 10px;
+}
+.rating_section {
+  margin-top: 20px;
+}
+.whole {
+  display: flex;
+  justify-content: space-around;
+  background-color: #444745;
+  border-radius: 10px;
+  margin-top: 30px;
+  margin-left: 200px;
+  margin-right: 200px;
+}
+.edit_btn {
+  width: 100px;
+  height: 30px;
+}
+.input {
+  width: 500px;
+  height: 150px;
+}
+.btn_div {
+  margin-top: 10px;
 }
 /* cart */
 /*Desktop*/

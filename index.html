@@ -37,12 +37,14 @@
           <li><a href="./Pages/Product.html">Products</a></li>
           <li id="login_btn" onclick="openpopup()"><a>Login/signup</a></li>
           <li class="profile">
-            <img
-              class="pro_img"
-              src="./assets/images/26.png"
-              width="60"
-              height="60"
-            />
+            <a href="./Pages/acc.html">
+              <img
+                src="./assets/images/account profile.jpg"
+                id="show_profile"
+                class="pro_img"
+                width="50"
+                height="50"
+            /></a>
           </li>
         </ul>
       </nav>
@@ -153,6 +155,7 @@
               placeholder="Password"
               required
             />
+            <p class="forget">forgot password?</p>
           </div>
           <div class="form-input">
             <button type="submit" onclick="login()">Login</button>
@@ -161,6 +164,21 @@
         <div class="signup">
           Don't have an account? <a onclick="open_pop()">Sign up</a>
         </div>
+      </div>
+    </div>
+    <div class="forgot_container">
+      <div class="forget_pass">
+        <div><h4>forgot password?</h4></div>
+        <form id="submit_form">
+          <label>Email:</label>
+          <input id="f_email " type="email" />
+          <label>Password:</label>
+          <input id="f_password" type="password" />
+          <label>Confirm Password:</label>
+          <input id="f_confirm_password " type="password" />
+          <button class="submit" type="submit">Submit</button>
+          <button onclick="exit_pop()">Back</button>
+        </form>
       </div>
     </div>
     <div class="one">
@@ -527,6 +545,5 @@
         console.log(data);
       });
     </script>
-    <script src="/assets/js/cart.js"></script>
   </body>
 </html>

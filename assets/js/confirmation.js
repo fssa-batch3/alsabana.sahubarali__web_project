@@ -24,12 +24,12 @@ for (let i = 0; i < product.length; i++) {
     totals = product[i]["cost"];
   }
 }
-let product_name = (document.getElementById("product_name").innerHTML =
+let product_name = (document.getElementById("product_name").innerText =
   pro_name);
-let pro_cost = (document.getElementById("product_cost").innerHTML =
+let pro_cost = (document.getElementById("product_cost").innerText =
   "Rs." + cost);
 let images = (document.getElementById("image").src = image);
-let total = (document.getElementById("totals").innerHTML = "Rs." + cost);
+let total = (document.getElementById("totals").innerText = "Rs." + cost);
 
 let order_id = JSON.parse(localStorage.getItem("order_id"));
 let order_details = JSON.parse(localStorage.getItem("details"));

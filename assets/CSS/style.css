@@ -162,6 +162,43 @@ nav {
 }
 .pro_img {
   display: none;
+  border-radius: 50%;
+}
+.forget {
+  color: #f278a0;
+  font-style: italic;
+}
+.exit_div {
+  display: flex;
+  justify-content: space-around;
+}
+.forgot_container {
+  position: absolute;
+  width: 270px;
+  background-color: white;
+  margin-left: 40%;
+  margin-top: 15%;
+}
+.forgot_container h4 {
+  text-align: center;
+  margin-top: 30px;
+  color: #f278a0;
+}
+.forget_pass input {
+  width: 230px;
+  height: 30px;
+  margin-left: 15px;
+}
+.forget_pass button {
+  width: 100px;
+  height: 10px;
+  font-size: 20px;
+  margin-top: 20px;
+  margin-left: 20px;
+  margin-bottom: 10px;
+}
+.forget_pass label {
+  margin-left: 15px;
 }
 nav li {
   padding-right: 50px;
