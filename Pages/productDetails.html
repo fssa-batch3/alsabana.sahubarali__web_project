@@ -98,43 +98,62 @@
        <a href="../Pages/delivery.html" type="click" id="buy"><button>Buy Now</button></a> 
       </div>
     </div>
-    <!-- Reviews-->
- <div>
-  <!-- <button>RATE PRODUCT</button> -->
-    <form class="input_2">
+    <hr>
+<div id="reviewsAndRatings">
+  <div id="num_reviews">
+    <form class="input_2" id="form_submit">
       <div>
-        <div><h2></h2></div>
-        <input class="input" id="input_field" placeholder="add your review" type="text">
-        <div class="btn_div">
-          <button class="edit_btn">Cancel</button>
-          <button class="edit_btn" id="post" type="click">Post</button>
-        </div>
-    </div> 
-     </form>
- </div>
-<div class="whole">
-  <div class="reviews">
-    <div>
-      <img src="../assets/images/alodia-target.jpeg" width="50" height="50">
-    </div>
-    <div>
-      <h3>alsabana</h3>
-      <p>Review good one usefull product</p>
-      <button class="edit_btn">Edit</button>
-    </div>
-  </div>
-  <div class="rating_section">
-    <div class="star_rating">
-      <div class="userRating">
-        <h2 id="showRating"></h2>
+        <h2>121 reviews</h2>
       </div>
-      <i class="fa-regular">&#9734;</i>
-      <i class="fa-regular">&#9734;</i>
-      <i class="fa-regular">&#9734;</i>
-      <i class="fa-regular">&#9734;</i>
-      <i class="fa-regular">&#9734;</i>
+      <div>
+        <p>Overall ratings</p>
+        <i class="fa-regular">&#9734;</i>
+        <i class="fa-regular">&#9734;</i>
+        <i class="fa-regular">&#9734;</i>
+        <i class="fa-regular">&#9734;</i>
+        <i class="fa-regular">&#9734;</i>
+      </div>
+      <div>
+        <div><h2>WRITE A CUSTOMER REVIEW</h2></div>
+        <div><label>
+          Ratings
+        </label>
+        <select id="select_ratings">
+          <option>Select</option>
+          <option>5 stars-Exellent</option>
+          <option>4 stars-Very Good</option>
+          <option>3 stars-Good</option>
+          <option>2 stars-Not bad</option>
+          <option>1 star-Bad</option>
+        </select></div>
+        <div>
+          <label>Comment</label>
+          <input class="input" id="input_field" placeholder="add your review" type="text">
+        <div class="btn_div">
+          <button class="edit_btn" id="post" type="submit">Submit</button>
+        </div>
+        </div>
+      </div> 
+    </form>
+ </div>
+    <div class="flexible">
+      <div class="whole">
+        <!-- <div class="reviews">
+          <div>
+            <img src="../assets/images/account profile.jpg" width="50px" height="50px">
+          </div>
+          <div>
+            <h3>Alsav=bana</h3>
+            <p>good product</p>
+            <button>Edit</button>
+          </div>
+        </div>
+        <div class="rating_section">
+          <h3>4 stars -good</h3>
+        </div> -->
+      </div>
     </div>
-  </div>
+ 
 </div>
 <script src="/assets/js/confirmation.js" ></script>
   <script src="/assets/js/detail.js"></script>

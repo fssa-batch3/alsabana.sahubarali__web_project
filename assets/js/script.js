@@ -70,12 +70,8 @@ signup?.addEventListener("submit", function (event) {
         seller_array.push(userDetails);
         seller_str = JSON.stringify(seller_array);
         localStorage.setItem("seller", seller_str);
-        alert("You have successfully Registered");
-        localStorage.setItem(
-          "seller_email",
-          JSON.stringify(seller_array["email"])
-        );
-        window.open("../Pages/seller.html");
+        alert("You have successfully Registered please login to your account");
+        // window.open("../Pages/seller.html");
       } else if (
         localStorage.getItem("seller") != null &&
         userDetails.sign_type === "seller"
@@ -84,8 +80,8 @@ signup?.addEventListener("submit", function (event) {
         get_seller.push(userDetails);
         string_seller = JSON.stringify(get_seller);
         localStorage.setItem("seller", string_seller);
-        alert("You have successfully Registered as a seller");
-        window.open("../Pages/seller.html");
+        alert("You have successfully Registered please login to your account");
+        // window.open("../Pages/seller.html");
 
         location.reload();
       } else {
@@ -106,18 +102,27 @@ function checkUser(phn, email) {
   }
   let check = false;
   let findUser = user.find((e) => {
-    if (e["email"] == email || phn == e["phoneNo"]) {
+    if (e["email"] == email) {
       check = true;
-      alert("Email or phone number already Exist");
+      alert("Email already Exist");
+      return true;
+    }
+    if (phn == e["phoneNo"]) {
+      check = true;
+      alert("Phone number already exist");
       return true;
     }
   });
 
   let findSeller = seller.find((e) => {
-    if (e["email"] == email || phn == e["phoneNo"]) {
+    if (e["email"] == email) {
       check = true;
-      alert("please check your details");
+      alert("Email already exist");
       return true;
+    }
+    if (phn == e["phoneNo"]) {
+      check = true;
+      alert("Phone number Already exist");
     }
   });
   return check;

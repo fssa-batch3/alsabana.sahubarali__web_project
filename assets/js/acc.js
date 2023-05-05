@@ -74,25 +74,14 @@ let logout = document.getElementById("logOut");
 logout.addEventListener("click", function (e) {
   localStorage.removeItem("login");
 });
-let orders = JSON.parse(localStorage.getItem("details"));
-let login_account = JSON.parse(localStorage.getItem("login"));
-let matched_orders;
-let find_orders = orders.find(function (e) {
-  let order_login = e["login_id"];
-  if (login_account == order_login) {
-    matched_orders = orders.filter(
-      (get) => get["order_login"] == login_account
-    );
-  }
-  console.log(matched_orders);
-});
-for (let i = 0; i < matched_orders.length; i++) {
+
+for (let i = 0; i < find_orders.length; i++) {
   let div_card = document.createElement("div");
   div_card.setAttribute("class", "order-container");
   let div_card1 = document.createElement("div");
   div_card.append(div_card1);
   let img_tag = document.createElement("img");
-  img_tag.setAttribute("src", matched_orders[i]["image"]);
+  img_tag.setAttribute("src", find_orders[i]["image"]);
   img_tag.setAttribute("class", "image");
   img_tag.setAttribute("width", "100");
   img_tag.setAttribute("height", "110");
@@ -100,12 +89,12 @@ for (let i = 0; i < matched_orders.length; i++) {
   let div_card2 = document.createElement("div");
   div_card.append(div_card2);
   let h4_tag = document.createElement("h4");
-  h4_tag.innerText = matched_orders[i]["productName"];
+  h4_tag.innerText = find_orders[i]["productName"];
   div_card2.append(h4_tag);
   let div_card3 = document.createElement("div");
   div_card.append(div_card3);
   let h5_tag = document.createElement("h5");
-  h5_tag.innerText = "Rs." + matched_orders[i]["cost"];
+  h5_tag.innerText = "Rs." + find_orders[i]["cost"];
   div_card3.append(h5_tag);
   let div_card4 = document.createElement("div");
   div_card.append(div_card4);
@@ -114,7 +103,7 @@ for (let i = 0; i < matched_orders.length; i++) {
   span_tag.setAttribute("class", "dot");
   div_card4.append(span_tag);
   let span1_tag = document.createElement("span");
-  span1_tag.innerText = "Delivered by" + matched_orders[i]["delivery_date"];
+  span1_tag.innerText = "Delivered by" + find_orders[i]["delivery_date"];
   div_card4.append(span1_tag);
   let p_tag = document.createElement("p");
   p_tag.innerText = "Your product has been delivered";

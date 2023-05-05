@@ -2,6 +2,7 @@
 
 body {
   font-family: "Poppins", sans-serif;
+  overflow-x: hidden;
 }
 
 .navbar {
@@ -222,23 +223,11 @@ button:hover {
 .box {
   font-size: 27px;
 }
-.input {
-  width: 300px;
-}
-.input input {
-  width: 400px;
-  height: 70px;
-}
-
 .btn button {
   width: 100px;
   height: 30px;
   margin-left: 10px;
   margin-top: 10px;
-}
-.rating_section {
-  margin-top: 10%;
-  margin-left: 50px;
 }
 .fa-regular {
   cursor: pointer;
@@ -259,30 +248,48 @@ button:hover {
 .reviews div {
   padding: 10px;
 }
+#num_reviews {
+  margin-left: 60px;
+  padding: 30px;
+  border: 1px solid black;
+}
 .rating_section {
   margin-top: 20px;
+  margin-right: 30px;
+}
+.flexible {
+  display: flex;
+  flex-wrap: wrap;
 }
 .whole {
   display: flex;
-  justify-content: space-around;
-  background-color: #444745;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  background-color: rgb(245, 240, 240);
   border-radius: 10px;
-  margin-top: 30px;
+  margin-top: 50px;
   margin-left: 200px;
   margin-right: 200px;
+  height: 180px;
 }
 .edit_btn {
   width: 100px;
   height: 30px;
 }
 .input {
-  width: 500px;
-  height: 150px;
+  margin-top: 10px;
+  width: 300px;
+  height: 100px;
 }
 .btn_div {
   margin-top: 10px;
 }
+#reviewsAndRatings {
+  display: flex;
+  justify-content: space-between;
+}
 /* cart */
+
 /*Desktop*/
 @media (min-width: 600px) {
   .navbar .navbar-item {
