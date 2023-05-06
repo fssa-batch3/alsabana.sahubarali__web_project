@@ -8,7 +8,7 @@ function createUserCard(arr) {
     let div_card2 = document.createElement("div");
     div_card1.append(div_card2);
     let image_card = document.createElement("img");
-    image_card.setAttribute("src", "../assets/images/alovera.png");
+    image_card.setAttribute("src", arr[i]["image"]);
     image_card.setAttribute("alt", "image");
     div_card2.append(image_card);
     let div_card3 = document.createElement("div");

@@ -61,6 +61,7 @@ signup?.addEventListener("submit", function (event) {
         localStorage.setItem("userData", stringArray);
         alert("You have successfully Registered Please login your account");
         // window.open("/Pages/Product.html");
+        location.reload();
       }
       if (
         localStorage.getItem("seller") === null &&
@@ -71,7 +72,7 @@ signup?.addEventListener("submit", function (event) {
         seller_str = JSON.stringify(seller_array);
         localStorage.setItem("seller", seller_str);
         alert("You have successfully Registered please login to your account");
-        // window.open("../Pages/seller.html");
+        location.reload();
       } else if (
         localStorage.getItem("seller") != null &&
         userDetails.sign_type === "seller"
@@ -81,7 +82,7 @@ signup?.addEventListener("submit", function (event) {
         string_seller = JSON.stringify(get_seller);
         localStorage.setItem("seller", string_seller);
         alert("You have successfully Registered please login to your account");
-        // window.open("../Pages/seller.html");
+        location.reload();
 
         location.reload();
       } else {

@@ -75,6 +75,12 @@ logout.addEventListener("click", function (e) {
   localStorage.removeItem("login");
 });
 
+let login_acc = JSON.parse(localStorage.getItem("login"));
+let order_details = JSON.parse(localStorage.getItem("details"));
+let find_orders = order_details.filter(
+  (logid) => login_acc == logid["login_id"]
+);
+
 for (let i = 0; i < find_orders.length; i++) {
   let div_card = document.createElement("div");
   div_card.setAttribute("class", "order-container");

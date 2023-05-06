@@ -46,8 +46,8 @@
           <a href="#"><h3>Contact us</h3></a>
         </div>
         <div>
-          <a href="/index.html">
-            <h3><i class="fa fa-sign-out"></i>Log out</h3></a
+          <a href="#">
+            <h3 id="log_Out"><i class="fa fa-sign-out"></i>Log out</h3></a
           >
         </div>
       </div>
@@ -57,10 +57,10 @@
       <section>
         <img id="user_img" width="200" height="200" alt="image" />
         <h3>Profile Information</h3>
-        <p>Name: Sabana</p>
-        <p>Email: sabin.@example.com</p>
-        <p>Phone: 555-555-5555</p>
-        <p>Address:pallivasal Street</p>
+        <p>Name:<span id="detail_name"> Sabana</span></p>
+        <p>Email:<span id="detail_email">sabin.@example.com</span></p>
+        <p>Phone:<span id="detail_num"> 555-555-5555</span></p>
+        <p>Address:<span id="detail_address">pallivasal Street</span></p>
       </section>
       <section>
         <h3>Account Settings, You can Edit your Account</h3>
@@ -98,11 +98,13 @@
           <label for="address">Pickup Address:</label>
           <input for="address" id="address" type="text" />
           <br /><br />
+          <label for="company_name">Company Name</label>
+          <input for="company_name" id="company_name" type="text" />
+          <br /><br />
           <input type="submit" value="Save" />
           <button id="delete">DELETE</button>
         </form>
       </section>
-
       <footer>
         <p>&copy; 2023 Healthy hair</p>
       </footer>
@@ -117,22 +119,35 @@
           return true;
         }
       });
-      const email = document.getElementById("email");
-      const num = document.getElementById("phone");
-      const name = document.getElementById("name");
-      const address = document.getElementById("address");
+
+      let email = document.getElementById("email");
+      let num = document.getElementById("phone");
+      let name = document.getElementById("name");
+      let address = document.getElementById("address");
+      let detail_name = document.getElementById("detail_name");
+      detail_name.innerText = select_user["username"];
+      let detail_email = document.getElementById("detail_email");
+      detail_email.innerText = select_user["email"];
+      let detail_num = document.getElementById("detail_num");
+      detail_num.innerText = select_user["phoneNo"];
+      let detail_address = document.getElementById("detail_address");
+      detail_address.innerText = select_user["address"];
+
       let username = document.getElementById("user_name");
       username.innerText = select_user["username"];
       let user_img = document.getElementById("user_img");
       user_img.setAttribute("src", select_user["image"]);
+      let company_name = document.getElementById("company_name");
+      company_name.innerText = select_user["company_name"];
 
       email.value = select_user["email"];
       num.value = select_user["phoneNo"];
       name.value = select_user["username"];
       address.value = select_user["address"];
+      company_name.value = select_user["company_name"];
+      user_img.src = select_user["image"];
 
       const form = document.getElementById("acc_form");
-
       form.addEventListener("submit", function (event) {
         event.preventDefault();
         let name = document.getElementById("name").value;
@@ -140,13 +155,14 @@
         let num = document.getElementById("phone").value;
         let address = document.getElementById("address").value;
         let image = document.getElementById("image").value;
-
+        let company_name = document.getElementById("company_name").value;
         let data = {
           name,
           email,
           num,
           address,
           image,
+          company_name,
         };
         const combineData = Object.assign(select_user, data);
         let find = sellerData.indexOf(select_user);
@@ -168,6 +184,13 @@
           localStorage.setItem("seller", JSON.stringify(sellerData));
         }
       });
+
+      let logout = document.getElementById("log_Out");
+      logout.addEventListener("click", function (e) {
+        localStorage.removeItem("login");
+        window.open("/index.html");
+      });
     </script>
+    <script src="/assets/js/sellerAdd.js"></script>
   </body>
 </html>
