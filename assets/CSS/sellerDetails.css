@@ -1,0 +1,73 @@
+body {
+  padding: 0px;
+  font-family: "Alegreya", serif;
+  border: 1px solid black;
+}
+table {
+  font-size: 18px;
+  font-weight: 500;
+}
+table {
+  margin-left: 10px;
+}
+.table-user-information > tbody > tr {
+  border-top: 1px solid #ccc;
+}
+.panel-body {
+  margin-top: 100px;
+  /* margin-left: 30%; */
+}
+.alter {
+  width: 230px;
+}
+.panel {
+  margin-top: 50px;
+}
+.main-details {
+  display: flex;
+  width: max-content;
+  gap: 100px;
+  margin-left: 59px;
+}
+input,
+textarea {
+  background-color: transparent;
+  border: none;
+}
+.img-circle {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+}
+button {
+  width: 50px;
+  padding: 5px;
+}
+button:hover {
+  transform: scale(1.05);
+}
+.product-listing-1 {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  flex-direction: column;
+  text-align: center;
+  font-size: 15px;
+  padding: 10px;
+  margin-bottom: 40px;
+}
+.products {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+.listing-1 {
+  background-color: rgb(14, 14, 14);
+  color: white;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 10px 20px 10px gray;
+}
+.products a {
+  text-decoration: none;
+}

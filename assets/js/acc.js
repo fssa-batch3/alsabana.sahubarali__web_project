@@ -73,15 +73,19 @@ delete_user.addEventListener("click", function (event) {
 let logout = document.getElementById("logOut");
 logout.addEventListener("click", function (e) {
   localStorage.removeItem("login");
+  window.open("/index.html");
 });
 
 let login_acc = JSON.parse(localStorage.getItem("login"));
 let order_details = JSON.parse(localStorage.getItem("details"));
-let find_orders = order_details.filter(
+let find_orders = order_details?.filter(
   (logid) => login_acc == logid["login_id"]
 );
-
-for (let i = 0; i < find_orders.length; i++) {
+if (find_orders == null) {
+  let order_result = document.getElementById("no_order");
+  order_result.innerText = "There is no order history";
+}
+for (let i = 0; i < find_orders?.length; i++) {
   let div_card = document.createElement("div");
   div_card.setAttribute("class", "order-container");
   let div_card1 = document.createElement("div");

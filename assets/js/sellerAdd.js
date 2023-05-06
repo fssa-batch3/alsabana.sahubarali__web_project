@@ -1,9 +1,7 @@
 let arr = JSON.parse(localStorage.getItem("proObject"));
 let login_email = JSON.parse(localStorage.getItem("login"));
 
-let show_product = arr.filter(
-  (product) => login_email == product["login_email"]
-);
+let show_product = arr.filter((product) => login_email == product["login_id"]);
 console.log(show_product);
 
 for (let i = 0; i < show_product.length; i++) {

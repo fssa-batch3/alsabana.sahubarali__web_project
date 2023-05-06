@@ -40,7 +40,7 @@
         if (localStorage.getItem("proObject") != null) {
           productArray = JSON.parse(localStorage.getItem("proObject"));
         }
-        let login_email = JSON.parse(localStorage.getItem("login"));
+        let login_id = JSON.parse(localStorage.getItem("login"));
         let product_type = document.getElementById("product_type").value;
         let product_detail = document.getElementById("product_detail").value;
         let productName = document.getElementById("pName").value;
@@ -54,7 +54,7 @@
           cost,
           image: { src, alt },
           id: Date.now(),
-          login_email,
+          login_id,
         };
         productArray.push(proObject);
         stringProduct = JSON.stringify(productArray);

@@ -53,6 +53,7 @@ signup?.addEventListener("submit", function (event) {
     sign_type,
   };
   let check = checkUser(phoneNo, email);
+
   if (check == false) {
     if (userDetails.password == userDetails.confirmPassword) {
       if (userDetails.sign_type === "customer") {
@@ -60,7 +61,6 @@ signup?.addEventListener("submit", function (event) {
         stringArray = JSON.stringify(arrayOfUserDetails);
         localStorage.setItem("userData", stringArray);
         alert("You have successfully Registered Please login your account");
-        // window.open("/Pages/Product.html");
         location.reload();
       }
       if (
@@ -83,12 +83,13 @@ signup?.addEventListener("submit", function (event) {
         localStorage.setItem("seller", string_seller);
         alert("You have successfully Registered please login to your account");
         location.reload();
-
-        location.reload();
-      } else {
-        alert("Please Check Your Details");
       }
+    } else {
+      alert("Please Check Your Details");
     }
+    // else {
+    //   alert("check your password");
+    // }
   }
 });
 // function check user
@@ -145,9 +146,10 @@ loginForm?.addEventListener("submit", function (event) {
         window.open("/Pages/Product.html");
         localStorage.setItem("login", JSON.stringify(user["u_id"]));
         return isExist;
+      } else {
+        alert("password not match");
+        return isExist;
       }
-      alert("password not match");
-      return isExist;
     }
     return isExist;
   });
@@ -158,8 +160,10 @@ loginForm?.addEventListener("submit", function (event) {
         if (password === user["password"]) {
           alert("successfully seller loged in");
           window.location.href = "../Pages/sellerAdd.html";
-          localStorage.setItem("login", JSON.stringify(user["email"]));
+          localStorage.setItem("login", JSON.stringify(user["u_id"]));
           return isExist;
+        } else {
+          alert("password not match");
         }
       }
       return isExist;
@@ -208,8 +212,7 @@ if (logged != null) {
   nav.style.marginRight = "100px";
 }
 
-let show_profile = document.getElementById("show_profile");
-let user = JSON.parse(localStorage.getItem("userData"));
-
-let log_user = user.find((obj) => logged == obj["u_id"]);
-show_profile.setAttribute("src", log_user["image"]);
+// let show_profile = document.getElementById("show_profile");
+// let user = JSON.parse(localStorage.getItem("userData"));
+// let log_user = user.find((obj) => logged == obj["u_id"]);
+// show_profile.setAttribute("src", log_user["image"]);
