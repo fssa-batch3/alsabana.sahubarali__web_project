@@ -178,6 +178,7 @@ nav {
   background-color: white;
   margin-left: 40%;
   margin-top: 15%;
+  visibility: hidden;
 }
 .forgot_container h4 {
   text-align: center;

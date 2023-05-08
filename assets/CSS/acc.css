@@ -35,8 +35,6 @@ nav li {
 }
 .fst-container {
   display: flex;
-
-  /* background-color: rgb(124, 124, 123); */
   margin-top: 140px;
   margin-left: 50px;
   width: 300px;
@@ -232,7 +230,6 @@ a {
   .navbar-btn {
     border: none;
     background: none;
-    /* border: 1px solid white; */
     padding: 5px;
     position: absolute;
     right: 0;

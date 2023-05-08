@@ -19,7 +19,25 @@ payment_form.addEventListener("submit", function (event) {
       return true;
     }
   });
-
+  const today = new Date();
+  const year = today.getFullYear();
+  let month = today.getMonth() + 1;
+  let day = today.getDate();
+  if (day <= 28) {
+    day = day + 2;
+  }
+  if (day > 28) {
+    day = 30 - 28;
+    month = month + 1;
+  }
+  // add leading zero if month or day is a single digit
+  if (month < 10) {
+    month = "0" + month;
+  }
+  if (day < 10) {
+    day = "0" + day;
+  }
+  let currentDate = `${year}-${month}-${day}`;
   let card_name = document.getElementById("name").value;
   let card_number = document.getElementById("number").value;
   let date = document.getElementById("date").value;
@@ -36,7 +54,7 @@ payment_form.addEventListener("submit", function (event) {
     productName,
     cost,
     image,
-    delivery_date: new Date(),
+    currentDate,
   };
 
   let pay = Object.assign(find_id, new_obj);

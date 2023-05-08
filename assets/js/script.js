@@ -69,7 +69,7 @@ signup?.addEventListener("submit", function (event) {
       ) {
         let seller_array = [];
         seller_array.push(userDetails);
-        seller_str = JSON.stringify(seller_array);
+        let seller_str = JSON.stringify(seller_array);
         localStorage.setItem("seller", seller_str);
         alert("You have successfully Registered please login to your account");
         location.reload();
@@ -79,7 +79,7 @@ signup?.addEventListener("submit", function (event) {
       ) {
         let get_seller = JSON.parse(localStorage.getItem("seller"));
         get_seller.push(userDetails);
-        string_seller = JSON.stringify(get_seller);
+        let string_seller = JSON.stringify(get_seller);
         localStorage.setItem("seller", string_seller);
         alert("You have successfully Registered please login to your account");
         location.reload();
@@ -103,7 +103,7 @@ function checkUser(phn, email) {
     seller = JSON.parse(localStorage.getItem("seller"));
   }
   let check = false;
-  let findUser = user.find((e) => {
+  user.find((e) => {
     if (e["email"] == email) {
       check = true;
       alert("Email already Exist");
@@ -116,7 +116,7 @@ function checkUser(phn, email) {
     }
   });
 
-  let findSeller = seller.find((e) => {
+  seller.find((e) => {
     if (e["email"] == email) {
       check = true;
       alert("Email already exist");
@@ -154,7 +154,7 @@ loginForm?.addEventListener("submit", function (event) {
     return isExist;
   });
   if (isExist == false) {
-    const seller = find_seller?.find(function (user) {
+    find_seller?.find(function (user) {
       if (email === user["email"]) {
         isExist = true;
         if (password === user["password"]) {
@@ -184,23 +184,23 @@ loginForm?.addEventListener("submit", function (event) {
 
 //forgot password
 
-let form = document.getElementById("submit_form");
-form.addEventListener("submit", function (e) {
-  e.preventDefault();
+// let form = document.getElementById("submit_form");
+// form.addEventListener("submit", function (e) {
+//   e.preventDefault();
 
-  let forgotEmail = document.getElementById("f_email").value;
-  let forgotPass = document.getElementById("f_password").value;
-  let forgotCpass = document.getElementById("f_confirm_password").value;
+//   let forgotEmail = document.getElementById("f_email").value;
+//   let forgotPass = document.getElementById("f_password").value;
+//   let forgotCpass = document.getElementById("f_confirm_password").value;
 
-  let userDetails = JSON.parse(localStorage.getItem("userData"));
+//   let userDetails = JSON.parse(localStorage.getItem("userData"));
 
-  let get_email = userDetails.find(function (obj) {
-    if (forgotEmail === obj["email"]) {
-      return true;
-    }
-  });
-  console.log(get_email);
-});
+//   let get_email = userDetails.find(function (obj) {
+//     if (forgotEmail === obj["email"]) {
+//       return true;
+//     }
+//   });
+//   console.log(get_email);
+// });
 
 let logged = JSON.parse(localStorage.getItem("login"));
 let login_btn = document.getElementById("login_btn");
@@ -212,7 +212,7 @@ if (logged != null) {
   nav.style.marginRight = "100px";
 }
 
-// let show_profile = document.getElementById("show_profile");
-// let user = JSON.parse(localStorage.getItem("userData"));
-// let log_user = user.find((obj) => logged == obj["u_id"]);
-// show_profile.setAttribute("src", log_user["image"]);
+let show_profile = document.getElementById("show_profile");
+let user = JSON.parse(localStorage.getItem("userData"));
+let log_user = user.find((obj) => logged == obj["u_id"]);
+show_profile.setAttribute("src", log_user["image"]);

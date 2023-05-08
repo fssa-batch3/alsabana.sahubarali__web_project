@@ -10,10 +10,10 @@ let pro_detail = products.find(function (event) {
 });
 let range = document.getElementById("range");
 let pic = document.getElementById("imgs");
-let productname = document.getElementById("pro_name");
+let product_name = document.getElementById("pro_name");
 let product_price = document.getElementById("pro_cost");
 let description = document.getElementById("description");
-productname.innerText = pro_detail["productName"];
+product_name.innerText = pro_detail["productName"];
 product_price.innerText = "₹" + pro_detail["cost"];
 description.innerText = pro_detail["product_detail"];
 pic.setAttribute("src", pro_detail["image"]["src"]);
@@ -23,8 +23,14 @@ let reviews = JSON.parse(localStorage.getItem("reviews"));
 let products_id = window.location.search;
 let parameter = new URLSearchParams(products_id);
 let search_id = product_params.get("id");
-let cus_reviews = reviews.filter((id) => search_id == id["product_id"]);
-for (let i = 0; i < cus_reviews.length; i++) {
+let cus_reviews = reviews?.filter((id) => search_id == id["product_id"]);
+
+if (cus_reviews == null) {
+  let no_reviews = document.getElementById("no_reviews");
+  no_reviews.innerText = "No Reviews";
+}
+
+for (let i = 0; i < cus_reviews?.length; i++) {
   let div = document.createElement("div");
   div.setAttribute("class", "reviews");
   let div_card = document.createElement("div");
@@ -63,7 +69,7 @@ postBtn.addEventListener("submit", function (e) {
   if (localStorage.getItem("reviews") != null) {
     array = JSON.parse(localStorage.getItem("reviews"));
   }
-  let product_id = product_params.get("id");
+  let id_product = product_params.get("id");
   let login_acc = JSON.parse(localStorage.getItem("login"));
   let userData = JSON.parse(localStorage.getItem("userData"));
   let find_user = userData.find(function (login) {
@@ -82,7 +88,7 @@ postBtn.addEventListener("submit", function (e) {
     ratings,
     username,
     image,
-    product_id,
+    id_product,
   };
 
   array.push(reviews);

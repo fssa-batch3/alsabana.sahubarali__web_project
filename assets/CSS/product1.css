@@ -98,9 +98,10 @@ button:hover {
   padding: 50px;
   margin-left: 37%;
   display: flex;
+  flex-wrap: wrap;
 }
 .arrow {
-  margin-top: 13px;
+  margin-top: 20px;
   margin-left: -40px;
 }
 .box {
@@ -149,10 +150,6 @@ button:hover {
   border: 2px solid rgba(0, 0, 0, 1);
   padding: 5px;
 }
-.cart-quantity {
-  width: 150px;
-  height: 30px;
-}
 .detail-box {
   display: grid;
   row-gap: 0.5rem;
@@ -176,6 +173,8 @@ button:hover {
   width: 2.4rem;
   text-align: center;
   font-size: 1rem;
+  width: 150px;
+  height: 30px;
 }
 .cart-remove {
   font-size: 23px;
@@ -229,16 +228,6 @@ button {
 }
 button:hover {
   transform: scale(1.2);
-}
-.btn {
-  padding: 50px;
-  margin-left: 37%;
-  display: flex;
-  flex-wrap: wrap;
-}
-.arrow {
-  margin-top: 10px;
-  margin-left: -40px;
 }
 /* cart */
 footer {

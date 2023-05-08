@@ -86,28 +86,8 @@
       <div class="list">
         <h2>OUR PRODUCT LIST</h2>
       </div>
-      <!-- <div class="btn">
-        <a href="../Pages/update.html"> <button class="add">ADD</button></a>
-      </div> -->
       <div class="products" id="app">
-        <div class="product-listing-1">
-          <!-- <div class="listing-1">
-          <div>
-            <img
-              src="../assets/images/sample 1.png"
-              alt="image"
-              width="250"
-              height="250"
-            />
-          </div>
-          <div>
-            <h3>Serum for dry hair-100ml</h3>
-            <h5>Rs.399</h5>
-            <button>EDIT</button>
-            <a href="./upPro.html"><button id="delete">Delete</button></a>
-          </div>
-        </div> -->
-        </div>
+        <div class="product-listing-1"></div>
       </div>
     </div>
     <script>
@@ -141,20 +121,6 @@
         let h5_tag = document.createElement("h5");
         div2.append(h5_tag);
         h5_tag.innerText = " Rs. " + arr[i].cost;
-        //button tag
-        // let anchor = document.createElement("a");
-        // anchor.setAttribute("class", "edit_btn");
-        // anchor.setAttribute("href", "./upPro.html?id=" + arr[i].productName);
-        // anchor.innerText = "EDIT";
-        // div2.append(anchor);
-        // let delete_button = document.createElement("a");
-        // delete_button.setAttribute("class", "edit_btn");
-        // delete_button.innerText = "Edit";
-        // delete_button.setAttribute(
-        //   "href",
-        //   "./upPro.html?id=" + arr[i].productName
-        // );
-        // div2.append(delete_button);
         let insert_div = document.getElementById("app");
         insert_div.append(div_card);
       }

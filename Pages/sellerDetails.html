@@ -128,18 +128,14 @@
       let search = new URLSearchParams(id);
       let get_id = search.get("id");
       let total_products = JSON.parse(localStorage.getItem("proObject"));
-      let selled_product = total_products.find(function (pro) {
-        let prod = pro["login_id"];
-        if (get_id == prod) {
-          return true;
-        }
-      });
-      console.log(selled_product);
+      var selled_product = total_products.filter(
+        (pro) => get_id == pro["login_id"]
+      );
       if (selled_product == null) {
         let pro_result = document.getElementById("noPro");
         pro_result.innerText = "No products";
       }
-      for (let i = 0; i < selled_product; i++) {
+      for (let i = 0; i < selled_product.length; i++) {
         let anger_tag = document.createElement("a");
         anger_tag.setAttribute(
           "href",
@@ -184,5 +180,6 @@
         insert_div.append(anger_tag);
       }
     </script>
+    <script src="/assets/js/customerDetail.js"></script>
   </body>
 </html>

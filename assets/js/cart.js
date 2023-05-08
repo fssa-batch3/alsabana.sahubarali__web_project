@@ -112,7 +112,7 @@ let finded_product = getCartItems?.find(function (user) {
     );
   }
 });
-for (let i = 0; i < matched_products.length; i++) {
+for (let i = 0; i < matched_products?.length; i++) {
   let div_card = document.createElement("div");
   div_card.setAttribute("class", "cart-box");
   let card_img = document.createElement("img");
