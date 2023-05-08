@@ -26,7 +26,6 @@ body {
   right: 0;
   left: 0;
   color: #000;
-  /* border-bottom: 1px solid black; */
 }
 nav ul {
   margin-top: 20px;
@@ -35,7 +34,6 @@ nav li {
   padding-right: 50px;
   font-size: 50px;
   font-weight: bold;
-  font-family: cambria;
   cursor: pointer;
   color: black;
 }

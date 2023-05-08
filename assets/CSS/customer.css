@@ -31,7 +31,6 @@ nav a {
 nav a:hover {
   color: #f1f1f1;
 }
-
 .help_div {
   border-top: 1px solid rgb(245, 242, 242);
   margin-top: 100%;
@@ -57,7 +56,6 @@ nav a:hover {
   margin-left: 13.5%;
   justify-content: space-between;
   gap: 15px;
-  /* margin-top: 30px; */
 }
 .whole_card {
   background-color: rgb(12, 12, 12);
@@ -78,7 +76,6 @@ form input {
   height: 30px;
   width: 200px;
   margin-top: 10px;
-  /* margin-left: 18px; */
 }
 label {
   margin-left: 18px;

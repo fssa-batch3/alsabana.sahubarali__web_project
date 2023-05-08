@@ -34,7 +34,6 @@ nav li {
   padding-right: 50px;
   font-size: 50px;
   font-weight: bold;
-  font-family: cambria;
   cursor: pointer;
   color: black;
 }
@@ -114,7 +113,6 @@ nav li {
 .cart-quantity {
   border: 1px solid rgba(0, 0, 0, 1);
   outline: none;
-  width: 2.4rem;
   text-align: center;
   font-size: 1rem;
   width: 150px;

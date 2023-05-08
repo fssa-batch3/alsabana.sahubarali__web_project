@@ -19,7 +19,6 @@ nav li {
   padding-right: 50px;
   font-size: 50px;
   font-weight: bold;
-  font-family: cambria;
   cursor: pointer;
   color: black;
 }
@@ -83,16 +82,6 @@ nav li {
 }
 .long-1 img {
   border-radius: 10px;
-}
-button {
-  width: 200px;
-  height: 50px;
-  background-color: rgb(11, 11, 11);
-  color: white;
-  border-radius: 10px;
-}
-button:hover {
-  transform: scale(1.2);
 }
 .btn {
   padding: 50px;
@@ -234,12 +223,9 @@ footer {
   font-family: "Poppins", sans-serif;
   font-size: 15px;
   padding: 10px;
-
   background-color: black;
   color: white;
-  /* height: 250px; */
   margin-top: -8px;
-
   border: 1px solid gray;
 }
 .flip {

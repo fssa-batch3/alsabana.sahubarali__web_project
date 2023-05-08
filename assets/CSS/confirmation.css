@@ -35,7 +35,6 @@ nav li {
   padding-right: 50px;
   font-size: 50px;
   font-weight: bold;
-  font-family: cambria;
   cursor: pointer;
   color: black;
 }
@@ -89,10 +88,6 @@ nav li {
   border: 2px solid rgba(0, 0, 0, 1);
   padding: 5px;
 }
-.cart-quantity {
-  width: 150px;
-  height: 30px;
-}
 .detail-box {
   display: grid;
   row-gap: 0.5rem;
@@ -113,9 +108,10 @@ nav li {
 .cart-quantity {
   border: 1px solid rgba(0, 0, 0, 1);
   outline: none;
-  width: 2.4rem;
   text-align: center;
   font-size: 1rem;
+  width: 150px;
+  height: 30px;
 }
 .cart-remove {
   font-size: 23px;
