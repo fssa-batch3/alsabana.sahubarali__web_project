@@ -45,8 +45,7 @@ form.addEventListener("submit", function (event) {
     phoneNo,
     password,
     address,
-    image:
-      "https://e7.pngegg.com/pngimages/799/987/png-clipart-computer-icons-avatar-icon-design-avatar-heroes-computer-wallpaper.png",
+    image,
   };
 
   const combineData = Object.assign(select_user, newData);

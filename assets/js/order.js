@@ -22,7 +22,7 @@ form.addEventListener("submit", function (event) {
       order_id,
     };
   customer_details.push(details);
-  stringDetail = JSON.stringify(customer_details);
+  let stringDetail = JSON.stringify(customer_details);
   localStorage.setItem("details", stringDetail);
   localStorage.setItem("order_id", JSON.stringify(order_id));
   window.location.href = "../Pages/check.html";

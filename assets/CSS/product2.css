@@ -79,12 +79,6 @@ nav li {
   padding: 30px;
   font-size: 20px;
 }
-button {
-  width: 200px;
-  height: 50px;
-  border-radius: 10px;
-  font-size: 20px;
-}
 h5 {
   font-weight: bold;
   font-size: 18px;
@@ -135,10 +129,7 @@ h5 {
   border: 2px solid rgba(0, 0, 0, 1);
   padding: 5px;
 }
-.cart-quantity {
-  width: 150px;
-  height: 30px;
-}
+
 .detail-box {
   display: grid;
   row-gap: 0.5rem;
@@ -159,9 +150,10 @@ h5 {
 .cart-quantity {
   border: 1px solid rgba(0, 0, 0, 1);
   outline: none;
-  width: 2.4rem;
   text-align: center;
   font-size: 1rem;
+  width: 150px;
+  height: 30px;
 }
 .cart-remove {
   font-size: 23px;

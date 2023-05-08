@@ -1,6 +1,6 @@
-const btnCart = document.querySelector(".count");
-const cart = document.querySelector(".cart");
-const btnClose = document.querySelector("#cart-close");
+let btnCart = document.querySelector(".count");
+let cart = document.querySelector(".cart");
+let btnClose = document.querySelector("#cart-close");
 
 btnCart.addEventListener("click", () => {
   cart.classList.add("cart-active");
@@ -44,8 +44,8 @@ function removeItem() {
     quantity: 1,
   };
   let checkQty = JSON.parse(localStorage.getItem("items"));
-  for (var i = 0; i < checkQty?.length; i++) {
-    var key = checkQty[i];
+  for (let i = 0; i < checkQty?.length; i++) {
+    let key = checkQty[i];
     if (key.title == items.title) {
       checkQty.splice(i, 1);
       localStorage.setItem("items", JSON.stringify(checkQty));
@@ -75,9 +75,9 @@ function addCart() {
     product_id: login_uid,
   };
   let checkQty = JSON.parse(localStorage.getItem("items"));
-  for (var i = 0; i < checkQty?.length; i++) {
-    var key = checkQty[i];
-    var haveTitle = true;
+  for (let i = 0; i < checkQty?.length; i++) {
+    let key = checkQty[i];
+    let haveTitle = true;
     if (key.title == items.title) {
       key.quantity += items.quantity;
       localStorage.setItem("items", JSON.stringify(checkQty));

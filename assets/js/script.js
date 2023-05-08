@@ -27,7 +27,7 @@ function exit_popup() {
   pop_up.classList.remove("sign-block");
 }
 ///my signup
-let checker = false;
+let check = false;
 const signup = document.getElementById("signUp");
 signup?.addEventListener("submit", function (event) {
   event.preventDefault();
@@ -135,7 +135,7 @@ loginForm?.addEventListener("submit", function (event) {
   let isExist = false;
   let find_customer = JSON.parse(localStorage.getItem("userData"));
   let find_seller = JSON.parse(localStorage.getItem("seller"));
-  const find = find_customer?.find(function (user) {
+  find_customer?.find(function (user) {
     if (email === user["email"]) {
       isExist = true;
       if (password === user["password"]) {

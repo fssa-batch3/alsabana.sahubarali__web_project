@@ -40,7 +40,6 @@ function productDiv(products, id) {
     //h5 tag
     let h5_tag = document.createElement("h5");
     h5_tag.innerText = products[i].cost;
-    // h5_tag.innerText = "Rs.";
     h5_tag.setAttribute("class", "product-cost");
     div2.append(h5_tag);
     //button tag
