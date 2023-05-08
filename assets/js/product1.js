@@ -17,7 +17,6 @@ let ayurvedic = get_product1.filter(
 productDiv2(ayurvedic, ".products");
 function productDiv2(products, id) {
   for (let i = 0; i < products.length; i++) {
-    let name = products[i];
     let anger_tag = document.createElement("a");
     anger_tag.setAttribute(
       "href",

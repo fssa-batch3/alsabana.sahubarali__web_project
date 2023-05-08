@@ -1,6 +1,6 @@
 let buy_btn = document.getElementById("buy");
 buy_btn?.addEventListener("click", function () {
-  alert("hi");
+  alert("successfully clicked");
   const product_id = window.location.search;
   const product_params = new URLSearchParams(product_id);
   const get_details = product_params.get("id");

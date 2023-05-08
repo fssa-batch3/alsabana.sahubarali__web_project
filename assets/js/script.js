@@ -87,9 +87,6 @@ signup?.addEventListener("submit", function (event) {
     } else {
       alert("Please Check Your Details");
     }
-    // else {
-    //   alert("check your password");
-    // }
   }
 });
 // function check user
@@ -181,26 +178,6 @@ loginForm?.addEventListener("submit", function (event) {
     alert("Invalid user crentials");
   }
 });
-
-//forgot password
-
-// let form = document.getElementById("submit_form");
-// form.addEventListener("submit", function (e) {
-//   e.preventDefault();
-
-//   let forgotEmail = document.getElementById("f_email").value;
-//   let forgotPass = document.getElementById("f_password").value;
-//   let forgotCpass = document.getElementById("f_confirm_password").value;
-
-//   let userDetails = JSON.parse(localStorage.getItem("userData"));
-
-//   let get_email = userDetails.find(function (obj) {
-//     if (forgotEmail === obj["email"]) {
-//       return true;
-//     }
-//   });
-//   console.log(get_email);
-// });
 
 let logged = JSON.parse(localStorage.getItem("login"));
 let login_btn = document.getElementById("login_btn");

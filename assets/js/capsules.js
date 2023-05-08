@@ -1,5 +1,3 @@
-//capsules
-
 let products1 = [
   {
     productsname: "Hair growth and hair fall capsules",
@@ -49,7 +47,6 @@ function productDiv4(products1, id) {
     //h3 tag
     let h3_tag = document.createElement("h3");
     div2.append(h3_tag);
-
     h3_tag.innerText = products1[i].productName;
     //h5 tag
     let h5_tag = document.createElement("h5");
