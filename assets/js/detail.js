@@ -1,13 +1,27 @@
-const product_id = window.location.search;
-const product_params = new URLSearchParams(product_id);
-const get_details = product_params.get("id");
-const products = JSON.parse(localStorage.getItem("proObject"));
-let pro_detail = products.find(function (event) {
-  let id = event["id"];
-  if (get_details == id) {
-    return true;
+let buy_btn = document.getElementById("buy");
+buy_btn?.addEventListener("click", function () {
+  let user_login = JSON.parse(localStorage.getItem("login"));
+  if (user_login == null) {
+    alert("You didn't login please login or signup");
+    window.open("/index.html");
+  } else {
+    alert("successfully clicked");
+    window.open("../Pages/delivery.html");
+    let search_id = window.location.search;
+    let product_params = new URLSearchParams(search_id);
+    let get_details = product_params.get("id");
+    if (get_details) {
+      let string = JSON.stringify(get_details);
+      localStorage.setItem("id", string);
+    }
   }
 });
+
+let find_id = window.location.search;
+let product_params = new URLSearchParams(find_id);
+let get_detail = product_params.get("id");
+let products = JSON.parse(localStorage.getItem("proObject"));
+let pro_detail = products.find((event) => get_detail == event["id"]);
 let range = document.getElementById("range");
 let pic = document.getElementById("imgs");
 let product_name = document.getElementById("pro_name");
@@ -24,43 +38,43 @@ let products_id = window.location.search;
 let parameter = new URLSearchParams(products_id);
 let search_id = product_params.get("id");
 let cus_reviews = reviews?.filter((id) => search_id == id["product_id"]);
-
 if (cus_reviews == null) {
   let no_reviews = document.getElementById("no_reviews");
   no_reviews.innerText = "No Reviews";
 }
 
-for (let i = 0; i < cus_reviews?.length; i++) {
-  let div = document.createElement("div");
-  div.setAttribute("class", "reviews");
-  let div_card = document.createElement("div");
-  div.append(div_card);
-  let img_tag = document.createElement("img");
-  img_tag.setAttribute("width", "50");
-  img_tag.setAttribute("height", "50");
-  img_tag.setAttribute("src", cus_reviews[i]["image"]);
-  div_card.append(img_tag);
-  let div_card1 = document.createElement("div");
-  div.append(div_card1);
-  let h3_tag = document.createElement("h3");
-  h3_tag.innerText = cus_reviews[i]["username"];
-  div_card1.append(h3_tag);
-  let p_tag = document.createElement("p");
-  p_tag.innerText = cus_reviews[i]["customer_reviews"];
-  div_card1.append(p_tag);
-  let button = document.createElement("button");
-  button.setAttribute("class", "edit_btn");
-  button.innerText = "Edit";
-  div_card1.append(button);
-  let rating_div = document.createElement("div");
-  rating_div.setAttribute("class", "rating_section");
-  let stars = document.createElement("h3");
-  stars.innerText = cus_reviews[i]["ratings"];
-  rating_div.append(stars);
-  let insert = document.querySelector(".whole");
-  insert.append(div);
-  insert.append(rating_div);
-}
+let div_card = document.createElement("div");
+div_card.setAttribute("class", "whole");
+let div_card1 = document.createElement("div");
+div_card1.setAttribute("class", "whole_child");
+div_card.append(div_card1);
+let div_card2 = document.createElement("div");
+div_card2.setAttribute("class", "reviews");
+div_card1.append(div_card2);
+let child_div = document.createElement("div");
+div_card2.append(child_div);
+let image_tag = document.createElement("img");
+image_tag.setAttribute("src", "../assets/images/Caster-Hair-Oil-.jpg.webp");
+image_tag.setAttribute("width", "50");
+image_tag.setAttribute("height", "50");
+child_div.append(image_tag);
+let child_div1 = document.createElement("div");
+div_card2.append(child_div1);
+let h3_tag = document.createElement("h3");
+h3_tag.innerText = "Alsabana";
+child_div1.append(h3_tag);
+let p_tag = document.createElement("p");
+p_tag.innerText = "good product";
+child_div1.append(p_tag);
+let button = document.createElement("button");
+button.setAttribute("class", "edit_btn");
+child_div1.append(button);
+let rate_div = document.createElement("div");
+rate_div.setAttribute("class", "rating_section");
+div_card1.append(rate_div);
+let star_h3 = document.createElement("h3");
+star_h3.innerText = "4 stars-good";
+rate_div.append(star_h3);
 
 let postBtn = document.getElementById("form_submit");
 postBtn.addEventListener("submit", function (e) {

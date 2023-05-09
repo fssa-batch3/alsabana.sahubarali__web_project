@@ -134,8 +134,9 @@ for (let i = 0; i < matched_products?.length; i++) {
   let price_div1 = document.createElement("div");
   price_div1.setAttribute("id", "price");
   price_div1.setAttribute("class", "cart-price");
-  price_div1.innerText =
-    "Rs." + matched_products[i].price * matched_products[i].quantity;
+  let m = matched_products[i].price;
+  let n = m.split(".");
+  price_div1.innerText = "Rs." + n[1] * matched_products[i].quantity;
   price_div.append(price_div1);
   let input = document.createElement("input");
   input.setAttribute("value", matched_products[i].quantity);
@@ -152,6 +153,8 @@ for (let i = 0; i < matched_products?.length; i++) {
 }
 let add = 0;
 for (let i = 0; i < matched_products?.length; i++) {
-  add += parseInt(matched_products[i].price * matched_products[i].quantity);
+  let split = matched_products[i].price;
+  let result = split.split(".");
+  add += parseInt(result[1] * matched_products[i].quantity);
 }
-let view = (document.getElementById("total").innerHTML = "Rs." + add);
+let view = (document.getElementById("total").innerText = "Rs." + add);

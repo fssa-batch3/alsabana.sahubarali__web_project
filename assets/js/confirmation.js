@@ -1,15 +1,3 @@
-let buy_btn = document.getElementById("buy");
-buy_btn?.addEventListener("click", function () {
-  alert("successfully clicked");
-  const product_id = window.location.search;
-  const product_params = new URLSearchParams(product_id);
-  const get_details = product_params.get("id");
-  if (get_details) {
-    let string = JSON.stringify(get_details);
-    localStorage.setItem("id", string);
-  }
-});
-
 let get_id = JSON.parse(localStorage.getItem("id"));
 let product = JSON.parse(localStorage.getItem("proObject"));
 let pro_name;
@@ -45,7 +33,7 @@ for (let j = 0; j < order_details.length; j++) {
     cus_address = order_details[j]["address"];
     state = order_details[j]["select_state"];
     number = order_details[j]["number"];
-    order_detail = order_details[j]["delivery_date"];
+    order_detail = order_details[j]["date"];
     id = order_details[j]["order_id"];
   }
 }

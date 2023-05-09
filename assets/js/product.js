@@ -39,7 +39,7 @@ function productDiv(products, id) {
     div2.append(tag_h5);
     //h5 tag
     let h5_tag = document.createElement("h5");
-    h5_tag.innerText = products[i].cost;
+    h5_tag.innerText = "Rs." + products[i]["cost"];
     h5_tag.setAttribute("class", "product-cost");
     div2.append(h5_tag);
     //button tag

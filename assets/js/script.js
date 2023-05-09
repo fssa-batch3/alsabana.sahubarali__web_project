@@ -31,7 +31,6 @@ let check = false;
 const signup = document.getElementById("signUp");
 signup?.addEventListener("submit", function (event) {
   event.preventDefault();
-  let arrayOfUserDetails = [];
   if (localStorage.getItem("userData") != null) {
     arrayOfUserDetails = JSON.parse(localStorage.getItem("userData"));
   }
@@ -51,36 +50,32 @@ signup?.addEventListener("submit", function (event) {
     confirmPassword: confirmPassword,
     u_id,
     sign_type,
+    image:
+      "https://png.pngtree.com/png-clipart/20200224/original/pngtree-avatar-icon-profile-icon-member-login-vector-isolated-png-image_5247852.jpg",
   };
   let check = checkUser(phoneNo, email);
 
   if (check == false) {
     if (userDetails.password == userDetails.confirmPassword) {
-      if (userDetails.sign_type === "customer") {
-        arrayOfUserDetails.push(userDetails);
-        stringArray = JSON.stringify(arrayOfUserDetails);
+      if (userDetails.sign_type == "customer") {
+        let customer = [];
+        if (JSON.parse(localStorage.getItem("userData")) != null) {
+          customer = JSON.parse(localStorage.getItem("userData"));
+        }
+        customer.push(userDetails);
+        let stringArray = JSON.stringify(customer);
         localStorage.setItem("userData", stringArray);
         alert("You have successfully Registered Please login your account");
         location.reload();
       }
-      if (
-        localStorage.getItem("seller") === null &&
-        userDetails.sign_type === "seller"
-      ) {
-        let seller_array = [];
-        seller_array.push(userDetails);
-        let seller_str = JSON.stringify(seller_array);
+      if (userDetails.sign_type == "seller") {
+        let seller = [];
+        if (JSON.parse(localStorage.getItem("seller")) != null) {
+          seller = JSON.parse(localStorage.getItem("seller"));
+        }
+        seller.push(userDetails);
+        let seller_str = JSON.stringify(seller);
         localStorage.setItem("seller", seller_str);
-        alert("You have successfully Registered please login to your account");
-        location.reload();
-      } else if (
-        localStorage.getItem("seller") != null &&
-        userDetails.sign_type === "seller"
-      ) {
-        let get_seller = JSON.parse(localStorage.getItem("seller"));
-        get_seller.push(userDetails);
-        let string_seller = JSON.stringify(get_seller);
-        localStorage.setItem("seller", string_seller);
         alert("You have successfully Registered please login to your account");
         location.reload();
       }
@@ -187,6 +182,7 @@ if (logged != null) {
   login_btn.style.display = "none";
   profile.style.display = "block";
   nav.style.marginRight = "100px";
+  profile.style.marginTop = "20px";
 }
 
 let show_profile = document.getElementById("show_profile");

@@ -1,5 +1,5 @@
 let payment_form = document.getElementById("pay_form");
-payment_form.addEventListener("submit", function (event) {
+payment_form?.addEventListener("submit", function (event) {
   event.preventDefault();
 
   let order = JSON.parse(localStorage.getItem("order_id"));

@@ -267,6 +267,9 @@ button:hover {
   margin-right: 200px;
   height: 180px;
 }
+.whole_child {
+  display: flex;
+}
 .edit_btn {
   width: 100px;
   height: 30px;

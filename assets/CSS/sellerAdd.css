@@ -7,7 +7,6 @@ nav {
   z-index: 1;
   top: 0;
   left: 0;
-
   overflow-x: hidden;
   padding-top: 20px;
   cursor: pointer;
@@ -45,6 +44,9 @@ nav a:active {
 }
 .main {
   margin-left: 15%;
+}
+.main div {
+  margin-left: 30px;
 }
 .listing-1 {
   background-color: rgb(14, 14, 14);

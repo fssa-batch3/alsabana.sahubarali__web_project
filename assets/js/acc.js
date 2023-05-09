@@ -81,9 +81,11 @@ let order_details = JSON.parse(localStorage.getItem("details"));
 let find_orders = order_details?.filter(
   (logid) => login_acc == logid["login_id"]
 );
-if (find_orders == null) {
-  let order_result = document.getElementById("no_order");
-  order_result.innerText = "There is no order history";
+
+let no_order = document.querySelector(".no-order");
+if (find_orders.length === 0) {
+  console.log("check");
+  no_order.style.display = "block";
 }
 for (let i = 0; i < find_orders?.length; i++) {
   let div_card = document.createElement("div");

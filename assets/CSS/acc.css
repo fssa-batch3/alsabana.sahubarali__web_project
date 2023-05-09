@@ -48,10 +48,7 @@ nav li {
   display: flex;
   justify-content: space-evenly;
 }
-h3 {
-  padding: 0;
-  margin: 0;
-}
+
 .scnd-container {
   margin-top: -100px;
 }
@@ -86,6 +83,7 @@ h3 {
   color: rgb(16, 16, 16);
   margin-top: 20px;
 }
+
 input {
   width: 250px;
   height: 35px;
@@ -183,6 +181,20 @@ a {
 }
 .logout {
   margin-top: 10px;
+}
+.no-order {
+  display: none;
+  font-size: larger;
+  width: 1000px;
+  align-items: center;
+  margin-top: 150px;
+  text-align: center;
+}
+.no-order button {
+  width: 230px;
+  height: 50px;
+  border-radius: 30px;
+  font-size: 22px;
 }
 /*Desktop*/
 @media (min-width: 600px) {
