@@ -259,13 +259,14 @@ button:hover {
 .whole {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
-  background-color: rgb(245, 240, 240);
+  justify-content: space-around;
+  background-color: rgb(232, 231, 231);
   border-radius: 10px;
   margin-top: 50px;
   margin-left: 200px;
   margin-right: 200px;
   height: 180px;
+  width: 500px;
 }
 .whole_child {
   display: flex;
@@ -285,6 +286,14 @@ button:hover {
 #reviewsAndRatings {
   display: flex;
   justify-content: space-between;
+}
+.no_reviews {
+  display: none;
+  font-size: 30px;
+  width: 1000px;
+  align-items: center;
+  text-align: center;
+  letter-spacing: 2px;
 }
 /* cart */
 

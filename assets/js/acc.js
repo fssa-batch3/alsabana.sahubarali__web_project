@@ -49,12 +49,11 @@ form.addEventListener("submit", function (event) {
   };
 
   const combineData = Object.assign(select_user, newData);
-  //  console.log(combineData)
-
   let findIndex = userData.indexOf(select_user);
   userData[findIndex] = combineData;
   localStorage.setItem("userData", JSON.stringify(userData));
   alert("successfully changed");
+  location.reload();
 });
 let delete_user = document.getElementById("delete");
 delete_user.addEventListener("click", function (event) {
@@ -115,7 +114,7 @@ for (let i = 0; i < find_orders?.length; i++) {
   span_tag.setAttribute("class", "dot");
   div_card4.append(span_tag);
   let span1_tag = document.createElement("span");
-  span1_tag.innerText = "Delivered by" + find_orders[i]["delivery_date"];
+  span1_tag.innerText = "Delivered by " + find_orders[i]["date"];
   div_card4.append(span1_tag);
   let p_tag = document.createElement("p");
   p_tag.innerText = "Your product has been delivered";
