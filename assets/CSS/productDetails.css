@@ -266,14 +266,41 @@ button:hover {
   margin-left: 200px;
   margin-right: 200px;
   height: 180px;
-  width: 500px;
+  width: 400px;
 }
 .whole_child {
   display: flex;
 }
+.input_2 {
+  font-size: 22px;
+  width: 500px;
+}
 .edit_btn {
   width: 100px;
   height: 30px;
+  background-color: #333232;
+  color: white;
+  display: none;
+}
+.edit_btns {
+  width: 100px;
+  height: 30px;
+  background-color: #333232;
+  color: white;
+  margin-left: 68%;
+}
+.rating {
+  margin-left: 70px;
+}
+.review_header {
+  font-size: 28px;
+  text-align: center;
+  font-style: italic;
+}
+#select_ratings {
+  width: 150px;
+  height: 30px;
+  margin-left: 23px;
 }
 .input {
   margin-top: 10px;

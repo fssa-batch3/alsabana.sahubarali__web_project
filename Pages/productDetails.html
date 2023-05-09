@@ -98,11 +98,15 @@
       </div>
     </div>
     <hr>
+    <div>
+      <h3 class="review_header">Our Customer  Reviews</h3>
+    </div>
 <div id="reviewsAndRatings">
+  
   <div id="num_reviews">
     <form class="input_2" id="form_submit">
       <div>
-        <h2>121 reviews</h2>
+        <h2><span id="count">0</span> reviews</h2>
       </div>
       <div>
         <p>Overall ratings</p>
@@ -115,21 +119,21 @@
       <div>
         <div><h2>WRITE A CUSTOMER REVIEW</h2></div>
         <div><label>
-          Ratings
+          Ratings :
         </label>
         <select id="select_ratings">
           <option>Select</option>
-          <option>5 stars-Exellent</option>
-          <option>4 stars-Very Good</option>
-          <option>3 stars-Good</option>
-          <option>2 stars-Not bad</option>
-          <option>1 star-Bad</option>
+          <option>&#9733;&#9733;&#9733;&#9733;&#9733;</option>
+          <option>&#9733;&#9733;&#9733;&#9733;</option>
+          <option>&#9733;&#9733;&#9733;</option>
+          <option>&#9733;&#9733;</option>
+          <option>&#9733;</option>
         </select></div>
         <div>
-          <label>Comment</label>
-          <input class="input" id="input_field" placeholder="add your review" type="text">
+          <label>Comment :</label>
+          <input class="input" id="input_field" placeholder="Add your review" title="You should add your review" required="true" type="text">
         <div class="btn_div">
-          <button class="edit_btn" id="post" type="submit">Submit</button>
+          <button class="edit_btns" id="post" type="submit">Submit</button>
         </div>
         </div>
       </div> 

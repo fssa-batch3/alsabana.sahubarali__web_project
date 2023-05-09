@@ -32,7 +32,7 @@ const signup = document.getElementById("signUp");
 signup?.addEventListener("submit", function (event) {
   event.preventDefault();
   if (localStorage.getItem("userData") != null) {
-    arrayOfUserDetails = JSON.parse(localStorage.getItem("userData"));
+    let arrayOfUserDetails = JSON.parse(localStorage.getItem("userData"));
   }
   let sign_type = document.getElementById("input_type").value;
   let userName = document.getElementById("username").value;

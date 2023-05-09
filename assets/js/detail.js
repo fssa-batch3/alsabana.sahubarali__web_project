@@ -27,6 +27,7 @@ let pic = document.getElementById("imgs");
 let product_name = document.getElementById("pro_name");
 let product_price = document.getElementById("pro_cost");
 let description = document.getElementById("description");
+
 product_name.innerText = pro_detail["productName"];
 product_price.innerText = "₹" + pro_detail["cost"];
 description.innerText = pro_detail["product_detail"];
@@ -47,7 +48,7 @@ postBtn.addEventListener("submit", function (e) {
     let id_product = product_params.get("id");
     let login_acc = JSON.parse(localStorage.getItem("login"));
     let userData = JSON.parse(localStorage.getItem("userData"));
-    let find_user = userData.find(function (login) {
+    let find_user = userData?.find(function (login) {
       if (login_acc == login["u_id"]) {
         return true;
       }
@@ -78,14 +79,15 @@ let reviews = JSON.parse(localStorage.getItem("reviews"));
 let products_id = window.location.search;
 let parameter = new URLSearchParams(products_id);
 let search_id = product_params.get("id");
-let cus_reviews = reviews.filter((id) => search_id == id["id_product"]);
-console.log(cus_reviews);
+let cus_reviews = reviews?.filter((id) => search_id == id["id_product"]);
 let no_reviews = document.querySelector(".no_reviews");
 if (cus_reviews.length === 0) {
-  console.log("check");
   no_reviews.style.display = "block";
 }
+let num_reviews = 0;
 for (let i = 0; i < cus_reviews.length; i++) {
+  num_reviews += 1;
+  console.log(num_reviews);
   let div_card = document.createElement("div");
   div_card.setAttribute("class", "whole");
   let div_card1 = document.createElement("div");
@@ -117,8 +119,11 @@ for (let i = 0; i < cus_reviews.length; i++) {
   rate_div.setAttribute("class", "rating_section");
   div_card1.append(rate_div);
   let star_h3 = document.createElement("h3");
+  star_h3.setAttribute("class", "rating");
   star_h3.innerText = cus_reviews[i]["ratings"];
   rate_div.append(star_h3);
   let insert_div = document.querySelector(".flexible");
   insert_div.append(div_card);
 }
+let count_reviews = document.getElementById("count");
+count_reviews.innerText = num_reviews;

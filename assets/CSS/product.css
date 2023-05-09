@@ -64,6 +64,12 @@ nav li {
   text-align: center;
   box-shadow: 10px 20px 10px gray;
 }
+.products h3 {
+  width: 230px;
+}
+.products a {
+  text-decoration: none;
+}
 .box {
   font-size: 27px;
 }
