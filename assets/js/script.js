@@ -152,7 +152,7 @@ loginForm?.addEventListener("submit", function (event) {
         if (password === user["password"]) {
           alert("successfully seller loged in");
           window.location.href = "../Pages/sellerAdd.html";
-          localStorage.setItem("login", JSON.stringify(user["u_id"]));
+          localStorage.setItem("login_seller", JSON.stringify(user["u_id"]));
           return isExist;
         } else {
           alert("password not match");

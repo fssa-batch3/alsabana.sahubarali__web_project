@@ -56,36 +56,44 @@
     <!-- personal info -->
   <div class="first-container">
     <div class="personal-container">
-      <h5>Personal information</h5> 
-    <form class="form" id="proform">
-        <label>Image <input class="url" id="image" type="text" placeholder="upload image" />
+      <h3>Personal information:</h3> 
+    <form class="form edit" id="proform">
+        <label>Image Url: <input class="url" id="image" type="text"  placeholder="upload image" />
         </label>       
-         <label>Name <input type="text" id="username" placeholder="your name">
+         <label>Name :<input type="text" id="username"  placeholder="your name">
          </label>
-         <label>Email
-          <input type="email" id="email" placeholder="alsabana@gmail.com"> 
-
+         <label>Email:
+          <input type="email" id="email"  placeholder="alsabana@gmail.com"> 
          </label>
-         <label>Number
-          <input type="text" id="phNo" placeholder="8090177736"> 
+         <label>Number:
+          <input type="text" id="phNo"  placeholder="8090177736"> 
 
          </label>
          <label>
-          password
-          <input type="password" id="pass">
+          password:
+          <input type="password"  id="pass">
          </label>
          <label>
-          Address
-          <input type="text"id="country">
+          Address:
+          <textarea  type="text"id="country"></textarea>
          </label>
          <button type="submit"> SUBMIT</button>
          <button id="delete">DELETE</button>
          <div class="logout">
-         <a href="#">
-          <h3 id="logOut"><i class="fa fa-sign-out"></i>Log out</h3></a
-        >
-      </div>
+         
+        
+        </div>
     </form>  
+      <div class="customer_details" >
+        <h4>Name : <span id="detail_name">alsabana</span></h4>
+        <h4>Number : <span id="detail_no">7688876654</span></h4>
+        <h4>Email : <span id="detail_email" >sab@gmail.com</span></h4>
+        <h4>Address : <span id="detail_address" >jcb</span></h4>
+        <button type="click" onclick="change()" id="click_edit">Edit</button>
+        <div>
+          <h3 id="logOut"><i class="fa fa-sign-out"></i>Log out</h3>
+        </div>
+     </div>
    </div>
     <div class="scnd-container">
       <div>

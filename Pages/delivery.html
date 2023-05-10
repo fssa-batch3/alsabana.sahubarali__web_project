@@ -50,7 +50,7 @@
       <div class="progress-step-container">
         <div class="step-check"></div>
         <a href="../Pages/delivery.html"
-          ><span class="step-title">Shipping</span></a
+          ><span class="step-title">Address</span></a
         >
       </div>
       <div class="progress-step-container">
@@ -92,7 +92,7 @@
             id="number"
             title="Phone number contain 10 digits only"
             placeholder="+91"
-            pattern="[0-9]{1,10}"
+            pattern="[6-9]{1}[0-9]{9}"
             required="true"
           />
         </div>
@@ -105,6 +105,11 @@
               <option>Kerala</option>
             </select>
           </div>
+
+          <!-- <div class="input-line">
+            <label for="name">Your state</label>
+            <input id=" state" />
+          </div> -->
           <div class="input-line">
             <label for="name">Pincode</label>
             <input
@@ -131,5 +136,100 @@
       </form>
     </div>
     <script src="../assets/js/order.js"></script>
+    <script>
+      let state = document.getElementById("state");
+
+      async function getToken() {
+        const response = await fetch(
+          `https://www.universal-tutorial.com/api/getaccesstoken`,
+          {
+            method: "GET",
+            headers: {
+              "api-token":
+                "qYNmq_Y46Nx2xpB6EX8-jzjKmhE05gn0cUq26AuhegJ3NixpCZ_g3RpA2eL14jq6QNs",
+              Accept: "application/json",
+              "user-email": "healthyhair040@gmail.com",
+            },
+          }
+        );
+        return response.json();
+      }
+      async function getData(endpoint) {
+        const authToken = await getToken();
+        const response = await fetch(
+          `https://www.universal-tutorial.com/api/${endpoint}`,
+          {
+            method: "GET",
+            headers: {
+              Authorization: `Bearer ${authToken.auth_token}`,
+              Accept: "application/json",
+            },
+          }
+        );
+        return await response.json();
+      }
+
+      async function showData() {
+        const dataArr = await getData("state");
+        // const stateList = await getData(`states/${dataArr[0]["country_name"]}`);
+        // const districtList = await getData(
+        //   `cities/${stateList[0]["state_name"]}`
+        // );
+        let option;
+        // countryOutput.innerText = dataArr[0]["country_name"];
+        stateOutput.innerText = stateList[0]["state_name"];
+        // cityOutput.innerText = districtList[0]["city_name"];
+        // for (const element of dataArr) {
+        //   option = document.createElement("option");
+
+        //   option.value = element["country_name"];
+        //   option.text = element["country_name"];
+        //   countryArr.appendChild(option);
+        // }
+        for (const element of stateList) {
+          option = document.createElement("option");
+          option.value = element["state_name"];
+          option.text = element["state_name"];
+          stateArr.appendChild(option);
+        }
+        // for (const element of districtList) {
+        //   option = document.createElement("option");
+        //   option.value = element["city_name"];
+        //   option.text = element["city_name"];
+        //   districtArr.appendChild(option);
+        // }
+      }
+      showData();
+      // countryArr.addEventListener("change", async () => {
+      //   const dataArr = await getData(`states/${countryArr.value}`);
+      //   // stateArr.innerHTML = "";
+      //   // districtArr.innerHTML = "";
+      //   // countryOutput.innerText = countryArr.value;
+      //   // stateOutput.innerText = stateArr.value;
+      //   // cityOutput.innerText = districtArr.value;
+      //   for (const element of dataArr) {
+      //     var option = document.createElement("option");
+      //     option.value = element["state_name"];
+      //     option.text = element["state_name"];
+      //     stateArr.appendChild(option);
+      //   }
+      // });
+      //  state.addEventListener("change", async () => {
+      //     const dataArr = await getData(`cities/${stateArr.value}`);
+      //     districtArr.innerHTML = "";
+      //     countryOutput.innerText = countryArr.value;
+      //     stateOutput.innerText =state.value;
+      //     cityOutput.innerText = districtArr.value;
+      //     for (const element of dataArr) {
+      //       var option = document.createElement("option");
+      //       option.value = element["city_name"];
+      //       option.text = element["city_name"];
+      //       districtArr.appendChild(option);
+      //     }
+      //   });
+      districtArr.addEventListener("change", async () => {
+        cityOutput.innerText = districtArr.value;
+      });
+    </script>
   </body>
 </html>

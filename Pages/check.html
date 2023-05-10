@@ -62,7 +62,7 @@
       <div class="progress-step-container">
         <div class="step-check"></div>
         <a href="../Pages/delivery.html"
-          ><span class="step-title">Shipping</span></a
+          ><span class="step-title">Address</span></a
         >
       </div>
       <div class="progress-step-container">
@@ -100,9 +100,10 @@
             type="text"
             name="name"
             id="number"
-            placeholder="1111-2222-3333-4444"
-            pattern="[0-9]{16}"
             required="true"
+            pattern="(\d{4}\s?){4}"
+            placeholder="&#8226;&#8226;&#8226;&#8226; &#8226;&#8226;&#8226;&#8226; &#8226;&#8226;&#8226;&#8226; &#8226;&#8226;&#8226;&#8226;"
+            maxlength="19"
           />
         </div>
         <div class="input-container">
@@ -111,7 +112,7 @@
             <input type="date" name="name" id="date" placeholder="09-21" />
           </div>
           <div class="input-line">
-            <label for="name">CVC</label>
+            <label for="name">CVV</label>
             <input
               type="text"
               name="name"
@@ -123,7 +124,11 @@
           </div>
         </div>
         <a href="../Pages/confirmation.html"
-          ><input type="submit" id="pay" value="Complete payment"
+          ><input
+            type="submit"
+            class="submit"
+            id="pay"
+            value="Complete payment"
         /></a>
       </form>
     </div>

@@ -42,9 +42,10 @@ nav a:hover {
   color: white;
 }
 .profile_name img {
-  width: 80px;
-  height: 80px;
-  border-radius: 30%;
+  width: 60px;
+  height: 60px;
+  margin: 15px;
+  margin-top: 30px;
 }
 .list h2 {
   margin-left: 10%;
@@ -62,8 +63,10 @@ nav a:hover {
   color: rgb(254, 253, 253);
   width: 250px;
   height: 200px;
-  border-radius: 10%;
   margin-bottom: 2rem;
+}
+a {
+  text-decoration: none;
 }
 .whole_card form {
   display: flex;

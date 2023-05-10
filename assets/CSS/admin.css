@@ -39,7 +39,9 @@ nav a:active {
 #dash {
   color: white;
 }
-
+#app {
+  margin-left: 10%;
+}
 .help_div {
   border-top: 1px solid rgb(245, 242, 242);
   margin-top: 100%;
@@ -49,10 +51,11 @@ nav a:active {
   background-color: rgb(14, 14, 14);
   color: white;
   padding: 20px;
-  border-radius: 50px;
   text-align: center;
   box-shadow: 10px 20px 10px gray;
   width: 200px;
+  height: 200px;
+  margin-top: 20px;
 }
 img {
   width: 100px;
@@ -74,9 +77,7 @@ img {
   font-size: 15px;
   margin-bottom: 40px;
 }
-.product-listing-1 img {
-  border-radius: 20px;
-}
+
 .edit_btn {
   text-decoration: none;
   margin-left: 20px;

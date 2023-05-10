@@ -3,6 +3,8 @@
 body {
   font-family: "Poppins", sans-serif;
   overflow-x: hidden;
+  margin: 0;
+  padding: 0;
 }
 
 .overall {
@@ -211,7 +213,6 @@ nav {
 nav li {
   padding-right: 50px;
   font-size: 50px;
-  font-weight: bold;
   cursor: pointer;
   color: black;
 }

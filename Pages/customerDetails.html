@@ -4,8 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Seller details</title>
-    <link rel="stylesheet" href="../assets/CSS/sellerDetails.css" />
+    <link rel="stylesheet" href="../assets/CSS/customerDetails.css" />
     <link
       href="https://fonts.googleapis.com/css2?family=Alegreya:wght@400;700&family=Klee+One&family=Rajdhani&display=swap"
       rel="stylesheet"
@@ -16,6 +15,7 @@
       integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD"
       crossorigin="anonymous"
     />
+    <title>Document</title>
   </head>
   <body>
     <div class="container">
@@ -24,7 +24,7 @@
       >
         <div class="panel panel-primary">
           <div>
-            <h3>Seller Details</h3>
+            <h3>Buyer Details</h3>
           </div>
           <form class="panel-body" id="form">
             <div class="row">
@@ -91,94 +91,42 @@
         </div>
       </div>
       <div>
-        <h2>Added Products</h2>
+        <h2>Orders</h2>
         <div class="products">
           <h2 id="noPro"></h2>
         </div>
       </div>
       <div class="back"><button>Back</button></div>
     </div>
+
     <script>
-      let product_id = window.location.search;
-      let product_params = new URLSearchParams(product_id);
-      let get_details = product_params.get("id");
-      let seller = JSON.parse(localStorage.getItem("seller"));
-      let seller_details = seller.find(function (event) {
+      let cus_id = window.location.search;
+      let id_params = new URLSearchParams(cus_id);
+      let cus_details = id_params.get("id");
+      let customer = JSON.parse(localStorage.getItem("userData"));
+      console.log(customer);
+      let customer_details = customer.find(function (event) {
         let id = event["u_id"];
-        if (get_details == id) {
+        if (cus_details == id) {
           return true;
         }
       });
-      let seller_image = document.getElementById("profile_pic");
-      seller_image.src = seller_details["image"];
-      let username = document.getElementById("username");
-      username.value = seller_details["username"];
-      let address = document.getElementById("address");
-      address.value = seller_details["address"];
-      let phone_number = document.getElementById("phone_number");
-      phone_number.value = seller_details["phoneNo"];
-      let alter_num = document.getElementById("alter_number");
-      alter_num.value = seller_details["alter_num"];
-      let company_name = document.getElementById("cname");
-      company_name.value = seller_details["company_name"];
-      let email = document.getElementById("email");
-      email.value = seller_details["email"];
 
-      let id = window.location.search;
-      let search = new URLSearchParams(id);
-      let get_id = search.get("id");
-      let total_products = JSON.parse(localStorage.getItem("proObject"));
-      let selled_product = total_products.filter(
-        (pro) => get_id == pro["login_id"]
-      );
-      if (selled_product == null) {
-        let pro_result = document.getElementById("noPro");
-        pro_result.innerText = "No products";
-      }
-      for (let i = 0; i < selled_product.length; i++) {
-        let anger_tag = document.createElement("a");
-        anger_tag.setAttribute(
-          "href",
-          "../Pages/productDetails.html?id=" + selled_product[i]["id"]
-        );
-        anger_tag.setAttribute("class", "anger");
-        let div_card = document.createElement("div");
-        div_card.setAttribute("class", "product-listing-1");
-        anger_tag.append(div_card);
-        //second div
-        let div1 = document.createElement("div");
-        div1.setAttribute("class", "listing-1");
-        div_card.append(div1);
-        //third div
-        let div2 = document.createElement("div");
-        div1.append(div2);
-        //img tag and attributes
-        let card_img = document.createElement("img");
-        card_img.setAttribute("src", selled_product[i].image["src"]);
-        card_img.setAttribute("height", "250");
-        card_img.setAttribute("width", "250");
-        card_img.setAttribute("class", "img-src");
-        card_img.setAttribute("alt", selled_product[i].image["alt"]);
-        div2.append(card_img);
-        //div for h3 and h5 tags
-        let div1_card = document.createElement("div");
-        div_card.append(div1_card);
-        //h3 tag
-        let h3_tag = document.createElement("h3");
-        h3_tag.setAttribute("class", "product-name");
-        h3_tag.innerText = selled_product[i].productName;
-        div2.append(h3_tag);
-        let tag_h5 = document.createElement("h5");
-        div2.append(tag_h5);
-        //h5 tag
-        let h5_tag = document.createElement("h5");
-        h5_tag.innerText = "Rs. " + selled_product[i].cost;
-        h5_tag.setAttribute("class", "product-cost");
-        div2.append(h5_tag);
-        //append
-        let insert_div = document.querySelector(".products");
-        insert_div.append(anger_tag);
-      }
+      console.log(customer_details);
+      let customer_image = document.getElementById("profile_pic");
+      customer_image.src = customer_details["image"];
+      let username = document.getElementById("username");
+      username.value = customer_details["username"];
+      let address = document.getElementById("address");
+      address.value = customer_details["address"];
+      let phone_number = document.getElementById("phone_number");
+      phone_number.value = customer_details["phoneNo"];
+      let alter_num = document.getElementById("alter_number");
+      alter_num.value = customer_details["alter_num"];
+      let company_name = document.getElementById("cname");
+      company_name.value = customer_details["company_name"];
+      let email = document.getElementById("email");
+      email.value = customer_details["email"];
     </script>
   </body>
 </html>

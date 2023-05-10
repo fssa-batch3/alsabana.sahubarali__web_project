@@ -68,19 +68,15 @@
       <div class="first-container">
         <div class="product">
           <h2>PRODUCTS</h2>
-          <h3>120</h3>
+          <h3 id="count">120</h3>
         </div>
         <div class="product">
           <h2>ORDERS</h2>
-          <h3>56/Day</h3>
+          <h3 id="orders">56/Day</h3>
         </div>
         <div class="product">
           <h2>EARINGS</h2>
           <h3>$40/Day</h3>
-        </div>
-        <div class="product">
-          <h2>SALES</h2>
-          <h3>550/MO</h3>
         </div>
       </div>
       <div class="list">
@@ -91,8 +87,10 @@
       </div>
     </div>
     <script>
+      let count = 0;
       const arr = JSON.parse(localStorage.getItem("proObject"));
       for (let i = 0; i < arr.length; i++) {
+        count++;
         //first div
         let div_card = document.createElement("div");
         div_card.setAttribute("class", "product-listing-1");
@@ -124,6 +122,15 @@
         let insert_div = document.getElementById("app");
         insert_div.append(div_card);
       }
+      let total_product = document.getElementById("count");
+      total_product.innerText = count;
+      let order_count = 0;
+      let total_orders = JSON.parse(localStorage.getItem("details"));
+      for (let j = 0; j < total_orders.length; j++) {
+        order_count++;
+      }
+      let orders = document.getElementById("orders");
+      orders.innerText = order_count;
     </script>
   </body>
 </html>

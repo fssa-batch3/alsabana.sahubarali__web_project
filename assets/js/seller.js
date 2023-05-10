@@ -1,9 +1,9 @@
-function createUserCard(arr) {
+function createCustomerCard(arr) {
   for (let i = 0; i < arr.length; i++) {
     let a_tag = document.createElement("a");
     a_tag.setAttribute(
       "href",
-      "../Pages/sellerDetails.html?id=" + arr[i]["u_id"]
+      "../Pages/customerDetails.html?id=" + arr[i]["u_id"]
     );
     let div_card = document.createElement("div");
     div_card.setAttribute("class", "whole_card");

@@ -43,9 +43,13 @@ nav a:hover {
   color: white;
 }
 .profile_name img {
-  width: 80px;
-  height: 80px;
-  border-radius: 30%;
+  width: 60px;
+  height: 60px;
+  margin: 15px;
+  margin-top: 30px;
+}
+a {
+  text-decoration: none;
 }
 .list h2 {
   margin-left: 10%;
@@ -57,14 +61,12 @@ nav a:hover {
   margin-left: 13.5%;
   justify-content: space-between;
   gap: 15px;
-  /* margin-top: 30px; */
 }
 .whole_card {
   background-color: rgb(12, 12, 12);
   color: rgb(254, 253, 253);
   width: 250px;
   height: 200px;
-  border-radius: 10%;
   margin-bottom: 2rem;
 }
 .whole_card form {
@@ -78,7 +80,6 @@ form input {
   height: 30px;
   width: 200px;
   margin-top: 10px;
-  /* margin-left: 18px; */
 }
 label {
   margin-left: 18px;

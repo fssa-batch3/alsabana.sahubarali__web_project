@@ -1,7 +1,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Outfit:wght@100&family=Poppins:ital@1&family=Space+Mono:wght@700&display=swap");
 
 body {
-  font-family: "Poppins", sans-serif;
+  font-family: "poppins", sans-serif;
+  font-weight: 0px;
 }
 .navbar {
   width: 100%;
@@ -18,7 +19,6 @@ body {
 nav li {
   padding-right: 50px;
   font-size: 50px;
-  font-weight: bold;
   cursor: pointer;
   color: black;
 }
@@ -48,7 +48,14 @@ nav li {
   display: flex;
   justify-content: space-evenly;
 }
-
+.edit {
+  display: none;
+}
+.customer_details {
+  font-style: italic;
+  width: 330px;
+  font-weight: normal;
+}
 .scnd-container {
   margin-top: -100px;
 }
@@ -62,6 +69,8 @@ nav li {
   background-color: rgb(56, 92, 65);
   border-radius: 50%;
   display: inline-block;
+  margin-top: 30px;
+  margin-right: 30px;
 }
 .checked {
   color: rgb(53, 49, 141);
@@ -74,24 +83,26 @@ nav li {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  background-color: rgb(166, 169, 169);
+  background-color: #f9f9f9;
   width: 950px;
-  height: 120px;
-  box-shadow: 4px 10px rgb(92, 91, 91);
+  height: 150px;
+  box-shadow: 4px 4px 4px 4px rgb(243, 242, 242);
 }
 .form label {
   color: rgb(16, 16, 16);
   margin-top: 20px;
 }
-
-input {
-  width: 250px;
+input,
+textarea {
+  width: 260px;
   height: 35px;
+  border-radius: 3px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  border-style: none;
+  border-bottom: 1px solid black;
 }
-.radio input {
-  width: 25px;
-  height: 25px;
-}
+
 .url input {
   width: 20px;
   height: 10px;
@@ -114,7 +125,6 @@ footer {
   background-color: black;
   color: white;
   margin-top: 50px;
-
   border: 1px solid gray;
 }
 .flip {

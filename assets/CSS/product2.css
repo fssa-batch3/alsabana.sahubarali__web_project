@@ -19,7 +19,6 @@ body {
 nav li {
   padding-right: 50px;
   font-size: 50px;
-  font-weight: bold;
   cursor: pointer;
   color: black;
 }
@@ -71,6 +70,8 @@ nav li {
   padding: 20px;
   text-align: center;
   box-shadow: 10px 20px 10px gray;
+  height: 450px;
+  width: 250px;
 }
 
 .center {

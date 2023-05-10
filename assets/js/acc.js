@@ -19,13 +19,21 @@ let userImg = document.getElementById("image");
 userImg.setAttribute("src", select_user["image"]);
 let image = document.getElementById("user_img");
 image.setAttribute("src", select_user["image"]);
-
 email.value = select_user["email"];
 phNo.value = select_user["phoneNo"];
 userName.value = select_user["username"];
 password.value = select_user["password"];
 address.value = select_user["address"];
 userImg.value = select_user["image"];
+
+let detail_name = document.getElementById("detail_name");
+let detail_no = document.getElementById("detail_no");
+let detail_email = document.getElementById("detail_email");
+let detail_address = document.getElementById("detail_address");
+detail_name.innerText = select_user["username"];
+detail_no.innerText = select_user["phoneNo"];
+detail_email.innerText = select_user["email"];
+detail_address.innerText = select_user["address"];
 
 const form = document.getElementById("proform");
 
@@ -125,6 +133,16 @@ for (let i = 0; i < find_orders?.length; i++) {
   let span3_tag = document.createElement("span");
   span3_tag.innerText = "Rate & Review product";
   div_card4.append(span3_tag);
+  // let cancel_button = document.createElement("button");
+  // cancel_button.innerText = "cancel";
+  // cancel_button.setAttribute("class", "cancel_btn");
+  // div_card3.append(cancel_button);
   let insert_div = document.querySelector(".scnd-container");
   insert_div.append(div_card);
+}
+function change() {
+  let cus_details = document.querySelector(".customer_details");
+  let form_Detail = document.getElementById("proform");
+  cus_details.style.display = "none";
+  form_Detail.style.display = "block";
 }
