@@ -1,8 +1,13 @@
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@100&family=Poppins:ital@1&family=Space+Mono:wght@700&display=swap");
+
+body {
+  font-family: "Poppins", sans-serif;
+}
 nav {
   background-color: black;
   color: #818181;
   height: 100%;
-  width: 200px;
+  width: 230px;
   position: fixed;
   z-index: 1;
   top: 0;
@@ -12,7 +17,10 @@ nav {
   cursor: pointer;
 }
 nav img {
-  border-radius: 45%;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  margin-top: 13px;
 }
 nav h3 {
   margin-left: 20px;
@@ -20,6 +28,10 @@ nav h3 {
 .nav_logo {
   display: flex;
   justify-content: space-around;
+  color: rgb(216, 211, 211);
+}
+.nav_logo h2 {
+  margin-right: 15px;
 }
 nav a {
   text-decoration: none;
@@ -42,28 +54,43 @@ nav a:hover {
   color: white;
 }
 .profile_name img {
-  width: 60px;
-  height: 60px;
+  width: 70px;
+  height: 70px;
   margin: 15px;
-  margin-top: 30px;
+  margin-top: 35px;
+  border-radius: 50%;
 }
 .list h2 {
   margin-left: 10%;
   text-align: center;
+  font-size: 25px;
+  font-weight: bolder;
 }
 .whole {
   display: flex;
   flex-wrap: wrap;
-  margin-left: 13.5%;
+  margin-left: 16.5%;
   justify-content: space-between;
   gap: 15px;
 }
 .whole_card {
   background-color: rgb(12, 12, 12);
-  color: rgb(254, 253, 253);
-  width: 250px;
-  height: 200px;
+  color: rgb(146, 140, 140);
+  width: 350px;
+  height: 300px;
   margin-bottom: 2rem;
+  font-size: 20px;
+  border-radius: 10px;
+}
+button {
+  width: 200px;
+  height: 50px;
+  border-radius: 10px;
+  font-size: 22px;
+  background-color: #9b9797;
+}
+button:hover {
+  background-color: white;
 }
 a {
   text-decoration: none;
@@ -87,5 +114,5 @@ label {
   display: flex;
 }
 p {
-  color: rgb(234, 240, 245);
+  color: rgb(178, 182, 185);
 }

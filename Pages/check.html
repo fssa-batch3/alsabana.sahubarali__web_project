@@ -104,22 +104,30 @@
             pattern="(\d{4}\s?){4}"
             placeholder="&#8226;&#8226;&#8226;&#8226; &#8226;&#8226;&#8226;&#8226; &#8226;&#8226;&#8226;&#8226; &#8226;&#8226;&#8226;&#8226;"
             maxlength="19"
+            title="Card number must 16 digits only"
           />
         </div>
         <div class="input-container">
           <div class="input-line">
             <label for="name">Expiring Date</label>
-            <input type="date" name="name" id="date" placeholder="09-21" />
+            <input
+              type="month"
+              id="date"
+              name="start"
+              min="2023-03"
+              value="2023-05"
+            />
           </div>
           <div class="input-line">
             <label for="name">CVV</label>
             <input
-              type="text"
+              type="password"
               name="name"
               pattern="[0-9]{3}"
               required="true"
               id="cvc"
               placeholder="***"
+              title="CVV contains 3 Digits only"
             />
           </div>
         </div>
