@@ -13,6 +13,10 @@
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css"
     />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/gh/suryaumapathy2812/notify__js/notify.css"
+    />
     <title>Home</title>
   </head>
   <body class="container">
@@ -34,8 +38,13 @@
         <ul>
           <li><a href="./index.html">Home</a></li>
           <li><a href="./Pages/analysis.html">Hair Analysis</a></li>
-          <li><a href="./Pages/Product.html">Products</a></li>
-          <li id="login_btn" onclick="openpopup()"><a>Login/signup</a></li>
+          <li class="box" id="product_drop" onclick="dropdown()">Products</li>
+          <div class="dropdown" id="drop">
+            <h4>Our samples</h4>
+            <h4>Ayurvedic & caffeine range</h4>
+            <h4>Avocado & capsules</h4>
+          </div>
+          <li id="login_btn" onclick="openpopup()"><a>Login</a></li>
           <li class="profile">
             <a href="./Pages/acc.html">
               <img
@@ -83,13 +92,14 @@
               id="email"
               placeholder="Email"
               required="true"
+              pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}"
             />
           </div>
           <div class="form-input">
             <input
-              type="text"
+              type="tell"
               id="phone-no"
-              title="Phone number contains only 10 digits"
+              title="Please enter your valid number"
               placeholder="Phone No"
               pattern="[6-9]{1}[0-9]{9}"
               required="true"
@@ -544,5 +554,6 @@
         console.log(data);
       });
     </script>
+    <script src="https://cdn.jsdelivr.net/gh/suryaumapathy2812/notify__js/notify.js"></script>
   </body>
 </html>

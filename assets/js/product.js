@@ -53,3 +53,9 @@ function productDiv(products, id) {
   }
 }
 productDiv(products, ".products");
+
+let account = document.getElementById("acc_none");
+let login = JSON.parse(localStorage.getItem("login"));
+if (login != null) {
+  account.style.display = "block";
+}

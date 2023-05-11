@@ -65,7 +65,9 @@ signup?.addEventListener("submit", function (event) {
         customer.push(userDetails);
         let stringArray = JSON.stringify(customer);
         localStorage.setItem("userData", stringArray);
-        alert("You have successfully Registered Please login your account");
+        Notify.success(
+          "You have successfully Registered Please login your account"
+        );
         location.reload();
       }
       if (userDetails.sign_type == "seller") {
@@ -76,11 +78,13 @@ signup?.addEventListener("submit", function (event) {
         seller.push(userDetails);
         let seller_str = JSON.stringify(seller);
         localStorage.setItem("seller", seller_str);
-        alert("You have successfully Registered please login to your account");
+        Notify.success(
+          "You have successfully Registered please login to your account"
+        );
         location.reload();
       }
     } else {
-      alert("Please Check Your Details");
+      Notify.error("Please Check Your Details");
     }
   }
 });
@@ -98,12 +102,12 @@ function checkUser(phn, email) {
   user.find((e) => {
     if (e["email"] == email) {
       check = true;
-      alert("Email already Exist");
+      Notify.error("Email already Exist");
       return true;
     }
     if (phn == e["phoneNo"]) {
       check = true;
-      alert("Phone number already exist");
+      Notify.error("Phone number already exist");
       return true;
     }
   });
@@ -111,12 +115,12 @@ function checkUser(phn, email) {
   seller.find((e) => {
     if (e["email"] == email) {
       check = true;
-      alert("Email already exist");
+      Notify.error("Email already exist");
       return true;
     }
     if (phn == e["phoneNo"]) {
       check = true;
-      alert("Phone number Already exist");
+      Notify.error("Phone number Already exist");
     }
   });
   return check;
@@ -134,12 +138,12 @@ loginForm?.addEventListener("submit", function (event) {
     if (email === user["email"]) {
       isExist = true;
       if (password === user["password"]) {
-        alert("successfully loged in");
+        Notify.success("successfully loged in");
         window.open("/Pages/Product.html");
         localStorage.setItem("login", JSON.stringify(user["u_id"]));
         return isExist;
       } else {
-        alert("password not match");
+        Notify.error("password not match");
         return isExist;
       }
     }
@@ -150,12 +154,12 @@ loginForm?.addEventListener("submit", function (event) {
       if (email === user["email"]) {
         isExist = true;
         if (password === user["password"]) {
-          alert("successfully seller loged in");
+          Notify.success("successfully seller loged in");
           window.location.href = "../Pages/sellerAdd.html";
           localStorage.setItem("login_seller", JSON.stringify(user["u_id"]));
           return isExist;
         } else {
-          alert("password not match");
+          Notify.error("password not match");
         }
       }
       return isExist;
@@ -163,14 +167,14 @@ loginForm?.addEventListener("submit", function (event) {
   }
   if (email === "admin@gmail.com") {
     if (password == 1234567890) {
-      alert("Welcome");
+      Notify.success("Welcome");
       window.open("/Pages/adPanel.html");
     } else {
-      alert("invalid please check");
+      Notify.error("invalid please check");
     }
   }
   if (isExist === false) {
-    alert("Invalid user crentials");
+    Notify.error("Invalid user crentials");
   }
 });
 
@@ -189,3 +193,21 @@ let show_profile = document.getElementById("show_profile");
 let user = JSON.parse(localStorage.getItem("userData"));
 let log_user = user.find((obj) => logged == obj["u_id"]);
 show_profile.setAttribute("src", log_user["image"]);
+
+// To  drop down
+function dropdown() {
+  document.getElementById("drop").classList.toggle("show");
+}
+window.onclick = function (e) {
+  if (!e.target.matches("#product_drop")) {
+    let dropdown = document.querySelector(".dropdown");
+    if (dropdown.classList.contains("show")) {
+      dropdown.classList.remove("show");
+    }
+  }
+};
+let tog = document.getElementById("drop");
+if (logged != null) {
+  tog.style.position = "absolute";
+  tog.style.right = "6%";
+}

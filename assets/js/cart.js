@@ -77,7 +77,7 @@ function addCart() {
   let checkQty = JSON.parse(localStorage.getItem("items"));
   for (let i = 0; i < checkQty?.length; i++) {
     let key = checkQty[i];
-    let haveTitle = true;
+    haveTitle = true;
     if (key.title == items.title) {
       key.quantity += items.quantity;
       localStorage.setItem("items", JSON.stringify(checkQty));

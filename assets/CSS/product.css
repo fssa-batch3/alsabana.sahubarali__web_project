@@ -74,6 +74,9 @@ nav li {
 .box {
   font-size: 27px;
 }
+/* #acc_none {
+  display: none;
+} */
 /* cart */
 .cart {
   position: fixed;
@@ -207,8 +210,8 @@ button:hover {
   margin-top: 10px;
   margin-left: -40px;
 }
-/* cart */
 
+/* cart */
 footer {
   font-family: "Poppins", sans-serif;
   font-size: 15px;
