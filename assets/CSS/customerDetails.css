@@ -68,3 +68,38 @@ button:hover {
 .products a {
   text-decoration: none;
 }
+
+/*  */
+.card {
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  width: 300px;
+  margin: 0 auto;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+}
+
+.card-header {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.card-title {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.card-text {
+  margin-bottom: 5px;
+}
+
+.order-items {
+  list-style-type: none;
+  padding: 0;
+  margin-bottom: 10px;
+}
+
+.order-items li {
+  margin-bottom: 5px;
+}

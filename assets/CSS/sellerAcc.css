@@ -1,16 +1,25 @@
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@100&family=Poppins:ital@1&family=Space+Mono:wght@700&display=swap");
+
+body {
+  font-family: "Poppins", sans-serif;
+}
+
 nav {
   background-color: black;
   color: #818181;
   height: 100%;
-  width: 200px;
+  width: 230px;
   position: fixed;
   z-index: 1;
   top: 0;
   left: 0;
-
   overflow-x: hidden;
   padding-top: 20px;
   cursor: pointer;
+}
+nav h2 {
+  margin-right: 10px;
+  color: white;
 }
 nav h3 {
   margin-left: 20px;
@@ -20,7 +29,10 @@ nav h3 {
   justify-content: space-around;
 }
 nav img {
-  border-radius: 45%;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  margin-top: 10px;
 }
 nav a {
   text-decoration: none;
@@ -41,12 +53,23 @@ nav a:active {
 #dash {
   color: white;
 }
+#detail {
+  text-align: center;
+  /* display: none; */
+}
 main {
   padding: 20px;
   font-size: 24px;
-  margin-left: 15%;
+  margin-left: 16%;
 }
-
+button {
+  background-color: #333;
+  color: #fff;
+  border: none;
+  padding: 10px;
+  border-radius: 4px;
+  cursor: pointer;
+}
 section {
   margin-bottom: 20px;
 }
@@ -59,7 +82,9 @@ form label {
   display: block;
   margin-bottom: 5px;
 }
-
+#edit_section {
+  display: none;
+}
 form input[type="text"],
 form input[type="email"],
 form input[type="tel"],

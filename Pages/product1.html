@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="../assets/CSS/product1.css" />
+    <link rel="stylesheet" href="../assets/CSS/product.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
     <title>Document</title>
@@ -66,7 +67,7 @@
     <div class="head-1">
       <h3>AYURVEDIC RANGE</h3>
     </div>
-    <div class="products">
+    <div class="product">
     </div>
     <div class="long-1">
       <img
@@ -202,9 +203,20 @@
         <h3>Healthy hair 2022 © All rights reserved</h3>
       </div>
     </footer>
+    <script src="../assets/js/product.js"></script>
+    <script>
+      let get_product1 = JSON.parse(localStorage.getItem("total_product"));
+      let ayurvedic = get_product1.filter(
+          (get) => get["product_type"] == "Ayurvedic Range");
+       productDiv(ayurvedic, ".product")
+       
+      let get_num_product = JSON.parse(localStorage.getItem("total_product"));
+         const Caffeine =  get_num_product.filter(
+         (getting) => getting["product_type"] == "Caffeine Range");
+       productDiv(Caffeine, ".Products");
+  
+    </script>
+    <script src="/assets/js/script.js"></script>
+    <script src="../assets/js/cart.js"></script>
   </body>
-  <script src="/assets/js/script.js"></script>
-  <script src="../assets/js/cart.js"></script>
-  <script src="../assets/js/product1.js"></script>
-  <script src="../assets/js/caffeine.js"></script>
 </html>

@@ -1,8 +1,14 @@
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@100&family=Poppins:ital@1&family=Space+Mono:wght@700&display=swap");
+
+body {
+  font-family: "Poppins", sans-serif;
+}
+
 nav {
   background-color: black;
   color: #818181;
   height: 100%;
-  width: 200px;
+  width: 230px;
   position: fixed;
   z-index: 1;
   top: 0;
@@ -10,6 +16,10 @@ nav {
   overflow-x: hidden;
   padding-top: 20px;
   cursor: pointer;
+}
+nav h2 {
+  margin-right: 10px;
+  color: white;
 }
 nav h3 {
   margin-left: 20px;
@@ -19,9 +29,10 @@ nav h3 {
   justify-content: space-around;
 }
 nav img {
-  border-radius: 45%;
+  border-radius: 50%;
   width: 50px;
   height: 50px;
+  margin-top: 10px;
 }
 nav a {
   text-decoration: none;
@@ -43,7 +54,14 @@ nav a:active {
   color: white;
 }
 .main {
-  margin-left: 15%;
+  margin-left: 14%;
+  display: flex;
+  background-color: black;
+  color: white;
+  justify-content: space-around;
+  position: fixed;
+  top: 0;
+  width: 100%;
 }
 .main div {
   margin-left: 30px;
@@ -52,18 +70,20 @@ nav a:active {
   background-color: rgb(14, 14, 14);
   color: white;
   padding: 20px;
-  border-radius: 50px;
+  border-radius: 10px;
   text-align: center;
-  box-shadow: 10px 20px 10px gray;
   width: 200px;
+  height: 330px;
+  margin-bottom: 25px;
 }
 img {
-  width: 100px;
-  height: 100px;
+  width: 200px;
+  height: 170px;
+  border-radius: 10px;
 }
 .btn button {
-  width: 100px;
-  height: 40px;
+  width: 150px;
+  height: 50px;
   background-color: black;
   color: aliceblue;
   border-radius: 50px;
@@ -76,10 +96,10 @@ img {
   text-align: center;
   font-size: 15px;
   margin-bottom: 40px;
+  margin-top: 120px;
+  margin-left: 15%;
 }
-.product-listing-1 img {
-  border-radius: 20px;
-}
+
 .edit_btn {
   text-decoration: none;
   margin-left: 20px;
@@ -87,4 +107,17 @@ img {
   background-color: #fff;
   padding: 10px;
   border-radius: 15px;
+}
+.add_more button {
+  width: 160px;
+  height: 45px;
+  margin-top: 17px;
+  border-radius: 10px;
+  background-color: #c1bdbd;
+  font-size: 15px;
+  font-weight: bolder;
+}
+
+.add_more button:hover {
+  background-color: white;
 }

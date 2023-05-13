@@ -54,15 +54,20 @@
     </nav>
     <main>
       <h2>Welcome, <span id="user_name"></span></h2>
-      <section>
-        <img id="user_img" width="200" height="200" alt="image" />
+      <section id="detail">
+        <i class="fa fa-users"
+          ><img id="user_img" width="200" height="200" alt="image"
+        /></i>
         <h3>Profile Information</h3>
         <p>Name:<span id="detail_name"> Sabana</span></p>
         <p>Email:<span id="detail_email">sabin.@example.com</span></p>
         <p>Phone:<span id="detail_num"> 555-555-5555</span></p>
         <p>Address:<span id="detail_address">pallivasal Street</span></p>
+        <p>Company name : <span id="detail_company">Ayurveda</span></p>
+        <button id="edit_btn" onclick="edit()">Edit</button>
       </section>
-      <section>
+
+      <section id="edit_section">
         <h3>Account Settings, You can Edit your Account</h3>
         <form id="acc_form">
           <label for="image">Your image:</label>
@@ -110,11 +115,19 @@
       </footer>
     </main>
     <script>
-      const logEmail = JSON.parse(localStorage.getItem("login"));
+      function edit() {
+        let edit_section = document.getElementById("edit_section");
+        let detail = document.getElementById("detail");
+
+        edit_section.style.display = "block";
+        detail.style.display = "none";
+      }
+
+      const logEmail = JSON.parse(localStorage.getItem("login_seller"));
       const sellerData = JSON.parse(localStorage.getItem("seller"));
 
       let select_user = sellerData.find(function (event) {
-        const customerEmail = event["email"];
+        const customerEmail = event["u_id"];
         if (logEmail === customerEmail) {
           return true;
         }
@@ -132,6 +145,8 @@
       detail_num.innerText = select_user["phoneNo"];
       let detail_address = document.getElementById("detail_address");
       detail_address.innerText = select_user["address"];
+      let detail_company = document.getElementById("detail_company");
+      detail_company.innerText = select_user["company_name"];
 
       let username = document.getElementById("user_name");
       username.innerText = select_user["username"];
@@ -146,6 +161,7 @@
       address.value = select_user["address"];
       company_name.value = select_user["company_name"];
       user_img.src = select_user["image"];
+      company_name.value = select_user["company_name"];
 
       const form = document.getElementById("acc_form");
       form.addEventListener("submit", function (event) {
@@ -169,6 +185,7 @@
         sellerData[find] = combineData;
         localStorage.setItem("seller", JSON.stringify(sellerData));
         alert("successfully changed");
+        location.reload();
       });
 
       let delete_seller = document.getElementById("delete");

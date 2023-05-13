@@ -20,7 +20,7 @@ buy_btn?.addEventListener("click", function () {
 let find_id = window.location.search;
 let product_params = new URLSearchParams(find_id);
 let get_detail = product_params.get("id");
-let products = JSON.parse(localStorage.getItem("proObject"));
+let products = JSON.parse(localStorage.getItem("total_product"));
 let pro_detail = products.find((event) => get_detail == event["id"]);
 let range = document.getElementById("range");
 let pic = document.getElementById("imgs");
@@ -31,7 +31,7 @@ let description = document.getElementById("description");
 product_name.innerText = pro_detail["productName"];
 product_price.innerText = "₹" + pro_detail["cost"];
 description.innerText = pro_detail["product_detail"];
-pic.setAttribute("src", pro_detail["image"]["src"]);
+pic.setAttribute("src", pro_detail["image"]);
 range.innerText = pro_detail["product_type"];
 //review
 let user_login = JSON.parse(localStorage.getItem("login"));

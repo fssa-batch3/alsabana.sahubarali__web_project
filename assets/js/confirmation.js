@@ -1,5 +1,5 @@
 let get_id = JSON.parse(localStorage.getItem("id"));
-let product = JSON.parse(localStorage.getItem("proObject"));
+let product = JSON.parse(localStorage.getItem("total_product"));
 let pro_name;
 let cost;
 let image;

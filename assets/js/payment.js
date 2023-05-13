@@ -19,7 +19,7 @@ payment_form?.addEventListener("submit", function (event) {
   let order = JSON.parse(localStorage.getItem("order_id"));
   let details = JSON.parse(localStorage.getItem("details"));
   let id = JSON.parse(localStorage.getItem("id"));
-  let product = JSON.parse(localStorage.getItem("proObject"));
+  let product = JSON.parse(localStorage.getItem("total_product"));
   let find_product = product.find(function (pro) {
     let product_id = pro["id"];
     if (product_id == id) {

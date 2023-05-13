@@ -1,8 +1,6 @@
-let arr = JSON.parse(localStorage.getItem("proObject"));
-let login_email = JSON.parse(localStorage.getItem("login"));
-
+let arr = JSON.parse(localStorage.getItem("total_product"));
+let login_email = JSON.parse(localStorage.getItem("login_seller"));
 let show_product = arr.filter((product) => login_email == product["login_id"]);
-console.log(show_product);
 
 for (let i = 0; i < show_product.length; i++) {
   //first div
@@ -17,10 +15,10 @@ for (let i = 0; i < show_product.length; i++) {
   div1.append(div2);
   //img tag and attributes
   let card_img = document.createElement("img");
-  card_img.setAttribute("src", show_product[i].image["src"]);
+  card_img.setAttribute("src", show_product[i]["image"]);
   card_img.setAttribute("height", "250");
   card_img.setAttribute("width", "250");
-  card_img.setAttribute("alt", show_product[i].image["alt"]);
+  card_img.setAttribute("alt", "product");
   div2.append(card_img);
   //div for h3 and h5 tags
   let div1_card = document.createElement("div");
@@ -53,6 +51,6 @@ for (let i = 0; i < show_product.length; i++) {
 
 let logout = document.getElementById("logOut");
 logout.addEventListener("click", function (e) {
-  localStorage.removeItem("login");
+  localStorage.removeItem("login_seller");
   window.open("/index.html");
 });

@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="../assets/CSS/product2.css" />
+    <link rel="stylesheet" href="../assets/CSS/product.css">
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
 
     <link
@@ -70,12 +71,12 @@
     <div class="head">
       <h3>Macadamia Nut, Avocado, Biotin Range</h3>
     </div>
-    <div class="products">
+    <div class="avocado">
     </div>
     <div class="center">
       <h3>Hair serum and Hair Booster capsules</h3>
     </div>
-    <div class="Products">
+    <div class="capsules">
     </div> 
     <hr />
     <div class="delivery">
@@ -184,10 +185,20 @@
         <h3>Healthy hair 2022 © All rights reserved</h3>
       </div>
     </footer>
+    <script src="/assets/js/product.js"></script>
+    <script>
+        let avocado_range = JSON.parse(localStorage.getItem("total_product"));
+        const avocado = avocado_range.filter((get) => get["product_type"] == "Avocado Range");
+        productDiv(avocado, ".avocado");
+
+
+
+        let capsules_range = JSON.parse(localStorage.getItem("total_product"));
+        const capsules = capsules_range.filter((get) => get["product_type"] == "Capsules");
+        productDiv(capsules, ".capsules");
+    </script>
       <script src="/assets/js/script.js"></script>
       <script src="/assets/js/cart.js"></script>
-      <script src="/assets/js/product2.js"></script>
-      <script src="/assets/js/capsules.js"></script>
 
   </body>
-</html>
+</html> 
