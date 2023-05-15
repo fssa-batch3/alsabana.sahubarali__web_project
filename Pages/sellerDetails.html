@@ -104,7 +104,7 @@
       let get_details = product_params.get("id");
       let seller = JSON.parse(localStorage.getItem("seller"));
       let seller_details = seller.find(function (event) {
-        let id = event["u_id"];
+        let id = event["user_id"];
         if (get_details == id) {
           return true;
         }

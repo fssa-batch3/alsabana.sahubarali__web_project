@@ -49,7 +49,7 @@ postBtn.addEventListener("submit", function (e) {
     let login_acc = JSON.parse(localStorage.getItem("login"));
     let userData = JSON.parse(localStorage.getItem("userData"));
     let find_user = userData?.find(function (login) {
-      if (login_acc == login["u_id"]) {
+      if (login_acc == login["user_id"]) {
         return true;
       }
     });

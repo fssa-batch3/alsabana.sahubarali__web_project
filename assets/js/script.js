@@ -40,7 +40,7 @@ signup?.addEventListener("submit", function (event) {
   let phoneNo = document.getElementById("phone-no").value;
   let password = document.getElementById("password").value;
   let confirmPassword = document.getElementById("confirm-password").value;
-  let u_id = Date.now();
+  let user_id = Date.now();
 
   let userDetails = {
     username: userName,
@@ -48,7 +48,7 @@ signup?.addEventListener("submit", function (event) {
     phoneNo: phoneNo,
     password: password,
     confirmPassword: confirmPassword,
-    u_id,
+    user_id,
     sign_type,
     image:
       "https://png.pngtree.com/png-clipart/20200224/original/pngtree-avatar-icon-profile-icon-member-login-vector-isolated-png-image_5247852.jpg",
@@ -140,7 +140,7 @@ loginForm?.addEventListener("submit", function (event) {
       if (password === user["password"]) {
         Notify.success("successfully loged in");
         window.open("/Pages/Product.html");
-        localStorage.setItem("login", JSON.stringify(user["u_id"]));
+        localStorage.setItem("login", JSON.stringify(user["user_id"]));
         return isExist;
       } else {
         Notify.error("password not match");
@@ -156,7 +156,7 @@ loginForm?.addEventListener("submit", function (event) {
         if (password === user["password"]) {
           Notify.success("successfully seller loged in");
           window.location.href = "../Pages/sellerAdd.html";
-          localStorage.setItem("login_seller", JSON.stringify(user["u_id"]));
+          localStorage.setItem("login_seller", JSON.stringify(user["user_id"]));
           return isExist;
         } else {
           Notify.error("password not match");
@@ -191,7 +191,7 @@ if (logged != null) {
 
 let show_profile = document.getElementById("show_profile");
 let user = JSON.parse(localStorage.getItem("userData"));
-let log_user = user.find((obj) => logged == obj["u_id"]);
+let log_user = user.find((obj) => logged == obj["user_id"]);
 show_profile.setAttribute("src", log_user["image"]);
 
 // To  drop down

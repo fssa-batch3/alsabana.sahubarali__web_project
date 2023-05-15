@@ -15,6 +15,8 @@ body {
   align-items: center;
   flex-direction: column;
   padding: 0 20%;
+  font-family: "Poppins", sans-serif;
+  overflow-x: hidden;
 }
 .navbar {
   width: 100%;
@@ -33,9 +35,9 @@ nav ul {
 nav li {
   padding-right: 50px;
   font-size: 50px;
-  font-weight: bold;
   cursor: pointer;
   color: black;
+  margin-top: 50px;
 }
 .navbar .navbar-header {
   color: rgb(9, 9, 9);

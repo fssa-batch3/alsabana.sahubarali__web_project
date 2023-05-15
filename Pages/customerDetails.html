@@ -108,7 +108,7 @@
       let cus_details = id_params.get("id");
       let customer = JSON.parse(localStorage.getItem("userData"));
       let customer_details = customer.find(function (event) {
-        let id = event["u_id"];
+        let id = event["user_id"];
         if (cus_details == id) {
           return true;
         }

@@ -3,7 +3,7 @@ function createUserCard(arr) {
     let a_tag = document.createElement("a");
     a_tag.setAttribute(
       "href",
-      "../Pages/sellerDetails.html?id=" + arr[i]["u_id"]
+      "../Pages/sellerDetails.html?id=" + arr[i]["user_id"]
     );
     let div_card = document.createElement("div");
     div_card.setAttribute("class", "whole_card");

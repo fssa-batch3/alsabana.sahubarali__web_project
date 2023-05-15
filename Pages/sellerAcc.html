@@ -127,7 +127,7 @@
       const sellerData = JSON.parse(localStorage.getItem("seller"));
 
       let select_user = sellerData.find(function (event) {
-        const customerEmail = event["u_id"];
+        const customerEmail = event["user_id"];
         if (logEmail === customerEmail) {
           return true;
         }

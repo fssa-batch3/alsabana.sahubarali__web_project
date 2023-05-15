@@ -34,9 +34,9 @@ nav ul {
 nav li {
   padding-right: 50px;
   font-size: 50px;
-  font-weight: bold;
   cursor: pointer;
   color: black;
+  margin-top: 50px;
 }
 .navbar .navbar-header {
   color: rgb(9, 9, 9);
@@ -88,6 +88,10 @@ nav li {
   border: 2px solid rgba(0, 0, 0, 1);
   padding: 5px;
 }
+.cart-quantity {
+  width: 150px;
+  height: 30px;
+}
 .detail-box {
   display: grid;
   row-gap: 0.5rem;
@@ -108,10 +112,9 @@ nav li {
 .cart-quantity {
   border: 1px solid rgba(0, 0, 0, 1);
   outline: none;
+  width: 2.4rem;
   text-align: center;
   font-size: 1rem;
-  width: 150px;
-  height: 30px;
 }
 .cart-remove {
   font-size: 23px;
@@ -145,6 +148,15 @@ nav li {
   right: 0.8rem;
   font-size: 2rem;
 }
+button {
+  width: 200px;
+  height: 50px;
+  background-color: rgb(250, 246, 246);
+  color: rgb(11, 10, 10);
+  text-decoration: none;
+  border-radius: 10px;
+  font-size: 16px;
+}
 .btn button {
   background-color: rgb(8, 8, 8);
   color: rgb(251, 248, 248);
@@ -173,8 +185,9 @@ button:hover {
   justify-content: space-between;
   align-items: center;
   width: 60%;
+  margin-top: 45%;
+  z-index: -10;
 }
-
 .progress-step-container {
   display: flex;
   justify-content: center;
@@ -236,7 +249,7 @@ a {
   width: 450px;
   height: 40px;
   font-size: larger;
-  margin-top: 40px;
+  margin-top: 30px;
   background-color: #403e3e;
   color: white;
   border-radius: 50px;
