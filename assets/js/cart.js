@@ -112,47 +112,46 @@ let finded_product = getCartItems?.find(function (user) {
     );
   }
 });
-function orderCart(matched_products) {
-  for (let i = 0; i < matched_products?.length; i++) {
-    let div_card = document.createElement("div");
-    div_card.setAttribute("class", "cart-box");
-    let card_img = document.createElement("img");
-    card_img.setAttribute("src", matched_products[i].image);
-    card_img.setAttribute("class", "cart-img");
-    card_img.setAttribute("id", "image");
-    div_card.append(card_img);
-    let div_card1 = document.createElement("div");
-    div_card1.setAttribute("class", "detail-box");
-    div_card.append(div_card1);
-    let div_card2 = document.createElement("div");
-    div_card2.setAttribute("id", "product_name");
-    div_card2.setAttribute("class", "product-title");
-    div_card2.innerText = matched_products[i].title;
-    div_card1.append(div_card2);
-    let price_div = document.createElement("div");
-    price_div.setAttribute("class", "price-box");
-    div_card1.append(price_div);
-    let price_div1 = document.createElement("div");
-    price_div1.setAttribute("id", "price");
-    price_div1.setAttribute("class", "cart-price");
-    let m = matched_products[i].price;
-    let n = m.split(".");
-    price_div1.innerText = "Rs." + n[1] * matched_products[i].quantity;
-    price_div.append(price_div1);
-    let input = document.createElement("input");
-    input.setAttribute("value", matched_products[i].quantity);
-    input.setAttribute("type", "number");
-    input.setAttribute("class", "cart-quantity");
-    div_card1.append(input);
-    let ion = document.createElement("ion-icon");
-    ion.setAttribute("class", "cart-remove");
-    ion.setAttribute("id", "delete");
-    ion.setAttribute("name", "trash");
-    div_card.append(ion);
-    let cart_content = document.querySelector(".cart-content");
-    cart_content.prepend(div_card);
-  }
+for (let i = 0; i < matched_products?.length; i++) {
+  let div_card = document.createElement("div");
+  div_card.setAttribute("class", "cart-box");
+  let card_img = document.createElement("img");
+  card_img.setAttribute("src", matched_products[i].image);
+  card_img.setAttribute("class", "cart-img");
+  card_img.setAttribute("id", "image");
+  div_card.append(card_img);
+  let div_card1 = document.createElement("div");
+  div_card1.setAttribute("class", "detail-box");
+  div_card.append(div_card1);
+  let div_card2 = document.createElement("div");
+  div_card2.setAttribute("id", "product_name");
+  div_card2.setAttribute("class", "product-title");
+  div_card2.innerText = matched_products[i].title;
+  div_card1.append(div_card2);
+  let price_div = document.createElement("div");
+  price_div.setAttribute("class", "price-box");
+  div_card1.append(price_div);
+  let price_div1 = document.createElement("div");
+  price_div1.setAttribute("id", "price");
+  price_div1.setAttribute("class", "cart-price");
+  let m = matched_products[i].price;
+  let n = m.split(".");
+  price_div1.innerText = "Rs." + n[1] * matched_products[i].quantity;
+  price_div.append(price_div1);
+  let input = document.createElement("input");
+  input.setAttribute("value", matched_products[i].quantity);
+  input.setAttribute("type", "number");
+  input.setAttribute("class", "cart-quantity");
+  div_card1.append(input);
+  let ion = document.createElement("ion-icon");
+  ion.setAttribute("class", "cart-remove");
+  ion.setAttribute("id", "delete");
+  ion.setAttribute("name", "trash");
+  div_card.append(ion);
+  let cart_content = document.querySelector(".cart-content");
+  cart_content.prepend(div_card);
 }
+
 let add = 0;
 for (let i = 0; i < matched_products?.length; i++) {
   let split = matched_products[i].price;
@@ -160,6 +159,3 @@ for (let i = 0; i < matched_products?.length; i++) {
   add += parseInt(result[1] * matched_products[i].quantity);
 }
 let view = (document.getElementById("total").innerText = "Rs." + add);
-
-let get_items = JSON.parse(localStorage.getItem("items"));
-function deliveryCart() {}

@@ -8,7 +8,7 @@ for (let i = 0; i < product.length; i++) {
   if (get_id == product[i]["id"]) {
     pro_name = product[i]["productName"];
     cost = product[i]["cost"];
-    image = product[i]["image"]["src"];
+    image = product[i]["image"];
     totals = product[i]["cost"];
   }
 }

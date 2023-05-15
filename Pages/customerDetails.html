@@ -24,7 +24,7 @@
       >
         <div class="panel panel-primary">
           <div>
-            <h3>Buyer Details</h3>
+            <h3>Customer Details</h3>
           </div>
           <form class="panel-body" id="form">
             <div class="row">
@@ -75,10 +75,6 @@
                         </th>
                       </tr>
                       <tr>
-                        <td>Company Name :</td>
-                        <td><input id="cname" type="text" disabled /></td>
-                      </tr>
-                      <tr>
                         <td>Email :</td>
                         <td><input id="email" type="email" disabled /></td>
                       </tr>
@@ -90,44 +86,33 @@
           </form>
         </div>
       </div>
-      <div>
-        <!-- <h2>Orders</h2>
-        <div class="products">
-          <h2 id="noPro"></h2>
-        </div> -->
-        <div class="card">
-          <div class="card-header">Order Details</div>
+      <hr />
+      <div class="card-header">Order Details</div>
+      <div id="appends">
+        <!-- <div class="card">
           <div class="card-body">
             <h5 class="card-title">Order #12345</h5>
             <p class="card-text">Date: May 12, 2023</p>
             <p class="card-text">Customer: John Doe</p>
             <p class="card-text">Shipping Address: 123 Main St, Anytown, USA</p>
-            <ul class="order-items">
-              <li>Item 1</li>
-              <li>Item 2</li>
-              <li>Item 3</li>
-            </ul>
+            <p class="order-items">product name : ayurveda</p>
             <p class="card-text">Total: $99.99</p>
           </div>
-        </div>
+        </div> -->
       </div>
       <div class="back"><button>Back</button></div>
     </div>
-
     <script>
       let cus_id = window.location.search;
       let id_params = new URLSearchParams(cus_id);
       let cus_details = id_params.get("id");
       let customer = JSON.parse(localStorage.getItem("userData"));
-      console.log(customer);
       let customer_details = customer.find(function (event) {
         let id = event["u_id"];
         if (cus_details == id) {
           return true;
         }
       });
-
-      console.log(customer_details);
       let customer_image = document.getElementById("profile_pic");
       customer_image.src = customer_details["image"];
       let username = document.getElementById("username");
@@ -136,12 +121,49 @@
       address.value = customer_details["address"];
       let phone_number = document.getElementById("phone_number");
       phone_number.value = customer_details["phoneNo"];
-      let alter_num = document.getElementById("alter_number");
-      alter_num.value = customer_details["alter_num"];
-      let company_name = document.getElementById("cname");
-      company_name.value = customer_details["company_name"];
+      // let alter_num = document.getElementById("alter_number");
+      // alter_num.value = customer_details["alter_num"];
       let email = document.getElementById("email");
       email.value = customer_details["email"];
+
+      let order_details = JSON.parse(localStorage.getItem("details"));
+      let order_history = order_details.filter(
+        (event) => cus_details == event["login_id"]
+      );
+      console.log(order_history);
+      for (i = 0; i < order_history.length; i++) {
+        let div_card = document.createElement("div");
+        div_card.setAttribute("class", "card");
+        let div_card1 = document.createElement("div");
+        div_card1.setAttribute("class", "card-body");
+        div_card.append(div_card1);
+        let h5_tag = document.createElement("h5");
+        h5_tag.setAttribute("class", "card-title");
+        h5_tag.innerText = "Order ID:" + order_history[i]["order_id"];
+        div_card1.append(h5_tag);
+        let p_tag = document.createElement("p");
+        p_tag.setAttribute("class", "card-text");
+        p_tag.innerText = "Date:" + order_history[i]["currentDate"];
+        div_card1.append(p_tag);
+        let p1_tag = document.createElement("p");
+        p1_tag.setAttribute("class", "card-text");
+        p1_tag.innerText = "Customer:" + order_history[i]["cus_name"];
+        div_card1.append(p1_tag);
+        let p2_tag = document.createElement("p");
+        p2_tag.setAttribute("class", "card-text");
+        p2_tag.innerText = "Shipping Address:" + order_history[i]["address"];
+        div_card1.append(p2_tag);
+        let p3_tag = document.createElement("p");
+        p3_tag.setAttribute("class", "order-items");
+        p3_tag.innerText = "product name :" + order_history[i]["productName"];
+        div_card1.append(p3_tag);
+        let p4_tag = document.createElement("p");
+        p4_tag.setAttribute("class", "card-text");
+        p4_tag.innerText = "Total: Rs." + order_history[i]["cost"];
+        div_card1.append(p4_tag);
+        let insert_div = document.getElementById("appends");
+        insert_div.append(div_card);
+      }
     </script>
   </body>
 </html>

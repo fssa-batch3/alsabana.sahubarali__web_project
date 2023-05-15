@@ -5,9 +5,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="../assets/CSS/product1.css" />
-    <link rel="stylesheet" href="../assets/CSS/product.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
-    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <link rel="stylesheet" href="../assets/CSS/product.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css"
+    />
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
+    ></script>
     <title>Document</title>
   </head>
   <body>
@@ -20,30 +26,15 @@
         height="100"
         alt="image"
       />
-      <button class='navbar-btn'>
+      <button class="navbar-btn">
         <span></span>
         <span></span>
         <span></span>
       </button>
-
-     <nav class="navbar-item hide">
-        <ul>
-          <li><a href="../index.html">Home</a></li>
-          <li><a href="../Pages/analysis.html">Hair Analysis</a></li>
-          <li><a href="../Pages/Product.html">Products</a></li>
-          <li class="box">
-             <span class="bi bi-cart4 count " ></span>Cart
-          </li>
-          <li>
-            <a href="../Pages/acc.html"
-             class="bi bi-person-circle" >
-          Account  </a>
-          </li>
-        </ul>
-      </div>
-    </nav>
+      <div id="js_header"></div>
+    </div>
     <!-- cart -->
-    <div class="cart ">
+    <div class="cart">
       <div class="cart-title">Cart items</div>
       <div class="cart-content">
         <div class="total">
@@ -52,8 +43,8 @@
         </div>
         <ion-icon name="close" id="cart-close"></ion-icon>
         <button class="btn-buy">place order</button>
-      </div>  
-    </div> 
+      </div>
+    </div>
     <!-- cart -->
     <div class="long-image">
       <img
@@ -67,8 +58,7 @@
     <div class="head-1">
       <h3>AYURVEDIC RANGE</h3>
     </div>
-    <div class="product">
-    </div>
+    <div class="product"></div>
     <div class="long-1">
       <img
         src="../assets/images/big images1.jpg"
@@ -78,8 +68,7 @@
       />
     </div>
     <div class="head-2"><h2>Onion Caffeine Range</h2></div>
-    <div class="Products">
-    </div>
+    <div class="Products"></div>
     <div class="btn">
       <div>
         <a href="../Pages/product2.html"
@@ -207,15 +196,17 @@
     <script>
       let get_product1 = JSON.parse(localStorage.getItem("total_product"));
       let ayurvedic = get_product1.filter(
-          (get) => get["product_type"] == "Ayurvedic Range");
-       productDiv(ayurvedic, ".product")
-       
+        (get) => get["product_type"] == "Ayurvedic Range"
+      );
+      productDiv(ayurvedic, ".product");
+
       let get_num_product = JSON.parse(localStorage.getItem("total_product"));
-         const Caffeine =  get_num_product.filter(
-         (getting) => getting["product_type"] == "Caffeine Range");
-       productDiv(Caffeine, ".Products");
-  
+      const Caffeine = get_num_product.filter(
+        (getting) => getting["product_type"] == "Caffeine Range"
+      );
+      productDiv(Caffeine, ".Products");
     </script>
+    <script src="../assets/js/nav.js"></script>
     <script src="/assets/js/script.js"></script>
     <script src="../assets/js/cart.js"></script>
   </body>

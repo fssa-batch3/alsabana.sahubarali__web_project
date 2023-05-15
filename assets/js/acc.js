@@ -91,7 +91,6 @@ let find_orders = order_details?.filter(
 
 let no_order = document.querySelector(".no-order");
 if (find_orders.length === 0) {
-  console.log("check");
   no_order.style.display = "block";
 }
 for (let i = 0; i < find_orders?.length; i++) {
@@ -122,21 +121,19 @@ for (let i = 0; i < find_orders?.length; i++) {
   span_tag.setAttribute("class", "dot");
   div_card4.append(span_tag);
   let span1_tag = document.createElement("span");
-  span1_tag.innerText = "Delivered by " + find_orders[i]["date"];
+  span1_tag.innerText = "Delivered by " + find_orders[i]["currentDate"];
   div_card4.append(span1_tag);
   let p_tag = document.createElement("p");
-  p_tag.innerText = "Your product has been delivered";
+  p_tag.innerText = "Order ID :" + find_orders[i]["order_id"];
   div_card4.append(p_tag);
-  let span2_tag = document.createElement("span");
-  span2_tag.setAttribute("class", "fa fa-star checked");
-  div_card4.append(span2_tag);
-  let span3_tag = document.createElement("span");
-  span3_tag.innerText = "Rate & Review product";
-  div_card4.append(span3_tag);
-  // let cancel_button = document.createElement("button");
-  // cancel_button.innerText = "cancel";
-  // cancel_button.setAttribute("class", "cancel_btn");
-  // div_card3.append(cancel_button);
+  let cancel_button = document.createElement("button");
+  cancel_button.innerText = "cancel order";
+  cancel_button.setAttribute("id", "cancel_btn");
+  cancel_button.setAttribute(
+    "onclick",
+    "deleteOrder(" + find_orders[i]["order_id"] + ")"
+  );
+  div_card4.append(cancel_button);
   let insert_div = document.querySelector(".scnd-container");
   insert_div.append(div_card);
 }
@@ -145,4 +142,25 @@ function change() {
   let form_Detail = document.getElementById("proform");
   cus_details.style.display = "none";
   form_Detail.style.display = "block";
+}
+
+function deleteOrder(Orderid) {
+  let order_history = JSON.parse(localStorage.getItem("details"));
+  let find_order = order_history.find(function (order) {
+    let orderId = order["order_id"];
+    if (Orderid == orderId) {
+      return true;
+    } else {
+      return false;
+    }
+  });
+  let msg = confirm("Are you sure to cancel order");
+  let orderIndex = order_history.indexOf(find_order);
+  if (msg != true) {
+    return;
+  } else {
+    order_history.splice(orderIndex, 1);
+    localStorage.setItem("details", JSON.stringify(order_history));
+    location.reload();
+  }
 }

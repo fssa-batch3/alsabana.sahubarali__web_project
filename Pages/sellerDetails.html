@@ -127,7 +127,7 @@
       let id = window.location.search;
       let search = new URLSearchParams(id);
       let get_id = search.get("id");
-      let total_products = JSON.parse(localStorage.getItem("proObject"));
+      let total_products = JSON.parse(localStorage.getItem("total_product"));
       let selled_product = total_products.filter(
         (pro) => get_id == pro["login_id"]
       );

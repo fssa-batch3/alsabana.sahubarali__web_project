@@ -171,7 +171,7 @@
               placeholder="Password"
               required
             />
-            <p class="forget">forgot password?</p>
+            <p onclick="forgot()" class="forget">forgot password?</p>
           </div>
           <div class="form-input">
             <button type="submit">Login</button>
@@ -194,6 +194,27 @@
           <input id="f_confirm_password " type="password" />
           <button class="submit" type="submit">Submit</button>
           <button>Back</button>
+        </form>
+      </div>
+    </div>
+    <div class="otp_verification">
+      <div class="forget_pass">
+        <div><h4>forgot password?</h4></div>
+        <form id="submit_form">
+          <div class="hide_email">
+            <label>Email:</label>
+            <input id="f_email " type="email" />
+            <div class="verify_otp">
+              <button>Send Otp</button>
+            </div>
+          </div>
+          <div class="hide_otp">
+            <label>Enter Otp :</label>
+            <input id="f_confirm_password" type="password" />
+            <div class="verify_otp">
+              <button type="submit">Verify Otp</button>
+            </div>
+          </div>
         </form>
       </div>
     </div>

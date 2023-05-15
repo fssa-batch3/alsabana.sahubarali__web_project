@@ -45,7 +45,6 @@ button:hover {
 .product-listing-1 {
   display: flex;
   flex-wrap: wrap;
-  /* justify-content: space-around; */
   flex-direction: column;
   text-align: center;
   padding: 10px;
@@ -69,7 +68,11 @@ button:hover {
   text-decoration: none;
 }
 
-/*  */
+#appends {
+  display: flex;
+  justify-content: space-around;
+}
+
 .card {
   border: 1px solid #ccc;
   border-radius: 4px;

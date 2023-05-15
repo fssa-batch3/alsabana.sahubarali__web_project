@@ -5,8 +5,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="../assets/CSS/product.css" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
-    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css"
+    />
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
+    ></script>
     <title>Products</title>
   </head>
   <body>
@@ -19,28 +25,14 @@
         height="100"
         alt="image"
       />
-      <button class='navbar-btn'>
+      <button class="navbar-btn">
         <span></span>
         <span></span>
         <span></span>
       </button>
-      <nav class="navbar-item hide">
-        <ul>
-          <li><a href="../index.html">Home</a></li>
-          <li><a href="../Pages/analysis.html">Hair Analysis</a></li>
-          <li class="dropdown"><a href="../Pages/Product.html">Products</a></li>
-          <li class="box count" onclick="open_popup()">
-             <span class="bi bi-cart4"></span>Cart
-          </li>
-          <li id="acc_none">
-            <a href="../Pages/acc.html"
-             class="bi bi-person-circle" >
-          Account  </a>
-          </li>
-        </ul>
-      </div>
-    </nav>
-    <div class="cart ">
+      <div id="js_header"></div>
+    </div>
+    <div class="cart">
       <div class="cart-title">Cart items</div>
       <div class="cart-content">
         <div class="total">
@@ -48,9 +40,13 @@
           <div class="total-price" id="total">Rs.0</div>
         </div>
         <ion-icon name="close" id="cart-close"></ion-icon>
-       <a href="../Pages/delivery.html" ><button onclick="deliveryCart()" class="btn-buy">place order</button></a>
-      </div>  
-    </div> 
+        <a href="../Pages/delivery.html"
+          ><button onclick="deliveryCart()" class="btn-buy">
+            place order
+          </button></a
+        >
+      </div>
+    </div>
     <div class="long">
       <img
         src="../assets/images/Shoppage-page-bundle-offer-desktop.jpg"
@@ -61,8 +57,7 @@
     <div class="sample">
       <h2>OUR SAMPLES</h2>
     </div>
-    <div class="products" >
-    </div>
+    <div class="products"></div>
     <div class="btn">
       <div>
         <button class="btns">
@@ -185,10 +180,9 @@
         <h3>Healthy hair 2022 © All rights reserved</h3>
       </div>
     </footer>
+    <script src="../assets/js/nav.js"></script>
     <script src="../assets/js/product.js"></script>
     <script src="/assets/js/script.js"></script>
     <script src="/assets/js/cart.js"></script>
-
   </body>
 </html>
-

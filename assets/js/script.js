@@ -211,3 +211,7 @@ if (logged != null) {
   tog.style.position = "absolute";
   tog.style.right = "6%";
 }
+function forgot() {
+  let forgot_container = document.querySelector(".forgot_container");
+  forgot_container.style.display = "block";
+}

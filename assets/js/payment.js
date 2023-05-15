@@ -1,5 +1,5 @@
 let pay = document.getElementById("number");
-pay.addEventListener("keyup", function (e) {
+pay?.addEventListener("keyup", function (e) {
   console.log(e.keyCode);
   if (e.keyCode !== 8) {
     if (
@@ -54,16 +54,14 @@ payment_form?.addEventListener("submit", function (event) {
   let currentDate = `${year}-${month}-${day}`;
   let card_name = document.getElementById("name").value;
   let card_number = document.getElementById("number").value;
-  let date = document.getElementById("date").value;
   let cvc_num = document.getElementById("cvc").value;
   let productName = find_product["productName"];
   let cost = find_product["cost"];
-  let image = find_product["image"]["src"];
+  let image = find_product["image"];
 
   let new_obj = {
     card_name,
     card_number,
-    date,
     cvc_num,
     productName,
     cost,

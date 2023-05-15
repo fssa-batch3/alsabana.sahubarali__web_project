@@ -23,7 +23,7 @@ body {
 .dropdown h4 {
   text-align: center;
   font-weight: lighter;
-  background-color: #e2e1dc;
+  background-color: #9e9a86;
   margin: 3px;
   color: black;
 }
@@ -31,7 +31,7 @@ h4 a {
   color: black;
 }
 .dropdown h4:hover {
-  background-color: #7f8081;
+  background-color: #7b7762;
 }
 .box {
   font-size: 25px;
@@ -46,6 +46,7 @@ h4 a {
   top: 0;
   right: 5%;
   left: 50%;
+  z-index: 20;
   visibility: hidden;
   transform: translate(-50%, -50%) scale(0.1);
   transition: transform 0.4s, top 0.4s;
@@ -152,6 +153,7 @@ a {
   left: 60%;
   display: none;
   cursor: pointer;
+  z-index: 20;
 }
 .sign-block {
   display: block;
@@ -230,15 +232,16 @@ nav {
   display: flex;
   justify-content: space-around;
 }
+/* foget password */
 .forgot_container {
   position: absolute;
   width: 270px;
   background-color: white;
   margin-left: 40%;
   margin-top: 15%;
-  visibility: hidden;
+  display: none;
 }
-.forgot_container h4 {
+.forget_pass h4 {
   text-align: center;
   margin-top: 30px;
   color: #f278a0;
@@ -259,6 +262,24 @@ nav {
 .forget_pass label {
   margin-left: 15px;
 }
+.otp_verification {
+  position: absolute;
+  width: 270px;
+  background-color: white;
+  margin-left: 40%;
+  margin-top: 15%;
+  display: none;
+}
+.verify_otp button {
+  width: 200px;
+}
+.hide_otp {
+  display: block;
+}
+.hide_email {
+  display: none;
+}
+/* forgot password */
 nav li {
   padding-right: 50px;
   font-size: 50px;
