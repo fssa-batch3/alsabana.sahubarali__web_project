@@ -87,7 +87,6 @@ if (cus_reviews.length === 0) {
 let num_reviews = 0;
 for (let i = 0; i < cus_reviews.length; i++) {
   num_reviews += 1;
-  console.log(num_reviews);
   let div_card = document.createElement("div");
   div_card.setAttribute("class", "whole");
   let div_card1 = document.createElement("div");
@@ -112,7 +111,8 @@ for (let i = 0; i < cus_reviews.length; i++) {
   p_tag.innerText = cus_reviews[i]["customer_reviews"];
   child_div1.append(p_tag);
   let button = document.createElement("button");
-  button.innerText = "Edit";
+  button.innerText = "Delete";
+  button.style.display = "none";
   button.setAttribute("class", "edit_btn");
   child_div1.append(button);
   let rate_div = document.createElement("div");
@@ -127,3 +127,13 @@ for (let i = 0; i < cus_reviews.length; i++) {
 }
 let count_reviews = document.getElementById("count");
 count_reviews.innerText = num_reviews;
+
+let delete_btn = document.querySelector(".edit_btn");
+let logged_user = JSON.parse(localStorage.getItem("login"));
+let total_reviews = JSON.parse(localStorage.getItem("reviews"));
+let find_reviews = total_reviews.filter(
+  (review) => logged_user == review["login_acc"]
+);
+if (logged_user == total_reviews["login_acc"]) {
+  delete_btn.style.display = "block";
+}
