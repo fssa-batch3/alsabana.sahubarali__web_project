@@ -185,7 +185,7 @@ button:hover {
   justify-content: space-between;
   align-items: center;
   width: 60%;
-  margin-top: 45%;
+  margin-top: 5%;
   z-index: -10;
 }
 .progress-step-container {
@@ -223,7 +223,6 @@ button:hover {
   background-color: rgb(243, 98, 127);
   border: 2px solid rgb(243, 98, 127);
 }
-
 .step-check::after {
   content: "";
   width: 15vw;

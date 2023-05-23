@@ -4,48 +4,43 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css"
+    />
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
+    ></script>
     <link rel="stylesheet" href="../assets/CSS/suggest.css" />
     <title>suggest product</title>
   </head>
   <body>
-    <nav>
-      <ul>
-        <li>
-          <img
-            class="image-1"
-            src="../assets/images/new logo.png"
-            width="90"
-            height="85"
-            alt="image"
-          />
-        </li>
-        <li><a href="../index.html">Home</a></li>
-        <li><a href="../Pages/analysis.html">Hair Analysis</a></li>
-        <li><a href="../Pages/Product.html">Products</a></li>
-        <li><a href="../Pages/admin.html">Login</a></li>
-        <li><a href="../Pages/register.html">Register Now</a></li>
-        <li>
-          <a href="../Pages/cart.html">
-            <img
-              src="../assets/images/cart-shopping-solid.svg"
-              width="40"
-              height="40"
-              alt="image"
-          /></a>
-        </li>
-        <li>
-          <a href="../Pages/account.html"
-            ><img
-              src="../assets/images/user-solid.svg"
-              width="40"
-              height="40"
-              alt="image"
-          /></a>
-        </li>
-      </ul>
-    </nav>
-    <div class="fst-1">
-      <button><a class="btn" href="../Pages/analysis2.html">GO BACK</a></button>
+    <div class="navbar">
+      <img
+        class="image-1"
+        src="../assets/images/new logo.png"
+        width="100"
+        height="100"
+        alt="image"
+      />
+      <button class="navbar-btn">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <div id="js_header"></div>
+    </div>
+    <div class="cart">
+      <div class="cart-title">Cart items</div>
+      <div class="cart-content">
+        <div class="total">
+          <div class="total-title">Total</div>
+          <div class="total-price" id="total">Rs.0</div>
+        </div>
+        <ion-icon name="close" id="cart-close"></ion-icon>
+        <button class="btn-buy">place order</button>
+      </div>
     </div>
     <div class="result-1">
       <h2>Here are your results!</h2>
@@ -193,11 +188,11 @@
           <h3>castor oil -100 ml</h3>
           <h5>₹299</h5>
           <a href="../Pages/information.html"
-            ><button class="hvr">BUY NOW</button></a
+            ><button class="hvr">Add to cart</button></a
           >
         </div>
       </div>
-      <div class="list-2">
+      <div class="list-1">
         <div>
           <img
             src="../assets/images/onion-shampoo-1.jpg"
@@ -210,11 +205,11 @@
           <h3>Onion Shampoo - 200 ml</h3>
           <h5>₹240</h5>
           <a href="../Pages/information.html"
-            ><button class="hvr">BUY NOW</button></a
+            ><button class="hvr">Add to cart</button></a
           >
         </div>
       </div>
-      <div class="list-3">
+      <div class="list-1">
         <div>
           <div>
             <img
@@ -229,7 +224,7 @@
           <h3>Protein hair serum - 50ml</h3>
           <h5>₹274</h5>
           <a href="../Pages/information.html"
-            ><button class="hvr">BUY NOW</button></a
+            ><button class="hvr">Add to cart</button></a
           >
         </div>
       </div>
@@ -338,5 +333,7 @@
         <h3>Healthy hair 2022 © All rights reserved</h3>
       </div>
     </footer>
+    <script src="/assets/js/nav.js"></script>
+    <script src="/assets/js/cart.js"></script>
   </body>
 </html>

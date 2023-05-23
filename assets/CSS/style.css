@@ -120,7 +120,7 @@ a {
 }
 .shopNow_btn {
   position: absolute;
-  margin-left: 64%;
+  margin-left: 65%;
   margin-top: -14%;
 }
 .shopNow_btn a {
@@ -334,10 +334,6 @@ nav li {
   border-radius: 10px;
   margin-bottom: 10px;
 }
-/* button:hover {
-  font-size: 80%;
-  box-shadow: 5px 5px 5px black;
-} */
 .three-2 {
   border-radius: 20px;
 }
@@ -465,7 +461,7 @@ footer {
   font-family: "Poppins", sans-serif;
   font-size: 15px;
   padding: 10px;
-  background-color: black;
+  background-color: rgb(28, 27, 26);
   color: white;
   margin-top: -8px;
   border: 1px solid gray;

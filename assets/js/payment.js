@@ -1,7 +1,7 @@
 let pay = document.getElementById("number");
 pay?.addEventListener("keyup", function (e) {
-  console.log(e.keyCode);
-  if (e.keyCode !== 8) {
+  console.log(e.pay);
+  if (e.pay !== 8) {
     if (
       this.value.length === 4 ||
       this.value.length === 9 ||

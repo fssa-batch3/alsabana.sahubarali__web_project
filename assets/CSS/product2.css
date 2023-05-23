@@ -201,7 +201,8 @@ footer {
   font-family: "Poppins", sans-serif;
   font-size: 15px;
   padding: 10px;
-  background-color: black;
+  background-color: rgb(28, 27, 26);
+
   color: white;
   margin-top: -8px;
   border: 1px solid gray;
@@ -264,6 +265,13 @@ footer {
 }
 .delivery div {
   padding: 20px;
+}
+.showAll_product {
+  margin-left: 590px;
+}
+.showAll_product button {
+  background-color: black;
+  color: white;
 }
 /*Desktop*/
 @media (min-width: 600px) {

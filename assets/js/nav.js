@@ -1,5 +1,7 @@
 let before_login = `<nav class="navbar-item hide">
 <ul>
+<input type="text" id="search_input" name="search" placeholder="Search..">
+
   <li><a href="../index.html">Home</a></li>
   <li><a href="../Pages/analysis.html">Hair Analysis</a></li>
   <li class="dropdown"><a href="../Pages/Product.html">Products</a></li>
@@ -12,6 +14,8 @@ let before_login = `<nav class="navbar-item hide">
 
 let after_login = `<nav class="navbar-item hide">
 <ul>
+<input type="text" id="search_input" name="search" placeholder="Search..">
+
   <li><a href="../index.html">Home</a></li>
   <li><a href="../Pages/analysis.html">Hair Analysis</a></li>
   <li class="dropdown"><a href="../Pages/Product.html">Products</a></li>

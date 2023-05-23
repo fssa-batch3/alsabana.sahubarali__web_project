@@ -1,6 +1,7 @@
 let buy_btn = document.getElementById("buy");
 buy_btn?.addEventListener("click", function () {
   let user_login = JSON.parse(localStorage.getItem("login"));
+
   if (user_login == null) {
     alert("You didn't login please login or signup");
     window.open("/index.html");
@@ -34,6 +35,7 @@ description.innerText = pro_detail["product_detail"];
 pic.setAttribute("src", pro_detail["image"]);
 range.innerText = pro_detail["product_type"];
 //review
+
 let user_login = JSON.parse(localStorage.getItem("login"));
 let postBtn = document.getElementById("form_submit");
 postBtn.addEventListener("submit", function (e) {
@@ -58,6 +60,12 @@ postBtn.addEventListener("submit", function (e) {
     let image = find_user["image"];
     let customer_reviews = document.getElementById("input_field").value;
     let ratings = document.getElementById("select_ratings").value;
+    let review_id = Date.now();
+    let date = new Date();
+    let day = date.getDate();
+    let month = date.getMonth() + 1;
+    let year = date.getFullYear();
+    let fullDate = `${day}.${month}.${year}`;
     let reviews = {
       customer_reviews,
       login_acc,
@@ -65,6 +73,8 @@ postBtn.addEventListener("submit", function (e) {
       username,
       image,
       id_product,
+      review_id,
+      fullDate,
     };
 
     array.push(reviews);
@@ -107,14 +117,23 @@ for (let i = 0; i < cus_reviews.length; i++) {
   let h3_tag = document.createElement("h3");
   h3_tag.innerText = cus_reviews[i]["username"];
   child_div1.append(h3_tag);
+  let date = document.createElement("p");
+  date.setAttribute("class", "date");
+  date.innerText = cus_reviews[i]["fullDate"];
+  div_card.append(date);
   let p_tag = document.createElement("p");
   p_tag.innerText = cus_reviews[i]["customer_reviews"];
   child_div1.append(p_tag);
   let button = document.createElement("button");
+  button.setAttribute("id", "edit_btn");
   button.innerText = "Delete";
-  button.style.display = "none";
-  button.setAttribute("class", "edit_btn");
+  button.setAttribute("class", cus_reviews[i]["login_acc"]);
+  button.setAttribute(
+    "onclick",
+    "deleteReview(" + cus_reviews[i]["review_id"] + ")"
+  );
   child_div1.append(button);
+
   let rate_div = document.createElement("div");
   rate_div.setAttribute("class", "rating_section");
   div_card1.append(rate_div);
@@ -125,15 +144,32 @@ for (let i = 0; i < cus_reviews.length; i++) {
   let insert_div = document.querySelector(".flexible");
   insert_div.append(div_card);
 }
+
 let count_reviews = document.getElementById("count");
 count_reviews.innerText = num_reviews;
 
-let delete_btn = document.querySelector(".edit_btn");
-let logged_user = JSON.parse(localStorage.getItem("login"));
-let total_reviews = JSON.parse(localStorage.getItem("reviews"));
-let find_reviews = total_reviews.filter(
-  (review) => logged_user == review["login_acc"]
-);
-if (logged_user == total_reviews["login_acc"]) {
-  delete_btn.style.display = "block";
+let delete_btn = document.getElementsByClassName(user_login);
+for (let i = 0; i < delete_btn.length; i++) {
+  if (user_login == delete_btn[i].getAttribute("class")) {
+    delete_btn[i].style.display = "block";
+  }
+}
+
+function deleteReview(review_id) {
+  let find_review = reviews.find(function (e) {
+    if (review_id == e["review_id"]) {
+      return true;
+    } else {
+      return false;
+    }
+  });
+  let msg = confirm("Are you sure to delete review");
+  let reviewIndex = reviews.indexOf(find_review);
+  if (msg != true) {
+    return;
+  } else {
+    reviews.splice(reviewIndex, 1);
+    localStorage.setItem("reviews", JSON.stringify(reviews));
+    location.reload();
+  }
 }

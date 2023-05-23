@@ -85,7 +85,6 @@
         <div class="input-line">
           <label for="name">Name on card</label>
           <input
-            value="Alsabana"
             type="text"
             name="name"
             id="name"
@@ -98,7 +97,6 @@
         <div class="input-line">
           <label for="name">Card number</label>
           <input
-            value="6578 4859 5794 5875"
             type="text"
             name="name"
             id="number"
@@ -116,8 +114,8 @@
               type="month"
               id="date"
               name="start"
-              min="2023-06"
-              value="2023-06"
+              min="2023-03"
+              value="2023-05"
             />
           </div>
           <div class="input-line">
@@ -130,7 +128,6 @@
               id="cvc"
               placeholder="***"
               title="CVV contains 3 Digits only"
-              value="345"
             />
           </div>
         </div>
@@ -144,14 +141,77 @@
       </form>
     </div>
     <script>
-      let get_product = JSON.parse(localStorage.getItem("proObject"));
-      let payment = document.getElementById("pay");
-      payment.addEventListener("submit", function (e) {
-        window.location.href =
-          "../Pages/confirmation.html?id=" + get_product[i]["id"];
+      let pay = document.getElementById("number");
+      pay?.addEventListener("keyup", function (e) {
+        console.log(e.pay);
+        if (e.pay !== 8) {
+          if (
+            this.value.length === 4 ||
+            this.value.length === 9 ||
+            this.value.length === 14
+          ) {
+            this.value = this.value += " ";
+          }
+        }
+      });
+
+      let payment_form = document.getElementById("pay_form");
+      payment_form?.addEventListener("submit", function (event) {
+        event.preventDefault();
+
+        let order = JSON.parse(localStorage.getItem("order_id"));
+        let details = JSON.parse(localStorage.getItem("details"));
+        //   let id = JSON.parse(localStorage.getItem("id"));
+        //   let product = JSON.parse(localStorage.getItem("total_product"));
+        //   let find_product = product.find(function (pro) {
+        //     let product_id = pro["id"];
+        //     if (product_id == id) {
+        //       return true;
+        //     }
+        //   });
+
+        let find_id = details.find(function (obj) {
+          let id = obj["order_id"];
+          if (id == order) {
+            return true;
+          }
+        });
+        const today = new Date();
+        const year = today.getFullYear();
+        let month = today.getMonth() + 1;
+        let day = today.getDate();
+        if (day <= 28) {
+          day = day + 2;
+        }
+        if (day > 28) {
+          day = 30 - 28;
+          month = month + 1;
+        }
+        // add leading zero if month or day is a single digit
+        if (month < 10) {
+          month = "0" + month;
+        }
+        if (day < 10) {
+          day = "0" + day;
+        }
+        let currentDate = `${year}-${month}-${day}`;
+        let card_name = document.getElementById("name").value;
+        let card_number = document.getElementById("number").value;
+        let cvc_num = document.getElementById("cvc").value;
+
+        let new_obj = {
+          card_name,
+          card_number,
+          cvc_num,
+          currentDate,
+        };
+        let pay = Object.assign(find_id, new_obj);
+        let index = details.indexOf(find_id);
+        details[index] = pay;
+        localStorage.setItem("details", JSON.stringify(details));
+        alert("order succeed");
+        location.href = "../Pages/copyReview.html";
       });
     </script>
-    <script src="/assets/js/cart.js"></script>
-    <script src="/assets/js/payment.js"></script>
   </body>
 </html>

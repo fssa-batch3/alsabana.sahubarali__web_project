@@ -45,7 +45,6 @@ button:hover {
 .product-listing-1 {
   display: flex;
   flex-wrap: wrap;
-  /* justify-content: space-around; */
   flex-direction: column;
   text-align: center;
   padding: 10px;
@@ -64,6 +63,12 @@ button:hover {
   padding: 20px;
   text-align: center;
   box-shadow: 10px 20px 10px gray;
+  width: 300px;
+  height: 450px;
+}
+.listing-1 h3 {
+  font-size: 23px;
+  margin-top: 20px;
 }
 .products a {
   text-decoration: none;

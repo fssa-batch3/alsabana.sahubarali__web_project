@@ -30,7 +30,7 @@ nav li {
 }
 
 .image-1 {
-  margin-top: -12px;
+  margin-top: -7px;
   border-radius: 50%;
 }
 
@@ -74,7 +74,6 @@ nav li {
 .box {
   font-size: 27px;
 }
-
 /* cart */
 .cart {
   position: fixed;
@@ -187,8 +186,8 @@ button {
   font-size: 16px;
 }
 .btn button {
-  background-color: rgb(8, 8, 8);
-  color: rgb(251, 248, 248);
+  background-color: black;
+  color: white;
   border-style: none;
 }
 .btn-a {
@@ -204,22 +203,14 @@ button:hover {
   display: flex;
   flex-wrap: wrap;
 }
-.arrow {
-  margin-top: 10px;
-  margin-left: -40px;
-}
-
 /* cart */
 footer {
   font-family: "Poppins", sans-serif;
   font-size: 15px;
   padding: 10px;
-
-  background-color: black;
   color: white;
-  /* height: 250px; */
   margin-top: -8px;
-
+  background-color: rgb(28, 27, 26);
   border: 1px solid gray;
 }
 .flip {
@@ -281,7 +272,12 @@ footer {
 .delivery div {
   padding: 20px;
 }
-
+.btns a {
+  margin-bottom: 20px;
+}
+.btns img {
+  margin-left: 10px;
+}
 /*Desktop*/
 @media (min-width: 600px) {
   .navbar .navbar-item {
