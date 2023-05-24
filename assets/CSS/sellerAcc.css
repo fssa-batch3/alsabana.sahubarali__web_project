@@ -85,6 +85,9 @@ form label {
 #edit_section {
   display: none;
 }
+#user_img {
+  border-radius: 50px;
+}
 form input[type="text"],
 form input[type="email"],
 form input[type="tel"],

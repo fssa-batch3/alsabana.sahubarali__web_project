@@ -7,9 +7,9 @@ body {
   padding: 0;
   user-select: none;
 }
-.dropdown {
+/* .dropdown {
   display: none;
-}
+} */
 .show {
   display: flex;
   flex-direction: column;
@@ -20,19 +20,19 @@ body {
   right: 20%;
   background-color: #fefefe;
 }
-.dropdown h4 {
+/* .dropdown h4 {
   text-align: center;
   font-weight: lighter;
   background-color: #9e9a86;
   margin: 3px;
   color: black;
-}
-h4 a {
+} */
+/* h4 a {
   color: black;
-}
-.dropdown h4:hover {
+} */
+/* .dropdown h4:hover {
   background-color: #7b7762;
-}
+} */
 .box {
   font-size: 25px;
 }
@@ -120,15 +120,15 @@ a {
 }
 .shopNow_btn {
   position: absolute;
-  margin-left: 65%;
+  margin-left: 63%;
   margin-top: -14%;
 }
 .shopNow_btn a {
   color: white;
 }
 .shopNow_btn button {
-  width: 218px;
-  height: 70px;
+  width: 235px;
+  height: 73px;
   border-radius: 15px;
   font-weight: bold;
   font-size: 24px;
@@ -274,11 +274,9 @@ nav {
   width: 200px;
 }
 .hide_otp {
-  display: block;
-}
-.hide_email {
   display: none;
 }
+
 /* forgot password */
 nav li {
   padding-right: 50px;

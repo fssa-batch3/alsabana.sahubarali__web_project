@@ -194,24 +194,23 @@ let user = JSON.parse(localStorage.getItem("userData"));
 let log_user = user.find((obj) => logged == obj["user_id"]);
 show_profile.setAttribute("src", log_user["image"]);
 
-// To  drop down
-function dropdown() {
-  document.getElementById("drop").classList.toggle("show");
-}
-window.onclick = function (e) {
-  if (!e.target.matches("#product_drop")) {
-    let dropdown = document.querySelector(".dropdown");
-    if (dropdown.classList.contains("show")) {
-      dropdown.classList.remove("show");
-    }
-  }
-};
-let tog = document.getElementById("drop");
-if (logged != null) {
-  tog.style.position = "absolute";
-  tog.style.right = "6%";
-}
+let otp_container = document.querySelector(".otp_verification");
+let email_container = document.querySelector(".hide_email");
+let enter_otp = document.querySelector(".hide_otp");
 function forgot() {
-  let forgot_container = document.querySelector(".forgot_container");
-  forgot_container.style.display = "block";
+  otp_container.style.display = "block";
 }
+
+document.getElementById("send-otp").addEventListener("click", function (e) {
+  e.preventDefault();
+
+  email_container.style.display = "none";
+  enter_otp.style.display = "block";
+});
+
+document.getElementById("verifyOtp").addEventListener("click", function (e) {
+  e.preventDefault();
+  let forgot_password = document.querySelector(".forgot_container");
+  enter_otp.style.display = "none";
+  forgot_password.style.display = "block";
+});

@@ -15,7 +15,9 @@ body {
   left: 0;
   color: #000;
 }
-
+.box {
+  font-size: 24px;
+}
 nav li {
   padding-right: 50px;
   font-size: 50px;

@@ -38,14 +38,16 @@
         <ul>
           <li><a href="./index.html">Home</a></li>
           <li><a href="./Pages/analysis.html">Hair Analysis</a></li>
-          <li class="box" id="product_drop" onclick="dropdown()">Products</li>
-          <div class="dropdown" id="drop">
+          <li class="box" id="product_drop" onclick="dropdown()">
+            <a href="./Pages/Product.html">Products</a>
+          </li>
+          <!-- <div class="dropdown" id="drop">
             <h4><a href="./Pages/Product.html">Our samples</a></h4>
             <h4>
               <a href="./Pages/product1.html"> Ayurvedic & caffeine range</a>
             </h4>
             <h4><a href="./Pages/product2.html"> Avocado & capsules</a></h4>
-          </div>
+          </div> -->
           <li id="login_btn" onclick="openpopup()"><a>Login</a></li>
           <li class="profile">
             <a href="./Pages/acc.html">
@@ -86,7 +88,7 @@
               title="Username cannot contains spaces"
               placeholder="Enter your name"
               required="true"
-              value="nithya"
+              value="gowtham"
             />
           </div>
           <div class="form-input">
@@ -96,7 +98,7 @@
               placeholder="Email"
               required="true"
               pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}"
-              value="nithya@gmail.com"
+              value="gowtham@gmail.com"
             />
           </div>
           <div class="form-input">
@@ -107,14 +109,14 @@
               placeholder="Phone No"
               pattern="[6-9]{1}[0-9]{9}"
               required="true"
-              value="9089008790"
+              value="9679008790"
             />
           </div>
           <div class="form-input">
             <input
               type="password"
-              title="You can use 6 to 15 characters,Alphabets and numbers"
               id="password"
+              title="You can use 6 to 15 characters,Alphabets and numbers"
               pattern="[A-Z a-z 0-9]{6,15}"
               placeholder="Password"
               required="true"
@@ -171,7 +173,7 @@
               type="email"
               id="loginEmail"
               placeholder="Email"
-              value="nithya@gmail.com"
+              value="gowtham@gmail.com"
               required
             />
           </div>
@@ -199,13 +201,33 @@
         <div><h4>forgot password?</h4></div>
         <form id="submit_form">
           <label>Email:</label>
-          <input id="f_email " type="email" />
+          <input
+            id="f_email "
+            type="email"
+            placeholder="Email"
+            required="true"
+            pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}"
+          />
           <label>Password:</label>
-          <input id="f_password" type="password" />
+          <input
+            id="f_password"
+            type="password"
+            title="You can use 6 to 15 characters,Alphabets and numbers"
+            pattern="[A-Z a-z 0-9]{6,15}"
+            placeholder="Password"
+            required="true"
+          />
           <label>Confirm Password:</label>
-          <input id="f_confirm_password " type="password" />
+          <input
+            id="f_confirm_password "
+            title="You can use 6 to 15 characters,Alphabets and numbers"
+            pattern="[A-Z a-z 0-9]{6,15}"
+            placeholder="Password"
+            required="true"
+            type="password"
+          />
           <button class="submit" type="submit">Submit</button>
-          <button>Back</button>
+          <a href="/index.html"><button>Back</button></a>
         </form>
       </div>
     </div>
@@ -215,16 +237,27 @@
         <form id="submit_form">
           <div class="hide_email">
             <label>Email:</label>
-            <input id="f_email " type="email" />
+            <input
+              id="f_email"
+              type="email"
+              placeholder="Email"
+              required="true"
+              pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}"
+            />
             <div class="verify_otp">
-              <button>Send Otp</button>
+              <button id="send-otp">Send Otp</button>
             </div>
           </div>
           <div class="hide_otp">
             <label>Enter Otp :</label>
-            <input id="f_confirm_password" type="password" />
+            <input
+              id="enter_otp"
+              type="text"
+              pattern="[0-9]{4}"
+              required="true"
+            />
             <div class="verify_otp">
-              <button type="submit">Verify Otp</button>
+              <button type="submit" id="verifyOtp">Verify Otp</button>
             </div>
           </div>
         </form>
@@ -504,7 +537,6 @@
         </div>
       </div>
       <div class="seventeen"><h2>Also Available On</h2></div>
-
       <div class="eighteen">
         <div>
           <img
@@ -561,37 +593,6 @@
       </div>
     </footer>
     <script src="assets/js/script.js"></script>
-    <script type="module">
-      import { initializeApp } from "https://www.gstatic.com/firebasejs/9.21.0/firebase-app.js";
-      import {
-        getDatabase,
-        set,
-        ref,
-        onValue,
-        push,
-      } from "https://www.gstatic.com/firebasejs/9.21.0/firebase-database.js";
-
-      const firebaseConfig = {
-        apiKey: "AIzaSyAg8L8TzqOUoS52UC3Hod__xttGfLgux7E",
-        authDomain: "healthy-hair-7397e.firebaseapp.com",
-        projectId: "healthy-hair-7397e",
-        storageBucket: "healthy-hair-7397e.appspot.com",
-        messagingSenderId: "1031359648247",
-        appId: "1:1031359648247:web:686fb168e4fe4a13a91ef2",
-      };
-
-      // Initialize Firebase
-      const app = initializeApp(firebaseConfig);
-      const database = getDatabase();
-      console.log(database);
-
-      const db = getDatabase();
-      const starCountRef = ref(database, "email/");
-      onValue(starCountRef, (snapshot) => {
-        const data = snapshot.val();
-        console.log(data);
-      });
-    </script>
     <script src="https://cdn.jsdelivr.net/gh/suryaumapathy2812/notify__js/notify.js"></script>
   </body>
 </html>

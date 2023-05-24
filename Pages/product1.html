@@ -7,7 +7,6 @@
     <link rel="stylesheet" href="../assets/CSS/product1.css" />
     <link rel="stylesheet" href="../assets/CSS/product.css" />
     <link rel="stylesheet" href="../assets/CSS/search.css" />
-
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css"
@@ -44,7 +43,7 @@
           <div class="total-price" id="total">Rs.0</div>
         </div>
         <ion-icon name="close" id="cart-close"></ion-icon>
-        <button class="btn-buy">place order</button>
+        <button onclick="cartOrder()" class="btn-buy">place order</button>
       </div>
     </div>
     <!-- cart -->
@@ -192,6 +191,7 @@
       let ayurvedic = get_product1.filter(
         (get) => get["product_type"] == "Ayurvedic Range"
       );
+      console.log(ayurvedic);
       productDiv(ayurvedic, ".product");
 
       let get_num_product = JSON.parse(localStorage.getItem("total_product"));

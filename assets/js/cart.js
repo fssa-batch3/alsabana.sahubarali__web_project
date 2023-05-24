@@ -147,6 +147,7 @@ for (let i = 0; i < matched_products?.length; i++) {
   let input = document.createElement("input");
   input.setAttribute("value", matched_products[i].quantity);
   input.setAttribute("type", "number");
+  input.setAttribute("disabled", "true");
   input.setAttribute("class", "cart-quantity");
   div_card1.append(input);
   let ion = document.createElement("ion-icon");
@@ -165,8 +166,7 @@ for (let i = 0; i < matched_products?.length; i++) {
   add += parseInt(result[1] * matched_products[i].quantity);
 }
 let view = (document.getElementById("total").innerText = "Rs." + add);
+
 function cartOrder() {
-  alert("check");
-  localStorage.removeItem("id");
   window.location.href = "../Pages/copyAddress.html";
 }

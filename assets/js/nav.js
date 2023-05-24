@@ -38,3 +38,17 @@ if (login_id == null) {
 } else {
   header.innerHTML = after_login;
 }
+
+const searchbar = document.getElementById("search_input");
+const cards = document.getElementsByClassName("listing-1");
+searchbar.addEventListener("input", () => {
+  for (const element of cards) {
+    if (
+      element.innerHTML.toLowerCase().includes(searchbar.value.toLowerCase())
+    ) {
+      element.style.display = "flex";
+    } else {
+      element.style.display = "none";
+    }
+  }
+});

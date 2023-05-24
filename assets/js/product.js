@@ -1,5 +1,6 @@
 let gets_product = JSON.parse(localStorage.getItem("total_product"));
-const Samples = gets_product.filter((get) => get["product_type"] == "Samples");
+const Samples = gets_product.filter((get) => get["product_type"] == "samples");
+let samples = gets_product.filter((get) => get["product_type"] == "Samples");
 function productDiv(products, id) {
   for (let i = 0; i < products.length; i++) {
     //first div
@@ -52,7 +53,7 @@ function productDiv(products, id) {
   }
 }
 productDiv(Samples, ".products");
-
+productDiv(samples, ".products");
 let account = document.getElementById("acc_none");
 let login = JSON.parse(localStorage.getItem("login"));
 if (login != null) {
