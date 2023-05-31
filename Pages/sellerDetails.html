@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Seller details</title>
+    <link rel="stylesheet" href="../assets/CSS/sellerDetails.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Alegreya:wght@400;700&family=Klee+One&family=Rajdhani&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <div
+        class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xs-offset-0 col-sm-offset-0 col-md-offset-3 col-lg-offset-3 toppad"
+      >
+        <div class="panel panel-primary">
+          <div>
+            <h3>Seller Details</h3>
+          </div>
+          <form class="panel-body" id="form">
+            <div class="row">
+              <div class="col-md-3 col-lg-3">
+                <img
+                  alt="User Pic"
+                  id="profile_pic"
+                  src="../assets/images/caffeine2.webp"
+                  class="img-circle img-responsive"
+                  width="100"
+                  height="50"
+                />
+              </div>
+              <div class="col-md-9 col-lg-9" id="form">
+                <div class="main-details">
+                  <table class="table table-user-information">
+                    <tbody>
+                      <tr>
+                        <th>Name :</th>
+                        <th><input id="username" type="text" disabled /></th>
+                      </tr>
+                      <tr>
+                        <td>Address :</td>
+                        <td>
+                          <textarea
+                            name="address"
+                            id="address"
+                            cols="23"
+                            rows="4"
+                            disabled
+                          ></textarea>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td class="phone">Phone Number :</td>
+                        <td>
+                          <input id="phone_number" type="number" disabled />
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                  <table class="table table-user-information">
+                    <tbody>
+                      <tr>
+                        <th class="alter">Alternative Number :</th>
+                        <th>
+                          <input id="alter_number" type="number" disabled />
+                        </th>
+                      </tr>
+                      <tr>
+                        <td>Company Name :</td>
+                        <td><input id="cname" type="text" disabled /></td>
+                      </tr>
+                      <tr>
+                        <td>Email :</td>
+                        <td><input id="email" type="email" disabled /></td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+      <div>
+        <h2>Added Products</h2>
+        <div class="products">
+          <h2 id="noPro"></h2>
+        </div>
+      </div>
+      <div class="back">
+        <a href="./sellerProfile.html"><button>Back</button></a>
+      </div>
+    </div>
+    <script>
+      let product_id = window.location.search;
+      let product_params = new URLSearchParams(product_id);
+      let get_details = product_params.get("id");
+      let seller = JSON.parse(localStorage.getItem("seller"));
+      let seller_details = seller.find(function (event) {
+        let id = event["user_id"];
+        if (get_details == id) {
+          return true;
+        }
+      });
+      let seller_image = document.getElementById("profile_pic");
+      seller_image.src = seller_details["image"];
+      let username = document.getElementById("username");
+      username.value = seller_details["username"];
+      let address = document.getElementById("address");
+      address.value = seller_details["address"];
+      let phone_number = document.getElementById("phone_number");
+      phone_number.value = seller_details["phoneNo"];
+      let alter_num = document.getElementById("alter_number");
+      alter_num.value = seller_details["alter_num"];
+      let company_name = document.getElementById("cname");
+      company_name.value = seller_details["company_name"];
+      let email = document.getElementById("email");
+      email.value = seller_details["email"];
+
+      let id = window.location.search;
+      let search = new URLSearchParams(id);
+      let get_id = search.get("id");
+      let total_products = JSON.parse(localStorage.getItem("total_product"));
+      let selled_product = total_products.filter(
+        (pro) => get_id == pro["login_id"]
+      );
+      if (selled_product == null) {
+        let pro_result = document.getElementById("noPro");
+        pro_result.innerText = "No products";
+      }
+      for (let i = 0; i < selled_product.length; i++) {
+        let anger_tag = document.createElement("a");
+        anger_tag.setAttribute(
+          "href",
+          "../Pages/productDetails.html?id=" + selled_product[i]["id"]
+        );
+        anger_tag.setAttribute("class", "anger");
+        let div_card = document.createElement("div");
+        div_card.setAttribute("class", "product-listing-1");
+        anger_tag.append(div_card);
+        //second div
+        let div1 = document.createElement("div");
+        div1.setAttribute("class", "listing-1");
+        div_card.append(div1);
+        //third div
+        let div2 = document.createElement("div");
+        div1.append(div2);
+        //img tag and attributes
+        let card_img = document.createElement("img");
+        card_img.setAttribute("src", selled_product[i]["image"]);
+        card_img.setAttribute("height", "250");
+        card_img.setAttribute("width", "250");
+        card_img.setAttribute("class", "img-src");
+        div2.append(card_img);
+        //div for h3 and h5 tags
+        let div1_card = document.createElement("div");
+        div_card.append(div1_card);
+        //h3 tag
+        let h3_tag = document.createElement("h3");
+        h3_tag.setAttribute("class", "product-name");
+        h3_tag.innerText = selled_product[i].productName;
+        div2.append(h3_tag);
+        let tag_h5 = document.createElement("h5");
+        div2.append(tag_h5);
+        //h5 tag
+        let h5_tag = document.createElement("h5");
+        h5_tag.innerText = "Rs. " + selled_product[i].cost;
+        h5_tag.setAttribute("class", "product-cost");
+        div2.append(h5_tag);
+        //append
+        let insert_div = document.querySelector(".products");
+        insert_div.append(anger_tag);
+      }
+    </script>
+  </body>
+</html>

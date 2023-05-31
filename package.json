@@ -1,0 +1,24 @@
+{
+  "name": "healthy_hair",
+  "version": "1.0.0",
+  "description": "@Healthy hair I have solved hairfall problem, so many people affected by hairfall, they don't know which product suit for their hair. In my website have a free hair analysis and to put your detail we suggest some products for you and, we have one another advantages,customers buy firstly sample product with low cost that product best for your hair means you buy a another product.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fssa-batch3/alsabana.sahubarali__web_project.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/fssa-batch3/alsabana.sahubarali__web_project/issues"
+  },
+  "homepage": "https://github.com/fssa-batch3/alsabana.sahubarali__web_project#readme",
+  "devDependencies": {
+    "@commitlint/cli": "^17.4.4",
+    "@commitlint/config-conventional": "^17.4.4",
+    "husky": "^8.0.3"
+  }
+}

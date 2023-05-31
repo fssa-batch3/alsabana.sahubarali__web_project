@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../assets/CSS/copyReview.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css"
+    />
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <title>Confirmation</title>
+  </head>
+  <body>
+    <!-- nav -->
+    <div class="navbar">
+      <img
+        class="image-1"
+        src="../assets/images/new logo.png"
+        width="100"
+        height="100"
+        alt="image"
+      />
+      <button class="navbar-btn">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <nav class="navbar-item hide">
+        <ul>
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="../Pages/analysis.html">Hair Analysis</a></li>
+          <li><a href="../Pages/Product.html">Products</a></li>
+          <li class="box"><span class="bi bi-cart4 count"></span>Cart</li>
+          <li>
+            <a href="../Pages/acc.html" class="bi bi-person-circle">
+              Account
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+    <div class="cart">
+      <div class="cart-title">Cart items</div>
+      <div class="cart-content">
+        <div class="total">
+          <div class="total-title">Total</div>
+          <div class="total-price" id="total">Rs.0</div>
+        </div>
+        <ion-icon name="close" id="cart-close"></ion-icon>
+        <button class="btn-buy">place order</button>
+      </div>
+    </div>
+
+    <div class="progress-checkout-container">
+      <div class="progress-step-container">
+        <div class="step-check"></div>
+        <a href="../Pages/delivery.html"
+          ><span class="step-title">Address</span></a
+        >
+      </div>
+      <div class="progress-step-container">
+        <div class="step-check"></div>
+        <a href="../Pages/check.html"
+          ><span class="step-title">Payment</span></a
+        >
+      </div>
+      <div class="progress-step-container">
+        <div class="step-check"></div>
+        <a href="../Pages/confirmation.html">
+          <span class="step-title">Review</span></a
+        >
+      </div>
+    </div>
+    <div class="thank_div">
+      <button>Thank you for shopping with us!</button>
+    </div>
+    <div class="id">
+      <h3>YOUR ORDER ID :<span id="order_id">1234567890</span></h3>
+    </div>
+    <div class="whole_container">
+      <div>
+        <div class="flex">
+          <div>
+            <h3>Order Details</h3>
+          </div>
+          <div>
+            <p>Delivered By : <span id="date">03/01/2003</span></p>
+          </div>
+        </div>
+        <!-- cart div-->
+        <div class="cart-box"></div>
+        <div class="cartContent"></div>
+        <div>
+          <p>Delivery Address:</p>
+        </div>
+        <div>
+          <p id="cus_name">Name</p>
+          <p id="address">Adress</p>
+          <p id="state">state</p>
+          <p id="number">mobile no</p>
+        </div>
+      </div>
+      <div class="price_detail">
+        <div><p>Price details :</p></div>
+        <div>
+          <p>Order total :<span id="totals">Rs.768</span></p>
+        </div>
+        <div class="continue_btn">
+          <a href="../Pages/Product.html"
+            ><h6 id="continue">Continue shopping</h6></a
+          >
+        </div>
+      </div>
+    </div>
+    <script>
+      let cart_items = JSON.parse(localStorage.getItem("items"));
+
+      let cart_box = document.querySelector(".cart-box");
+      for (let i = 0; i < cart_items.length; i++) {
+        let div_card = document.createElement("div");
+        div_card.setAttribute("class", "cart-box");
+        let card_img = document.createElement("img");
+        card_img.setAttribute("src", cart_items[i].image);
+        card_img.setAttribute("class", "cart-img");
+        card_img.setAttribute("id", "image");
+        div_card.append(card_img);
+        let div_card1 = document.createElement("div");
+        div_card1.setAttribute("class", "detail-box");
+        div_card.append(div_card1);
+        let div_card2 = document.createElement("div");
+        div_card2.setAttribute("id", "product_name");
+        div_card2.setAttribute("class", "product-title");
+        div_card2.innerText = cart_items[i].title;
+        div_card1.append(div_card2);
+        let price_div = document.createElement("div");
+        price_div.setAttribute("class", "price-box");
+        div_card1.append(price_div);
+        let price_div1 = document.createElement("div");
+        price_div1.setAttribute("id", "price");
+        price_div1.setAttribute("class", "cart-price");
+        let m = cart_items[i].price;
+        let n = m.split(".");
+        price_div1.innerText = "Rs." + n[1] * cart_items[i].quantity;
+        price_div.append(price_div1);
+        let input = document.createElement("input");
+        input.setAttribute("value", cart_items[i].quantity);
+        input.setAttribute("type", "text");
+        input.setAttribute("disabled", "true");
+        input.setAttribute("class", "cart-quantity");
+        div_card1.append(input);
+        let cart_content = document.querySelector(".cartContent");
+        cart_content.prepend(div_card);
+      }
+      let add = 0;
+      for (let i = 0; i < cart_items?.length; i++) {
+        let split = cart_items[i].price;
+        let result = split.split(".");
+        add += parseInt(result[1] * cart_items[i].quantity);
+      }
+      let view = (document.getElementById("totals").innerText = "Rs." + add);
+
+      let order_id = JSON.parse(localStorage.getItem("order_id"));
+      let order_details = JSON.parse(localStorage.getItem("details"));
+      let customer_name;
+      let cus_address;
+      let state;
+      let number;
+      let order_detail;
+      let id;
+      for (let j = 0; j < order_details.length; j++) {
+        if (order_id == order_details[j]["order_id"]) {
+          customer_name = order_details[j]["cus_name"];
+          cus_address = order_details[j]["address"];
+          state = order_details[j]["select_state"];
+          number = order_details[j]["number"];
+          order_detail = order_details[j]["currentDate"];
+          id = order_details[j]["order_id"];
+        }
+      }
+
+      let cus_name = (document.getElementById("cus_name").innerHTML =
+        customer_name + ",");
+      let address = (document.getElementById("address").innerHTML =
+        cus_address + ",");
+      let cus_state = (document.getElementById("state").innerHTML =
+        state + ",");
+      let phone = (document.getElementById("number").innerHTML = number + ".");
+      let orderdetail = (document.getElementById("date").innerHTML =
+        order_detail + ".");
+      let order = (document.getElementById("order_id").innerHTML = id);
+      let cart_item = JSON.parse(localStorage.getItem("items"));
+
+      for (let i = 0; i < order_details.length; i++) {
+        if (order_id == order_details[i]["order_id"]) {
+          localStorage.setItem("products", JSON.stringify(cart_item));
+        }
+      }
+    </script>
+    <script src="/assets/js/script.js"></script>
+  </body>
+</html>

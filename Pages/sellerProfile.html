@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Seller Card for admin</title>
+    <link rel="stylesheet" href="../assets/CSS/sellerProfile.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <script
+      src="https://kit.fontawesome.com/a076d05399.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <nav>
+      <div class="nav_logo">
+        <div>
+          <img
+            src="../assets/images/new logo.png"
+            alt="logo"
+            width="50"
+            height="60"
+          />
+        </div>
+        <div>
+          <h2>Healthy Hair</h2>
+        </div>
+      </div>
+      <div class="dashboard">
+        <a href="../Pages/adPanel.html">
+          <h3><i class="fa fa-dashboard"></i> Dashboard</h3></a
+        >
+      </div>
+      <div>
+        <a href="./admin.html">
+          <h3><i class="fa fa-product-hunt"></i> Products</h3></a
+        >
+      </div>
+      <div>
+        <a href="../Pages/customer.html"
+          ><h3><i class="fa fa-users"></i> Customers</h3></a
+        >
+      </div>
+      <div>
+        <a href="../Pages/sellerProfile.html"
+          ><h3 id="dash"><i class="fa fa-users"></i> Seller</h3></a
+        >
+      </div>
+      <div class="help_div">
+        <div>
+          <a href="../index.html">
+            <h3><i class="fa fa-sign-out"></i>Log out</h3></a
+          >
+        </div>
+      </div>
+    </nav>
+    <div class="list">
+      <h2>OUR SELLER LIST</h2>
+    </div>
+    <div class="whole"></div>
+    <script src="../assets/js/customer.js"></script>
+    <script>
+      let seller = JSON.parse(localStorage.getItem("seller"));
+      createUserCard(seller);
+    </script>
+  </body>
+</html>

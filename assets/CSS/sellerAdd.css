@@ -1,0 +1,123 @@
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@100&family=Poppins:ital@1&family=Space+Mono:wght@700&display=swap");
+
+body {
+  font-family: "Poppins", sans-serif;
+}
+
+nav {
+  background-color: black;
+  color: #818181;
+  height: 100%;
+  width: 230px;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  overflow-x: hidden;
+  padding-top: 20px;
+  cursor: pointer;
+}
+nav h2 {
+  margin-right: 10px;
+  color: white;
+}
+nav h3 {
+  margin-left: 20px;
+}
+.nav_logo {
+  display: flex;
+  justify-content: space-around;
+}
+nav img {
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  margin-top: 10px;
+}
+nav a {
+  text-decoration: none;
+  font-size: 20px;
+  color: #818181;
+  display: block;
+}
+nav a:hover {
+  color: #f1f1f1;
+}
+nav a:active {
+  color: #f1f1f1;
+}
+.help_div {
+  border-top: 1px solid rgb(245, 242, 242);
+  margin-top: 100%;
+}
+#dash {
+  color: white;
+}
+.main {
+  margin-left: 14%;
+  display: flex;
+  background-color: black;
+  color: white;
+  justify-content: space-around;
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+.main div {
+  margin-left: 30px;
+}
+.listing-1 {
+  background-color: rgb(14, 14, 14);
+  color: white;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  width: 200px;
+  height: 330px;
+  margin-bottom: 25px;
+}
+img {
+  width: 200px;
+  height: 170px;
+  border-radius: 10px;
+}
+.btn button {
+  width: 150px;
+  height: 50px;
+  background-color: black;
+  color: aliceblue;
+  border-radius: 50px;
+  margin-bottom: 50px;
+}
+.products {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  text-align: center;
+  font-size: 15px;
+  margin-bottom: 40px;
+  margin-top: 120px;
+  margin-left: 15%;
+}
+
+.edit_btn {
+  text-decoration: none;
+  margin-left: 20px;
+  color: rgb(16, 15, 15);
+  background-color: #fff;
+  padding: 10px;
+  border-radius: 15px;
+}
+.add_more button {
+  width: 160px;
+  height: 45px;
+  margin-top: 17px;
+  border-radius: 10px;
+  background-color: #c1bdbd;
+  font-size: 15px;
+  font-weight: bolder;
+}
+
+.add_more button:hover {
+  background-color: white;
+}

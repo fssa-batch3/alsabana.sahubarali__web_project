@@ -1,7 +1,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Outfit:wght@100&family=Poppins:ital@1&family=Space+Mono:wght@700&display=swap");
 
 body {
-  font-family: "Poppins", sans-serif;
+  font-family: "poppins", sans-serif;
+  font-weight: 0px;
 }
 .navbar {
   width: 100%;
@@ -14,12 +15,12 @@ body {
   left: 0;
   color: #000;
 }
-
+.box {
+  font-size: 24px;
+}
 nav li {
   padding-right: 50px;
   font-size: 50px;
-  font-weight: bold;
-  font-family: cambria;
   cursor: pointer;
   color: black;
 }
@@ -35,8 +36,6 @@ nav li {
 }
 .fst-container {
   display: flex;
-
-  /* background-color: rgb(124, 124, 123); */
   margin-top: 140px;
   margin-left: 50px;
   width: 300px;
@@ -51,28 +50,29 @@ nav li {
   display: flex;
   justify-content: space-evenly;
 }
-h3 {
-  padding: 0;
-  margin: 0;
+.edit {
+  display: none;
+}
+.customer_details {
+  font-style: italic;
+  width: 330px;
+  font-weight: normal;
 }
 .scnd-container {
-  /* margin-top: 140px; */
   margin-top: -100px;
 }
 .profile img {
   width: 80px;
   height: 80px;
 }
-/* .whole {
-  display: flex;
-  justify-content: space-around;
-} */
 .dot {
   height: 10px;
   width: 10px;
   background-color: rgb(56, 92, 65);
   border-radius: 50%;
   display: inline-block;
+  margin-top: 30px;
+  margin-right: 30px;
 }
 .checked {
   color: rgb(53, 49, 141);
@@ -85,24 +85,26 @@ h3 {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  background-color: rgb(166, 169, 169);
+  background-color: #f9f9f9;
   width: 950px;
-  height: 120px;
-  box-shadow: 4px 10px rgb(92, 91, 91);
+  height: 150px;
+  box-shadow: 4px 4px 4px 4px rgb(243, 242, 242);
 }
 .form label {
   color: rgb(16, 16, 16);
   margin-top: 20px;
-  /* padding: 8px; */
 }
-input {
-  width: 250px;
+input,
+textarea {
+  width: 260px;
   height: 35px;
+  border-radius: 3px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  border-style: none;
+  border-bottom: 1px solid black;
 }
-.radio input {
-  width: 25px;
-  height: 25px;
-}
+
 .url input {
   width: 20px;
   height: 10px;
@@ -118,79 +120,35 @@ button {
   margin-top: 10px;
   margin-left: 10px;
 }
-footer {
-  font-family: "Poppins", sans-serif;
-  font-size: 15px;
-  padding: 10px;
-
-  background-color: black;
-  color: white;
-  /* height: 250px; */
-  margin-top: 50px;
-
-  border: 1px solid gray;
+a {
+  text-decoration: none;
+  color: black;
 }
-.flip {
-  border-radius: 50%;
+.logout {
+  margin-top: 10px;
 }
-.sixteen {
-  display: flex;
-  flex-wrap: wrap;
-}
-.sixteen div {
-  padding: 20px;
-}
-.seventeen {
-  text-align: center;
-  margin-top: -12%;
-}
-
-.eighteen {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-.eighteen div {
-  padding: 20px;
-}
-.nineteen {
-  text-align: end;
-  margin-top: -14%;
-  margin-right: 10%;
-}
-.twenty {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: end;
-  margin-right: 10%;
-}
-.twenty div {
-  padding: 10px;
-}
-.twentyone {
-  text-align: end;
-  margin-top: 50px;
-}
-.delivery {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
-  font-size: 19px;
-  font-family: "Poppins", sans-serif;
-  /* background-color: #9f9d9b; */
-}
-.deli {
-  display: flex;
-  flex-direction: column;
+.no-order {
+  display: none;
+  font-size: larger;
+  width: 1000px;
   align-items: center;
+  margin-top: 150px;
+  text-align: center;
 }
-.delivery img {
-  filter: sepia(100%);
+#cancel_btn {
+  height: 30px;
+  width: 100px;
+  background-color: rgb(192, 16, 16);
+  border: none;
+  border-radius: 10px;
+  margin-left: 15%;
 }
-.delivery div {
-  padding: 20px;
+.no-order button {
+  width: 230px;
+  height: 50px;
+  border-radius: 30px;
+  font-size: 22px;
 }
-
 /*Desktop*/
 @media (min-width: 600px) {
   .navbar .navbar-item {
@@ -236,7 +194,6 @@ footer {
   .navbar-btn {
     border: none;
     background: none;
-    /* border: 1px solid white; */
     padding: 5px;
     position: absolute;
     right: 0;

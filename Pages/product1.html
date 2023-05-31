@@ -5,7 +5,16 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="../assets/CSS/product1.css" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="../assets/CSS/product.css" />
+    <link rel="stylesheet" href="../assets/CSS/search.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css"
+    />
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
+    ></script>
     <title>Document</title>
   </head>
   <body>
@@ -18,33 +27,26 @@
         height="100"
         alt="image"
       />
-      <button class='navbar-btn'>
+      <button class="navbar-btn">
         <span></span>
         <span></span>
         <span></span>
       </button>
-
-      <nav class="navbar-item hide">
-        <ul>
-          <li><a href="../index.html">Home</a></li>
-          <li><a href="../Pages/analysis.html">Hair Analysis</a></li>
-          <li><a href="../Pages/Product.html">Products</a></li>
-         
-          
-          <li>
-            <a href="../Pages/cart.html"
-              class="bi bi-cart4 "
-            >Cart</a>
-          </li>
-          <li>
-            <a href="../Pages/account.html"
-             class="bi bi-person-circle" >
-          Account  </a>
-          </li>
-        </ul>
+      <div id="js_header"></div>
+    </div>
+    <!-- cart -->
+    <div class="cart">
+      <div class="cart-title">Cart items</div>
+      <div class="cart-content">
+        <div class="total">
+          <div class="total-title">Total</div>
+          <div class="total-price" id="total">Rs.0</div>
+        </div>
+        <ion-icon name="close" id="cart-close"></ion-icon>
+        <button onclick="cartOrder()" class="btn-buy">place order</button>
       </div>
-    </nav>
-
+    </div>
+    <!-- cart -->
     <div class="long-image">
       <img
         src="../assets/images/big image.jpg"
@@ -57,132 +59,7 @@
     <div class="head-1">
       <h3>AYURVEDIC RANGE</h3>
     </div>
-    <div class="products">
-      <!-- <div class="product-listing3">
-      <div class="pro-list-1">
-        <div>
-          <a href="../Pages/product detail.html"
-            ><img
-              src="../assets/images/GoodAyurvedic-hairoil1.webp"
-              alt="image"
-              width="250"
-              height="250"
-          /></a>
-        </div>
-        <div>
-          <h3>Ayurvedic Hair Oil For Hair Growth-100ml</h3>
-          <h5>Rs.299</h5>
-        </div>
-      </div>
-
-      <div class="pro-list-1">
-        <div>
-          <img
-            src="../assets/images/GoodHair_AyurvedicShampoo2.webp"
-            alt="image"
-            width="250"
-            height="250"
-          />
-        </div>
-        <div>
-          <h3>
-            Ayurvedic Hair Shampoo For Anti-Hair Fall & Anti-Dandruff-200ml
-          </h3>
-          <h5>Rs.349</h5>
-        </div>
-      </div>
-      <div class="pro-list-1">
-        <div>
-          <img
-            src="../assets/images/GoodHairAyurvedicConditioner3.webp"
-            alt="image"
-            width="250"
-            height="250"
-          />
-        </div>
-        <div>
-          <h3>
-            Ayurvedic Hair Conditioner For Thin, Weak & Damaged Hair-100ml
-          </h3>
-          <h5>Rs.249</h5>
-        </div>
-      </div>
-      <div class="pro-list-1">
-        <div>
-          <img
-            src="../assets/images/GoodHair-GreenAppleShampoo4.webp"
-            alt="image"
-            width="250"
-            height="250"
-          />
-        </div>
-        <div>
-          <h3>Green apple shampoo-100ml</h3>
-          <h5>Rs.359</h5>
-        </div>
-      </div>
-    </div>
-    <div class="product-listing3">
-      <div class="pro-list-1">
-        <div>
-          <img
-            src="../assets/images/Goodhair-ayurvedic-trio6.webp"
-            alt="image"
-            width="250"
-            height="250"
-          />
-        </div>
-        <div>
-          <h3>Ayurvedic Hair Oil, Shampoo & Conditioner For Hair Growth</h3>
-          <h5>Rs.622</h5>
-        </div>
-      </div>
-      <div class="pro-list-1">
-        <div>
-          <img
-            src="../assets/images/GoodHair-GreenApple-combo7.webp"
-            alt="image"
-            width="250"
-            height="250"
-          />
-        </div>
-        <div>
-          <h3>Green Apple & Aloe Vera Shampoo & Conditioner</h3>
-          <h5>Rs.718</h5>
-        </div>
-      </div>
-      <div class="pro-list-1">
-        <div>
-          <img
-            src="../assets/images/GoodHair-GreenAppleConditioner5.webp"
-            alt="image"
-            width="250"
-            height="250"
-          />
-        </div>
-        <div>
-          <h3>Green Apple Conditioner</h3>
-          <h5>Rs.359</h5>
-        </div>
-      </div>
-
-      <div class="pro-list-1">
-        <div>
-          <img
-            src="../assets/images/GoodHair-Ayurvedic-combo8.webp"
-            alt="image"
-            width="250"
-            height="250"
-          />
-        </div>
-        <div>
-          <h3>Ayurvedic Shampoo & Conditioner (Combo Pack)</h3>
-          <h5>Rs.590</h5>
-        </div>
-      </div>
-    </div>-->
-    </div>
-
+    <div class="product"></div>
     <div class="long-1">
       <img
         src="../assets/images/big images1.jpg"
@@ -192,80 +69,12 @@
       />
     </div>
     <div class="head-2"><h2>Onion Caffeine Range</h2></div>
-    <div class="Products">
-      <!-- <div class="product-listing3">
-      <div class="pro-list-1">
-        <div>
-          <img
-            src="../assets/images/caffeine1.webp"
-            width="250"
-            height="250"
-            alt="image"
-          />
-        </div>
-        <div>
-          <h3>Onion Caffeine Hair Oil, Shampoo & Conditioner (trio pack)</h3>
-          <h5>Rs.1799</h5>
-        </div>
-      </div>
-      <div class="pro-list-1">
-        <div>
-          <img
-            src="../assets/images/caffeine2.webp"
-            width="250"
-            height="250"
-            alt="image"
-          />
-        </div>
-        <div>
-          <h3>Onion Caffeine Shampoo & Conditioner(combo pack)</h3>
-          <h5>Rs.1100</h5>
-        </div>
-      </div>
-      <div class="pro-list-1">
-        <div>
-          <img
-            src="../assets/images/caffeine3.webp"
-            width="250"
-            height="250"
-            alt="image"
-          />
-        </div>
-        <div>
-          <h3>Onion oil for Regrowth-200ml</h3>
-          <h5>Rs.599</h5>
-        </div>
-      </div>
-
-      <div class="pro-list-1">
-        <div>
-          <img
-            src="../assets/images/caffeine4.webp"
-            width="250"
-            height="250"
-            alt="image"
-          />
-        </div>
-        <div>
-          <h3>Onion shampoo for dandruff-300ml</h3>
-          <h5>Rs.550</h5>
-        </div>
-      </div>
-    </div> -->
-    </div>
+    <div class="Products"></div>
     <div class="btn">
       <div>
         <a href="../Pages/product2.html"
-          ><button class="show">SHOW ALL</button></a
+          ><button class="show">Avocado Range</button></a
         >
-      </div>
-      <div class="arrow">
-        <img
-          src="../assets/images/right-long-solid.svg"
-          alt="image"
-          width="20"
-          height="20"
-        />
       </div>
     </div>
     <hr />
@@ -376,224 +185,23 @@
         <h3>Healthy hair 2022 © All rights reserved</h3>
       </div>
     </footer>
+    <script src="../assets/js/product.js"></script>
     <script>
+      let get_product1 = JSON.parse(localStorage.getItem("total_product"));
+      let ayurvedic = get_product1.filter(
+        (get) => get["product_type"] == "Ayurvedic Range"
+      );
+      console.log(ayurvedic);
+      productDiv(ayurvedic, ".product");
 
-      let products = [
-        {
-          productName:  "Ayurvedic hair oil for hair growth - 100ml",
-          cost: 299,
-          image: {
-            src: "../assets/images/GoodAyurvedic-hairoil1.webp",
-            alt: "hair oil",
-          },
-        },
-        {
-          productName:"Ayurvedic hair shampoo for Anti-Dandruff & Anti-Hairfall - 200ml",
-          cost: 349,
-          image: {
-            src: "../assets/images/GoodHair_AyurvedicShampoo2.webp",
-            alt: "shampoo",
-          },
-        },
-        {
-          productName:"Ayurvedic hair conditionar for Thin,weak and Damaged hair-100ml",
-          cost: 249,
-          image: {
-            src: "../assets/images/GoodHairAyurvedicConditioner3.webp",
-            alt: "conditioner",
-          },
-        },
-        {
-          productName: "Green apple shampoo-100ml",
-          cost: 359,
-          image: {
-            src: "../assets/images/GoodHair-GreenAppleShampoo4.webp",
-            alt: "green apple shampoo",
-          },
-        },
-        {
-          productName:
-            "Ayurvedic hair oil,shampoo & consitioner for hair growth",
-          cost: 622,
-          image: {
-            src: "../assets/images/Goodhair-ayurvedic-trio6.webp",
-            alt: "hair oil",
-          },
-        },
-        {
-          productName: "Green Apple & Aloevera shampoo & conditioner",
-          cost: 718,
-          image: {
-            src: "../assets/images/GoodHair-GreenApple-combo7.webp",
-            alt: "aloevera shampoo",
-          },
-        },
-        {
-          productName: "conditioner",
-
-          cost: 359,
-          image: {
-            src: "../assets/images/GoodHair-GreenAppleConditioner5.webp",
-            alt: "apple conditioner",
-          },
-        },
-
-        {
-          productName: "Ayurvedic shampoo & conditioner (combo pack)",
-          cost: 590,
-          image: {
-            src: "../assets/images/GoodHair-Ayurvedic-combo8.webp",
-            alt: "ayurvedic shampoo",
-          },
-        },
-        {
-          productName: "Alsabana)",
-          cost: 590,
-          image: {
-            src: "../assets/images/GoodHair-Ayurvedic-combo8.webp",
-            alt: "ayurvedic shampoo",
-          },
-        },
-      ];
-    const arr =JSON.parse(localStorage.getItem("proObject"))
-    console.log(arr)
-    console.log(arr)
-    for(let i = 0;i<arr.length;i++){
-      products.push(arr[i])
-    }
-      for (let i = 0; i < products.length; i++) {
-        let name = products[i];
-        let anger_tag = document.createElement("a");
-        anger_tag.setAttribute(
-          "href",
-          "../Pages/product detail.html"
-        );
-        //first div
-        let div_card = document.createElement("div");
-        div_card.setAttribute("class", "product-listing3");
-        anger_tag.append(div_card);
-        //second div
-        let div1 = document.createElement("div");
-        div1.setAttribute("class", "pro-list-1");
-        div_card.append(div1);
-        //third div
-        let div2 = document.createElement("div");
-        div1.append(div2);
-        //img tag and attributes
-        let card_img = document.createElement("img");
-        card_img.setAttribute("src", products[i].image["src"]);
-        card_img.setAttribute("height", "250");
-        card_img.setAttribute("width", "250");
-        card_img.setAttribute("alt", products[i].image["alt"]);
-        div2.append(card_img);
-        //div for h3 and h5 tags
-
-        let div1_card = document.createElement("div");
-        div_card.append(div1_card);
-        //h3 tag
-        let h3_tag = document.createElement("h3");
-        div2.append(h3_tag);
-
-        h3_tag.innerText = products[i].productName;
-
-        // //p tag for desc
-        // let desc_p = document.createElement("p");
-        // desc_p.innerText = products[i].description;
-        // div2.append(desc_p);
-        //h5 tag
-        let h5_tag = document.createElement("h5");
-        div2.append(h5_tag);
-        h5_tag.innerText = "Rs. " + products[i].cost;
-
-        //append
-        let insert_div = document.querySelector(".products");
-        insert_div.append(anger_tag);
-       
-      }
-      console.log(products)
-
-      let products1 = [
-        {
-          productsname:
-            "Onion Caffeine Hair Oil, Shampoo & Conditioner (trio pack)",
-          cost: 1799,
-          image: {
-            src: "../assets/images/caffeine1.webp",
-            alt: "onion caffeine",
-          },
-        },
-        {
-          productsname: "Onion Caffeine Shampoo & Conditioner(combo pack)",
-          cost: 1100,
-          image: {
-            src: "../assets/images/caffeine2.webp",
-            alt: "onion shampoo",
-          },
-        },
-        {
-          productsname: "Onion oil for Regrowth-200ml",
-          cost: 599,
-          image: {
-            src: "../assets/images/caffeine3.webp",
-            alt: "onion oil",
-          },
-        },
-        {
-          productsname: "Onion shampoo for dandruff-300ml",
-          cost: 550,
-          image: {
-            src: "../assets/images/caffeine4.webp",
-            alt: "shampoo for dandruff",
-          },
-         
-        },
-        {
-          productsname: "dsajhluiasdc",
-          cost: 550,
-          image: {
-            src: "../assets/images/caffeine4.webp",
-            alt: "shampoo for dandruff",
-          },
-        }
-      ];
-
-      for (let i = 0; i <= 3; i++) {
-        //first div
-        let div_card = document.createElement("div");
-        div_card.setAttribute("class", "product-listing3");
-        //second div
-        let div1 = document.createElement("div");
-        div1.setAttribute("class", "pro-list-1");
-        div_card.append(div1);
-        //third div
-        let div2 = document.createElement("div");
-        div1.append(div2);
-        //img tag and attributes
-        let card_img = document.createElement("img");
-        card_img.setAttribute("src", products1[i].image["src"]);
-        card_img.setAttribute("height", "250");
-        card_img.setAttribute("width", "250");
-        card_img.setAttribute("alt", products1[i].image["alt"]);
-        div2.append(card_img);
-        //div for h3 and h5 tags
-
-        let div1_card = document.createElement("div");
-        div_card.append(div1_card);
-        //h3 tag
-        let h3_tag = document.createElement("h3");
-        div2.append(h3_tag);
-
-        h3_tag.innerText = products1[i].productsname;
-        //h5 tag
-        let h5_tag = document.createElement("h5");
-        div2.append(h5_tag);
-        h5_tag.innerText = " Rs. " + products1[i].cost;
-
-        //append
-        let insert_div = document.querySelector(".Products");
-        insert_div.append(div_card);
-      }
+      let get_num_product = JSON.parse(localStorage.getItem("total_product"));
+      const Caffeine = get_num_product.filter(
+        (getting) => getting["product_type"] == "Caffeine Range"
+      );
+      productDiv(Caffeine, ".Products");
     </script>
-      <script src="/assets/js/script.js"></script>
+    <script src="../assets/js/nav.js"></script>
+    <script src="/assets/js/script.js"></script>
+    <script src="../assets/js/cart.js"></script>
   </body>
 </html>

@@ -2,18 +2,51 @@
 
 body {
   font-family: "Poppins", sans-serif;
+  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+  user-select: none;
 }
-
+/* .dropdown {
+  display: none;
+} */
+.show {
+  display: flex;
+  flex-direction: column;
+  width: 30%;
+  font-size: 22px;
+  position: absolute;
+  top: 115%;
+  right: 20%;
+  background-color: #fefefe;
+}
+/* .dropdown h4 {
+  text-align: center;
+  font-weight: lighter;
+  background-color: #9e9a86;
+  margin: 3px;
+  color: black;
+} */
+/* h4 a {
+  color: black;
+} */
+/* .dropdown h4:hover {
+  background-color: #7b7762;
+} */
+.box {
+  font-size: 25px;
+}
 .overall {
   width: 450px;
   margin: 0 auto;
   padding: 30px 0;
-  margin-top: 13%;
+  margin-bottom: 13%;
   height: 500px;
   position: absolute;
   top: 0;
   right: 5%;
   left: 50%;
+  z-index: 20;
   visibility: hidden;
   transform: translate(-50%, -50%) scale(0.1);
   transition: transform 0.4s, top 0.4s;
@@ -21,7 +54,7 @@ body {
 }
 .open-popup {
   visibility: visible;
-  top: 30%;
+  top: 7%;
   margin-left: 30%;
   transform: translate(-50%, -50%) scale(1);
 }
@@ -40,7 +73,6 @@ body {
   width: 100px;
   height: 100px;
   border-radius: 50%;
-
   background-color: white;
   padding: 10px;
   box-shadow: 0px 2px 2px rgb(0 0 0 / 10%);
@@ -57,13 +89,12 @@ body {
   min-height: 40px;
   border-radius: 2px;
   width: 100%;
-  padding: 0.375rem 0.75rem;
   font-size: 1rem;
   border: 1px solid #ced4da;
   margin-bottom: 20px;
+  padding: 5px;
 }
 button {
-  /* background: #2f2e2e !important; */
   background-color: #000;
   border: none;
   min-height: 40px;
@@ -84,31 +115,49 @@ button {
   text-decoration: none;
   color: #f278a0;
 }
+a {
+  text-decoration: none;
+}
+.shopNow_btn {
+  position: absolute;
+  margin-left: 63%;
+  margin-top: -14%;
+}
+.shopNow_btn a {
+  color: white;
+}
+.shopNow_btn button {
+  width: 235px;
+  height: 73px;
+  border-radius: 15px;
+  font-weight: bold;
+  font-size: 24px;
+  letter-spacing: 2px;
+  font-family: Arial, Helvetica, sans-serif;
+}
 /* sign up */
 .overall-pop {
   width: 550px;
   margin: 0 auto;
   margin-top: 13%;
 }
-
 .signup-pop {
   width: 450px;
   margin: 0 auto;
   padding: 30px 0;
-  margin-top: 13%;
+  margin-top: 5%;
   height: 500px;
   position: absolute;
   top: 0;
   right: 5%;
-  left: 50%;
+  left: 60%;
   display: none;
   cursor: pointer;
+  z-index: 20;
 }
-
 .sign-block {
   display: block;
 }
-
 .top {
   width: 100%;
   height: 50px;
@@ -121,11 +170,17 @@ button {
   color: #fff;
   padding: 13px;
 }
-
 input {
   outline: none;
   box-shadow: 0 0 0.5px 0.5px #1f1b4b;
   border-color: rgb(20, 15, 15);
+}
+#input_type {
+  width: 400px;
+  height: 40px;
+  margin-bottom: 20px;
+  border: 2px solid rgb(17, 17, 17);
+  font-size: 15px;
 }
 input:valid {
   border-color: green;
@@ -144,7 +199,6 @@ button:focus {
 .exit img {
   border-radius: 50%;
 }
-
 .navbar {
   width: 100%;
   padding: 20px;
@@ -155,13 +209,78 @@ button:focus {
   right: 0;
   left: 0;
   color: #000;
+  z-index: 10;
+}
+nav {
+  position: relative;
+  margin-right: 0px;
+}
+.profile {
+  position: absolute;
+  top: 25px;
+  right: -100px;
+}
+.pro_img {
+  display: none;
+  border-radius: 50%;
+}
+.forget {
+  color: #f278a0;
+  font-style: italic;
+}
+.exit_div {
+  display: flex;
+  justify-content: space-around;
+}
+/* foget password */
+.forgot_container {
+  position: absolute;
+  width: 270px;
+  background-color: white;
+  margin-left: 40%;
+  margin-top: 15%;
+  display: none;
+}
+.forget_pass h4 {
+  text-align: center;
+  margin-top: 30px;
+  color: #f278a0;
+}
+.forget_pass input {
+  width: 230px;
+  height: 30px;
+  margin-left: 15px;
+}
+.forget_pass button {
+  width: 100px;
+  height: 10px;
+  font-size: 20px;
+  margin-top: 20px;
+  margin-left: 20px;
+  margin-bottom: 10px;
+}
+.forget_pass label {
+  margin-left: 15px;
+}
+.otp_verification {
+  position: absolute;
+  width: 270px;
+  background-color: white;
+  margin-left: 40%;
+  margin-top: 15%;
+  display: none;
+}
+.verify_otp button {
+  width: 200px;
+}
+.hide_otp {
+  display: none;
 }
 
+/* forgot password */
 nav li {
   padding-right: 50px;
   font-size: 50px;
-  font-weight: bold;
-  font-family: cambria;
   cursor: pointer;
   color: black;
 }
@@ -170,7 +289,6 @@ nav li {
   font-size: 26px;
   text-decoration: none;
 }
-
 .image-1 {
   margin-top: -12px;
   border-radius: 50%;
@@ -184,9 +302,7 @@ nav li {
 }
 .two {
   display: flex;
-
   margin-left: 50px;
-
   font-size: 15px;
   padding: 25px;
 }
@@ -199,7 +315,6 @@ nav li {
 }
 .three {
   display: flex;
-
   margin-left: 200px;
   font-family: "Poppins", sans-serif;
 }
@@ -217,10 +332,6 @@ nav li {
   border-radius: 10px;
   margin-bottom: 10px;
 }
-button:hover {
-  font-size: 80%;
-  box-shadow: 5px 5px 5px black;
-}
 .three-2 {
   border-radius: 20px;
 }
@@ -229,7 +340,6 @@ button:hover {
   margin-top: -300px;
   margin-left: 15px;
 }
-
 .five h2 {
   padding: 30px;
   width: 800px;
@@ -240,9 +350,7 @@ button:hover {
 }
 .seven {
   display: flex;
-
   background-color: #f5ebe0;
-
   font-size: 15px;
   font-family: "Poppins", sans-serif;
   font-weight: bold;
@@ -253,13 +361,11 @@ button:hover {
   margin-right: 10px;
   height: 300px;
   border-radius: 40px;
-
   border-style: double;
 }
 .seven div {
   padding: 50px;
 }
-
 .eight {
   font-size: 20px;
   font-family: "Poppins", sans-serif;
@@ -278,7 +384,6 @@ button:hover {
   font-weight: bold;
   border-left: 2px solid rgb(57, 56, 56);
   border-left-style: double;
-  /* background-color: rgb(205, 205, 196); */
   background-color: #faf4ef;
   box-shadow: 20px 20px 15px gray;
 }
@@ -330,7 +435,6 @@ button:hover {
 }
 .thirdeen-1 {
   border-radius: 40px;
-
   box-shadow: 20px 20px 15px #faefe5;
 }
 .fourteen {
@@ -351,17 +455,13 @@ button:hover {
 .fifteen-1 {
   margin-left: 50px;
 }
-
 footer {
   font-family: "Poppins", sans-serif;
   font-size: 15px;
   padding: 10px;
-
-  background-color: black;
+  background-color: rgb(28, 27, 26);
   color: white;
-  /* height: 250px; */
   margin-top: -8px;
-
   border: 1px solid gray;
 }
 .flip {
@@ -378,7 +478,6 @@ footer {
   text-align: center;
   margin-top: -12%;
 }
-
 .eighteen {
   display: flex;
   flex-wrap: wrap;
@@ -411,7 +510,6 @@ footer {
   justify-content: space-around;
   font-size: 19px;
   font-family: "Poppins", sans-serif;
-  /* background-color: #9f9d9b; */
 }
 .deli {
   display: flex;
@@ -424,7 +522,6 @@ footer {
 .delivery div {
   padding: 20px;
 }
-
 /*Desktop*/
 @media (min-width: 600px) {
   .navbar .navbar-item {
@@ -509,8 +606,6 @@ footer {
     margin-left: 0;
     display: flex;
     align-items: center;
-    /* margin: 0;
-    /* display: none; */
   }
   .three img {
     width: 150px;

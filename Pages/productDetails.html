@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Product Detail</title>
+    <link rel="website icon"  type="png" href="../assets/images/Almond-2.png">
+    <link rel="stylesheet" href="../assets/CSS/productDetails.css" />
+    <link rel="stylesheet" href="../assets/CSS/search.css" />
+
+    <script
+      src="https://kit.fontawesome.com/f30fac2c61.js"
+      crossorigin="anonymous"
+    ></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Catamaran:wght@200&family=Courgette&family=Edu+TAS+Beginner:wght@700&family=Lato:wght@300;900&family=Mukta:wght@700&family=Mulish:wght@300&family=Open+Sans&family=PT+Sans:ital,wght@1,700&family=Poppins:wght@300&family=Raleway:wght@100&family=Roboto+Condensed:wght@700&family=Roboto+Slab&family=Roboto:wght@300&family=Source+Sans+Pro:wght@300&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+
+  </head>
+<body>
+    <!-- nav -->
+    <div class="navbar">
+      <img
+        class="image-1"
+        src="../assets/images/new logo.png"
+        width="100"
+        height="100"
+        alt="image"
+      />
+      <button class="navbar-btn">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <div id="js_header"></div>
+    </div>
+      <div class="cart ">
+        <div class="cart-title">Cart items</div>
+        <div class="cart-content">
+          <div class="total">
+            <div class="total-title">Total</div>
+            <div onclick="cartOrder()" class="total-price" id="total">Rs.0</div>
+          </div>
+          <ion-icon name="close" id="cart-close"></ion-icon>
+         <a href="../Pages/delivery.html" ><button class="btn-buy">place order</button></a>
+        </div>  
+      </div> 
+    <div class="card">
+      <div class="left">
+        <img
+          src="../assets/images/GoodHair-Ayurvedic-combo8.webp"
+          id="imgs"
+          alt="image"
+        />
+      </div>
+      <div class="right">
+        <h3 id="range">Ayurvedic product</h3>
+        <h1 id="pro_name">caffeine conditioner & shampooo</h1>
+        <h1 id="pro_cost"></h1>
+        <i class="fa-solid fa-star"></i>
+        <i class="fa-solid fa-star"></i>
+        <i class="fa-solid fa-star"></i>
+        <i class="fa-solid fa-star"></i>
+        <i class="fa-solid fa-star-half-stroke"></i>
+        <h3>Product Description :</h3>
+        <p id="description">
+        </p>
+        <h4>Available Offer's</h4>
+        <p>
+          : Special PriceGet extra 11% off (price inclusive of cashback/coupon)
+        </p>
+        <p>
+          : Partner OfferPurchase now & get a surprise cashback coupon for
+          May / June 2023
+        </p>
+        <p>
+          : Partner OfferSign up for healthy hair Pay Later and get Healthy hair Gift
+          Card worth up to ₹1000*
+        </p>
+        <p>: Bank Offer5% Cashback on healthy hair Axis Bank</p>
+       <a href="../Pages/delivery.html" type="click" id="buy"><button>Buy Now</button></a> 
+      </div>
+    </div>
+    <hr>
+    <div>
+      <h3 class="review_header">Our Customer  Reviews</h3>
+    </div>
+<div id="reviewsAndRatings">
+  
+  <div id="num_reviews">
+    <form class="input_2" id="form_submit">
+      <div>
+        <h2><span id="count">0</span> reviews</h2>
+      </div>
+      <!-- <div>
+        <p>Overall ratings</p>
+        <i class="fa-regular">&#9734;</i>
+        <i class="fa-regular">&#9734;</i>
+        <i class="fa-regular">&#9734;</i>
+        <i class="fa-regular">&#9734;</i>
+        <i class="fa-regular">&#9734;</i>
+      </div> -->
+      <div>
+        <div><h2>WRITE A CUSTOMER REVIEW</h2></div>
+        <div><label>
+          Ratings :
+        </label>
+        <select id="select_ratings">
+          <option>Select</option>
+          <option >&#9733;&#9733;&#9733;&#9733;&#9733;</option>
+          <option>&#9733;&#9733;&#9733;&#9733;</option>
+          <option>&#9733;&#9733;&#9733;</option>
+          <option>&#9733;&#9733;</option>
+          <option>&#9733;</option>
+        </select></div>
+        <div>
+          <label>Comment :</label>
+          <input class="input" id="input_field" placeholder="Add your review" title="You should add your review" required="true" type="text">
+        <div class="btn_div">
+          <button class="edit_btns" id="post" type="submit">Submit</button>
+        </div>
+        </div>
+      </div> 
+    </form>
+ </div>
+ <div>
+ </div>
+<div class="whole_container">
+  <div class="flexible">
+ </div>
+ <div class="no_reviews">
+  <h2>No Reviews</h2>
+ </div>
+</div>
+ <script src="/assets/js/nav.js"></script>
+  <script src="/assets/js/detail.js"></script>
+  <script src="/assets/js/cart.js"></script>
+  <script src="/assets/js/product.js"></script>
+</body>
+</html>

@@ -1,0 +1,108 @@
+body {
+  padding: 0px;
+  border: 1px solid black;
+}
+table {
+  font-size: 18px;
+  font-weight: 500;
+  margin-left: 10px;
+}
+.table-user-information > tbody > tr {
+  border-top: 1px solid #ccc;
+}
+.panel-body {
+  margin-top: 100px;
+}
+.alter {
+  width: 230px;
+}
+.panel {
+  margin-top: 50px;
+}
+.main-details {
+  display: flex;
+  width: max-content;
+  gap: 100px;
+  margin-left: 59px;
+}
+input,
+textarea {
+  background-color: transparent;
+  border: none;
+}
+.img-circle {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+}
+button {
+  width: 50px;
+  padding: 5px;
+}
+button:hover {
+  transform: scale(1.05);
+}
+.product-listing-1 {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  text-align: center;
+  padding: 10px;
+  margin-bottom: 40px;
+  width: 300px;
+  height: 600px;
+}
+.products {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+.listing-1 {
+  background-color: rgb(14, 14, 14);
+  color: white;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 10px 20px 10px gray;
+}
+.products a {
+  text-decoration: none;
+}
+
+#appends {
+  display: flex;
+  justify-content: space-around;
+}
+
+.card {
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  width: 300px;
+  margin: 0 auto;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+}
+
+.card-header {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.card-title {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.card-text {
+  margin-bottom: 5px;
+}
+
+.order-items {
+  list-style-type: none;
+  padding: 0;
+  margin-bottom: 10px;
+}
+
+.order-items li {
+  margin-bottom: 5px;
+}

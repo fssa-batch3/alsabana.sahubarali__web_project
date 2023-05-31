@@ -1,0 +1,27 @@
+#js_header input[type="text"] {
+  width: 70px;
+  margin-top: 40px;
+  margin-right: 50px;
+  border-radius: 50px;
+  font-size: 16px;
+  background-image: url("../images/My project-1.png");
+  background-position: 10px;
+  background-repeat: no-repeat;
+  background-size: 40px;
+  padding: 12px 30px 12px 40px;
+  -webkit-transition: width 0.4s ease-in-out;
+  transition: width 0.4s ease-in-out;
+}
+
+#js_header input[type="text"]:focus {
+  width: 200px;
+  outline: none;
+  font-size: 16px;
+  color: #0d0d0d;
+  padding-left: 70px;
+}
+
+#js_header input[type="text"]::placeholder {
+  padding: 20px;
+  color: #030202;
+}

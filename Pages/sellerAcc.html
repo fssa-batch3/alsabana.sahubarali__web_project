@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" href="../assets/CSS/sellerAcc.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <script
+      src="https://kit.fontawesome.com/a076d05399.js"
+      crossorigin="anonymous"
+    ></script>
+    <title>Seller Account page</title>
+  </head>
+  <body>
+    <nav>
+      <div class="nav_logo">
+        <div>
+          <img
+            src="../assets/images/new logo.png"
+            alt="logo"
+            width="50"
+            height="60"
+          />
+        </div>
+        <div>
+          <h2>Healthy Hair</h2>
+        </div>
+      </div>
+      <div>
+        <a href="../Pages/sellerAdd.html">
+          <h3><i class="fa fa-product-hunt"></i> Products</h3></a
+        >
+      </div>
+      <div>
+        <a href="../Pages/sellerAcc.html"
+          ><h3 id="dash"><i class="fa fa-users"></i>Account</h3></a
+        >
+      </div>
+      <div class="help_div">
+        <div>
+          <a href="#"><h3>Contact us</h3></a>
+        </div>
+        <div>
+          <a href="#">
+            <h3 id="log_Out"><i class="fa fa-sign-out"></i>Log out</h3></a
+          >
+        </div>
+      </div>
+    </nav>
+    <main>
+      <h2>Welcome, <span id="user_name"></span></h2>
+      <section id="detail">
+        <img id="user_img" width="200" height="200" alt="image" />
+        <h3>Profile Information</h3>
+        <p>Name:<span id="detail_name"> Sabana</span></p>
+        <p>Email:<span id="detail_email">sabin.@example.com</span></p>
+        <p>Phone:<span id="detail_num"> 555-555-5555</span></p>
+        <p>Address:<span id="detail_address">pallivasal Street</span></p>
+        <p>Company name : <span id="detail_company">Ayurveda</span></p>
+        <button id="edit_btn" onclick="edit()">Edit</button>
+      </section>
+
+      <section id="edit_section">
+        <h3>Account Settings, You can Edit your Account</h3>
+        <form id="acc_form">
+          <label for="image">Your image:</label>
+          <input
+            id="image"
+            type="url"
+            name="image"
+            placeholder="please put your image url"
+          />
+          <br /><br />
+          <label for="name">Name:</label>
+          <input
+            type="text"
+            id="name"
+            name="name"
+            placeholder="name"
+          /><br /><br />
+          <label for="email">Email:</label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            placeholder="john.doe@example.com"
+          />
+          <br /><br />
+          <label for="phone">Phone:</label>
+          <input
+            type="tel"
+            id="phone"
+            name="phone"
+            placeholder="555-555-5555"
+          /><br /><br />
+          <label for="address">Pickup Address:</label>
+          <input for="address" id="address" type="text" />
+          <br /><br />
+          <label for="company_name">Company Name</label>
+          <input for="company_name" id="company_name" type="text" />
+          <br /><br />
+          <input type="submit" value="Save" />
+          <button id="delete">DELETE</button>
+        </form>
+      </section>
+      <footer>
+        <p>&copy; 2023 Healthy hair</p>
+      </footer>
+    </main>
+    <script>
+      function edit() {
+        let edit_section = document.getElementById("edit_section");
+        let detail = document.getElementById("detail");
+
+        edit_section.style.display = "block";
+        detail.style.display = "none";
+      }
+
+      const logEmail = JSON.parse(localStorage.getItem("login_seller"));
+      const sellerData = JSON.parse(localStorage.getItem("seller"));
+
+      let select_user = sellerData.find(function (event) {
+        const customerEmail = event["user_id"];
+        if (logEmail === customerEmail) {
+          return true;
+        }
+      });
+
+      let email = document.getElementById("email");
+      let num = document.getElementById("phone");
+      let name = document.getElementById("name");
+      let address = document.getElementById("address");
+      let detail_name = document.getElementById("detail_name");
+      detail_name.innerText = select_user["username"];
+      let detail_email = document.getElementById("detail_email");
+      detail_email.innerText = select_user["email"];
+      let detail_num = document.getElementById("detail_num");
+      detail_num.innerText = select_user["phoneNo"];
+      let detail_address = document.getElementById("detail_address");
+      detail_address.innerText = select_user["address"];
+      let detail_company = document.getElementById("detail_company");
+      detail_company.innerText = select_user["company_name"];
+
+      let username = document.getElementById("user_name");
+      username.innerText = select_user["username"];
+      let user_img = document.getElementById("user_img");
+      user_img.setAttribute("src", select_user["image"]);
+      let company_name = document.getElementById("company_name");
+      company_name.innerText = select_user["company_name"];
+
+      email.value = select_user["email"];
+      num.value = select_user["phoneNo"];
+      name.value = select_user["username"];
+      address.value = select_user["address"];
+      company_name.value = select_user["company_name"];
+      user_img.src = select_user["image"];
+      company_name.value = select_user["company_name"];
+
+      const form = document.getElementById("acc_form");
+      form.addEventListener("submit", function (event) {
+        event.preventDefault();
+        let name = document.getElementById("name").value;
+        let email = document.getElementById("email").value;
+        let num = document.getElementById("phone").value;
+        let address = document.getElementById("address").value;
+        let image = document.getElementById("image").value;
+        let company_name = document.getElementById("company_name").value;
+        let data = {
+          name,
+          email,
+          num,
+          address,
+          image,
+          company_name,
+        };
+        const combineData = Object.assign(select_user, data);
+        let find = sellerData.indexOf(select_user);
+        sellerData[find] = combineData;
+        localStorage.setItem("seller", JSON.stringify(sellerData));
+        alert("successfully changed");
+        location.reload();
+      });
+
+      let delete_seller = document.getElementById("delete");
+      delete_seller.addEventListener("click", function (event) {
+        event.preventDefault();
+        let indexDel = sellerData.indexOf(select_user);
+        let msg = confirm("Are you sure you want to delete your account");
+        if (msg !== true) {
+          return;
+        } else {
+          sellerData.splice(indexDel, 1);
+          window.location.href = "/index.html";
+          localStorage.setItem("seller", JSON.stringify(sellerData));
+        }
+      });
+
+      let logout = document.getElementById("log_Out");
+      logout.addEventListener("click", function (e) {
+        localStorage.removeItem("login");
+        window.open("/index.html");
+      });
+    </script>
+    <script src="/assets/js/sellerAdd.js"></script>
+  </body>
+</html>

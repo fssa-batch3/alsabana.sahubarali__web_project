@@ -1,0 +1,118 @@
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@100&family=Poppins:ital@1&family=Space+Mono:wght@700&display=swap");
+
+body {
+  font-family: "Poppins", sans-serif;
+}
+nav {
+  background-color: black;
+  color: #818181;
+  height: 100%;
+  width: 230px;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  overflow-x: hidden;
+  padding-top: 20px;
+  cursor: pointer;
+}
+nav img {
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  margin-top: 13px;
+}
+nav h3 {
+  margin-left: 20px;
+}
+.nav_logo {
+  display: flex;
+  justify-content: space-around;
+  color: rgb(216, 211, 211);
+}
+.nav_logo h2 {
+  margin-right: 15px;
+}
+nav a {
+  text-decoration: none;
+  font-size: 20px;
+  color: #818181;
+  display: block;
+}
+
+nav a:hover {
+  color: #f1f1f1;
+}
+.help_div {
+  border-top: 1px solid rgb(245, 242, 242);
+  margin-top: 100%;
+}
+.dashboard {
+  margin-top: 50px;
+}
+#dash {
+  color: white;
+}
+.profile_name img {
+  width: 70px;
+  height: 70px;
+  margin: 15px;
+  margin-top: 35px;
+  border-radius: 50%;
+}
+.list h2 {
+  margin-left: 10%;
+  text-align: center;
+  font-size: 25px;
+  font-weight: bolder;
+}
+.whole {
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: 16.5%;
+  justify-content: space-between;
+  gap: 15px;
+}
+.whole_card {
+  background-color: rgb(12, 12, 12);
+  color: rgb(146, 140, 140);
+  width: 350px;
+  height: 300px;
+  margin-bottom: 2rem;
+  font-size: 20px;
+  border-radius: 10px;
+}
+button {
+  width: 200px;
+  height: 50px;
+  border-radius: 10px;
+  font-size: 22px;
+  background-color: #9b9797;
+}
+button:hover {
+  background-color: white;
+}
+a {
+  text-decoration: none;
+}
+.whole_card form {
+  display: flex;
+  flex-direction: column;
+}
+.cus_name {
+  margin-top: 15px;
+}
+form input {
+  height: 30px;
+  width: 200px;
+  margin-top: 10px;
+}
+label {
+  margin-left: 18px;
+}
+.profile_name {
+  display: flex;
+}
+p {
+  color: rgb(178, 182, 185);
+}

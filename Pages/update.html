@@ -12,10 +12,47 @@
       <div class="parent-div">ADD A NEW PRODUCT</div>
       <div class="whole">
         <form id="update-form">
-          <label>Product name <input type="text" id="pName" /></label>
-          <label>Product price<input type="number" id="pPrice" /></label>
-          <label>Image<input type="text" id="pImage" /></label>
-          <label>Description<input type="textarea" id="pDescription" /></label>
+          <label
+            >Product name :
+            <input
+              type="text"
+              id="pName"
+              required
+              title="Please enter product name"
+          /></label>
+          <label
+            >Product price :<input
+              type="number"
+              id="pPrice"
+              required
+              title="Enter price of the product"
+          /></label>
+          <label
+            >Image :<input
+              type="text"
+              id="pImage"
+              required
+              title="please paste your product url"
+          /></label>
+          <label
+            >product_details :
+            <textarea
+              type="text"
+              id="product_detail"
+              title="Please enter more detail about product"
+              required
+            ></textarea>
+          </label>
+          <label
+            >Category :
+            <select id="product_type">
+              <option value="Ayurvedic Range">Ayurvedic Range</option>
+              <option value="Caffeine Range">Caffeine Range</option>
+              <option value="Samples">Our Samples</option>
+              <option value="Avocado Range">Avocado, Biotin Range</option>
+              <option value="Capsules">Hair serum and capsules</option>
+            </select>
+          </label>
           <button type="submit">ADD</button>
         </form>
       </div>
@@ -25,25 +62,28 @@
       form.addEventListener("submit", function (event) {
         event.preventDefault();
         let productArray = [];
-        if (localStorage.getItem("proObject") != null) {
-          productArray = JSON.parse(localStorage.getItem("proObject"));
+        if (localStorage.getItem("total_product") != null) {
+          productArray = JSON.parse(localStorage.getItem("total_product"));
         }
-
+        let login_id = JSON.parse(localStorage.getItem("login_seller"));
+        let product_type = document.getElementById("product_type").value;
+        let product_detail = document.getElementById("product_detail").value;
         let productName = document.getElementById("pName").value;
         let cost = document.getElementById("pPrice").value;
-        let src = document.getElementById("pImage").value;
-        let alt = document.getElementById("pDescription").value;
-
+        let image = document.getElementById("pImage").value;
         proObject = {
+          product_type,
+          product_detail,
           productName,
           cost,
-          image: { src, alt },
+          image,
+          id: Date.now(),
+          login_id,
         };
         productArray.push(proObject);
-        // console.log(productArray);
         stringProduct = JSON.stringify(productArray);
-        localStorage.setItem("proObject", stringProduct);
-        window.location.href = "./admin.html";
+        localStorage.setItem("total_product", stringProduct);
+        window.location.href = "./sellerAdd.html";
       });
     </script>
   </body>

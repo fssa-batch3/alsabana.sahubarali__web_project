@@ -5,8 +5,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="../assets/CSS/acc.css"/>
+    <link rel="stylesheet" href="../assets/CSS/search.css" />
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://fontawesome.com/icons/trash?f=sharp&s=solid&pc=%23c32222">
     <title>order</title>
   </head>
   <body>
@@ -18,377 +21,81 @@
         height="100"
         alt="image"
       />
-      <button class='navbar-btn'>
+      <button class="navbar-btn">
         <span></span>
         <span></span>
         <span></span>
       </button>
-
-      <nav class="navbar-item hide">
-        <ul>
-          <li><a href="../index.html">Home</a></li>
-          <li><a href="../Pages/analysis.html">Hair Analysis</a></li>
-          <li><a href="../Pages/Product.html">Products</a></li>
-          <li>
-            <a href="../Pages/cart.html"
-              class="bi bi-cart4 "
-            >Cart</a>
-          </li>
-          <li>
-            <a href="../Pages/account.html"
-             class="bi bi-person-circle" >
-          Account  </a>
-          </li>
-        </ul>
-      </div>
-    </nav>
+      <div id="js_header"></div>
+    </div>
   <div class="whole">
    <div class="personal-info">
      <div class="fst-container">
        <div class="profile">
-          <img id="user_img" >
+          <img src="../assets/images/account profile.jpg" alt="user_image" id="user_img" >
        </div>
        <div>
         <p>Hello,</p>
-        <h3 id="user_name"></h3>
-          <!-- <input class="url" type="url" placeholder="upload image" /> -->
-  
+        <h3 id="user_name"></h3>  
       </div>
     </div>
     <!-- personal info -->
   <div class="first-container">
     <div class="personal-container">
-      <h5>Personal information</h5> 
-    <form class="form" id="proform">
-        <label>Image <input class="url" id="image" type="text" placeholder="upload image" />
+      <h3>Personal information:</h3> 
+    <form class="form edit" id="proform">
+        <label>Image Url: <input class="url" id="image" type="text"  placeholder="upload image" />
         </label>       
-         <label>Name <input type="text" id="username" placeholder="your name" value="Alsabana">
+         <label>Name :<input type="text" id="username"  placeholder="your name">
          </label>
-         <label>Email
-          <input type="email" id="email" placeholder="alsabana@gmail.com"> 
-
+         <label>Email:
+          <input type="email" id="email"  placeholder="alsabana@gmail.com"> 
          </label>
-         <label>Number
-          <input type="text" id="phNo" placeholder="8090177736"> 
+         <label>Number:
+          <input type="text" id="phNo"  placeholder="8090177736"> 
 
          </label>
          <label>
-          password
-          <input type="text" id="pass">
+          password:
+          <input type="password"  id="pass">
          </label>
          <label>
-          Address
-          <input type="text"id="country">
+          Address:
+          <textarea  type="text"id="country"></textarea>
          </label>
          <button type="submit"> SUBMIT</button>
-         <button id="delete">DELETE</button>
+         <button id="delete">Delete</button>
+         <div class="logout">
+        </div>
     </form>  
-     
-      <!-- <h5>Personal information</h5> 
-      <form>
-        <input type="text" id="username" placeholder="your name" value="Alsabana">
-      </form>
-       <h5>
-        Email Address  
-       </h5>
-       <input type="email" id="email" placeholder="alsabana@gmail.com"> 
-    </div>
-    <h5>
-      Mobile Number 
-    </h5>
-    <input type="text" id="phNo" placeholder="8090177736"> 
-    <h5>
-      your password 
-    </h5>
-    <input type="text" id="pass">  -->
-    <!-- <div>
-     <button>Edit</button>
-   
-    </div> -->
-    
+      <div class="customer_details" >
+        <h4>Name : <span id="detail_name">alsabana</span></h4>
+        <h4>Number : <span id="detail_no">7688876654</span></h4>
+        <h4>Email : <span id="detail_email" >sab@gmail.com</span></h4>
+        <h4>Address : <span id="detail_address" >jcb</span></h4>
+        <button type="click" onclick="change()" id="click_edit">Edit</button>
+        <div>
+          <h3 id="logOut"><i class="fa fa-sign-out"></i>Log out</h3>
+        </div>
+     </div>
    </div>
-       
     <div class="scnd-container">
       <div>
-        <h3  class="bi bi-caret-right" > My orders</h3>
+        <h3  class="bi bi-caret-right">Your Order details</h3>
       </div>
-   
-      <!-- <div class="order-container">
-        <div>
-          <img src="../assets/images/Almond-2.png" width="80" height="80">
-        </div>
-        <div>
-          <h4>Product name</h4>
-        </div>
-        <div>
-          <h5>Rs.234</h5>
-        </div>
-        <div>
-          <span class="dot"></span><span>&nbsp;&nbsp;Delivered on Feb 01</span>
-          
-          <p>Your product has been delivered</p>
-          <span class="fa fa-star checked"></span><span>&nbsp;&nbsp;Rate & Review product</span>
-        </div>
-      </div> -->
-    </div>
-  </div>
-</div>
-  <!-- <footer>
-    <div class="fif">
-      <div class="fifteen-1">
-        <h2>Follow us</h2>
-      </div>
-      <div class="sixteen">
-        <div>
-          <a href="#"
-            ><img
-              src="../assets/images/new insta logo.gif"
-              alt="image"
-              height="60"
-              width="60"
-          /></a>
-        </div>
-        <div>
-          <img
-            src="../assets/images/facebook new.gif"
-            alt="image"
-            height="60"
-            width="60"
-          />
-        </div>
-        <div>
-          <img
-            src="../assets/images/youtube new.gif"
-            alt="image"
-            height="60"
-            width="60"
-          />
-        </div>
+      <hr>
+      <div class="no-order">
+        <h3 >You haven't ordered yet</h3>
+        <button>Explore now!</button>
       </div>
     </div>
-    <div class="seventeen"><h2>Also Available On</h2></div>
-
-    <div class="eighteen">
-      <div>
-        <img
-          src="../assets/images/amazon new1.jpg"
-          alt="image"
-          width="60"
-          height="60"
-        />
-        <p>Amazon</p>
-      </div>
-      <div>
-        <img
-          class="flip"
-          src="../assets/images/new flip.gif"
-          width="60"
-          height="60"
-          alt="image"
-        />
-        <p>Flipkart</p>
-      </div>
-      <div>
-        <img
-          src="../assets/images/shopify new.gif"
-          alt="image"
-          width="60"
-          height="60"
-        />
-        <p>Shopify</p>
-      </div>
+   </div>
     </div>
-    <div class="fif">
-      <div class="nineteen"><h2>Certification</h2></div>
-      <div class="twenty">
-        <div>
-          <img
-            src="../assets/images/certi2.jpg"
-            alt="image"
-            height="50"
-            width="50"
-          />
-        </div>
-        <div>
-          <img
-            src="../assets/images/certi3.webp"
-            alt="image"
-            height="50"
-            width="50"
-          />
-        </div>
-      </div>
-    </div>
-    <div class="twentyone">
-      <h3>Healthy hair 2022 © All rights reserved</h3>
-    </div>
-  </footer> -->
   </body>
-     
-     
-  <script>
-       <!--json-->
-         let products=[
-        {
-          productName:
-            "Onion Caffeine Hair Oil, Shampoo & Conditioner (trio pack)",
-          cost: 1799,
-          image: {
-            src: "../assets/images/caffeine1.webp",
-            alt: "onion caffeine",
-          },
-          detail:"Delivered on Feb 01",
-          details:"Your product has been delivered",
-          details1:"Rate & Review product"
+  <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
 
-        },
-        {
-          productName:
-            "Ayurvedic hair shampoo for Anti-Dandruff & Anti-Hairfall - 200ml",
-          cost: 349,
-          image: {
-            src: "../assets/images/GoodHair_AyurvedicShampoo2.webp",
-            alt: "shampoo",
-          },
-          detail:"Delivered on March 03",
-          details:"Your product has been delivered",
-          details1:"Rate & Review product"
-        },
-        {
-          productName: "hair mask-50ml",
-          cost: 200,
-          image: {
-            src: "../assets/images/sample5.jpg",
-            alt: "hair mask",
-          },
-          detail:"Delivered on April 23",
-          details:"Your product has been delivered",
-          details1:"Rate & Review product"
-        },
-          
-         ]
-
-         for(let i=0;i<=2;i++){
-
-      let div_card=document.createElement("div")
-      div_card.setAttribute("class","order-container")
-      let div_card1=document.createElement("div")
-      div_card.append( div_card1)
-      let img_tag=document.createElement("img")
-      img_tag.setAttribute("src",products[i].image["src"])
-      img_tag.setAttribute("class","image")
-      img_tag.setAttribute("width","100")
-      img_tag.setAttribute("height","110")
-      div_card1.append(img_tag)
-      let div_card2=document.createElement("div")
-      div_card.append( div_card2)
-      let h4_tag=document.createElement("h4")
-      h4_tag.innerText=products[i]["productName"]
-      div_card2.append(h4_tag)
-      let div_card3=document.createElement("div")
-      div_card.append( div_card3)
-      let h5_tag=document.createElement("h5")
-      h5_tag.innerText="Rs."+ products[i]["cost"]
-      div_card3.append(h5_tag)
-      let div_card4=document.createElement("div")
-      div_card.append( div_card4)
-      //span
-      let span_tag=document.createElement("span")
-      span_tag.setAttribute("class","dot")
-      div_card4.append(span_tag)
-      let span1_tag=document.createElement("span")
-      span1_tag.innerText=products[i]["detail"]
-      div_card4.append(span1_tag)
-      let p_tag=document.createElement("p")
-      p_tag.innerText=products[i]["details"]
-      div_card4.append(p_tag)
-      let span2_tag=document.createElement("span")
-      span2_tag.setAttribute("class","fa fa-star checked")
-      div_card4.append(span2_tag)
-      let span3_tag=document.createElement("span")
-      span3_tag.innerText=products[i]["details1"]
-      div_card4.append(span3_tag)
-      let insert_div=document.querySelector(".scnd-container")
-      insert_div.append(div_card)
-         }
-
-
-    ///profile
-
-    // const profile=JSON.parse(localStorage.getItem("login"));
-    const logEmail=JSON.parse(localStorage.getItem("login"));
-    const userData=JSON.parse(localStorage.getItem("userData"))
-
-    let select_user=userData.find(function(event){
-  const customerEmail=event["u_id"]
-  if(logEmail===customerEmail){
-    return true;
-   }
-  
-  // console.log(select_user)
-});
-   const email=document.getElementById("email")
-    const phNo=document.getElementById("phNo")
-    const userName=document.getElementById("username")
-    const password=document.getElementById("pass")
-    const address=document.getElementById("country")
-    let Name=document.getElementById("user_name")
-    Name.innerText=select_user["username"]
-    let userImg=document.getElementById("user_img")
-    userImg.setAttribute("src",select_user["image"])
-
-
-    email.value=select_user["email"]
-    phNo.value=select_user["phoneNo"]
-    userName.value=select_user["username"]
-    password.value=select_user["password"]
-    address.value=select_user["address"]
-
-
-
-    const form=document.getElementById("proform")
-
-   form.addEventListener("submit",function(event){
-   event.preventDefault()
-
-
-      let username =document.getElementById("username").value 
-      let email=document.getElementById("email").value
-      let phoneNo=document.getElementById("phNo").value
-      let password=document.getElementById("pass").value
-      let address=document.getElementById("country").value
-      let image=document.getElementById("image").value
-
-     
-
- let newData={
-      username,email,phoneNo,password,address,image
-     }
-    
-     const combineData=Object.assign(select_user,newData)
-     console.log(combineData)
-
-    let findIndex = userData.indexOf(select_user) 
-      userData[findIndex]=combineData
-      localStorage.setItem("userData",JSON.stringify(userData));
-      alert("successfully changed");
-
-});
-let delete_user = document.getElementById("delete")
-      delete_user.addEventListener("click" , function(event){
-      event.preventDefault()
-      let indexDel = userData.indexOf(select_user)
-    let msg = confirm("Are you sure you want to delete this account")
-      if(msg !== true){
-        return
-      } else{
-        userData.splice(indexDel,1)
-        console.log(userData);
-        localStorage.setItem("userData",JSON.stringify(userData))
-      
-      }
-    })
-
-   
-     </script>
+  <script src="/assets/js/payment.js" ></script>
+  <script src="/assets/js/acc.js" ></script>
+  <script src="/assets/js/nav.js"></script>
+  <script src="/assets/js/cart.js"></script>
 </html>

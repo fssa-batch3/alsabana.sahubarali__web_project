@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../assets/CSS/confirmation.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css"
+    />
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <title>Confirmation</title>
+  </head>
+  <body>
+    <!-- nav -->
+    <div class="navbar">
+      <img
+        class="image-1"
+        src="../assets/images/new logo.png"
+        width="100"
+        height="100"
+        alt="image"
+      />
+      <button class="navbar-btn">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <nav class="navbar-item hide">
+        <ul>
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="../Pages/analysis.html">Hair Analysis</a></li>
+          <li><a href="../Pages/Product.html">Products</a></li>
+          <li class="box"><span class="bi bi-cart4 count"></span>Cart</li>
+          <li>
+            <a href="../Pages/acc.html" class="bi bi-person-circle">
+              Account
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+    <div class="cart">
+      <div class="cart-title">Cart items</div>
+      <div class="cart-content">
+        <div class="total">
+          <div class="total-title">Total</div>
+          <div class="total-price" id="total">Rs.0</div>
+        </div>
+        <ion-icon name="close" id="cart-close"></ion-icon>
+        <button class="btn-buy">place order</button>
+      </div>
+    </div>
+
+    <div class="progress-checkout-container">
+      <div class="progress-step-container">
+        <div class="step-check"></div>
+        <a href="../Pages/delivery.html"
+          ><span class="step-title">Address</span></a
+        >
+      </div>
+      <div class="progress-step-container">
+        <div class="step-check"></div>
+        <a href="../Pages/check.html"
+          ><span class="step-title">Payment</span></a
+        >
+      </div>
+      <div class="progress-step-container">
+        <div class="step-check"></div>
+        <a href="../Pages/confirmation.html">
+          <span class="step-title">Review</span></a
+        >
+      </div>
+    </div>
+    <div class="thank_div">
+      <button>Thank you for shopping with us!</button>
+    </div>
+    <div class="id">
+      <h3>YOUR ORDER ID :<span id="order_id">1234567890</span></h3>
+    </div>
+    <div class="whole_container">
+      <div>
+        <div class="flex">
+          <div>
+            <h3>Order Details</h3>
+          </div>
+          <div>
+            <p>Delivered By : <span id="date">03/01/2003</span></p>
+          </div>
+        </div>
+        <!-- cart div-->
+        <div class="cart-box">
+          <img
+            src="../assets/images/Caster-Hair-Oil-.jpg.webp"
+            class="cart-img"
+            id="image"
+            alt="product_image"
+          />
+          <div class="detail-box">
+            <div id="product_name" class="product-title">caffeine shampoo</div>
+            <div class="price-box">
+              <div id="product_cost" class="cart-price">Rs.678</div>
+            </div>
+          </div>
+        </div>
+        <div class="cartContent"></div>
+        <div>
+          <p>Delivery Address:</p>
+        </div>
+        <div>
+          <p id="cus_name">Name</p>
+          <p id="address">Adress</p>
+          <p id="state">state</p>
+          <p id="number">mobile no</p>
+        </div>
+      </div>
+      <div class="price_detail">
+        <div><p>Price details :</p></div>
+        <div>
+          <p>Order total :<span id="totals">Rs.768</span></p>
+        </div>
+        <div class="continue_btn">
+          <a href="../Pages/Product.html"
+            ><h6 id="continue">Continue shopping</h6></a
+          >
+        </div>
+      </div>
+    </div>
+    <script src="/assets/js/confirmation.js"></script>
+    <script src="/assets/js/script.js"></script>
+    <script src="/assets/js/cart.js"></script>
+    <script src="/assets/js/payment.js"></script>
+  </body>
+</html>

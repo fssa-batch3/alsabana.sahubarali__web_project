@@ -9,8 +9,14 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
     />
-
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/gh/suryaumapathy2812/notify__js/notify.css"
+    />
     <title>Home</title>
   </head>
   <body class="container">
@@ -22,7 +28,7 @@
         height="100"
         alt="image"
       />
-      <button class='navbar-btn'>
+      <button class="navbar-btn">
         <span></span>
         <span></span>
         <span></span>
@@ -32,61 +38,124 @@
         <ul>
           <li><a href="./index.html">Home</a></li>
           <li><a href="./Pages/analysis.html">Hair Analysis</a></li>
-          <li><a href="./Pages/Product.html">Products</a></li>
-          <li onclick="openpopup()"><a>Login</a></li>
-          
-          <li>
-            <a href="./Pages/cart.html"
-              class="bi bi-cart4 "
-            >Cart</a>
+          <li class="box" id="product_drop" onclick="dropdown()">
+            <a href="./Pages/Product.html">Products</a>
           </li>
-          <li>
-            <a href="./Pages/acc.html"
-             class="bi bi-person-circle" >
-          Account  </a>
+          <!-- <div class="dropdown" id="drop">
+            <h4><a href="./Pages/Product.html">Our samples</a></h4>
+            <h4>
+              <a href="./Pages/product1.html"> Ayurvedic & caffeine range</a>
+            </h4>
+            <h4><a href="./Pages/product2.html"> Avocado & capsules</a></h4>
+          </div> -->
+          <li id="login_btn" onclick="openpopup()"><a>Login</a></li>
+          <li class="profile">
+            <a href="./Pages/acc.html">
+              <img
+                src="./assets/images/account profile.jpg"
+                id="show_profile"
+                class="pro_img"
+                width="40"
+                height="40"
+                alt="account logo"
+            /></a>
           </li>
         </ul>
-      </div>
-    </nav>
+      </nav>
+    </div>
     <!-- sign up -->
     <div class="signup-pop" id="popup">
       <div class="top">
         <h4 class="title">Sign Up</h4>
       </div>
       <div class="exit">
-        <img  onclick="exit_popup()" src="../assets/images/exits image.png" width="35" height="35" />
+        <img
+          onclick="exit_popup()"
+          src="../assets/images/exits image.png"
+          width="35"
+          height="35"
+          alt="exit"
+        />
       </div>
-      
       <div class="form" id="pop_up">
         <form id="signUp">
           <div class="form-input">
-            <input type="text"  id="username" autocomplete="off" pattern="[A-Za-z]{1,30}" title="Username cannot contains spaces" placeholder="Username" required="true" />
+            <input
+              type="text"
+              id="username"
+              autocomplete="off"
+              pattern="[A-Za-z]{1,30}"
+              title="Username cannot contains spaces"
+              placeholder="Enter your name"
+              required="true"
+              value="gowtham"
+            />
           </div>
           <div class="form-input">
-            <input type="email" id="email"  placeholder="Email" required="true" />
+            <input
+              type="email"
+              id="email"
+              placeholder="Email"
+              required="true"
+              pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}"
+              value="gowtham@gmail.com"
+            />
           </div>
           <div class="form-input">
-            <input type="text" id="phone-no" placeholder="Phone No" pattern="[0-9]{1,10}" required="true" />
+            <input
+              type="tell"
+              id="phone-no"
+              title="Please enter your valid number"
+              placeholder="Phone No"
+              pattern="[6-9]{1}[0-9]{9}"
+              required="true"
+              value="9679008790"
+            />
           </div>
           <div class="form-input">
-            <input type="password"  id="password" pattern="[A-Z a-z 0-9]{10,15}" placeholder="Password" required="true" />
+            <input
+              type="password"
+              id="password"
+              title="You can use 6 to 15 characters,Alphabets and numbers"
+              pattern="[A-Z a-z 0-9]{6,15}"
+              placeholder="Password"
+              required="true"
+              value="123456"
+            />
           </div>
           <div class="form-input">
-            <input type="password" id="confirm-password" pattern="[A-Z a-z 0-9]{10,15}"  placeholder="Confirm Password" required="true"/>
+            <input
+              type="password"
+              title="You can use 6 to 15 characters,Alphabets and numbers"
+              id="confirm-password"
+              pattern="[A-Z a-z 0-9]{6,15}"
+              placeholder="Confirm Password"
+              required="true"
+              value="123456"
+            />
           </div>
+          <select class="form-input" id="input_type">
+            <option value="">CHOOSE</option>
+            <option value="customer">Customer</option>
+            <option value="seller">Seller</option>
+          </select>
           <div class="form-input">
-            <button type="submit" onclick="sign()">Sign In</button>
+            <button type="submit">Sign Up</button>
           </div>
         </form>
-       
       </div>
     </div>
-
     <!-- login page -->
     <div class="overall" id="pop">
       <div class="form">
-        <div >
-          <img  onclick="exit_pop()" src="./assets/images/exits image.png" width="40" height="40" />
+        <div>
+          <img
+            onclick="exit_pop()"
+            src="./assets/images/exits image.png"
+            width="40"
+            height="40"
+            alt="exit"
+          />
         </div>
         <div class="circle">
           <img
@@ -94,18 +163,32 @@
             src="../assets/images/new logo.png "
             width="100"
             height="100"
+            alt="logo"
           />
         </div>
         <h4 class="title">Login to Your Account</h4>
         <form id="login_form">
           <div class="form-input">
-            <input type="email" id="loginEmail" placeholder="Email" required />
+            <input
+              type="email"
+              id="loginEmail"
+              placeholder="Email"
+              value="gowtham@gmail.com"
+              required
+            />
           </div>
           <div class="form-input">
-            <input type="password" id="loginPassword" placeholder="Password" required />
+            <input
+              type="password"
+              id="loginPassword"
+              placeholder="Password"
+              value="123456"
+              required
+            />
+            <p onclick="forgot()" class="forget">forgot password?</p>
           </div>
           <div class="form-input">
-            <button type="submit" onclick="login()" >Login</button>
+            <button type="submit">Login</button>
           </div>
         </form>
         <div class="signup">
@@ -113,14 +196,82 @@
         </div>
       </div>
     </div>
-
-
+    <div class="forgot_container">
+      <div class="forget_pass">
+        <div><h4>forgot password?</h4></div>
+        <form id="submit_form">
+          <label>Email:</label>
+          <input
+            id="f_email "
+            type="email"
+            placeholder="Email"
+            required="true"
+            pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}"
+          />
+          <label>Password:</label>
+          <input
+            id="f_password"
+            type="password"
+            title="You can use 6 to 15 characters,Alphabets and numbers"
+            pattern="[A-Z a-z 0-9]{6,15}"
+            placeholder="Password"
+            required="true"
+          />
+          <label>Confirm Password:</label>
+          <input
+            id="f_confirm_password "
+            title="You can use 6 to 15 characters,Alphabets and numbers"
+            pattern="[A-Z a-z 0-9]{6,15}"
+            placeholder="Password"
+            required="true"
+            type="password"
+          />
+          <button class="submit" type="submit">Submit</button>
+          <a href="/index.html"><button>Back</button></a>
+        </form>
+      </div>
+    </div>
+    <div class="otp_verification">
+      <div class="forget_pass">
+        <div><h4>forgot password?</h4></div>
+        <form id="submit_form">
+          <div class="hide_email">
+            <label>Email:</label>
+            <input
+              id="f_email"
+              type="email"
+              placeholder="Email"
+              required="true"
+              pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}"
+            />
+            <div class="verify_otp">
+              <button id="send-otp">Send Otp</button>
+            </div>
+          </div>
+          <div class="hide_otp">
+            <label>Enter Otp :</label>
+            <input
+              id="enter_otp"
+              type="text"
+              pattern="[0-9]{4}"
+              required="true"
+            />
+            <div class="verify_otp">
+              <button type="submit" id="verifyOtp">Verify Otp</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
     <div class="one">
       <img
         src="./assets/images/Screenshot 2022-12-02 140508.png"
         alt="image"
         width="1500"
       />
+    </div>
+    <div class="shopNow_btn">
+      <button><a href="Pages/Product.html">SHOP NOW</a></button>
     </div>
     <div class="two">
       <div>
@@ -284,7 +435,7 @@
     </div>
     <div class="about">
       <div class="ten">
-        <h2><button>About Us:</button></h2>
+        <h2>About Us:</h2>
       </div>
       <div class="eleven">
         <h2>Transforming Passion To Perfection</h2>
@@ -386,7 +537,6 @@
         </div>
       </div>
       <div class="seventeen"><h2>Also Available On</h2></div>
-
       <div class="eighteen">
         <div>
           <img
@@ -442,7 +592,7 @@
         <h3>Healthy hair 2022 © All rights reserved</h3>
       </div>
     </footer>
-     <script src="assets/js/script.js"></script>
-
+    <script src="assets/js/script.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/suryaumapathy2812/notify__js/notify.js"></script>
   </body>
 </html>

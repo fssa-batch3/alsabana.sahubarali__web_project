@@ -5,6 +5,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="../assets/CSS/product2.css" />
+    <link rel="stylesheet" href="../assets/CSS/product.css" />
+    <link rel="stylesheet" href="../assets/CSS/search.css" />
+
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
+    ></script>
+
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css"
@@ -21,34 +29,26 @@
         height="100"
         alt="image"
       />
-      <button class='navbar-btn'>
+      <button class="navbar-btn">
         <span></span>
         <span></span>
         <span></span>
       </button>
-
-      <nav class="navbar-item hide">
-        <ul>
-          <li><a href="../index.html">Home</a></li>
-          <li><a href="../Pages/analysis.html">Hair Analysis</a></li>
-          <li><a href="../Pages/Product.html">Products</a></li>
-         
-          
-          <li>
-            <a href="../Pages/cart.html"
-              class="bi bi-cart4 "
-            >Cart</a>
-          </li>
-          <li>
-            <a href="../Pages/account.html"
-             class="bi bi-person-circle" >
-          Account  </a>
-          </li>
-        </ul>
+      <div id="js_header"></div>
+    </div>
+    <!-- cart -->
+    <div class="cart">
+      <div class="cart-title">Cart items</div>
+      <div class="cart-content">
+        <div class="total">
+          <div class="total-title">Total</div>
+          <div class="total-price" id="total">Rs.0</div>
+        </div>
+        <ion-icon name="close" id="cart-close"></ion-icon>
+        <button onclick="cartOrder()" class="btn-buy">place order</button>
       </div>
-    </nav>
-
-
+    </div>
+    <!-- cart -->
     <div class="head-4">
       <a href="../Pages/product detail.html">
         <img
@@ -62,132 +62,13 @@
     <div class="head">
       <h3>Macadamia Nut, Avocado, Biotin Range</h3>
     </div>
-    <div class="products">
-      <!-- <div class="product-listing3">
-      <div class="pro-list-1">
-        <div>
-          <img
-            src="../assets/images/mecahair4.webp"
-            alt="image"
-            width="250"
-            height="250"
-          />
-        </div>
-        <div>
-          <h3>
-            Macadamia Nut, Avocado, Biotin Shampoo, Conditioner & Hair Serum
-          </h3>
-          <h5>Rs 1597</h5>
-        </div>
-      </div>
-
-      <div class="pro-list-1">
-        <div>
-          <img
-            src="../assets/images/meca hair1.webp"
-            width="250"
-            height="250"
-            alt="image"
-          />
-        </div>
-        <div>
-          <h3>Hair Serum for Frizzy hair-100ml</h3>
-          <h5>Rs.399</h5>
-        </div>
-      </div>
-      <div class="pro-list-1">
-        <div>
-          <img
-            src="../assets/images/meca hair2.webp"
-            width="250"
-            height="250"
-            alt="image"
-          />
-        </div>
-        <div>
-          <h3>Best leave in conditioner | Anti Frizz Conditioner -300ml</h3>
-          <h5>Rs.599</h5>
-        </div>
-      </div>
-      <div class="pro-list-1">
-        <div>
-          <img
-            src="../assets/images/meca hair3.webp"
-            width="250"
-            height="250"
-            alt="image"
-          />
-        </div>
-        <div>
-          <h3>Macadamia Nut, Avocado, Biotin Shampoo -300ml</h3>
-          <h5>Rs.599</h5>
-        </div>
-      </div>
-    </div> -->
-    </div>
-
+    <div class="avocado"></div>
     <div class="center">
       <h3>Hair serum and Hair Booster capsules</h3>
     </div>
-    <div class="Products">
-      <!-- <div class="product-listing3">
-      <div class="pro-list-1">
-        <div>
-          <img
-            src="../assets/images/capsules.webp"
-            alt="image"
-            width="250"
-            height="250"
-          />
-        </div>
-        <div>
-          <h3>Hair Growth Capsule Hair Fall Capsule</h3>
-          <h5>Rs.499</h5>
-        </div>
-      </div>
-      <div class="pro-list-1">
-        <div>
-          <img
-            src="../assets/images/capsules2.webp"
-            alt="image"
-            width="250"
-            height="250"
-          />
-        </div>
-        <div>
-          <h3>Hair Vitamin with DHT Blockers | Biotin and Bhringraj</h3>
-          <h5>Rs.520</h5>
-        </div>
-      </div>
-      <div class="pro-list-1">
-        <div>
-          <img
-            src="../assets/images/Vithan-Pro-hair-growth-Serum_1fc5f2e5-9f3f-4b5f-b99f-bd8dee8fa419_400x400.webp"
-            width="250"
-            height="250"
-            alt="image"
-          />
-        </div>
-        <div>
-          <h3>Vithan Pro Hair Growth Serum For Women 50ml</h3>
-          <h5>Rs.599</h5>
-        </div>
-      </div>
-      <div class="pro-list-1">
-        <div>
-          <img
-            src="../assets/images/new serum.png"
-            width="250"
-            height="250"
-            alt="image"
-          />
-        </div>
-        <div>
-          <h3>Hair Serum With 5% Redensy -200ml</h3>
-          <h5>Rs.399</h5>
-        </div>
-      </div>
-    </div> -->
+    <div class="capsules"></div>
+    <div class="showAll_product">
+      <a href="../Pages/allProduct.html"> <button>Show all product</button></a>
     </div>
     <hr />
     <div class="delivery">
@@ -296,151 +177,23 @@
         <h3>Healthy hair 2022 © All rights reserved</h3>
       </div>
     </footer>
+    <script src="/assets/js/product.js"></script>
     <script>
-      let products = [
-        {
-          productName:
-            "Macadamia Nut,Avacado,Biotin shampoo,conditioner & hair serum",
-          cost: 1597,
-          image: {
-            src: "../assets/images/mecahair4.webp",
-            alt: "avacado",
-          },
-        },
-        {
-          productName: "Hair serum for frizzy hair - 100ml",
-          cost: 399,
-          image: {
-            src: "../assets/images/meca hair1.webp",
-            alt: "frizy",
-          },
-        },
-        {
-          productName:
-            "Best leave in conditioner | Anti frizz conditioner-300ml",
-          cost: 599,
-          image: {
-            src: "../assets/images/meca hair2.webp",
-            alt: "anti frizz",
-          },
-        },
-        {
-          productName: "Macadamia Nut,Avocado Biotin shampoo-300ml",
-          cost: 599,
-          image: {
-            src: "../assets/images/meca hair3.webp",
-            alt: "biotin shampoo",
-          },
-        },
-      ];
-      for (let i = 0; i <= 3; i++) {
-        //first div
-        let div_card = document.createElement("div");
-        div_card.setAttribute("class", "product-listing3");
-        //second div
-        let div1 = document.createElement("div");
-        div1.setAttribute("class", "pro-list-1");
-        div_card.append(div1);
-        //third div
-        let div2 = document.createElement("div");
-        div1.append(div2);
-        //img tag and attributes
-        let card_img = document.createElement("img");
-        card_img.setAttribute("src", products[i].image["src"]);
-        card_img.setAttribute("height", "250");
-        card_img.setAttribute("width", "250");
-        card_img.setAttribute("alt", products[i].image["alt"]);
-        div2.append(card_img);
-        //div for h3 and h5 tags
+      let avocado_range = JSON.parse(localStorage.getItem("total_product"));
+      const avocado = avocado_range.filter(
+        (get) => get["product_type"] == "Avocado Range"
+      );
+      productDiv(avocado, ".avocado");
 
-        let div1_card = document.createElement("div");
-        div_card.append(div1_card);
-        //h3 tag
-        let h3_tag = document.createElement("h3");
-        div2.append(h3_tag);
-
-        h3_tag.innerText = products[i].productName;
-        //h5 tag
-        let h5_tag = document.createElement("h5");
-        div2.append(h5_tag);
-        h5_tag.innerText = " Rs. " + products[i].cost;
-
-        //append
-        let insert_div = document.querySelector(".products");
-        insert_div.append(div_card);
-      }
-      let products1 = [
-        {
-          productsname: "Hair growth and hair fall capsules",
-          cost: 499,
-          image: {
-            src: "../assets/images/capsules.webp",
-            alt: "hair growth capsules",
-          },
-        },
-        {
-          productsname: "Hair Vitamin with DHT Blockers | Biotin and Bhringraj",
-          cost: 420,
-          image: {
-            src: "../assets/images/capsules2.webp",
-            alt: "biotin",
-          },
-        },
-        {
-          productsname: "Vithan Pro Hair Growth Serum For Women 50ml",
-          cost: 599,
-          image: {
-            src: "../assets/images/Vithan-Pro-hair-growth-Serum_1fc5f2e5-9f3f-4b5f-b99f-bd8dee8fa419_400x400.webp",
-            alt: "hair growth",
-          },
-        },
-        {
-          productsname: "Hair Serum With 5% Redensy -200ml",
-          cost: 399,
-          image: {
-            src: "../assets/images/new serum.png",
-            alt: "redensy",
-          },
-        },
-      ];
-
-      for (let i = 0; i <= 3; i++) {
-        //first div
-        let div_card = document.createElement("div");
-        div_card.setAttribute("class", "product-listing3");
-        //second div
-        let div1 = document.createElement("div");
-        div1.setAttribute("class", "pro-list-1");
-        div_card.append(div1);
-        //third div
-        let div2 = document.createElement("div");
-        div1.append(div2);
-        //img tag and attributes
-        let card_img = document.createElement("img");
-        card_img.setAttribute("src", products1[i].image["src"]);
-        card_img.setAttribute("height", "250");
-        card_img.setAttribute("width", "250");
-        card_img.setAttribute("alt", products1[i].image["alt"]);
-        div2.append(card_img);
-        //div for h3 and h5 tags
-
-        let div1_card = document.createElement("div");
-        div_card.append(div1_card);
-        //h3 tag
-        let h3_tag = document.createElement("h3");
-        div2.append(h3_tag);
-
-        h3_tag.innerText = products1[i].productsname;
-        //h5 tag
-        let h5_tag = document.createElement("h5");
-        div2.append(h5_tag);
-        h5_tag.innerText = " Rs." + products1[i].cost;
-
-        //append
-        let insert_div = document.querySelector(".Products");
-        insert_div.append(div_card);
-      }
+      let capsules_range = JSON.parse(localStorage.getItem("total_product"));
+      const capsules = capsules_range.filter(
+        (get) => get["product_type"] == "Capsules"
+      );
+      productDiv(capsules, ".capsules");
     </script>
-      <script src="/assets/js/script.js"></script>
+    <script src="/assets/js/confirmation.js"></script>
+    <script src="../assets/js/nav.js"></script>
+    <script src="/assets/js/script.js"></script>
+    <script src="/assets/js/cart.js"></script>
   </body>
 </html>

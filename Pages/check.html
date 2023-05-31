@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css"
+    />
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
+    ></script>
+
+    <link rel="stylesheet" href="../assets/CSS/check.css" />
+    <title>PAYMENT</title>
+  </head>
+  <body>
+    <!-- nav -->
+    <div class="navbar">
+      <img
+        class="image-1"
+        src="../assets/images/new logo.png"
+        width="100"
+        height="100"
+        alt="image"
+      />
+      <button class="navbar-btn">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <nav class="navbar-item hide">
+        <ul>
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="../Pages/analysis.html">Hair Analysis</a></li>
+          <li><a href="../Pages/Product.html">Products</a></li>
+          <li class="box"><span class="bi bi-cart4 count"></span>Cart</li>
+          <li>
+            <a href="../Pages/acc.html" class="bi bi-person-circle">
+              Account
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+    <div class="cart">
+      <div class="cart-title">Cart items</div>
+      <div class="cart-content">
+        <div class="total">
+          <div class="total-title">Total</div>
+          <div class="total-price" id="total">Rs.0</div>
+        </div>
+        <ion-icon name="close" id="cart-close"></ion-icon>
+        <button class="btn-buy">place order</button>
+      </div>
+    </div>
+
+    <div class="progress-checkout-container">
+      <div class="progress-step-container">
+        <div class="step-check"></div>
+        <a href="../Pages/delivery.html"
+          ><span class="step-title">Address</span></a
+        >
+      </div>
+      <div class="progress-step-container">
+        <div class="step-check"></div>
+        <a href="../Pages/check.html"
+          ><span class="step-title">Payment</span></a
+        >
+      </div>
+      <div class="progress-step-container">
+        <div class="step-check"></div>
+        <a href="../Pages/confirmation.html">
+          <span class="step-title">Review</span></a
+        >
+      </div>
+    </div>
+
+    <div class="form-container">
+      <h2 class="form-title">Payment Details</h2>
+      <form action="" class="checkout-form" id="pay_form">
+        <div class="input-line">
+          <label for="name">Name on card</label>
+          <input
+            value="Alsabana"
+            type="text"
+            name="name"
+            id="name"
+            pattern="[A-Za-z]{1,30}"
+            placeholder="Your name and surname"
+            title="Enter your card name"
+            required="true"
+          />
+        </div>
+        <div class="input-line">
+          <label for="name">Card number</label>
+          <input
+            value="6578 4859 5794 5875"
+            type="text"
+            name="name"
+            id="number"
+            required="true"
+            pattern="(\d{4}\s?){4}"
+            placeholder="&#8226;&#8226;&#8226;&#8226; &#8226;&#8226;&#8226;&#8226; &#8226;&#8226;&#8226;&#8226; &#8226;&#8226;&#8226;&#8226;"
+            maxlength="19"
+            title="Card number must 16 digits only"
+          />
+        </div>
+        <div class="input-container">
+          <div class="input-line">
+            <label for="name">Expiring Date</label>
+            <input
+              type="month"
+              id="date"
+              name="start"
+              min="2023-06"
+              value="2023-06"
+            />
+          </div>
+          <div class="input-line">
+            <label for="name">CVV</label>
+            <input
+              type="password"
+              name="name"
+              pattern="[0-9]{3}"
+              required="true"
+              id="cvc"
+              placeholder="***"
+              title="CVV contains 3 Digits only"
+              value="345"
+            />
+          </div>
+        </div>
+        <a href="../Pages/confirmation.html"
+          ><input
+            type="submit"
+            class="submit"
+            id="pay"
+            value="Complete payment"
+        /></a>
+      </form>
+    </div>
+    <script>
+      let get_product = JSON.parse(localStorage.getItem("proObject"));
+      let payment = document.getElementById("pay");
+      payment.addEventListener("submit", function (e) {
+        window.location.href =
+          "../Pages/confirmation.html?id=" + get_product[i]["id"];
+      });
+    </script>
+    <script src="/assets/js/cart.js"></script>
+    <script src="/assets/js/payment.js"></script>
+  </body>
+</html>
